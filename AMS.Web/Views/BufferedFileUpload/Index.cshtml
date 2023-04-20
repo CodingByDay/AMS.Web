@@ -1,0 +1,345 @@
+﻿@model List<SetTables>
+<div id="app">
+    <div id="sidebar" class='active'>
+        <div class="sidebar-wrapper active">
+            <div class="sidebar-header">
+                <img src="~/content/dist/assets/images/insist-logo.png" alt="" srcset="">
+            </div>
+            <div class="sidebar-menu">
+                <ul class="menu">
+                    <li class="sidebar-item">
+                        <a asp-action="Index" asp-controller="Home" class='sidebar-link'>
+                            <i width="20"></i>
+                            <span>Inventure</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a asp-action="ActiveInventory" asp-controller="Home" class='sidebar-link'>
+
+                            <i width="20"></i>
+                            <span>Aktivna inventura</span>
+                        </a>
+                    </li>
+
+
+
+
+                    <li class="sidebar-item">
+                        <a asp-action="Listing" asp-controller="Home" class='sidebar-link'>
+                            <i width="20"></i>
+                            <span>Pregled</span>
+                        </a>
+
+                    </li>
+
+
+                    <li class="sidebar-item has-sub">
+                        <a class='sidebar-link'>
+                            <i width="20"></i>
+                            <span>Sinhronizacija</span>
+                        </a>
+
+                        <ul class="submenu ">
+
+                            <li>
+                                <a asp-action="Location" asp-controller="BufferedFileUpload">Lokacija</a>
+                            </li>
+
+                            <li>
+                                <a asp-action="Item" asp-controller="BufferedFileUpload">Artikel</a>
+                            </li>
+
+                            <li>
+                                <a asp-action="Asset" asp-controller="BufferedFileUpload">Sredstvo</a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </ul>
+            </div>
+            <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+        </div>
+    </div>
+    <div id="main">
+        <nav class="navbar navbar-header navbar-expand navbar-light">
+            <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
+            <button class="btn navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
+
+                    <li class="dropdown nav-icon mr-2">
+                        <a href="#" data-toggle="dropdown" class="nav-link  dropdown-toggle nav-link-lg nav-link-user">
+
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#"><i data-feather="settings"></i> Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"><i data-feather="log-out"></i> Logout</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <div class="avatar mr-1">
+                                <img src="~/content/dist/assets/images/more.png" alt="" srcset="">
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#"><i data-feather="settings"></i> Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"><i data-feather="log-out"></i> Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="main-content container-fluid">
+
+
+
+
+            <h1>Sinhronizicija @ViewBag.Type</h1>
+
+
+
+        <hr />
+            <div class="choose-file-outer">
+                <div class="choose-file-inner">
+
+                    <form method="post" enctype="multipart/form-data" id="mainForm">
+                        <label for="files" class="btn btn-info">Izbira datoteke</label>
+                        <input type="file" id="files" name="file" style="visibility:hidden;width:0;" />
+                        <button onclick="askAboutHeaders()" type="button" class="btn btn-primary">Odpri</button>
+                        <input type="hidden" name="header" id="header" value="false">
+
+                    </form>
+                    </div>
+
+
+
+                @if (ViewBag.Configuration != null)
+                {
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Predloge
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            @foreach (var config in ViewBag.Configuration)
+                            {
+                                <a class="dropdown-item" onclick="chooseConfig('@config', '@ViewBag.Company')">@config</a>
+                            }
+                        </div>
+                    </div>
+                }
+
+                <div class="remove-buttons">
+
+                    <button type="button" id="removeLast" onclick="removeLastConnection()" class="btn btn-primary">Pobrišite zadnju povezavu</button>
+                    <button type="button" id="removeAll" onclick="removeAllConnections()" class="btn btn-primary">Pobrišite vse povezave</button>
+                 
+
+                    </div>
+
+
+
+                @if (ViewBag.Type != null)
+                {
+                    
+            
+                <button type="button" id="sync" onclick="sync('@ViewBag.Type')" class="btn btn-primary">Začni sinhronizaciju</button>
+
+                }
+
+                <div class="header_class">
+                <label for="cbCheckbox"> Datoteka vsebuje naslove</label>
+
+
+                @if(ViewBag.Headers!=null) {
+                    @if (ViewBag.Headers.Count > 0)
+                    {
+                        <input type="checkbox" id="cbCheckbox" name="checkbox" checked>
+                        }
+                    } else
+                    {
+                        <input type="checkbox" id="cbCheckbox" name="checkbox">
+
+                    }
+
+               </div>
+
+
+                <div class="loader"></div>
+
+
+               
+            </div>
+        </div>
+        <div class="connect-panel">
+            <div class="column-values" style="overflow-y:scroll; direction: rtl;">
+                @if (ViewBag.Message != null)
+                {
+                    if (ViewBag.Row.columns.Count != 0)
+                    {
+                        <table border="1">
+                            <thead class="choose-field">
+                                <tr>
+                                    @for (int i = 0; i < ViewBag.Max; i++)
+                                    {
+                                        if (ViewBag.Headers != null)
+                                        {
+                                            @if (ViewBag.Headers.Count > 0)
+                                            {
+                                                <th id="@i">@ViewBag.Headers[i]</th>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <th id="@i">Stolpec @i</th>
+                                        }
+                                    }
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @{int j = 0;}
+                                
+                                @if(ViewBag.Row!=null)
+                                {
+                                    if (ViewBag.Row.headers)
+                                    {
+                                        {
+                                            j = 1;
+                                        }
+                                    } else
+                                    {
+                                        {
+                                            j = 0;
+                                        }
+                                    }
+                                }
+
+                                @for (; j < ViewBag.Row.columns.Count; j++)
+
+                                {
+                                    <tr>
+                                        @for (int max = 0; max < ViewBag.Max; max++)
+                                        {
+                                            var root = ViewBag.Row;
+                                            var row = ViewBag.Row.columns[j];
+   
+                                            
+                                            try
+                                            {
+                                                var elementinner = @ViewBag.Row.columns[j][max];
+                                                <td contenteditable="false">@ViewBag.Row.columns[j][max]</td>
+
+                                            } catch
+                                            {
+                                                <td contenteditable="false">NULL</td>
+
+                                            }
+
+                                        }
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+                    }
+                }
+            </div>
+        <div class="connect-arrow">
+
+                @if (ViewBag.Message != null)
+                {
+                    if (ViewBag.Row.columns.Count != 0)
+                    {
+                        <table border="1" id="arrow">
+                            <thead class="choose-field">
+                                <tr>
+                                   <th>Naziv</th>
+                                </tr>
+                            </thead>
+                        <tbody>                                                         
+                                        @for (int i = 0; i < ViewBag.Max; i++)
+                                        {
+                                            if(ViewBag.Headers!=null) {
+                                            @if (ViewBag.Headers.Count > 0)
+                                            {
+                                               <tr><td id="row-@i" onclick="colorRow(@i)">@ViewBag.Headers[i]</td></tr>
+                                            }
+                                                                                        
+                                            }
+                                            else
+                                            {                                          
+                                               <tr><td id="row-@i" onclick="colorRow(@i)">Stolpec @i</td></tr> 
+                                            }
+                                        }                                             
+                        </tbody>
+                        </table>
+                    }
+                }       
+        </div>
+            <div class="column-names" style="overflow-y:scroll;height: 50em!important;" id="namesScroll" onmousedown="myFunction()">
+                <table id="names">
+                    <thead>
+                        <tr>
+                            <th>Tabela</th>
+                            <th>Polje</th>
+                            <th>Naziv</th>
+                            <th>Naziv interno</th>
+                            <th>Opis</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            @for (int i = 1; i <= Model.Count; i++)
+                            {
+                                <tr onclick="chooseFirst(@i)" id="row-first-@i">
+                                    <td>@Model.ElementAt(i-1).Table</td>
+                                    <td>@Model.ElementAt(i-1).Field</td>
+                                    <td>@Model.ElementAt(i-1).Name</td>
+                                    <td>@Model.ElementAt(i-1).CustomName</td>
+                                    <td>@Model.ElementAt(i-1).Description</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+        </section>
+    </div>
+
+
+</div>
+    </div>
+
+
+

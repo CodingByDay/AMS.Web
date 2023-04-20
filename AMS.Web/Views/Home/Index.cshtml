@@ -1,0 +1,307 @@
+﻿
+    <div id="app">
+        <div id="sidebar" class='active'>
+            <div class="sidebar-wrapper active">
+                <div class="sidebar-header">
+                    <img src="~/content/dist/assets/images/insist-logo.png" alt="" srcset="">
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class="sidebar-item active">
+
+                        <a asp-action="Index" class='sidebar-link'>
+                            <i  width="20"></i>
+                                <span>Inventure</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item ">
+                        <a asp-action="ActiveInventory" class='sidebar-link'>
+                            <i  width="20"></i>
+                                <span>Aktivna inventura</span>
+                            </a>
+                        </li>
+
+
+                        <li class="sidebar-item">
+                        <a asp-action="Listing" class='sidebar-link'>
+                            <i  width="20"></i>
+                                <span>Pregled</span>
+                            </a>
+
+                        </li>
+
+
+                    <li class="sidebar-item has-sub">
+                        <a  class='sidebar-link'>
+                            <i width="20"></i>
+                                <span>Uvoz / izvoz</span>
+                            </a>
+
+                        <ul class="submenu ">
+
+                            <li>
+                                <a asp-action="Location" asp-controller="BufferedFileUpload">Lokacija</a>
+                            </li>
+
+                            <li>
+                                <a asp-action="Item" asp-controller="BufferedFileUpload">Artikel</a>
+                            </li>
+
+                            <li>
+                                <a asp-action="Asset" asp-controller="BufferedFileUpload">Sredstvo</a>
+                            </li>
+                            <li>
+                                <a asp-action="TotalImport" asp-controller="BufferedFileUpload">Skupni uvoz</a>
+                            </li>
+                        </ul>
+
+                        </li>
+
+
+
+
+
+                    </ul>
+                </div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+        <div id="main">
+            <nav class="navbar navbar-header navbar-expand navbar-light">
+                <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
+                <button class="btn navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
+                        
+                        <li class="dropdown nav-icon mr-2">
+                            <a href="#" data-toggle="dropdown" class="nav-link  dropdown-toggle nav-link-lg nav-link-user">
+                                
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a asp-action="Settings" asp-controller="Home" class="dropdown-item"><i data-feather="settings"></i> Nastavitve</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-action="Login" asp-controller="Auth"><i data-feather="log-out"></i> Odjava</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                                <div class="avatar mr-1">
+                                    <img src="~/content/dist/assets/images/more.png" alt="" srcset="">
+                                </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" asp-action="Settings" asp-controller="Home"><i data-feather="settings"></i> Nastavitve</a>
+                                <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" asp-action="Logout" asp-controller="Auth"><i data-feather="log-out"></i> Odjava</a>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="main-content container-fluid">
+                <div class="page-title">
+
+
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h4 class="card-title">Inventure</h4>
+                                    <div class="download ">
+
+
+
+
+
+
+                                @if (ViewBag.Type != null && ViewBag.Type == "LADM")
+                                    {
+                                        <img src="~/img/plus.png" width="30" length="30" class="plus-button-class" id="create-new-inventory" style="cursor:pointer;"/>
+                                    }
+
+                                    <img src="~/img/export.png" width="30" length="30" class="plus-button-class" id="export-inventory"  style="cursor:pointer;" />
+
+                                    </div>
+                                </div>
+                                <div class="card-body px-0 pb-0">
+                                    <div class="table-responsive">
+                                        <table class='table mb-0' id="inventories">
+                                            <thead>
+                                                <tr>
+                                                    <th>Ime</th>
+                                                    <th>Datum</th>
+                                                    <th>Zaklenjena dne</th>
+                                                    <th class="options-crud">Opcije</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+
+                                    @if (ViewBag.Inventories!=null)
+                                    {
+                                        foreach (var inv in ViewBag.Inventories)
+                                        {
+                                          <tr  data-unique="@inv.qId">
+
+                                            <td>@inv.name</td>
+                                            <td>@inv.date</td>
+
+                                            <td>@inv.closed</td>
+                                            @if(inv.active)
+                                            {
+
+
+
+                                                    <td class="inventories-options">
+                                                <span class="badge bg-success">Aktivna</span>
+                                                        <img src="~/img/remove.png" class="remove-icon" width="30" height="30" />
+                                                        <img src="~/img/verified.png" class="confirm-icon" width="30" height="30" />
+                                                </td>
+
+
+
+                                            } else
+                                            {
+
+
+                                                    <td class="inventories-options">
+                                                <span class="badge bg-error">Neaktivna</span>
+                                                        <img src="~/img/remove.png" class="remove-icon" width="30" height="30" />
+                                                        <img src="~/img/verified.png" class="confirm-icon" width="30" height="30" />
+                                                </td>
+
+
+
+
+                                            }
+                                 
+
+                                            </tr>
+
+                                        }
+
+                                    }
+
+
+
+
+                                          
+                                               
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+           
+        </div>
+    </div>
+
+
+
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+
+
+        <div class="export-choices">
+
+            <div class="choice-div-outer"><img src="~/img/pdf.png" style="display:none!important" width="100" class="choice-div" height="100" /></div>
+            <div class="choice-div-outer"><img src="~/img/excel.png" width="100" height="100" data-choice="excel" class="choice-div" /></div>
+            <div class="choice-div-outer"><img src="~/img/notepad.png" width="100" height="100" data-choice="notepad" class="choice-div" /></div>
+
+            <!-- Place for the configuration dropdown -->
+            @if (ViewBag.Configuration != null)
+            {
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Predloge
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        @foreach (var config in ViewBag.Configuration)
+                        {
+                            <a class="dropdown-item" onclick="chooseConfigHome('@config', '@ViewBag.Company')">@config</a>
+                        }
+                    </div>
+                </div>
+            }
+            <!-- End of the configuration section -->
+
+        </div>
+        <button type="button" class="btn btn-primary download" id="btnExport" data-config="" onclick="processButtonClick()">Prenesi</button>
+
+    </div>
+</div>
+
+
+
+
+
+
+<div id="new-inventory-modal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close-create">&times;</span>
+
+
+      
+
+
+
+        <div class="container">
+            <h2 style="width:fit-content;margin:auto">Kreiranje nove inventure</h2>
+            <form>
+
+                <div class="form-group name">
+                    <label for="email">Ime inventure</label>
+                    <input type="text" class="form-control" id="nameInventory" placeholder="Ime inventure" name="nameInventory">
+                </div>
+
+                <div class="form-group user">
+                    <label for="pwd">Zadolženi</label>
+                        <select name="users" id="users" class="form-control">
+
+                            @if (Model != null)
+                            {
+                                UserList list = Model;
+                                foreach (var s in list.users)
+                                {
+                                    <option>@s.email</option>
+                                }
+
+                            }
+
+                    </select>
+                </div>
+
+                <div class="form-group duration">
+                    <label for="email">Trajanje inventure</label>
+                    <input type="date" class="form-control" id="dateInventory" placeholder="Do kdaj" name="nameInventory">
+                </div>
+
+                <div class="form-group confirm">
+                   <center><button type="button" class="btn btn-primary" id="create-inventory-button">Kreiraj inventuro</button></center>
+                </div>
+
+                
+
+
+
+            </form>
+        </div>
+        
+        
+
+    </div>
+</div>
+

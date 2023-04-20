@@ -1,0 +1,60 @@
+﻿<div id="auth">
+
+    <div class="container">
+
+
+       
+        <div class="row">
+            <div class="col-md-5 col-sm-12 mx-auto">
+                <div class="card pt-4">
+                    <div class="card-body">
+                        <div class="text-center mb-5">
+                            <img src="~/content/dist/assets/images/insist-logo.png" height="48" class='mb-4'>
+                            <h3>Prijava</h3>
+                            <p>Prijavite se za nadaljevanje.</p>
+                        </div>
+                        <form method ="get">
+                            <div class="form-group position-relative has-icon-left">
+                                @if (ViewBag.Login != null)
+                                {
+                                    if (!ViewBag.Login)
+                                    {
+                                        <div class="alert alert-danger" role="alert">Napačni podatki, poskušajte še enkrat</div>
+                                    }
+                                }
+                                <label for="username">Email naslov</label>
+                                <div class="position-relative">
+                                    <input type="text" name="username" class="form-control" id="username">
+                                    <div class="form-control-icon">
+                                        <i data-feather="user"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group position-relative has-icon-left">
+                                <div class="clearfix">
+                                    <label for="password">Geslo</label>
+                                    <a asp-action="ResetPassword" class='float-right'>
+                                        <small>Pozabili ste geslo?</small>
+                                    </a>
+                                </div>
+                                <div class="position-relative">
+                                    <input type="password" class="form-control" name="password" id="password">
+                                    <div class="form-control-icon">
+                                        <i data-feather="lock"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix">
+                                <button asp-controller="Auth" asp-action="Authenticate" class="btn btn-primary float-right">Prijava</button>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

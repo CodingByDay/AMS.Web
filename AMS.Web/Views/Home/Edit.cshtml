@@ -1,0 +1,134 @@
+﻿
+<div id="app">
+    <div id="sidebar" class='active'>
+        <div class="sidebar-wrapper active">
+            <div class="sidebar-header">
+                <img src="~/content/dist/assets/images/insist-logo.png" alt="" srcset="">
+            </div>
+            <div class="sidebar-menu">
+                <ul class="menu">
+                    <li class="sidebar-item">
+                        <a asp-action="Index" class='sidebar-link'>
+                            <i width="20"></i>
+
+                            <span>Inventure</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item ">
+                        <a asp-action="ActiveInventory" class='sidebar-link'>
+                            <i width="20"></i>
+
+                            <span>Aktivna inventura</span>
+                        </a>
+                    </li>
+
+
+
+
+                    <li class="sidebar-item">
+                        <a asp-action="Listing" class='sidebar-link'>
+                            <i width="20"></i>
+
+                            <span>Pregled</span>
+                        </a>
+
+                    </li>
+
+
+                    <li class="sidebar-item has-sub">
+                        <a class='sidebar-link'>
+                            <i width="20"></i>
+
+                            <span>Sinhronizacija</span>
+                        </a>
+
+                        <ul class="submenu ">
+
+                            <li>
+                                <a asp-action="Location" asp-controller="BufferedFileUpload">Lokacija</a>
+                            </li>
+
+                            <li>
+                                <a asp-action="Item" asp-controller="BufferedFileUpload">Artikel</a>
+                            </li>
+
+                            <li>
+                                <a asp-action="Asset" asp-controller="BufferedFileUpload">Sredstvo</a>
+                            </li>
+                            <li>
+                                <a asp-action="TotalImport" asp-controller="BufferedFileUpload">Skupni uvoz</a>
+                            </li>
+                        </ul>
+
+                    </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </ul>
+            </div>
+            <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+        </div>
+    </div>
+    <div id="main">
+        <nav class="navbar navbar-header navbar-expand navbar-light">
+            <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
+            <button class="btn navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex align-items-center navbar-light ml-auto">
+
+                    <li class="dropdown nav-icon mr-2">
+                        <a href="#" data-toggle="dropdown" class="nav-link  dropdown-toggle nav-link-lg nav-link-user">
+
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a asp-action="Settings" asp-controller="Home" class="dropdown-item"><i data-feather="settings"></i> Nastavitve</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" asp-action="Login" asp-controller="Auth"><i data-feather="log-out"></i> Odjava</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <div class="avatar mr-1">
+                                <img src="~/content/dist/assets/images/more.png" alt="" srcset="">
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" asp-action="Settings" asp-controller="Home"><i data-feather="settings"></i> Nastavitve</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" asp-action="Logout" asp-controller="Auth"><i data-feather="log-out"></i> Odjava</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main-content container-fluid">
+            <h1>Uredi</h1>
+        </div>
+        </section>
+    </div>
+
+
+</div>
+    </div>
+
+
