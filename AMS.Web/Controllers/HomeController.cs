@@ -73,25 +73,14 @@ namespace AMS.Web.Controllers
 
 
 
-        [HttpGet]
-        public JsonResult GetCheckOut()
-        {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
-            var checkOuts = db.GetAllCheckOutItems();
-            int result = 8 + 8;
-            return Json(checkOuts);
-        }
 
 
 
 
         [HttpPost]
         public JsonResult DeleteInventory([FromQuery(Name = "qid")] string qid) {
-
             DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
             db.DeleteInventory(qid);
-
-
             return Json(true);
         }
 
@@ -135,7 +124,6 @@ namespace AMS.Web.Controllers
                     json = JsonSerializer.Serialize(structure);
                     break;
             }
-
             return Json(json);
         }
 
@@ -360,7 +348,9 @@ namespace AMS.Web.Controllers
             {
                 return RedirectToAction("Login", "Auth");
             }
-            return View();
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            var checkOuts = db.GetAllCheckOutItems();
+            return View(checkOuts);
 
         }
         public IActionResult DeviceSync()

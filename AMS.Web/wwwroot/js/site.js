@@ -13,9 +13,6 @@ jQuery(document).ready(function () {
 
 
 
-
-
-
 jQuery(".close-create").click(function () {
     jQuery("#new-inventory-modal").toggle();
 });

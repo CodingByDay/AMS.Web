@@ -1310,6 +1310,21 @@ namespace AMS.Web.Database
             }
         }
 
+
+
+        public class CheckOutAPI
+        {
+           private int totalCount { get; set; }
+           public List<CheckOut> data { get; set; }
+
+
+            public void setCount()
+            {
+                this.totalCount = data.Count;
+            }
+        }
+
+
         public List<CheckOut> GetAllCheckOutItems()
         {
             List<CheckOut> items = new List<CheckOut>();
@@ -1344,9 +1359,12 @@ namespace AMS.Web.Database
                         items.Add(checkOut);
                     }
                 }
+
             }
 
-
+            CheckOutAPI api = new CheckOutAPI();
+            api.data = items;
+            api.setCount();
             return items;
         }
     }
