@@ -140,12 +140,21 @@
                 .ShowBorders(true)
                 .DataSource(Model)
                 .KeyExpr("anQId")
+                .FilterRow(filterRow => filterRow
+                .Visible(true)
+                .ApplyFilter(GridApplyFilterMode.Auto)
+                )
+                .SearchPanel(searchPanel => searchPanel
+                .Visible(true)
+                .Width(240)
+                .Placeholder("Search...")
+                )
                 .Columns(c =>
                 {
-                    c.Add().DataField("acItem");
-                    c.Add().DataField("acLocation");
-                    c.Add().DataField("acCode");
-                    c.Add().DataField("acName");
+                    c.Add().DataField("Izdelek").Caption("Izdelek");
+                    c.Add().DataField("acLocation").Caption("Lokacija");
+                    c.Add().DataField("acCode").Caption("Šifra izdelka");
+                    c.Add().DataField("acName").Caption("Ime");
                 })
                 )
 
