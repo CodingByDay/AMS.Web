@@ -13,6 +13,17 @@ jQuery(document).ready(function () {
 
 
 
+function onConfirmIconClick(e) {
+    alert("The row index is" + e.row.rowIndex)
+}
+
+
+function onDeleteIconClick(e) {
+    alert("The row index is" + e.row.rowIndex)
+
+}
+
+
 jQuery(".close-create").click(function () {
     jQuery("#new-inventory-modal").toggle();
 });
