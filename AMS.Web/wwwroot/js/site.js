@@ -15,7 +15,7 @@ jQuery(document).ready(function () {
 
 function onConfirmIconClick(e) {
     Swal.fire({
-        title: 'Ali ste sigurni da želite podriti poziciju?',
+        title: 'Ali ste sigurni da želite potrditi pozicijo?',
         showDenyButton: true,
         showCancelButton: false,
         confirmButtonText: 'Da',
@@ -54,7 +54,7 @@ function onConfirmIconClick(e) {
 function onDeleteIconClick(e) {
 
     Swal.fire({
-        title: 'Ali ste sigurni da želite pobrisati poziciju?',
+        title: 'Ali ste sigurni da želite pobrisati pozicijo?',
         showDenyButton: true,
         showCancelButton: false,
         confirmButtonText: 'Da',

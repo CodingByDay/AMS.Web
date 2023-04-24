@@ -1214,16 +1214,7 @@ namespace AMS.Web.Database
 
             return structure;
         }
-        public class Inventory
-        {
-            public string name { get; set; }
-            public string date { get; set; }
-            public string closed { get; set; }
-            public bool active { get; set; }
-            public int qId { get; set; }
-
-
-        }
+      
 
         public static T ConvertFromDBVal<T>(object obj)
         {
@@ -1237,9 +1228,9 @@ namespace AMS.Web.Database
             }
         }
 
-        public List<Inventory> getInventories()
+        public List<InventoryGlobal> getInventories()
         {
-           List<Inventory> inventories = new List<Inventory>();  
+           List<InventoryGlobal> inventories = new List<InventoryGlobal>();  
            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -1266,7 +1257,7 @@ namespace AMS.Web.Database
                         {
                             active = false;
                         }
-                        inventories.Add(new Inventory { name = name, date = datet.ToString(), closed = closed, active = active, qId = qId });
+                        inventories.Add(new InventoryGlobal { name = name, date = datet.ToString(), closed = closed, active = active, qId = qId });
                     }
 
                 }
@@ -1382,7 +1373,7 @@ namespace AMS.Web.Database
             }
         }
 
-        private int getUserId(string user)
+        public int getUserId(string user)
         {
 
             using (SqlConnection conn = new SqlConnection(config.connectionString))
@@ -1395,16 +1386,21 @@ namespace AMS.Web.Database
                
         }
 
-        private void DeleteRow(CheckOut row)
+        public void DeleteRow(CheckOut row)
         {
             string currentStamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 SqlCommand sql = new SqlCommand($"DELETE FROM tCheckOut WHERE anQId = {row.anQId}", conn);
                 sql.ExecuteNonQuery();
             }
+        }
+
+        public CurrentState GetAllThreeTablesCurrentState()
+        {
+            var item = new CurrentState();
+            return item;
         }
     }
 }

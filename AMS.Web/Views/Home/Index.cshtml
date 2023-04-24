@@ -1,5 +1,6 @@
-﻿
-    <div id="app">
+﻿@using DevExtreme.AspNet.Mvc;
+
+<div id="app">
         <div id="sidebar" class='active'>
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header">
@@ -113,6 +114,19 @@
                                     <div class="download ">
 
 
+                            @{
+
+
+
+                                List<InventoryGlobal> data = ViewBag.Inventories;
+
+                                
+                            
+                            
+                            }
+
+
+                              
 
 
 
@@ -122,80 +136,59 @@
                                         <img src="~/img/plus.png" width="30" length="30" class="plus-button-class" id="create-new-inventory" style="cursor:pointer;"/>
                                     }
 
-                                    <img src="~/img/export.png" width="30" length="30" class="plus-button-class" id="export-inventory"  style="cursor:pointer;" />
+                                      <img src="~/img/export.png" width="30" length="30" class="plus-button-class" id="export-inventory"  style="cursor:pointer;" />
 
                                     </div>
                                 </div>
-                                <div class="card-body px-0 pb-0">
-                                    <div class="table-responsive">
-                                        <table class='table mb-0' id="inventories">
-                                            <thead>
-                                                <tr>
-                                                    <th>Ime</th>
-                                                    <th>Datum</th>
-                                                    <th>Zaklenjena dne</th>
-                                                    <th class="options-crud">Opcije</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
 
 
-                                    @if (ViewBag.Inventories!=null)
-                                    {
-                                        foreach (var inv in ViewBag.Inventories)
-                                        {
-                                          <tr  data-unique="@inv.qId">
-
-                                            <td>@inv.name</td>
-                                            <td>@inv.date</td>
-
-                                            <td>@inv.closed</td>
-                                            @if(inv.active)
-                                            {
-
-
-
-                                                    <td class="inventories-options">
-                                                <span class="badge bg-success">Aktivna</span>
-                                                        <img src="~/img/remove.png" class="remove-icon" width="30" height="30" />
-                                                        <img src="~/img/verified.png" class="confirm-icon" width="30" height="30" />
-                                                </td>
-
-
-
-                                            } else
-                                            {
-
-
-                                                    <td class="inventories-options">
-                                                <span class="badge bg-error">Neaktivna</span>
-                                                        <img src="~/img/remove.png" class="remove-icon" width="30" height="30" />
-                                                        <img src="~/img/verified.png" class="confirm-icon" width="30" height="30" />
-                                                </td>
+                    @(
+                        Html.DevExtreme().DataGrid()
 
 
 
 
-                                            }
-                                 
+                        .ID("gridContainer")
+                        .ShowBorders(true)
+                        .DataSource(data)
+                        .KeyExpr("anQId")
+                        .FilterRow(filterRow => filterRow
+                        .Visible(true)
+                        .ApplyFilter(GridApplyFilterMode.Auto)
+                        )
+                        .SearchPanel(searchPanel => searchPanel
+                        .Visible(true)
+                        .Width(240)
+                        .Placeholder("Search...")
+                        )
+                        .Columns(c =>
+                        {
+                            c.Add().DataField("name").Caption("Naziv");
+                            c.Add().DataField("date").Caption("Datum");
+                            c.Add().DataField("closed").Caption("Zaklenjena dne");
+                            c.Add()
+                            .Type(GridCommandColumnType.Buttons)
+                            .Width(110)
+                            .Buttons(b =>
+                            {
+                                b.Add().Hint("Potrdi").Icon("check").OnClick("onConfirmIconClick"); ;
+                                b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClick");
+                            });
 
-                                            </tr>
 
-                                        }
-
-                                    }
+                        })
 
 
+                        )
 
 
-                                          
-                                               
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+
+
+
+
+
+
+                </div>
                         </div>
                     </div>
                 </section>
