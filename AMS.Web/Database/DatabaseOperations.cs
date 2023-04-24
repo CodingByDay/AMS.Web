@@ -1450,7 +1450,7 @@ namespace AMS.Web.Database
             return data;
         }
 
-        public ItemListing GetAllItems()
+        public List<ItemListing> GetAllItems()
         {
             List<ItemListing> data = new List<ItemListing>();
             using(SqlConnection connection = new SqlConnection(connectionString))
@@ -1486,7 +1486,7 @@ namespace AMS.Web.Database
             return data;
         }
 
-        public AssetListing GetAssets()
+        public List<AssetListing> GetAssets()
         {
             List<AssetListing> data = new List<AssetListing>();
             using(SqlConnection connection = new SqlConnection(connectionString))
@@ -1498,50 +1498,50 @@ namespace AMS.Web.Database
                     while(reader.Read())
                     {
                         int anQId = ConvertFromDBVal<int>(reader["anQId"]);
-                        string acType = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acItem = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acLocation = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acCode = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acECD = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acName = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acName2 = ConvertFromDBVal<string>(reader["anQId"]);
-                        string adDateOfACQ = ConvertFromDBVal<string>(reader["anQId"]);
-                        string adDateOfACT = ConvertFromDBVal<string>(reader["anQId"]);
-                        string adDateOfLIQ = ConvertFromDBVal<string>(reader["anQId"]);
-                        string adDateOfELI = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acCareTaker = ConvertFromDBVal<string>(reader["anQId"]);
-                        string adTimeIns = ConvertFromDBVal<string>(reader["anQId"]);
-                        int anUserIns = ConvertFromDBVal<int>(reader["anQId"]);
-                        string adTimeChg = ConvertFromDBVal<string>(reader["anQId"]);
-                        int anUserChg = ConvertFromDBVal<int>(reader["anQId"]);
-                        string acNote = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acFieldSA = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acFieldSB = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acFieldSC = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acFieldSD = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acFieldSE = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acFieldSF = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acFieldSG = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acFieldSH = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acFieldSI = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acFieldSJ = ConvertFromDBVal<string>(reader["anQId"]);
-                        decimal anFieldNA = ConvertFromDBVal<int>(reader["anQId"]);
-                        decimal anFieldNB = ConvertFromDBVal<int>(reader["anQId"]);
-                        decimal anFieldNC = ConvertFromDBVal<int>(reader["anQId"]);
-                        decimal anFieldND = ConvertFromDBVal<int>(reader["anQId"]);
-                        decimal anFieldNE = ConvertFromDBVal<int>(reader["anQId"]);
-                        decimal anFieldNF = ConvertFromDBVal<int>(reader["anQId"]);
-                        decimal anFieldNG = ConvertFromDBVal<int>(reader["anQId"]);
-                        decimal anFieldNH = ConvertFromDBVal<int>(reader["anQId"]);
-                        decimal anFieldNI = ConvertFromDBVal<int>(reader["anQId"]);
-                        decimal anFieldNJ = ConvertFromDBVal<int>(reader["anQId"]);
-                        string adFieldDA = ConvertFromDBVal<string>(reader["anQId"]);
-                        string adFieldDB = ConvertFromDBVal<string>(reader["anQId"]);
-                        string adFieldDC = ConvertFromDBVal<string>(reader["anQId"]);
-                        string adFieldDD = ConvertFromDBVal<string>(reader["anQId"]);
-                        string acActive = ConvertFromDBVal<string>(reader["anQId"]);
-                        int anSeqNo = ConvertFromDBVal<int>(reader["anQId"]);
-                        string acInsertedFrom = ConvertFromDBVal<string>(reader["anQId"]);
+                        string acType = ConvertFromDBVal<string>(reader["acType"]);
+                        string acItem = ConvertFromDBVal<string>(reader["acItem"]);
+                        string acLocation = ConvertFromDBVal<string>(reader["acLocation"]);
+                        string acCode = ConvertFromDBVal<string>(reader["acCode"]);
+                        string acECD = ConvertFromDBVal<string>(reader["acECD"]);
+                        string acName = ConvertFromDBVal<string>(reader["acName"]);
+                        string acName2 = ConvertFromDBVal<string>(reader["acName2"]);
+                        string adDateOfACQ = ConvertFromDBVal<string>(reader["adDateOfACQ"]);
+                        string adDateOfACT = ConvertFromDBVal<string>(reader["adDateOfACT"]);
+                        string adDateOfLIQ = ConvertFromDBVal<string>(reader["adDateOfLIQ"]);
+                        string adDateOfELI = ConvertFromDBVal<string>(reader["adDateOfELI"]);
+                        string acCareTaker = ConvertFromDBVal<string>(reader["acCareTaker"]);
+                        string adTimeIns = ConvertFromDBVal<DateTime>(reader["adTimeIns"]).ToString();
+                        int anUserIns = ConvertFromDBVal<int>(reader["anUserIns"]);
+                        string adTimeChg = ConvertFromDBVal<DateTime>(reader["adTimeChg"]).ToString();
+                        int anUserChg = ConvertFromDBVal<int>(reader["anUserChg"]);
+                        string acNote = ConvertFromDBVal<string>(reader["acNote"]);
+                        string acFieldSA = ConvertFromDBVal<string>(reader["acFieldSA"]);
+                        string acFieldSB = ConvertFromDBVal<string>(reader["acFieldSB"]);
+                        string acFieldSC = ConvertFromDBVal<string>(reader["acFieldSC"]);
+                        string acFieldSD = ConvertFromDBVal<string>(reader["acFieldSD"]);
+                        string acFieldSE = ConvertFromDBVal<string>(reader["acFieldSE"]);
+                        string acFieldSF = ConvertFromDBVal<string>(reader["acFieldSF"]);
+                        string acFieldSG = ConvertFromDBVal<string>(reader["acFieldSG"]);
+                        string acFieldSH = ConvertFromDBVal<string>(reader["acFieldSH"]);
+                        string acFieldSI = ConvertFromDBVal<string>(reader["acFieldSI"]);
+                        string acFieldSJ = ConvertFromDBVal<string>(reader["acFieldSJ"]);
+                        decimal anFieldNA = ConvertFromDBVal<decimal>(reader["anFieldNA"]);
+                        decimal anFieldNB = ConvertFromDBVal<decimal>(reader["anFieldNB"]);
+                        decimal anFieldNC = ConvertFromDBVal<decimal>(reader["anFieldNC"]);
+                        decimal anFieldND = ConvertFromDBVal<decimal>(reader["anFieldND"]);
+                        decimal anFieldNE = ConvertFromDBVal<decimal>(reader["anFieldNE"]);
+                        decimal anFieldNF = ConvertFromDBVal<decimal>(reader["anFieldNF"]);
+                        decimal anFieldNG = ConvertFromDBVal<decimal>(reader["anFieldNG"]);
+                        decimal anFieldNH = ConvertFromDBVal<decimal>(reader["anFieldNH"]);
+                        decimal anFieldNI = ConvertFromDBVal<decimal>(reader["anFieldNI"]);
+                        decimal anFieldNJ = ConvertFromDBVal<decimal>(reader["anFieldNJ"]);
+                        string adFieldDA = ConvertFromDBVal<string>(reader["adFieldDA"]);
+                        string adFieldDB = ConvertFromDBVal<string>(reader["adFieldDB"]);
+                        string adFieldDC = ConvertFromDBVal<string>(reader["adFieldDC"]);
+                        string adFieldDD = ConvertFromDBVal<string>(reader["adFieldDD"]);
+                        string acActive = ConvertFromDBVal<string>(reader["acActive"]);
+                        int anSeqNo = ConvertFromDBVal<int>(reader["anSeqNo"]);
+                        string acInsertedFrom = ConvertFromDBVal<string>(reader["acInsertedFrom"]);
                         data.Add(new AssetListing (anQId, acType, acItem, acLocation, acCode, acECD, acName, acName2, adDateOfACQ, adDateOfACT, adDateOfLIQ, adDateOfELI, acCareTaker, adTimeIns, anUserIns, adTimeChg, anUserChg, acNote,
 
                             acFieldSA, acFieldSB, acFieldSC, acFieldSD, acFieldSE, acFieldSF, acFieldSG, acFieldSH, acFieldSI, acFieldSJ, anFieldNA, anFieldNB, anFieldNC, anFieldND, anFieldNE, anFieldNF, anFieldNG, anFieldNH,
@@ -1551,7 +1551,7 @@ namespace AMS.Web.Database
                 }
 
             }
-            return getTableDataLocation();
+            return data;
   
         }
     }
