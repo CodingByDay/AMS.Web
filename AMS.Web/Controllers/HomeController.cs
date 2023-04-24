@@ -43,7 +43,7 @@ namespace AMS.Web.Controllers
         {
             ViewBag.Title = "Artikli";
             DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
-            var items = db.GetAllItems();
+            //var items = db.GetAllItems();
             return View();
         }
 
@@ -52,7 +52,7 @@ namespace AMS.Web.Controllers
         {
             DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
             ViewBag.Title = "Sredstva";
-            var assets = db.GetAssets();
+          //  var assets = db.GetAssets();
             return View();
         }
 

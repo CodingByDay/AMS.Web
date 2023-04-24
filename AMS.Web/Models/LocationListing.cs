@@ -8,15 +8,15 @@
         public string acDept { get; set; }
         public int anUserIns { get; set; }
         public int anUserChg { get; set; }
-        public DateTime adTimeChg { get; set; }
-        public DateTime adTimeIns { get; set; }
+        public string adTimeChg { get; set; }
+        public string adTimeIns { get; set; }
         public string acCostDrv { get; set; }
         public string acCompany { get; set; }
         public string acNote { get; set; }
         public string acActive { get; set; }
         public string acCode { get; set; }
 
-        public LocationListing(int anQId_, string acLocation_, string acName_, string acDept_, int anUserIns_, int anUserChg_, DateTime adTimeChg_, DateTime adTimeIns_, string acCostDrv_, string acCompany_, string acNote_, string acActive_, string acCode_)
+        public LocationListing(int anQId_, string acLocation_, string acName_, string acDept_, int anUserIns_, int anUserChg_, string adTimeChg_, string adTimeIns_, string acCostDrv_, string acCompany_, string acNote_, string acActive_, string acCode_)
         {
             this.anQId = anQId_;
             this.acLocation = acLocation_;

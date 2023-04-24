@@ -9,18 +9,18 @@
         public decimal anQty { get; set; }
         public string acOrderKey { get; set; }
         public int anOrderNo { get; set; }
-        public DateTime adOrderDate { get; set; }
+        public string adOrderDate { get; set; }
         public decimal anAcqVal { get; set; }
         public decimal anWrtOffVal { get; set; }
         public string acStatus { get; set; }
-        public DateTime adTimeIns { get; set; }
+        public string adTimeIns { get; set; }
         public int anUserIns { get; set; }
-        public DateTime adTimeChg { get; set; }
+        public string adTimeChg { get; set; }
         public int anUserChg { get; set; }
         public string acNote { get; set; }
         public byte[] abIcon { get; set; }
 
-        public ItemListing(int anQId_, string acType_, string acItem_, string acName_, decimal anQty_, string acOrderKey_, int anOrderNo_, DateTime adOrderDate_, decimal anAcqVal_, decimal anWrtOffVal_, string acStatus_, DateTime adTimeIns_, int anUserIns_, DateTime adTimeChg_, int anUserChg_, string acNote_, byte[] abIcon_)
+        public ItemListing(int anQId_, string acType_, string acItem_, string acName_, decimal anQty_, string acOrderKey_, int anOrderNo_, string adOrderDate_, decimal anAcqVal_, decimal anWrtOffVal_, string acStatus_, string adTimeIns_, int anUserIns_, string adTimeChg_, int anUserChg_, string acNote_, byte[] abIcon_)
         {
             this.anQId = anQId_;
             this.acType = acType_;

@@ -12,6 +12,16 @@ jQuery(document).ready(function () {
 
 
 
+function setCellValue(newData, value, currentRowData) {
+
+    console.log(newData);
+    console.log(currentRowData);
+    console.log(value);
+}
+
+
+
+
 
 function onConfirmIconClick(e) {
     Swal.fire({

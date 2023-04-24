@@ -1417,23 +1417,48 @@ namespace AMS.Web.Database
 
         public object GetAllLocations()
         {
+            List<LocationListing> data = new List<LocationListing>();
             using(SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 SqlCommand sql = new SqlCommand("SELECT * FROM tLocation", connection);
+                using(SqlDataReader reader = sql.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int anQId = ConvertFromDBVal<int>(reader["anQId"]);
+                        string acLocation = ConvertFromDBVal<string>(reader["acLocation"]);
+                        string acName = ConvertFromDBVal<string>(reader["acName"]);
+                        string acDept = ConvertFromDBVal<string>(reader["acDept"]);
+                        int anUserIns = ConvertFromDBVal<int>(reader["anUserIns"]);
+                        int anUserChg = ConvertFromDBVal<int>(reader["anUserChg"]);
+                        string adTimeChg = ConvertFromDBVal<DateTime>(reader["adTimeChg"]).ToString();
+                        string adTimeIns = ConvertFromDBVal<DateTime>(reader["adTimeIns"]).ToString();
+                        string acCostDrv = ConvertFromDBVal<string>(reader["acCostDrv"]);
+                        string acCompany = ConvertFromDBVal<string>(reader["acCompany"]);
+                        string acNote = ConvertFromDBVal<string>(reader["acNote"]);
+                        string acActive = ConvertFromDBVal<string>(reader["acActive"]);
+                        string acCode = ConvertFromDBVal<string>(reader["acCode"]);
+                        LocationListing row = new LocationListing(anQId, acLocation, acName, acDept, anUserIns, anUserChg, adTimeChg, adTimeIns, acCostDrv, acCompany, acNote, acActive, acCode);
+                        data.Add(row);
+                    }
+                }
             }
+
+
+            return data;
         }
 
-        public object GetAllItems()
-        {
-            connection.Open();
-            SqlCommand sql = new SqlCommand("SELECT * FROM tLocation", connection);
-        }
+        //public object GetAllItems()
+        //{
+        //    connection.Open();
+        //    SqlCommand sql = new SqlCommand("SELECT * FROM tLocation", connection);
+        //}
 
-        public object GetAssets()
-        {
-            connection.Open();
-            SqlCommand sql = new SqlCommand("SELECT * FROM tLocation", connection);
-        }
+        //public object GetAssets()
+        //{
+        //    connection.Open();
+        //    SqlCommand sql = new SqlCommand("SELECT * FROM tLocation", connection);
+        //}
     }
 }
