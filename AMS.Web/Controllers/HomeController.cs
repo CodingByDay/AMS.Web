@@ -78,9 +78,11 @@ namespace AMS.Web.Controllers
 
 
         [HttpPost]
-        public JsonResult DeleteInventory([FromQuery(Name = "qid")] string qid) {
+        public JsonResult DeleteInventory([FromQuery(Name = "id")] string id) {
+
             DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
-            db.DeleteInventory(qid);
+            var invs = db.getInventories();
+            db.DeleteInventory(invs.ElementAt(Int32.Parse(id)).qId.ToString());
             return Json(true);
         }
 
@@ -135,6 +137,20 @@ namespace AMS.Web.Controllers
             int index = Int32.Parse(id);
             var row = checkOuts.ElementAt(index);
             db.CommitRow(row, HttpContext.Session.GetString("username"));
+            return Json(true);
+        }
+
+
+
+
+        [HttpPost]
+        public JsonResult ConfirmInventoryWhole([FromQuery(Name = "id")] string id)
+        {
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            var inventories = db.getInventories();
+            int index = Int32.Parse(id);
+            var row = inventories.ElementAt(index);
+            db.CommitInventory(row, HttpContext.Session.GetString("username"));
             return Json(true);
         }
 

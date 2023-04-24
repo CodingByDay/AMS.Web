@@ -114,76 +114,61 @@
                                     <div class="download ">
 
 
-                            @{
 
 
 
-                                List<InventoryGlobal> data = ViewBag.Inventories;
-
-                                
-                            
-                            
-                            }
-
-
-                              
-
-
-
-
-                                @if (ViewBag.Type != null && ViewBag.Type == "LADM")
+                            @if (ViewBag.Type != null && ViewBag.Type == "LADM")
                                     {
                                         <img src="~/img/plus.png" width="30" length="30" class="plus-button-class" id="create-new-inventory" style="cursor:pointer;"/>
                                     }
 
-                                      <img src="~/img/export.png" width="30" length="30" class="plus-button-class" id="export-inventory"  style="cursor:pointer;" />
+                                    <img src="~/img/export.png" width="30" length="30" class="plus-button-class" id="export-inventory"  style="cursor:pointer;" />
 
                                     </div>
                                 </div>
 
 
+
+
+                    @{
+                        List<InventoryGlobal> data = ViewBag.Inventories;
+                    };
+
                     @(
-                        Html.DevExtreme().DataGrid()
+                                Html.DevExtreme().DataGrid()
+
+                                .ID("gridContainer")
+                                .ShowBorders(true)
+                                .DataSource(data)
+                                .KeyExpr("anQId")
+                                .FilterRow(filterRow => filterRow
+                                .Visible(true)
+                                .ApplyFilter(GridApplyFilterMode.Auto)
+                                )
+                                .SearchPanel(searchPanel => searchPanel
+                                .Visible(true)
+                                .Width(240)
+                                .Placeholder("Search...")
+                                )
+                                .Columns(c =>
+                                {
+                                    c.Add().DataField("name").Caption("Naziv");
+                                    c.Add().DataField("date").Caption("Datum");
+                                    c.Add().DataField("closed").Caption("Zaklenjena dne");
+                                    c.Add()
+                                    .Type(GridCommandColumnType.Buttons)
+                                    .Width(110)
+                                    .Buttons(b =>
+                                    {
+                                        b.Add().Hint("Potrdi").Icon("check").OnClick("onConfirmIconClickInventory"); ;
+                                        b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClickInventory");
+                                    });
 
 
+                                })
 
 
-                        .ID("gridContainer")
-                        .ShowBorders(true)
-                        .DataSource(data)
-                        .KeyExpr("anQId")
-                        .FilterRow(filterRow => filterRow
-                        .Visible(true)
-                        .ApplyFilter(GridApplyFilterMode.Auto)
-                        )
-                        .SearchPanel(searchPanel => searchPanel
-                        .Visible(true)
-                        .Width(240)
-                        .Placeholder("Search...")
-                        )
-                        .Columns(c =>
-                        {
-                            c.Add().DataField("name").Caption("Naziv");
-                            c.Add().DataField("date").Caption("Datum");
-                            c.Add().DataField("closed").Caption("Zaklenjena dne");
-                            c.Add()
-                            .Type(GridCommandColumnType.Buttons)
-                            .Width(110)
-                            .Buttons(b =>
-                            {
-                                b.Add().Hint("Potrdi").Icon("check").OnClick("onConfirmIconClickInventory"); ;
-                                b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClickInventory");
-                            });
-
-
-                        })
-
-
-                        )
-
-
-
-
+                                )
 
 
 

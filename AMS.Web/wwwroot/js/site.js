@@ -79,13 +79,11 @@ function onConfirmIconClickInventory(e) {
                     window.location.reload();
                 },
                 failure: function (response) {
-
                 },
                 error: function (response) {
                 }
             });
         } else if (result.isDenied) {
-
         }
     })
 }

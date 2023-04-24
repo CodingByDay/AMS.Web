@@ -1234,7 +1234,7 @@ namespace AMS.Web.Database
            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT * FROM tInventory", connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM tInventory;", connection);
                 using (SqlDataReader rdr = command.ExecuteReader())
                 {
                     while (rdr.Read())
@@ -1401,6 +1401,18 @@ namespace AMS.Web.Database
         {
             var item = new CurrentState();
             return item;
+        }
+
+        public void CommitInventory(InventoryGlobal row, string? user)
+        {
+            string currentStamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            int userID = getUserId(user);
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand sql = new SqlCommand($"UPDATE tInventory SET adDateConfirm = '{currentStamp}', anUserConfirm = {userID} WHERE anQId = {row.qId}", conn);
+                sql.ExecuteNonQuery();
+            }
         }
     }
 }
