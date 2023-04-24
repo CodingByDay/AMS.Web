@@ -28,8 +28,6 @@ namespace AMS.Web.Controllers
         }
 
 
-
-
         public IActionResult LocationListing()
         {
             ViewBag.Title = "Lokacije";
@@ -43,8 +41,8 @@ namespace AMS.Web.Controllers
         {
             ViewBag.Title = "Artikli";
             DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
-            //var items = db.GetAllItems();
-            return View();
+            var items = db.GetAllItems();
+            return View(items);
         }
 
 
@@ -89,9 +87,6 @@ namespace AMS.Web.Controllers
             {
                 users = db.GetAllUsersSpecificCompanyWithoutItself(HttpContext.Session.GetString("company"), HttpContext.Session.GetString("username"));
             }
-
-
-
 
             ViewBag.Type = type;
 

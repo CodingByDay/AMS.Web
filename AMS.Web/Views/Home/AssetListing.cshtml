@@ -1,4 +1,4 @@
-﻿
+﻿@using DevExtreme.AspNet.Mvc;
 <div id="app">
     <div id="sidebar" class='active'>
         <div class="sidebar-wrapper active">
@@ -153,6 +153,57 @@
         <div class="main-content container-fluid">
             <h1>Pregled</h1>
         </div>
+
+
+
+        @model List<AssetListing>;
+
+        @(
+            Html.DevExtreme().DataGrid()
+
+            .ID("gridContainerAsset")
+            .ShowBorders(true)
+            .DataSource(Model)
+            .KeyExpr("anQId")
+            .FilterRow(filterRow => filterRow
+            .Visible(true)
+            .ApplyFilter(GridApplyFilterMode.Auto)
+            )
+            .SearchPanel(searchPanel => searchPanel
+            .Visible(true)
+            .Width(240)
+            .Placeholder("Poiščite...")
+            )
+            .Editing(e =>
+            {
+                e.Mode(GridEditMode.Cell)
+                .AllowAdding(true)
+                .AllowUpdating(true);
+            })
+            .Columns(c =>
+            {
+
+                c.Add().DataField("acItem").Caption("Šifra").AllowEditing(true);
+                c.Add().DataField("acName").Caption("Naslov").AllowEditing(true).SetCellValue("setCellValue");
+                c.Add().DataField("anQty").Caption("Količina");
+
+                c.Add()
+                .Type(GridCommandColumnType.Buttons)
+                .Width(110)
+                .Buttons(b =>
+                {
+                    b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClickInventory");
+                });
+
+
+            })
+
+
+            )
+
+
+
+
         </section>
     </div>
 

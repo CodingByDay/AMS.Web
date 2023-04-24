@@ -161,33 +161,34 @@
         @(
             Html.DevExtreme().DataGrid()
 
-                        .ID("gridContainerLocation")
-                        .ShowBorders(true)
-                        .DataSource(Model)
-                        .KeyExpr("anQId")
-                        .FilterRow(filterRow => filterRow
-                        .Visible(true)
-                        .ApplyFilter(GridApplyFilterMode.Auto)
-                        )
-                        .SearchPanel(searchPanel => searchPanel
-                        .Visible(true)
-                        .Width(240)
-                        .Placeholder("Poiščite...")
-                        )
-                        .Editing(e =>
-                        {
+                            .ID("gridContainerLocation")
+                            .ShowBorders(true)
+                            .DataSource(Model)
+                            .KeyExpr("anQId")
+                            .FilterRow(filterRow => filterRow
+                            .Visible(true)
+                            .ApplyFilter(GridApplyFilterMode.Auto)
+                            )
+                            .SearchPanel(searchPanel => searchPanel
+                            .Visible(true)
+                            .Width(240)
+                            .Placeholder("Poiščite...")
+                            )
+                            .Editing(e =>
+                            {
 
-                            e.Mode(GridEditMode.Cell)
-                                .AllowAdding(true)
-                                .AllowUpdating(true);
+                                e.Mode(GridEditMode.Cell)
+                                    .AllowAdding(true)
+                                    .AllowUpdating(true);
 
-                        })
-            .Columns(c =>
-            {
+                            })
+                .Columns(c =>
+                {
 
-                c.Add().DataField("acLocation").Caption("Šifra").AllowEditing(true).SetCellValue("setCellValue");
-                c.Add().DataField("acName").Caption("Naslov").AllowEditing(true).SetCellValue("setCellValue"); 
-                c.Add().DataField("adTimeChange").Caption("Zadnja sprememba").AllowEditing(true).SetCellValue("setCellValue"); 
+                    c.Add().DataField("acLocation").Caption("Šifra").AllowEditing(true);
+                    c.Add().DataField("acName").Caption("Naslov").AllowEditing(true).SetCellValue("setCellValue");
+                    c.Add().DataField("adTimeChange").Caption("Zadnja sprememba");
+
                 c.Add()
                 .Type(GridCommandColumnType.Buttons)
                 .Width(110)

@@ -5,6 +5,7 @@ using NuGet.Protocol.Plugins;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Text.Json;
@@ -1449,11 +1450,41 @@ namespace AMS.Web.Database
             return data;
         }
 
-        //public object GetAllItems()
-        //{
-        //    connection.Open();
-        //    SqlCommand sql = new SqlCommand("SELECT * FROM tLocation", connection);
-        //}
+        public object GetAllItems()
+        {
+            List<ItemListing> data = new List<ItemListing>();
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand sql = new SqlCommand("SELECT * FROM tItem", connection);
+                using (SqlDataReader reader = sql.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int anQId = ConvertFromDBVal<int>(reader["anQId"]);
+                        string acType = ConvertFromDBVal<string>(reader["acType"]);
+                        string acItem = ConvertFromDBVal<string>(reader["acItem"]);
+                        string acName = ConvertFromDBVal<string>(reader["acName"]);
+                        decimal anQty = ConvertFromDBVal<decimal>(reader["anQty"]);
+                        string acOrderKey = ConvertFromDBVal<string>(reader["acOrderKey"]);
+                        int anOrderNo = ConvertFromDBVal<int>(reader["anOrderNo"]);
+                        string adOrderDate = ConvertFromDBVal<DateTime>(reader["adOrderDate"]).ToString();
+                        decimal anAcqVal = (decimal)ConvertFromDBVal<decimal>(reader["anAcqVal"]);
+                        decimal anWrtOffVal = (decimal) ConvertFromDBVal<decimal>(reader["anWrtOffVal"]);
+                        string acStatus = ConvertFromDBVal<string>(reader["acStatus"]);
+                        string adTimeIns = ConvertFromDBVal<DateTime>(reader["adTimeIns"]).ToString();
+                        int anUserIns = ConvertFromDBVal<int>(reader["anUserIns"]);
+                        string adTimeChg = ConvertFromDBVal<DateTime>(reader["adTimeChg"]).ToString();
+                        int anUserChg = ConvertFromDBVal<int>(reader["anUserChg"]);
+                        string acNote = ConvertFromDBVal<string>(reader["acNote"]);
+                        byte[] abIcon = ConvertFromDBVal<byte[]>(reader["abIcon"]);
+                        ItemListing row = new ItemListing(anQId, acType, acItem, acName, anQty, acOrderKey, anOrderNo, adOrderDate, anAcqVal, anWrtOffVal, acStatus, adTimeIns, anUserIns, adTimeChg, anUserChg, acNote, abIcon);
+                        data.Add(row);
+                    }
+                }
+            }
+            return data;
+        }
 
         //public object GetAssets()
         //{
