@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.Text.Json;
 using System.Threading.Channels;
 using System.Xml.Linq;
+using static AMS.Web.Models.UserList;
 using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace AMS.Web.Database
@@ -1376,7 +1377,7 @@ namespace AMS.Web.Database
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                SqlCommand sql = new SqlCommand($"UPDATE tCheckOut SET adDateConfirm = '{currentStamp}', anUserConfirm = {userID}", conn);
+                SqlCommand sql = new SqlCommand($"UPDATE tCheckOut SET adDateConfirm = '{currentStamp}', anUserConfirm = {userID} WHERE anQId = {row.anQId}", conn);
                 sql.ExecuteNonQuery();
             }
         }
@@ -1392,6 +1393,18 @@ namespace AMS.Web.Database
                 return id;
             }
                
+        }
+
+        private void DeleteRow(CheckOut row)
+        {
+            string currentStamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand sql = new SqlCommand($"DELETE FROM tCheckOut WHERE anQId = {row.anQId}", conn);
+                sql.ExecuteNonQuery();
+            }
         }
     }
 }

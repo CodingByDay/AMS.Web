@@ -14,26 +14,82 @@ jQuery(document).ready(function () {
 
 
 function onConfirmIconClick(e) {
-
-    jQuery.ajax({
-        type: "POST",
-        url: `ConfirmInventory?id=${e.row.rowIndex}`,
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        success: function (response) {
-            window.location.reload();
-        },
-        failure: function (response) {
-
-        },
-        error: function (response) {
+    Swal.fire({
+        title: 'Ali ste sigurni da želite podriti poziciju?',
+        showDenyButton: true,
+        showCancelButton: false,
+        confirmButtonText: 'Da',
+        denyButtonText: 'Ne',
+        customClass: {
+            actions: 'my-actions',
+            cancelButton: 'order-1 right-gap',
+            confirmButton: 'order-2',
+            denyButton: 'order-3',
         }
-    });
+    }).then((result) => {
+        if (result.isConfirmed) {
+            jQuery.ajax({
+                type: "POST",
+                url: `ConfirmInventory?id=${e.row.rowIndex}`,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    window.location.reload();
+                },
+                failure: function (response) {
+
+                },
+                error: function (response) {
+                }
+            });
+        } else if (result.isDenied) {
+
+        }
+    })
+
+    
 }
 
 
 function onDeleteIconClick(e) {
-    alert("The row index is" + e.row.rowIndex)
+
+    Swal.fire({
+        title: 'Ali ste sigurni da želite pobrisati poziciju?',
+        showDenyButton: true,
+        showCancelButton: false,
+        confirmButtonText: 'Da',
+        denyButtonText: 'Ne',
+        customClass: {
+            actions: 'my-actions',
+            cancelButton: 'order-1 right-gap',
+            confirmButton: 'order-2',
+            denyButton: 'order-3',
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            jQuery.ajax({
+                type: "POST",
+                url: `DeleteInventoryPosition?id=${e.row.rowIndex}`,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    window.location.reload();
+                },
+                failure: function (response) {
+
+                },
+                error: function (response) {
+                }
+            });
+        } else if (result.isDenied) {
+            
+        }
+    })
+
+
+
+
+   
   
 }
 
