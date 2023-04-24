@@ -27,6 +27,41 @@ namespace AMS.Web.Controllers
             _logger = logger;
         }
 
+
+
+
+        public IActionResult LocationListing()
+        {
+            ViewBag.Title = "Lokacije";
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            var locations = db.GetAllLocations();
+            return View(locations);
+        }
+
+
+        public IActionResult ItemListing()
+        {
+            ViewBag.Title = "Artikli";
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            var items = db.GetAllItems();
+            return View();
+        }
+
+
+        public IActionResult AssetListing()
+        {
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            ViewBag.Title = "Sredstva";
+            var assets = db.GetAssets();
+            return View();
+        }
+
+
+
+
+
+
+
         public IActionResult Index()
         {
             string username = HttpContext.Session.GetString("username");

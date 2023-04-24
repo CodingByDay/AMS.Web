@@ -1414,5 +1414,26 @@ namespace AMS.Web.Database
                 sql.ExecuteNonQuery();
             }
         }
+
+        public object GetAllLocations()
+        {
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand sql = new SqlCommand("SELECT * FROM tLocation", connection);
+            }
+        }
+
+        public object GetAllItems()
+        {
+            connection.Open();
+            SqlCommand sql = new SqlCommand("SELECT * FROM tLocation", connection);
+        }
+
+        public object GetAssets()
+        {
+            connection.Open();
+            SqlCommand sql = new SqlCommand("SELECT * FROM tLocation", connection);
+        }
     }
 }
