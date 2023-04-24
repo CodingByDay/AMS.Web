@@ -62,7 +62,7 @@ namespace AMS.Web.Controllers
                     HttpContext.Session.SetString("connection", loginResponse.result);
                     HttpContext.Session.SetString("username", username);
                     HttpContext.Session.SetString("company", request.company);
-                    return RedirectToAction("Index", "Home", new {company = request.company});
+                    return RedirectToAction("Index", "Home", new {company = request.company, version = config.version});
                 }
             }
             TempData["Login"] = false;

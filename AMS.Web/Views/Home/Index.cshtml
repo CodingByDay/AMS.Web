@@ -24,13 +24,28 @@
                         </li>
 
 
-                        <li class="sidebar-item">
+                        <li class="sidebar-item has-sub">
                         <a asp-action="Listing" class='sidebar-link'>
                             <i  width="20"></i>
                                 <span>Pregled</span>
                             </a>
 
-                        </li>
+
+                        <ul class="submenu ">
+                            <li>
+                                <a asp-action="Location" asp-controller="BufferedFileUpload">Lokacije</a>
+                            </li>
+
+                            <li>
+                                <a asp-action="Item" asp-controller="BufferedFileUpload">Artikli</a>
+                            </li>
+
+                            <li>
+                                <a asp-action="Asset" asp-controller="BufferedFileUpload">Sredstva</a>
+                            </li>
+                        </ul>
+
+                    </li>
 
 
                     <li class="sidebar-item has-sub">

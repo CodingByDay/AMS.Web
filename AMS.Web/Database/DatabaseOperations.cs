@@ -1240,14 +1240,14 @@ namespace AMS.Web.Database
                     while (rdr.Read())
                     {
                         String name;
-                        System.DateTime datet;
+                        String datet;
                         String closed;
                         String confirm;
                         int qId;
                         bool active;
                         name = ConvertFromDBVal<string>(rdr["acNote"]);
-                        datet = ConvertFromDBVal<DateTime>(rdr["adDateCheck"]); 
-                        closed = ConvertFromDBVal<string>(rdr["adDateConfirm"]);
+                        datet = ConvertFromDBVal<DateTime>(rdr["adDateCheck"]).ToString(); 
+                        closed = ConvertFromDBVal<DateTime>(rdr["adDateConfirm"]).ToString();
                         confirm = ConvertFromDBVal<DateTime>(rdr["adDateConfirm"]).ToString();
                         qId = ConvertFromDBVal<int>(rdr["anQId"]);
                         if (confirm.Length>3)

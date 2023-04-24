@@ -17,6 +17,7 @@ namespace AMS.Web
 
     public class Root
     {
+        public string version { get; set; }
         public string email { get; set; }
         public string password { get; set; }
         public string baseURL { get; set; }
