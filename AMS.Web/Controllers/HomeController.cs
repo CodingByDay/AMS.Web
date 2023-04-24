@@ -127,6 +127,18 @@ namespace AMS.Web.Controllers
             return Json(json);
         }
 
+        [HttpPost]
+        public JsonResult ConfirmInventory([FromQuery(Name="id")] string id)
+        {
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            var checkOuts = db.GetAllCheckOutItems();
+            int index = Int32.Parse(id);
+            var row = checkOuts.ElementAt(index);
+            db.CommitRow(row, HttpContext.Session.GetString("username"));
+
+
+            return Json(true);
+        }
 
 
         [HttpPost]

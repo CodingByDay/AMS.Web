@@ -14,18 +14,33 @@ jQuery(document).ready(function () {
 
 
 function onConfirmIconClick(e) {
-    alert("The row index is" + e.row.rowIndex)
+
+    jQuery.ajax({
+        type: "POST",
+        url: `ConfirmInventory?id=${e.row.rowIndex}`,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            window.location.reload();
+        },
+        failure: function (response) {
+
+        },
+        error: function (response) {
+        }
+    });
 }
 
 
 function onDeleteIconClick(e) {
     alert("The row index is" + e.row.rowIndex)
-
+  
 }
 
 
 jQuery(".close-create").click(function () {
     jQuery("#new-inventory-modal").toggle();
+
 });
 
 

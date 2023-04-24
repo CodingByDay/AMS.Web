@@ -1331,13 +1331,14 @@ namespace AMS.Web.Database
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                CheckOut checkOut = new CheckOut();
-                SqlCommand command = new SqlCommand("SELECT * FROM tCheckOut WHERE anInventory = 1", connection);
+       
+                SqlCommand command = new SqlCommand("SELECT * FROM tCheckOut WHERE anInventory = 1 and adDateConfirm is null", connection);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
+                        CheckOut checkOut = new CheckOut();
                         checkOut.anQId = ConvertFromDBVal<int>(reader["anQId"]);
                         checkOut.anInventory = ConvertFromDBVal<int>(reader["anInventory"]);
                         checkOut.anAssetID = ConvertFromDBVal<int>(reader["anAssetID"]);
@@ -1366,6 +1367,31 @@ namespace AMS.Web.Database
             api.data = items;
             api.setCount();
             return items;
+        }
+
+        public void CommitRow(CheckOut row, string user)
+        {
+            string currentStamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            int userID = getUserId(user);
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand sql = new SqlCommand($"UPDATE tCheckOut SET adDateConfirm = '{currentStamp}', anUserConfirm = {userID}", conn);
+                sql.ExecuteNonQuery();
+            }
+        }
+
+        private int getUserId(string user)
+        {
+
+            using (SqlConnection conn = new SqlConnection(config.connectionString))
+            {
+                conn.Open();
+                SqlCommand sql = new SqlCommand($"SELECT ID FROM Accounts WHERE UserName='{user}'", conn);
+                int id = (int) sql.ExecuteScalar();
+                return id;
+            }
+               
         }
     }
 }
