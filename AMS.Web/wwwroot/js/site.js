@@ -13,13 +13,39 @@ jQuery(document).ready(function () {
 
 
 function setCellValueLocationName(newData, value, currentRowData) {
+    console.log(currentRowData)
+    jQuery.ajax({
+        type: "POST",
+        url: `UpdateRow?table=tLocation&&field=acName&&type=string&&data=${value}&&anQId=${currentRowData.anQId}`,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            window.location.reload();
+        },
+        failure: function (response) {
 
- 
+        },
+        error: function (response) {
+        }
+    });
 }
 
 
 function onDeleteIconClickInventory(newData, value, currentRowData) {
+    jQuery.ajax({
+        type: "POST",
+        url: `ConfirmInventory?id=${e.row.rowIndex}`,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            window.location.reload();
+        },
+        failure: function (response) {
 
+        },
+        error: function (response) {
+        }
+    });
 }
 
 
@@ -99,6 +125,47 @@ function onConfirmIconClickInventory(e) {
 }
 
 
+function onDeleteIconClickInventoryItem(e) {
+    Swal.fire({
+        title: 'Ali ste sigurni da želite pobrisati inventuro?',
+        showDenyButton: true,
+        showCancelButton: false,
+        confirmButtonText: 'Da',
+        denyButtonText: 'Ne',
+        customClass: {
+            actions: 'my-actions',
+            cancelButton: 'order-1 right-gap',
+            confirmButton: 'order-2',
+            denyButton: 'order-3',
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            jQuery.ajax({
+                type: "POST",
+                url: `DeleteInventoryItem?id=${e.row.rowIndex}`,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    window.location.reload();
+                },
+                failure: function (response) {
+
+                },
+                error: function (response) {
+                }
+            });
+        } else if (result.isDenied) {
+
+        }
+    })
+}
+
+
+
+
+
+
+
 function onDeleteIconClickInventory(e) {
     Swal.fire({
         title: 'Ali ste sigurni da želite pobrisati inventuro?',
@@ -154,7 +221,7 @@ function onDeleteIconClickInventoryLocation(e) {
         if (result.isConfirmed) {
             jQuery.ajax({
                 type: "POST",
-                url: `DeleteInventoryLocation?id=${e.row.rowIndex}`,
+                url: `DeleteInventory?id=${e.row.rowIndex}`,
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {

@@ -1576,5 +1576,13 @@ namespace AMS.Web.Database
             return data;
   
         }
+
+        public void UpdateRow(string table, string field, string type, string data, string id)
+        {
+           using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand($"UPDATE {table} SET {field}='{data}' WHERE anQId = {id}");
+            }
+        }
     }
 }

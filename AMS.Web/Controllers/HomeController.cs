@@ -103,6 +103,19 @@ namespace AMS.Web.Controllers
 
 
         [HttpPost]
+        public JsonResult UpdateRow([FromQuery(Name = "table")] string table, [FromQuery(Name = "field")] string field, [FromQuery( Name = "type")] string type, [FromQuery(Name = "data")] string data, [FromQuery(Name = "anQId")] string anQId)
+        {
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            db.UpdateRow(table,field, type, data, anQId);
+            return Json(true);
+        }
+
+
+
+
+
+
+        [HttpPost]
         public JsonResult DeleteInventoryLocation([FromQuery(Name = "id")] string id)
         {
 
@@ -112,6 +125,16 @@ namespace AMS.Web.Controllers
             return Json(true);
         }
 
+
+        [HttpPost]
+        public JsonResult DeleteInventoryItem([FromQuery(Name = "id")] string id)
+        {
+
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            var items = db.GetAllItems();
+            db.DeleteInventoryItem(items.ElementAt(Int32.Parse(id)).anQId.ToString());
+            return Json(true);
+        }
 
 
 
