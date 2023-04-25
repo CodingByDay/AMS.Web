@@ -184,13 +184,9 @@
             .Columns(c =>
             {
 
-                c.Add().DataField("acItem").Caption("Šifra").AllowEditing(true);
-                c.Add().DataField("acName").Caption("Naslov").AllowEditing(true);
-                c.Add().DataField("adTimeChange").Caption("Zadnja sprememba");
-
-                c.Add()
-                .Type(GridCommandColumnType.Buttons)
-                .Width(110);
+                c.Add().DataField("acItem").Caption("Šifra");
+                c.Add().DataField("acName").Caption("Naslov").AllowEditing(true).SetCellValue("setCellValueItemName");
+                c.Add().DataField("anQty").Caption("Količina").AllowEditing(true).SetCellValue("setCellValueItemQty");
 
                 c.Add()
                 .Type(GridCommandColumnType.Buttons)

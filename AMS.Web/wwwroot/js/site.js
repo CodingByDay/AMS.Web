@@ -12,8 +12,50 @@ jQuery(document).ready(function () {
 
 
 
+
+
+function setCellValueItemName(newData, value, currentRowData) {
+    jQuery.ajax({
+        type: "POST",
+        url: `UpdateRow?table=tItem&&field=acName&&type=string&&data=${value}&&anQId=${currentRowData.anQId}`,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            window.location.reload();
+        },
+        failure: function (response) {
+
+        },
+        error: function (response) {
+        }
+    });
+}
+
+
+
+function setCellValueItemQty(newData, value, currentRowData) {
+    jQuery.ajax({
+        type: "POST",
+        url: `UpdateRow?table=tItem&&field=anQty&&type=int&&data=${value}&&anQId=${currentRowData.anQId}`,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            window.location.reload();
+        },
+        failure: function (response) {
+
+        },
+        error: function (response) {
+        }
+    });
+}
+
+
+
+
+
+
 function setCellValueLocationName(newData, value, currentRowData) {
-    console.log(currentRowData)
     jQuery.ajax({
         type: "POST",
         url: `UpdateRow?table=tLocation&&field=acName&&type=string&&data=${value}&&anQId=${currentRowData.anQId}`,

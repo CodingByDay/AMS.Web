@@ -1579,9 +1579,20 @@ namespace AMS.Web.Database
 
         public void UpdateRow(string table, string field, string type, string data, string id)
         {
+           SqlCommand command = new SqlCommand();
            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand($"UPDATE {table} SET {field}='{data}' WHERE anQId = {id}");
+                connection.Open();
+                if (type == "string")
+                {
+                    command = new SqlCommand($"UPDATE {table} SET {field}='{data}' WHERE anQId = {id}", connection);
+                } else
+                {
+                    command = new SqlCommand($"UPDATE {table} SET {field}={data} WHERE anQId = {id}", connection);
+                }
+
+
+                command.ExecuteNonQuery();
             }
         }
     }
