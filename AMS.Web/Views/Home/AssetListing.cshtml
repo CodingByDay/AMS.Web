@@ -157,10 +157,8 @@
 
 
         @model List<AssetListing>;
-
         @(
             Html.DevExtreme().DataGrid()
-
             .ID("gridContainerAsset")
             .ShowBorders(true)
             .DataSource(Model)
@@ -182,7 +180,6 @@
             })
             .Columns(c =>
             {
-
                 c.Add().DataField("acItem").Caption("Šifra").AllowEditing(true);
                 c.Add().DataField("acName").Caption("Naslov").AllowEditing(true);
                 c.Add().DataField("acECD").Caption("EPC code");
@@ -194,11 +191,7 @@
                 {
                     b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClickInventory");
                 });
-
-
             })
-
-
             )
 
 

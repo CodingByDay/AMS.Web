@@ -18,7 +18,9 @@ function setCellValueLocationName(newData, value, currentRowData) {
 }
 
 
+function onDeleteIconClickInventory(newData, value, currentRowData) {
 
+}
 
 
 function onConfirmIconClick(e) {
@@ -130,6 +132,44 @@ function onDeleteIconClickInventory(e) {
 
         }
     })
+}
+
+
+
+
+function onDeleteIconClickInventoryLocation(e) {
+    Swal.fire({
+        title: 'Ali ste sigurni da želite pobrisati lokacijo?',
+        showDenyButton: true,
+        showCancelButton: false,
+        confirmButtonText: 'Da',
+        denyButtonText: 'Ne',
+        customClass: {
+            actions: 'my-actions',
+            cancelButton: 'order-1 right-gap',
+            confirmButton: 'order-2',
+            denyButton: 'order-3',
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            jQuery.ajax({
+                type: "POST",
+                url: `DeleteInventoryLocation?id=${e.row.rowIndex}`,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    window.location.reload();
+                },
+                failure: function (response) {
+
+                },
+                error: function (response) {
+                }
+            });
+        } else if (result.isDenied) {
+
+        }
+    })
 
 
 
@@ -137,11 +177,6 @@ function onDeleteIconClickInventory(e) {
 
 
 }
-
-
-
-
-
 
 
 function onDeleteIconClick(e) {

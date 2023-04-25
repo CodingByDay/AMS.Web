@@ -1302,6 +1302,28 @@ namespace AMS.Web.Database
                 // Testiranje inserta za inventure //
             }
         }
+        public void DeleteInventoryItem(string qid)
+        {
+            // var config = ConfigurationHelper.GetConfigurationObject();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand($"DELETE FROM tItem WHERE anQId = {qid}", connection);
+                command.ExecuteNonQuery();
+                // Testiranje inserta za inventure //
+            }
+        }
+        public void DeleteInventoryLocation(string qid)
+        {
+            // var config = ConfigurationHelper.GetConfigurationObject();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand($"DELETE FROM tLocation WHERE anQId = {qid}", connection);
+                command.ExecuteNonQuery();
+
+            }
+        }
 
 
 

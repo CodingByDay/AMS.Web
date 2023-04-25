@@ -102,7 +102,15 @@ namespace AMS.Web.Controllers
         }
 
 
+        [HttpPost]
+        public JsonResult DeleteInventoryLocation([FromQuery(Name = "id")] string id)
+        {
 
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            var locations = db.GetAllLocations();
+            db.DeleteInventoryLocation(locations.ElementAt(Int32.Parse(id)).anQId.ToString());
+            return Json(true);
+        }
 
 
 

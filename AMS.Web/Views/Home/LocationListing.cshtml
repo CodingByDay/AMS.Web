@@ -178,7 +178,7 @@
                             {
 
                                 e.Mode(GridEditMode.Cell)
-                                    .AllowAdding(true)
+    
                                     .AllowUpdating(true);
 
                             })
@@ -186,15 +186,13 @@
                 {
 
                     c.Add().DataField("acLocation").Caption("Šifra").AllowEditing(true);
-                    c.Add().DataField("acName").Caption("Naslov").AllowEditing(true).SetCellValue("setCellValue");
-                    c.Add().DataField("adTimeChange").Caption("Zadnja sprememba");
-
+                    c.Add().DataField("acName").Caption("Naslov").AllowEditing(true).SetCellValue("setCellValueLocationName");
                 c.Add()
                 .Type(GridCommandColumnType.Buttons)
                 .Width(110)
                 .Buttons(b =>
                 {
-                    b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClickInventory");
+                    b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClickInventoryLocation");
                 });
                
 
