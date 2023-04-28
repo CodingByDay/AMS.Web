@@ -541,21 +541,18 @@ function selectInventory(which) {
 var span = document.getElementsByClassName("close")[0];
 var modal = document.getElementById("myModal");
 $("#export-inventory").click(function () {
-    if (selectedInventory == 0) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Napaka...',
-            text: 'Morate izbrati dokument inventure!',
-        })
-        return;
-    } else {
+ 
         modal.style.display = "block";
-    }
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
 });
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none";
-}
+
+
+
+
+
 
 
 // When the user clicks anywhere outside of the modal, close it

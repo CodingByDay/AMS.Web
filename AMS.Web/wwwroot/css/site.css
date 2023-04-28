@@ -18,6 +18,9 @@ table.dx-datagrid-table.dx-datagrid-table-fixed {
 h4.card-title-active {
     padding: 1em;
 }
+td {
+    cursor: text;
+}
 
 
 
@@ -25,6 +28,24 @@ h4.card-title-active {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button#btnExport {
+    margin-top: 4em;
+}
 
 .choice-div {
     width: 120px;
