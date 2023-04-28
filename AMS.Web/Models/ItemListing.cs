@@ -20,7 +20,9 @@
         public string acNote { get; set; }
         public byte[] abIcon { get; set; }
 
-        public ItemListing(int anQId_, string acType_, string acItem_, string acName_, decimal anQty_, string acOrderKey_, int anOrderNo_, string adOrderDate_, decimal anAcqVal_, decimal anWrtOffVal_, string acStatus_, string adTimeIns_, int anUserIns_, string adTimeChg_, int anUserChg_, string acNote_, byte[] abIcon_)
+        public string userName { get; set; }
+
+        public ItemListing(int anQId_, string acType_, string acItem_, string acName_, decimal anQty_, string acOrderKey_, int anOrderNo_, string adOrderDate_, decimal anAcqVal_, decimal anWrtOffVal_, string acStatus_, string adTimeIns_, int anUserIns_, string adTimeChg_, int anUserChg_, string acNote_, byte[] abIcon_, string userName)
         {
             this.anQId = anQId_;
             this.acType = acType_;
@@ -39,6 +41,7 @@
             this.anUserChg = anUserChg_;
             this.acNote = acNote_;
             this.abIcon = abIcon_;
+            this.userName = userName;
         }
     }
 }

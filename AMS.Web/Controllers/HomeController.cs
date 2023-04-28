@@ -42,6 +42,7 @@ namespace AMS.Web.Controllers
             ViewBag.Title = "Artikli";
             DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
             var items = db.GetAllItems();
+            // db.GetUserNames(items)       
             return View(items);
         }
 
