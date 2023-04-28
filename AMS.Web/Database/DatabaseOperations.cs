@@ -1,18 +1,8 @@
 ﻿using AMS.Web.Classes;
 using AMS.Web.Models;
-using MimeKit;
-using NuGet.Protocol.Plugins;
-using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Data.SqlTypes;
-using System.Security.AccessControl;
-using System.Security.Cryptography;
 using System.Text.Json;
-using System.Threading.Channels;
-using System.Xml.Linq;
-using static AMS.Web.Models.UserList;
-using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace AMS.Web.Database
 {
@@ -34,19 +24,18 @@ namespace AMS.Web.Database
             String userTypeInner = string.Empty;
             SqlCommand command = new SqlCommand();
             //var config = ConfigurationHelper.GetConfigurationObject();
-            using (SqlConnection objConn = new SqlConnection(config.connectionString)) // This is the connection string for the login database.
+            using (SqlConnection objConn = new SqlConnection(config.connectionString)) 
             {
                 try
                 {
                     objConn.Open();
                     command = new SqlCommand($"SELECT UserType FROM Accounts WHERE UserName = '{userType}'", objConn);
-                    string? type = (string) command.ExecuteScalar();
+                    string? type = (string)command.ExecuteScalar();
                     return type ?? string.Empty;
                 }
                 catch (Exception err)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
                 finally
                 {
@@ -54,13 +43,6 @@ namespace AMS.Web.Database
                 }
             }
         }
-
-
-
-
-
-
-
 
         public void toggleFKConstraintsItems(bool disable)
         {
@@ -83,7 +65,6 @@ namespace AMS.Web.Database
                 catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
                 finally
                 {
@@ -91,8 +72,6 @@ namespace AMS.Web.Database
                 }
             }
         }
-
-
 
         public void toggleFKConstraintsAssets(bool disable)
         {
@@ -105,46 +84,39 @@ namespace AMS.Web.Database
                     if (disable)
                     {
                         current = new SqlCommand("ALTER TABLE tAsset NOCHECK CONSTRAINT rtAsset_tItem, rtAsset_tLocation", objConn);
-                    } else
+                    }
+                    else
                     {
                         current = new SqlCommand("ALTER TABLE tAsset CHECK CONSTRAINT rtAsset_tItem, rtAsset_tLocation", objConn);
-
                     }
                     current.ExecuteNonQuery();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
                 finally { objConn.Close(); }
-             
             }
         }
-
-
-
 
         public void insertBulk(List<string> statements)
         {
             using (SqlConnection objConn = new SqlConnection(connectionString))
             {
                 objConn.Open();
-                //   objTrans = objConn.BeginTransaction();
+
                 try
                 {
                     foreach (string statement in statements)
                     {
                         SqlCommand current = new SqlCommand(statement, objConn);
                         current.ExecuteNonQuery();
-                        //  objTrans.Commit();
+
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
-
                 }
                 finally
                 {
@@ -152,11 +124,6 @@ namespace AMS.Web.Database
                 }
             }
         }
-
-
-
-
-
 
         public List<SetTables> getTableDataLocation()
         {
@@ -167,84 +134,7 @@ namespace AMS.Web.Database
 
                 try
                 {
-                  
-                        SqlCommand command = new SqlCommand("SELECT * FROM tSetTables WHERE [Table] = 'tLocation';", objConn);
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            // Call Read before accessing data.
-                            while (reader.Read())
-                            {
-                                string? table = string.Empty;
-                                string? field = string.Empty;
-                                string? name = string.Empty;
-                                string? customName = string.Empty;
-                                string? description = string.Empty;
-
-
-                                if (!reader.IsDBNull(0))
-                                {
-                                 table = reader.GetString(0) ?? "";
-                                }
-
-                                if (!reader.IsDBNull(1))
-                                {
-                                 field = reader.GetString(1) ?? "";
-                                }
-
-                                if (!reader.IsDBNull(8))
-                                {
-                                 name = reader.GetString(8) ?? "";
-                                }
-
-                                if (!reader.IsDBNull(9))
-                                {
-                                 customName = reader.GetString(9) ?? "";
-                                }
-                                if (!reader.IsDBNull(10))
-                                {
-                                 description = reader.GetString(10) ?? "";
-                                }
-
-
-                            SetTables row = new SetTables
-                                {
-                                    Table = table,
-                                    Field = field,
-                                    Name = name,
-                                    CustomName = customName,
-                                    Description = description,
-                                };
-                                returnObject.Add(row);
-
-                            }
-                        }
-                    return returnObject;
-
-                }
-                catch (Exception ex)
-                {
-                    throw new KeyNotFoundException("Database error");
-
-                }
-                finally
-                {
-                    objConn.Close();
-
-                }
-            }
-        }
-
-        public List<SetTables> getTableDataItem()
-        {
-            List<SetTables> returnObject = new List<SetTables>();
-            using (SqlConnection objConn = new SqlConnection(connectionString))
-            {
-                objConn.Open();
-
-                try
-                {
-
-                    SqlCommand command = new SqlCommand("SELECT * FROM tSetTables WHERE [Table] = 'tItem';", objConn);
+                    SqlCommand command = new SqlCommand("SELECT * FROM tSetTables WHERE [Table] = 'tLocation';", objConn);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         // Call Read before accessing data.
@@ -255,7 +145,6 @@ namespace AMS.Web.Database
                             string? name = string.Empty;
                             string? customName = string.Empty;
                             string? description = string.Empty;
-
 
                             if (!reader.IsDBNull(0))
                             {
@@ -281,6 +170,74 @@ namespace AMS.Web.Database
                                 description = reader.GetString(10) ?? "";
                             }
 
+                            SetTables row = new SetTables
+                            {
+                                Table = table,
+                                Field = field,
+                                Name = name,
+                                CustomName = customName,
+                                Description = description,
+                            };
+                            returnObject.Add(row);
+                        }
+                    }
+                    return returnObject;
+                }
+                catch (Exception ex)
+                {
+                    throw new KeyNotFoundException("Database error");
+                }
+                finally
+                {
+                    objConn.Close();
+                }
+            }
+        }
+
+        public List<SetTables> getTableDataItem()
+        {
+            List<SetTables> returnObject = new List<SetTables>();
+            using (SqlConnection objConn = new SqlConnection(connectionString))
+            {
+                objConn.Open();
+
+                try
+                {
+                    SqlCommand command = new SqlCommand("SELECT * FROM tSetTables WHERE [Table] = 'tItem';", objConn);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Call Read before accessing data.
+                        while (reader.Read())
+                        {
+                            string? table = string.Empty;
+                            string? field = string.Empty;
+                            string? name = string.Empty;
+                            string? customName = string.Empty;
+                            string? description = string.Empty;
+
+                            if (!reader.IsDBNull(0))
+                            {
+                                table = reader.GetString(0) ?? "";
+                            }
+
+                            if (!reader.IsDBNull(1))
+                            {
+                                field = reader.GetString(1) ?? "";
+                            }
+
+                            if (!reader.IsDBNull(8))
+                            {
+                                name = reader.GetString(8) ?? "";
+                            }
+
+                            if (!reader.IsDBNull(9))
+                            {
+                                customName = reader.GetString(9) ?? "";
+                            }
+                            if (!reader.IsDBNull(10))
+                            {
+                                description = reader.GetString(10) ?? "";
+                            }
 
                             SetTables row = new SetTables
                             {
@@ -289,33 +246,25 @@ namespace AMS.Web.Database
                                 Name = name,
                                 CustomName = customName,
                                 Description = description
-
                             };
                             returnObject.Add(row);
-
                         }
                     }
                     return returnObject;
-
                 }
                 catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
                 finally
                 {
                     objConn.Close();
-
                 }
             }
         }
 
-
-
-
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         public Configuration getConfigurationNames()
@@ -342,9 +291,6 @@ namespace AMS.Web.Database
             return configuration;
         }
 
-
-
-
         public List<string> getConfigurationNamesOnly()
         {
             List<string> configurations = new List<string>();
@@ -370,13 +316,13 @@ namespace AMS.Web.Database
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="data"></param>
         public bool setConfiguration(List<KeyValuePair<FirstTable, SecondTable>> data, bool hasHeaders, string name, string company)
         {
-            string companyName = company ;
-           // System.Web.HttpContext.Session.GetString("Company");
+            string companyName = company;
+            // System.Web.HttpContext.Session.GetString("Company");
             CompleteConnectionConfiguration configuration = new CompleteConnectionConfiguration(data, hasHeaders, company);
             var json = JsonSerializer.Serialize(configuration);
             // update tSettings set value = data where name = 'configurations'
@@ -388,11 +334,10 @@ namespace AMS.Web.Database
                     SqlCommand sql = new SqlCommand($"INSERT INTO tSettings(name, value, company) VALUES ('{name}', '{json}', '{companyName}')", conn);
                     sql.ExecuteNonQuery();
                     return true;
-
-                } catch (Exception)
+                }
+                catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
         }
@@ -412,14 +357,12 @@ namespace AMS.Web.Database
                 catch (Exception err)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
         }
 
-
-        public List<SetTables> getTableDataAsset() {
-
+        public List<SetTables> getTableDataAsset()
+        {
             List<SetTables> returnObject = new List<SetTables>();
             using (SqlConnection objConn = new SqlConnection(connectionString))
             {
@@ -427,7 +370,6 @@ namespace AMS.Web.Database
 
                 try
                 {
-
                     SqlCommand command = new SqlCommand("SELECT * FROM tSetTables WHERE [Table] = 'tAsset';", objConn);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -439,7 +381,6 @@ namespace AMS.Web.Database
                             string? name = string.Empty;
                             string? customName = string.Empty;
                             string? description = string.Empty;
-
 
                             if (!reader.IsDBNull(0))
                             {
@@ -465,7 +406,6 @@ namespace AMS.Web.Database
                                 description = reader.GetString(10) ?? "";
                             }
 
-
                             SetTables row = new SetTables
                             {
                                 Table = table,
@@ -473,39 +413,26 @@ namespace AMS.Web.Database
                                 Name = name,
                                 CustomName = customName,
                                 Description = description,
-
                             };
                             returnObject.Add(row);
-
                         }
                     }
                     return returnObject;
-
                 }
                 catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
                 finally
                 {
                     objConn.Close();
-
                 }
             }
         }
 
-
-
-
-
-
-
-
-
         public string CreateCompany(string companyName)
         {
- //           var config = ConfigurationHelper.GetConfigurationObject();
+            //           var config = ConfigurationHelper.GetConfigurationObject();
             String invite = string.Empty;
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
@@ -523,7 +450,6 @@ namespace AMS.Web.Database
                 catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
 
@@ -534,7 +460,7 @@ namespace AMS.Web.Database
 
         private void UpdateInviteLink(string company, string guid)
         {
-          //  var config = ConfigurationHelper.GetConfigurationObject();
+            //  var config = ConfigurationHelper.GetConfigurationObject();
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
                 try
@@ -543,7 +469,6 @@ namespace AMS.Web.Database
                     var sql = "UPDATE Companies SET InviteGuid = @Guid WHERE Company = @Company";
                     using (var cmd = new SqlCommand(sql, conn))
                     {
-
                         cmd.Parameters.AddWithValue("@Guid", guid);
                         cmd.Parameters.AddWithValue("@Company", company);
 
@@ -553,14 +478,13 @@ namespace AMS.Web.Database
                 catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
         }
 
         internal bool checkGuidInviteUser(string uid, string user)
         {
-           // var config = ConfigurationHelper.GetConfigurationObject();
+            // var config = ConfigurationHelper.GetConfigurationObject();
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
                 try
@@ -570,9 +494,9 @@ namespace AMS.Web.Database
                     using (var cmd = new SqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@Username", user);
-                        var guid = (String)cmd.ExecuteScalar();       
-                       
-                        if(guid == uid)
+                        var guid = (String)cmd.ExecuteScalar();
+
+                        if (guid == uid)
                         {
                             return true;
                         }
@@ -581,16 +505,14 @@ namespace AMS.Web.Database
                 catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
             return false;
         }
 
-
         internal bool checkGuidInvite(string uid, string company)
         {
-          //  var config = ConfigurationHelper.GetConfigurationObject();
+            //  var config = ConfigurationHelper.GetConfigurationObject();
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
                 try
@@ -600,11 +522,12 @@ namespace AMS.Web.Database
                     using (var cmd = new SqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@Company", company);
-                        var guid =  (String) cmd.ExecuteScalar();
-                        if(guid!=uid)
+                        var guid = (String)cmd.ExecuteScalar();
+                        if (guid != uid)
                         {
                             return false;
-                        } else
+                        }
+                        else
                         {
                             return true;
                         }
@@ -613,14 +536,13 @@ namespace AMS.Web.Database
                 catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
         }
 
         internal void RegisterUserWithData(string username, string password, string company)
         {
-          //  var config = ConfigurationHelper.GetConfigurationObject();
+            //  var config = ConfigurationHelper.GetConfigurationObject();
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
                 try
@@ -639,7 +561,6 @@ namespace AMS.Web.Database
                 catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
         }
@@ -648,7 +569,7 @@ namespace AMS.Web.Database
         {
             string result = string.Empty;
 
-           // var config = ConfigurationHelper.GetConfigurationObject();
+            // var config = ConfigurationHelper.GetConfigurationObject();
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
                 try
@@ -656,39 +577,29 @@ namespace AMS.Web.Database
                     conn.Open();
                     var sql = "SELECT Company FROM Accounts WHERE UserName = @Email;";
 
-
-
                     using (var cmd = new SqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@Email", username);
 
-                        string company = (string) cmd.ExecuteScalar();
-
+                        string company = (string)cmd.ExecuteScalar();
 
                         result = company;
-
                     }
 
-
                     return result;
-
                 }
                 catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
-
-
-
         }
 
         internal void insertLogGUID(string username, string guid)
         {
             string result = string.Empty;
 
-           // var config = ConfigurationHelper.GetConfigurationObject();
+            // var config = ConfigurationHelper.GetConfigurationObject();
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
                 try
@@ -696,20 +607,16 @@ namespace AMS.Web.Database
                     conn.Open();
                     var sql = "  update Accounts set LoginGUID = 'test' where UserName = @Username";
 
-
-
                     using (var cmd = new SqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@Username", username);
 
                         cmd.ExecuteNonQuery();
-
                     }
                 }
                 catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
         }
@@ -718,7 +625,7 @@ namespace AMS.Web.Database
         {
             string result = string.Empty;
 
-           // var config = ConfigurationHelper.GetConfigurationObject();
+            // var config = ConfigurationHelper.GetConfigurationObject();
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
                 try
@@ -737,7 +644,6 @@ namespace AMS.Web.Database
                 catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
         }
@@ -746,7 +652,7 @@ namespace AMS.Web.Database
         {
             string result = string.Empty;
 
-         //   var config = ConfigurationHelper.GetConfigurationObject();
+            //   var config = ConfigurationHelper.GetConfigurationObject();
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
                 try
@@ -764,7 +670,6 @@ namespace AMS.Web.Database
                 catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
         }
@@ -775,7 +680,7 @@ namespace AMS.Web.Database
 
             string result = string.Empty;
 
-          //  var config = ConfigurationHelper.GetConfigurationObject();
+            //  var config = ConfigurationHelper.GetConfigurationObject();
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
                 try
@@ -784,7 +689,6 @@ namespace AMS.Web.Database
                     var sql = "SELECT UserName, Company, UserType FROM Accounts;";
                     using (var cmd = new SqlCommand(sql, conn))
                     {
-
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             // Call Read before accessing data.
@@ -817,7 +721,6 @@ namespace AMS.Web.Database
                 catch (Exception)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
 
@@ -830,7 +733,7 @@ namespace AMS.Web.Database
 
             string result = string.Empty;
 
-          //  var config = ConfigurationHelper.GetConfigurationObject();
+            //  var config = ConfigurationHelper.GetConfigurationObject();
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
                 try
@@ -874,13 +777,11 @@ namespace AMS.Web.Database
 
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
 
             return users;
         }
-
 
         public UserList GetAllUsersSpecificCompanyWithoutItself(string? companyParam, string self)
         {
@@ -888,7 +789,7 @@ namespace AMS.Web.Database
 
             string result = string.Empty;
 
-           // var config = ConfigurationHelper.GetConfigurationObject();
+            // var config = ConfigurationHelper.GetConfigurationObject();
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
                 try
@@ -932,25 +833,13 @@ namespace AMS.Web.Database
 
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
 
-
-
-
             users.users.Remove(users.users.Where(x => x.email == self).FirstOrDefault());
-
-
-
-
 
             return users;
         }
-
-
-
-
 
         internal void DeleteUserByEmail(string email)
         {
@@ -968,16 +857,14 @@ namespace AMS.Web.Database
                 catch (Exception ex)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
         }
 
-
         internal void CommitItemsFromAssets()
         {
             List<Item> items = new List<Item>();
-          //  var config = ConfigurationHelper.GetConfigurationObject();
+            //  var config = ConfigurationHelper.GetConfigurationObject();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
@@ -1018,7 +905,6 @@ namespace AMS.Web.Database
                 catch (Exception ex)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
 
@@ -1026,12 +912,10 @@ namespace AMS.Web.Database
             int result = 9 + 9;
         }
 
-
-
         internal void CommitLocationsFromAssets()
         {
             List<string> items = new List<string>();
-          //  var config = ConfigurationHelper.GetConfigurationObject();
+            //  var config = ConfigurationHelper.GetConfigurationObject();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
@@ -1060,11 +944,9 @@ namespace AMS.Web.Database
                 catch (Exception ex)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
             }
             InsertRowsLocations(items);
-
         }
 
         private void InsertRowsLocations(List<string> items)
@@ -1083,7 +965,6 @@ namespace AMS.Web.Database
                 catch (Exception ex)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
                 finally
                 {
@@ -1108,14 +989,12 @@ namespace AMS.Web.Database
                 catch (Exception ex)
                 {
                     throw new KeyNotFoundException("Database error");
-
                 }
                 finally
                 {
                     objConn.Close();
                 }
             }
-
         }
 
         internal ExportStructure GetStructure(int count)
@@ -1128,30 +1007,28 @@ namespace AMS.Web.Database
                 {
                     SqlCommand current = new SqlCommand($"SELECT * FROM tAsset;", objConn);
 
-
-
-
                     using (SqlDataReader reader = current.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                                ItemExport item = new ItemExport();
-                                try
-                                {
-                                    item.anQId = Int32.Parse(reader["anQId"].ToString());
-                                } catch
-                                {
-                                    item.anQId = -1;
-                                }
-                                item.acECD = reader["acECD"].ToString();
-                                item.acItem = reader["acItem"].ToString();
-                                item.acCode = reader["acCode"].ToString();
-                                item.acLocation = reader["acLocation"].ToString();
-                                item.acType = reader["acType"].ToString();
-                                item.acName = reader["acName"].ToString();
+                            ItemExport item = new ItemExport();
+                            try
+                            {
+                                item.anQId = Int32.Parse(reader["anQId"].ToString());
+                            }
+                            catch
+                            {
+                                item.anQId = -1;
+                            }
+                            item.acECD = reader["acECD"].ToString();
+                            item.acItem = reader["acItem"].ToString();
+                            item.acCode = reader["acCode"].ToString();
+                            item.acLocation = reader["acLocation"].ToString();
+                            item.acType = reader["acType"].ToString();
+                            item.acName = reader["acName"].ToString();
 
-
-                            if(item.anQId == -1) { continue;  } else
+                            if (item.anQId == -1) { continue; }
+                            else
                             {
                                 structure.items.Add(item);
                             }
@@ -1160,7 +1037,6 @@ namespace AMS.Web.Database
                 }
                 catch (Exception ex)
                 {
-
                 }
                 finally
                 {
@@ -1194,14 +1070,15 @@ namespace AMS.Web.Database
                         String currentLine = "";
                         foreach (var singular in rows)
                         {
-                            string currentValue = (string) reader[$"{singular}"];
+                            string currentValue = (string)reader[$"{singular}"];
                             if (currentValue != null)
                             {
                                 if (currentValue != "")
                                 {
                                     // Not empty
                                     currentLine += currentValue + ";";
-                                } else
+                                }
+                                else
                                 {
                                     currentLine += ";";
                                 }
@@ -1215,7 +1092,6 @@ namespace AMS.Web.Database
 
             return structure;
         }
-      
 
         public static T ConvertFromDBVal<T>(object obj)
         {
@@ -1231,8 +1107,8 @@ namespace AMS.Web.Database
 
         public List<InventoryGlobal> getInventories()
         {
-           List<InventoryGlobal> inventories = new List<InventoryGlobal>();  
-           using (SqlConnection connection = new SqlConnection(connectionString))
+            List<InventoryGlobal> inventories = new List<InventoryGlobal>();
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand("SELECT * FROM tInventory;", connection);
@@ -1247,37 +1123,35 @@ namespace AMS.Web.Database
                         int qId;
                         bool active;
                         name = ConvertFromDBVal<string>(rdr["acNote"]);
-                        datet = ConvertFromDBVal<DateTime>(rdr["adDateCheck"]).ToString(); 
+                        datet = ConvertFromDBVal<DateTime>(rdr["adDateCheck"]).ToString();
                         closed = ConvertFromDBVal<DateTime>(rdr["adDateConfirm"]).ToString();
                         confirm = ConvertFromDBVal<DateTime>(rdr["adDateConfirm"]).ToString();
                         qId = ConvertFromDBVal<int>(rdr["anQId"]);
-                        if (confirm.Length>3)
+                        if (confirm.Length > 3)
                         {
                             active = true;
-                        } else
+                        }
+                        else
                         {
                             active = false;
                         }
                         inventories.Add(new InventoryGlobal { name = name, date = datet.ToString(), closed = closed, active = active, qId = qId });
                     }
-
                 }
             }
 
-
-
-           return inventories;
+            return inventories;
         }
 
         public void CreateInventory(string name, string date, string leader)
         {
             int id;
-           // var config = ConfigurationHelper.GetConfigurationObject();
+            // var config = ConfigurationHelper.GetConfigurationObject();
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
                 conn.Open();
                 SqlCommand command = new SqlCommand($"SELECT ID FROM Accounts WHERE UserName = '{leader}'", conn);
-                id = (int) command.ExecuteScalar();
+                id = (int)command.ExecuteScalar();
                 // Testiranje inserta za inventure //
             }
 
@@ -1287,7 +1161,6 @@ namespace AMS.Web.Database
                 SqlCommand command = new SqlCommand($"INSERT INTO tInventory VALUES ('{date}', '{id}', NULL, NULL, NULL, NULL, NULL, NULL, 'Nova inventura')", conn);
                 command.ExecuteNonQuery();
                 // Testiranje inserta za inventure //
-
             }
         }
 
@@ -1302,6 +1175,7 @@ namespace AMS.Web.Database
                 // Testiranje inserta za inventure //
             }
         }
+
         public void DeleteInventoryItem(string qid)
         {
             // var config = ConfigurationHelper.GetConfigurationObject();
@@ -1313,6 +1187,7 @@ namespace AMS.Web.Database
                 // Testiranje inserta za inventure //
             }
         }
+
         public void DeleteInventoryLocation(string qid)
         {
             // var config = ConfigurationHelper.GetConfigurationObject();
@@ -1321,17 +1196,13 @@ namespace AMS.Web.Database
                 connection.Open();
                 SqlCommand command = new SqlCommand($"DELETE FROM tLocation WHERE anQId = {qid}", connection);
                 command.ExecuteNonQuery();
-
             }
         }
 
-
-
         public class CheckOutAPI
         {
-           private int totalCount { get; set; }
-           public List<CheckOut> data { get; set; }
-
+            private int totalCount { get; set; }
+            public List<CheckOut> data { get; set; }
 
             public void setCount()
             {
@@ -1339,14 +1210,13 @@ namespace AMS.Web.Database
             }
         }
 
-
         public List<CheckOut> GetAllCheckOutItems()
         {
             List<CheckOut> items = new List<CheckOut>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-       
+
                 SqlCommand command = new SqlCommand("SELECT * FROM tCheckOut WHERE anInventory = 1 and adDateConfirm is null", connection);
 
                 using (SqlDataReader reader = command.ExecuteReader())
@@ -1375,7 +1245,6 @@ namespace AMS.Web.Database
                         items.Add(checkOut);
                     }
                 }
-
             }
 
             CheckOutAPI api = new CheckOutAPI();
@@ -1398,15 +1267,13 @@ namespace AMS.Web.Database
 
         public int getUserId(string user)
         {
-
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
                 conn.Open();
                 SqlCommand sql = new SqlCommand($"SELECT ID FROM Accounts WHERE UserName='{user}'", conn);
-                int id = (int) sql.ExecuteScalar();
+                int id = (int)sql.ExecuteScalar();
                 return id;
             }
-               
         }
 
         public void DeleteRow(CheckOut row)
@@ -1441,11 +1308,11 @@ namespace AMS.Web.Database
         public List<LocationListing> GetAllLocations()
         {
             List<LocationListing> data = new List<LocationListing>();
-            using(SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 SqlCommand sql = new SqlCommand("SELECT * FROM tLocation", connection);
-                using(SqlDataReader reader = sql.ExecuteReader())
+                using (SqlDataReader reader = sql.ExecuteReader())
                 {
                     while (reader.Read())
                     {
@@ -1468,14 +1335,13 @@ namespace AMS.Web.Database
                 }
             }
 
-
             return data;
         }
 
         public List<ItemListing> GetAllItems()
         {
             List<ItemListing> data = new List<ItemListing>();
-            using(SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 SqlCommand sql = new SqlCommand("SELECT * FROM tItem", connection);
@@ -1492,7 +1358,7 @@ namespace AMS.Web.Database
                         int anOrderNo = ConvertFromDBVal<int>(reader["anOrderNo"]);
                         string adOrderDate = ConvertFromDBVal<DateTime>(reader["adOrderDate"]).ToString();
                         decimal anAcqVal = (decimal)ConvertFromDBVal<decimal>(reader["anAcqVal"]);
-                        decimal anWrtOffVal = (decimal) ConvertFromDBVal<decimal>(reader["anWrtOffVal"]);
+                        decimal anWrtOffVal = (decimal)ConvertFromDBVal<decimal>(reader["anWrtOffVal"]);
                         string acStatus = ConvertFromDBVal<string>(reader["acStatus"]);
                         string adTimeIns = ConvertFromDBVal<DateTime>(reader["adTimeIns"]).ToString();
                         int anUserIns = ConvertFromDBVal<int>(reader["anUserIns"]);
@@ -1511,13 +1377,13 @@ namespace AMS.Web.Database
         public List<AssetListing> GetAssets()
         {
             List<AssetListing> data = new List<AssetListing>();
-            using(SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 SqlCommand sql = new SqlCommand("SELECT * FROM tAsset", connection);
                 using (SqlDataReader reader = sql.ExecuteReader())
                 {
-                    while(reader.Read())
+                    while (reader.Read())
                     {
                         int anQId = ConvertFromDBVal<int>(reader["anQId"]);
                         string acType = ConvertFromDBVal<string>(reader["acType"]);
@@ -1564,33 +1430,31 @@ namespace AMS.Web.Database
                         string acActive = ConvertFromDBVal<string>(reader["acActive"]);
                         int anSeqNo = ConvertFromDBVal<int>(reader["anSeqNo"]);
                         string acInsertedFrom = ConvertFromDBVal<string>(reader["acInsertedFrom"]);
-                        data.Add(new AssetListing (anQId, acType, acItem, acLocation, acCode, acECD, acName, acName2, adDateOfACQ, adDateOfACT, adDateOfLIQ, adDateOfELI, acCareTaker, adTimeIns, anUserIns, adTimeChg, anUserChg, acNote,
+                        data.Add(new AssetListing(anQId, acType, acItem, acLocation, acCode, acECD, acName, acName2, adDateOfACQ, adDateOfACT, adDateOfLIQ, adDateOfELI, acCareTaker, adTimeIns, anUserIns, adTimeChg, anUserChg, acNote,
 
                             acFieldSA, acFieldSB, acFieldSC, acFieldSD, acFieldSE, acFieldSF, acFieldSG, acFieldSH, acFieldSI, acFieldSJ, anFieldNA, anFieldNB, anFieldNC, anFieldND, anFieldNE, anFieldNF, anFieldNG, anFieldNH,
 
                             anFieldNI, anFieldNJ, adFieldDA, adFieldDB, adFieldDC, adFieldDD, acActive, anSeqNo, acInsertedFrom));
                     }
                 }
-
             }
             return data;
-  
         }
 
         public void UpdateRow(string table, string field, string type, string data, string id)
         {
-           SqlCommand command = new SqlCommand();
-           using (SqlConnection connection = new SqlConnection(connectionString))
+            SqlCommand command = new SqlCommand();
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 if (type == "string")
                 {
                     command = new SqlCommand($"UPDATE {table} SET {field}='{data}' WHERE anQId = {id}", connection);
-                } else
+                }
+                else
                 {
                     command = new SqlCommand($"UPDATE {table} SET {field}={data} WHERE anQId = {id}", connection);
                 }
-
 
                 command.ExecuteNonQuery();
             }

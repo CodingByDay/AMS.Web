@@ -31,7 +31,7 @@ namespace AMS.Web.Controllers
         public IActionResult LocationListing()
         {
             ViewBag.Title = "Lokacije";
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection")??"");
             var locations = db.GetAllLocations();
             return View(locations);
         }
@@ -40,7 +40,7 @@ namespace AMS.Web.Controllers
         public IActionResult ItemListing()
         {
             ViewBag.Title = "Artikli";
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection")??"");
             var items = db.GetAllItems();
             // db.GetUserNames(items)       
             return View(items);
@@ -49,7 +49,7 @@ namespace AMS.Web.Controllers
 
         public IActionResult AssetListing()
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             ViewBag.Title = "Sredstva";
             var assets = db.GetAssets();
             return View(assets);
@@ -63,50 +63,35 @@ namespace AMS.Web.Controllers
 
         public IActionResult Index()
         {
-            string username = HttpContext.Session.GetString("username");
+            string username = HttpContext.Session.GetString("username") ?? "";
             if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             // Data for the configuration //
             var configuration = db.getConfigurationNamesOnly();
             var inventories = db.getInventories();
             ViewBag.Inventories = inventories;
             ViewBag.Configuration = configuration;
             ViewBag.Company = HttpContext.Session.GetString("company");
-            string type = db.getUserTypeFromString(username);
-
-
-
-
-
+            string type = db.getUserTypeFromString(username) ?? "";
             UserList users = new UserList();
-
-
             if (type == "LADM")
             {
-                users = db.GetAllUsersSpecificCompanyWithoutItself(HttpContext.Session.GetString("company"), HttpContext.Session.GetString("username"));
+                users = db.GetAllUsersSpecificCompanyWithoutItself(HttpContext.Session.GetString("company"), HttpContext.Session.GetString("username") ?? "");
             }
 
             ViewBag.Type = type;
 
-
-            // Data for the configuration //
             return View(users);
-
-
-
-            // Continue here configure the view so it shows the correct data.
-
-
         }
 
 
         [HttpPost]
         public JsonResult UpdateRow([FromQuery(Name = "table")] string table, [FromQuery(Name = "field")] string field, [FromQuery( Name = "type")] string type, [FromQuery(Name = "data")] string data, [FromQuery(Name = "anQId")] string anQId)
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             db.UpdateRow(table,field, type, data, anQId);
             return Json(true);
         }
@@ -120,7 +105,7 @@ namespace AMS.Web.Controllers
         public JsonResult DeleteInventoryLocation([FromQuery(Name = "id")] string id)
         {
 
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection")?? "");
             var locations = db.GetAllLocations();
             db.DeleteInventoryLocation(locations.ElementAt(Int32.Parse(id)).anQId.ToString());
             return Json(true);
@@ -131,7 +116,7 @@ namespace AMS.Web.Controllers
         public JsonResult DeleteInventoryItem([FromQuery(Name = "id")] string id)
         {
 
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             var items = db.GetAllItems();
             db.DeleteInventoryItem(items.ElementAt(Int32.Parse(id)).anQId.ToString());
             return Json(true);
@@ -142,7 +127,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult DeleteInventory([FromQuery(Name = "id")] string id) {
 
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             var invs = db.getInventories();
             db.DeleteInventory(invs.ElementAt(Int32.Parse(id)).qId.ToString());
             return Json(true);
@@ -153,7 +138,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult CreateInventory([FromQuery(Name = "name")] string name, [FromQuery(Name = "date")] string date, [FromQuery(Name = "leader")] string leader)
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             db.CreateInventory(name, date, leader);
             return Json(true);
         }
@@ -162,7 +147,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult getConfig([FromQuery(Name = "name")] string name)
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             var res = db.getSpecificConfiguration(name);
             return Json(res);
         }
@@ -194,11 +179,11 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult ConfirmInventory([FromQuery(Name="id")] string id)
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             var checkOuts = db.GetAllCheckOutItems();
             int index = Int32.Parse(id);
             var row = checkOuts.ElementAt(index);
-            db.CommitRow(row, HttpContext.Session.GetString("username"));
+            db.CommitRow(row, HttpContext.Session.GetString("username") ?? "");
             return Json(true);
         }
 
@@ -208,7 +193,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult ConfirmInventoryWhole([FromQuery(Name = "id")] string id)
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             var inventories = db.getInventories();
             int index = Int32.Parse(id);
             var row = inventories.ElementAt(index);
@@ -219,7 +204,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult DeleteInventoryPosition([FromQuery(Name = "id")] string id)
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             var checkOuts = db.GetAllCheckOutItems();
             int index = Int32.Parse(id);
             var row = checkOuts.ElementAt(index);
@@ -234,7 +219,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult DownloadInventory([FromQuery(Name = "type")] string type, [FromBody] CompleteConnectionConfiguration data )
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             string baseUrl = string.Empty;
             string uid = Guid.NewGuid().ToString();
             string name = string.Empty;
@@ -304,7 +289,7 @@ namespace AMS.Web.Controllers
         private ExportStructure GetStructureFromDatabase(int count)
         {
             var config = ConfigurationHelper.GetConfigurationObject();
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             return db.GetStructure(count);
         }
 
@@ -314,7 +299,7 @@ namespace AMS.Web.Controllers
             var config = ConfigurationHelper.GetConfigurationObject();
             DatabaseOperations db = new DatabaseOperations(config.connectionString);
             string guid = Guid.NewGuid().ToString();
-            string company = HttpContext.Session.GetString("company");
+            string company = HttpContext.Session.GetString("company") ?? "";
             db.CreateUser(email, company, guid);
             SendEmailInviteUser(company, guid, email);
             return Json(true);
@@ -413,9 +398,9 @@ namespace AMS.Web.Controllers
                 return RedirectToAction("Login", "Auth");
             }
 
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
-            string username = HttpContext.Session.GetString("username");
-            string type = db.getUserTypeFromString(username);
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            string username = HttpContext.Session.GetString("username") ?? "";
+            string type = db.getUserTypeFromString(username) ?? "";
             UserList users = new UserList();
 
 
@@ -450,7 +435,7 @@ namespace AMS.Web.Controllers
             {
                 return RedirectToAction("Login", "Auth");
             }
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             var checkOuts = db.GetAllCheckOutItems();
             return View(checkOuts);
 
@@ -477,7 +462,7 @@ namespace AMS.Web.Controllers
             {
                 return RedirectToAction("Login", "Auth");
             }
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             var data = db.GetAllThreeTablesCurrentState();
             return View(data);
         }
@@ -490,7 +475,7 @@ namespace AMS.Web.Controllers
             ConnectionViewModel connection = new ConnectionViewModel();
             if(TempData["ConnectionViewModel"] != null)
             {
-                connection = (ConnectionViewModel)TempData["ConnectionViewModel"];
+                connection = (ConnectionViewModel)TempData["ConnectionViewModel"] ;
             }
             return View(connection);
         }

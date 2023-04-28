@@ -1,3 +1,29 @@
+/* Tables */
+table.dx-datagrid-table.dx-datagrid-table-fixed td, tr {
+    background: white;
+    border: 0.1em solid #fff;
+}
+.dx-datagrid.dx-gridbase-container.dx-datagrid-borders {
+    padding: 7em;
+}
+table.dx-datagrid-table.dx-datagrid-table-fixed td, tr {
+    background: white;
+    border-bottom: 0.2em solid #fff;
+}
+table.dx-datagrid-table.dx-datagrid-table-fixed {
+    font-size: small;
+    color: gray;
+    font-weight: 500;
+}
+h4.card-title-active {
+    padding: 1em;
+}
+
+
+
+
+
+
 
 
 .choice-div {
@@ -407,5 +433,5 @@ table tbody tr:nth-of-type(even) {
 }
 
 table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+   
 }
