@@ -70,10 +70,13 @@ namespace AMS.Web.Controllers
         }
 
 
-        
 
 
 
+        public IActionResult Homepage()
+        {
+            return View();
+        }
         private void StoreTokenForUserName(string username)
         {
             throw new NotImplementedException();

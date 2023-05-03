@@ -36,6 +36,7 @@ namespace AMS.Web.Controllers
             return View(locations);
         }
 
+       
 
         public IActionResult ItemListing()
         {
@@ -389,7 +390,7 @@ namespace AMS.Web.Controllers
             smtpClient.EnableSsl = true;
             smtpClient.Send(mailMessage);
         }
-
+       
 
         public IActionResult Settings()
         {
