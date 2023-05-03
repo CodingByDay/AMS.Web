@@ -34,7 +34,6 @@
     <Content Remove="wwwroot\Content\dist\assets\images\avatar\avatar-s-7.png" />
     <Content Remove="wwwroot\Content\dist\assets\images\avatar\avatar-s-8.png" />
     <Content Remove="wwwroot\Content\dist\assets\images\avatar\avatar-s-9.png" />
-    <Content Remove="wwwroot\Content\dist\assets\images\background\auth.jpg" />
     <Content Remove="wwwroot\Content\dist\assets\images\favicon.png" />
     <Content Remove="wwwroot\Content\dist\assets\images\favicon.svg" />
     <Content Remove="wwwroot\Content\dist\assets\images\logo.png" />
@@ -976,7 +975,6 @@
     <None Include="wwwroot\Content\dist\assets\images\avatar\avatar-s-7.png" />
     <None Include="wwwroot\Content\dist\assets\images\avatar\avatar-s-8.png" />
     <None Include="wwwroot\Content\dist\assets\images\avatar\avatar-s-9.png" />
-    <None Include="wwwroot\Content\dist\assets\images\background\auth.jpg" />
     <None Include="wwwroot\Content\dist\assets\images\favicon.png" />
     <None Include="wwwroot\Content\dist\assets\images\favicon.svg" />
     <None Include="wwwroot\Content\dist\assets\images\logo.png" />

@@ -1238,9 +1238,15 @@ namespace AMS.Web.Database
             List<CheckOut> items = new List<CheckOut>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                connection.Open();
 
-                SqlCommand command = new SqlCommand("SELECT * FROM tCheckOut WHERE anInventory = 1 and adDateConfirm is null", connection);
+
+                connection.Open();
+                SqlCommand getOpenInventory = new SqlCommand("SELECT anQId FROM tInventory WHERE adDateConfirm IS NULL;", connection);
+                int qid = (int) getOpenInventory.ExecuteScalar(); 
+
+
+
+                SqlCommand command = new SqlCommand($"SELECT * FROM tCheckOut WHERE anInventory = {qid} and adDateConfirm is null", connection);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
