@@ -23,14 +23,24 @@ td {
 }
 
 
+div#app {
+    height: 0;
+}
 
 
+.choose-file-outer label, input, button {
 
+    /* width: 20%; */
+}
 
+div#app {
+    height: 80vh;
+}
 
+.choose-file-outer {
 
-
-
+    zoom: 0.8;
+}
 
 
 

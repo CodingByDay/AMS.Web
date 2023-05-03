@@ -849,7 +849,7 @@ namespace AMS.Web.Database
                 try
                 {
                     conn.Open();
-                    var sql = $"DELETE FROM Accounts WHERE email = '{email}';";
+                    var sql = $"DELETE FROM Accounts WHERE UserName = '{email}';";
                     using (var cmd = new SqlCommand(sql, conn))
                     {
                         cmd.ExecuteNonQuery();

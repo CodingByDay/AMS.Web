@@ -591,9 +591,10 @@ var currentChosenRow = -1;
 var currentChosenFirst = -1;
 
 
-function deleteUser(which) {
-    var row = document.getElementById(`user_${which}`)
-    var email = row.children[0].innerHTML;
+function deleteUser(newData, value, currentRowData) {
+
+    var email = newData.row.data.email
+
     Swal.fire({
         title: 'Ali ste sigurni da želite pobrisati uporabnika?',
         showDenyButton: true,
@@ -620,6 +621,10 @@ function deleteUser(which) {
                             showConfirmButton: false,
                             timer: 2500
                         });
+
+
+                        window.location.reload();
+
                     }
                 },
                 failure: function (response) {

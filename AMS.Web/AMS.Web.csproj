@@ -2202,6 +2202,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Temp\" />
     <Folder Include="wwwroot\Export\" />
     <PackageReference Include="DevExtreme.AspNet.Core" Version="22.2.5" />
     <PackageReference Include="DevExtreme.AspNet.Data" Version="2.9.0" />

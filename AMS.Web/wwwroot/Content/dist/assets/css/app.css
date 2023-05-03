@@ -110,7 +110,10 @@
 }
 
 #app {
-  position: relative;
+    height: 0;
+}
+div#app {
+    height: 80vh;
 }
 
 #main {
