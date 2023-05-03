@@ -14,7 +14,7 @@ builder.Services.AddRouting(options => options.LowercaseUrls = true);
 builder.Services.AddControllersWithViews().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
 builder.Services.AddTransient<IBufferedFileUploadService, BufferedFileUploadLocalService>();
 
-
+builder.Services.AddHostedService<RemoveExportService>();
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
