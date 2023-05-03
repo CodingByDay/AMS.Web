@@ -139,8 +139,8 @@ namespace AMS.Web.Controllers
         public JsonResult CreateInventory([FromQuery(Name = "name")] string name, [FromQuery(Name = "date")] string date, [FromQuery(Name = "leader")] string leader)
         {
             DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
-            db.CreateInventory(name, date, leader);
-            return Json(true);
+            bool created = db.CreateInventory(name, date, leader);
+            return Json(created);
         }
 
 

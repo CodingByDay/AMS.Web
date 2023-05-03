@@ -1149,7 +1149,7 @@ namespace AMS.Web.Database
             return inventories;
         }
 
-        public void CreateInventory(string name, string date, string leader)
+        public bool CreateInventory(string name, string date, string leader)
         {
             int id;
             // var config = ConfigurationHelper.GetConfigurationObject();
@@ -1160,14 +1160,31 @@ namespace AMS.Web.Database
                 id = (int)command.ExecuteScalar();
                 // Testiranje inserta za inventure //
             }
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
+
+
+                SqlCommand checkOpen = new SqlCommand("SELECT count(*) as openInventory FROM tInventory WHERE adDateConfirm is NULL;", conn);
+
+                int countOpen = (int) checkOpen.ExecuteScalar();
+
+
+
+
+
+
+                if (countOpen > 0)
+                {
+                    return false;
+                }
                 SqlCommand command = new SqlCommand($"INSERT INTO tInventory VALUES ('{date}', '{id}', NULL, NULL, NULL, NULL, NULL, NULL, 'Nova inventura')", conn);
                 command.ExecuteNonQuery();
                 // Testiranje inserta za inventure //
             }
+
+
+            return true;
         }
 
         public void DeleteInventory(string qid)
@@ -1348,11 +1365,9 @@ namespace AMS.Web.Database
                     {
                         var err = ex;
                     }
-
                     // Update the state and then confirm the original row.
                     try
                     {
-
                         SqlCommand confirm = new SqlCommand($"UPDATE tCheckOut SET adDateConfirm = '{DateTime.Now}', anUserConfirm = {userID} WHERE anQId = {item.anQId}", conn);
                         confirm.ExecuteNonQuery();
                     }
@@ -1361,8 +1376,8 @@ namespace AMS.Web.Database
                         var err = ex;
                     }
                 }
-                SqlCommand sql = new SqlCommand($"UPDATE tInventory SET adDateConfirm = '{currentStamp}', anUserConfirm = {userID} WHERE anQId = {row.qId}", conn);
-                sql.ExecuteNonQuery();
+                        SqlCommand sql = new SqlCommand($"UPDATE tInventory SET adDateConfirm = '{currentStamp}', anUserConfirm = {userID} WHERE anQId = {row.qId}", conn);
+                        sql.ExecuteNonQuery();
             }
         }
 

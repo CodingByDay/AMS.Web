@@ -134,36 +134,46 @@ function onConfirmIconClick(e) {
 
 
 function onConfirmIconClickInventory(e) {
-    Swal.fire({
-        title: 'Ali ste sigurni da želite potrditi inventuro?',
-        showDenyButton: true,
-        showCancelButton: false,
-        confirmButtonText: 'Da',
-        denyButtonText: 'Ne',
-        customClass: {
-            actions: 'my-actions',
-            cancelButton: 'order-1 right-gap',
-            confirmButton: 'order-2',
-            denyButton: 'order-3',
-        }
-    }).then((result) => {
-        if (result.isConfirmed) {
-            jQuery.ajax({
-                type: "POST",
-                url: `ConfirmInventoryWhole?id=${e.row.rowIndex}`,
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                success: function (response) {
-                    window.location.reload();
-                },
-                failure: function (response) {
-                },
-                error: function (response) {
-                }
-            });
-        } else if (result.isDenied) {
-        }
-    })
+
+    if (e.row.data.closed != "") {
+        Swal.fire({
+            icon: 'error',
+            title: 'Napaka...',
+            text: 'Inventura že zaključena!',
+        })
+    } else {
+
+        Swal.fire({
+            title: 'Ali ste sigurni da želite potrditi inventuro?',
+            showDenyButton: true,
+            showCancelButton: false,
+            confirmButtonText: 'Da',
+            denyButtonText: 'Ne',
+            customClass: {
+                actions: 'my-actions',
+                cancelButton: 'order-1 right-gap',
+                confirmButton: 'order-2',
+                denyButton: 'order-3',
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                jQuery.ajax({
+                    type: "POST",
+                    url: `ConfirmInventoryWhole?id=${e.row.rowIndex}`,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (response) {
+                        window.location.reload();
+                    },
+                    failure: function (response) {
+                    },
+                    error: function (response) {
+                    }
+                });
+            } else if (result.isDenied) {
+            }
+        })
+    }
 }
 
 
@@ -368,7 +378,19 @@ jQuery("#create-inventory-button").click(function () {
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function (response) {
-            window.location.reload();
+            if (response) {
+                window.location.reload();
+            } else {
+                Swal.fire({
+                    title: 'Morate zapreti druge inventure',
+                    icon: 'info',
+                    confirmButtonText: 'Ok'
+                }).then((result) => {
+                    if (result['isConfirmed']) {
+                        window.location.reload();
+                    }
+                })
+            }          
         },
         failure: function (response) {
 
