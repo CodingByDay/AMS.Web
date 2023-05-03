@@ -1,5 +1,6 @@
 ﻿using AMS.Web.Classes;
 using AMS.Web.Models;
+using Org.BouncyCastle.Utilities;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text.Json;
@@ -1126,6 +1127,11 @@ namespace AMS.Web.Database
                         datet = ConvertFromDBVal<DateTime>(rdr["adDateCheck"]).ToString();
                         closed = ConvertFromDBVal<DateTime>(rdr["adDateConfirm"]).ToString();
                         confirm = ConvertFromDBVal<DateTime>(rdr["adDateConfirm"]).ToString();
+                        var defaultDateTime = ConvertFromDBVal<DateTime>(rdr["adDateConfirm"]);
+                        if (defaultDateTime == default(DateTime))
+                        {
+                            confirm = string.Empty;
+                        }
                         qId = ConvertFromDBVal<int>(rdr["anQId"]);
                         if (confirm.Length > 3)
                         {
@@ -1135,7 +1141,7 @@ namespace AMS.Web.Database
                         {
                             active = false;
                         }
-                        inventories.Add(new InventoryGlobal { name = name, date = datet.ToString(), closed = closed, active = active, qId = qId });
+                        inventories.Add(new InventoryGlobal { name = name, date = datet.ToString(), closed = confirm, active = active, qId = qId });
                     }
                 }
             }
@@ -1296,10 +1302,65 @@ namespace AMS.Web.Database
         public void CommitInventory(InventoryGlobal row, string? user)
         {
             string currentStamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
             int userID = getUserId(user);
+
+            List<CheckOut> items = new List<CheckOut>();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
+
+                SqlCommand getCheckoutItems = new SqlCommand($"select * FROM tCheckOut WHERE anInventory = {row.qId} AND adDateConfirm IS NULL;", conn);
+                
+                using(SqlDataReader reader = getCheckoutItems.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        CheckOut checkOut = new CheckOut();
+                        checkOut.anQId = ConvertFromDBVal<int>(reader["anQId"]);
+                        checkOut.anInventory = ConvertFromDBVal<int>(reader["anInventory"]);
+                        checkOut.anAssetID = ConvertFromDBVal<int>(reader["anAssetID"]);
+                        checkOut.acItem = ConvertFromDBVal<string>(reader["acItem"]);
+                        checkOut.acLocation = ConvertFromDBVal<string>(reader["acLocation"]);
+                        checkOut.acCode = ConvertFromDBVal<string>(reader["acCode"]);
+                        checkOut.acECD = ConvertFromDBVal<string>(reader["acECD"]);
+                        checkOut.acName = ConvertFromDBVal<string>(reader["acName"]);
+                        checkOut.acName2 = ConvertFromDBVal<string>(reader["acName2"]);
+                        checkOut.adDateCheck = ConvertFromDBVal<DateTime>(reader["adDateCheck"]).ToString();
+                        checkOut.anUserCheck = ConvertFromDBVal<int>(reader["anUserCheck"]);
+                        checkOut.adStringConfirm = "Test";
+                        checkOut.anUserConfirm = ConvertFromDBVal<int>(reader["anUserConfirm"]);
+                        checkOut.adTimeIns = ConvertFromDBVal<DateTime>(reader["adTimeIns"]).ToString();
+                        checkOut.anUserIns = ConvertFromDBVal<int>(reader["anUserIns"]);
+                        checkOut.adTimeChg = ConvertFromDBVal<DateTime>(reader["adTimeChg"]).ToString();
+                        checkOut.anUserChg = ConvertFromDBVal<int>(reader["anUserChg"]);
+                        checkOut.acNote = ConvertFromDBVal<string>(reader["acNote"]);
+                        items.Add(checkOut); 
+                    }
+                }
+                foreach (CheckOut item in items)
+                {
+                    try
+                    {
+                        SqlCommand command = new SqlCommand($"UPDATE tAsset SET acLocation = '{item.acLocation}', acECD = '{item.acECD}' WHERE anQId = {item.anAssetID};", conn);
+                        command.ExecuteNonQuery();
+                    } catch (Exception ex)
+                    {
+                        var err = ex;
+                    }
+
+                    // Update the state and then confirm the original row.
+                    try
+                    {
+
+                        SqlCommand confirm = new SqlCommand($"UPDATE tCheckOut SET adDateConfirm = '{DateTime.Now}', anUserConfirm = {userID} WHERE anQId = {item.anQId}", conn);
+                        confirm.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        var err = ex;
+                    }
+                }
                 SqlCommand sql = new SqlCommand($"UPDATE tInventory SET adDateConfirm = '{currentStamp}', anUserConfirm = {userID} WHERE anQId = {row.qId}", conn);
                 sql.ExecuteNonQuery();
             }
