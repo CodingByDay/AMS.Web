@@ -39,7 +39,7 @@
 
         public String acNote { get; set; }
 
-
+        public String user { get; set; }
 
     }
 }

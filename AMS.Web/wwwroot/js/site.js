@@ -11,8 +11,9 @@ jQuery(document).ready(function () {
 
 
 
-
-
+function askForDeletion(index) {
+  //  alert("The chosen line has the right side index of " + index);
+}
 
 function setCellValueItemName(newData, value, currentRowData) {
     jQuery.ajax({
@@ -1382,7 +1383,7 @@ function connectElementsManualy(start, end) {
     window.end.push(end);
 
     // He
-    var line = new LeaderLine(endElement, startElement, {color: 'blue', size: 2, startSocket: 'right', endSocket: 'left' });
+    var line = new LeaderLine(endElement, startElement, {color: 'blue', size: 3, startSocket: 'right', endSocket: 'left', startPlug: 'disc', endPlug: 'disc'});
     window.visible.push(`row-first-${start}`)
     window.lines.push(line);
     
@@ -1443,7 +1444,7 @@ function connectElements() {
         window.start.push(currentChosenFirst);
         window.end.push(currentChosenRow);
 
-        var line = new LeaderLine(endElement, startElement, { color: 'blue', size: 2, startSocket: 'right', endSocket: 'left' });
+        var line = new LeaderLine(endElement, startElement, { color: 'blue', size: 3, startSocket: 'right', endSocket: 'left', startPlug: 'disc', endPlug: 'disc' });
 
 
 

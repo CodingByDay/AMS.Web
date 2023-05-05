@@ -42,7 +42,12 @@ div#app {
     zoom: 0.8;
 }
 
-
+h3#logo-header {
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
 
 
 

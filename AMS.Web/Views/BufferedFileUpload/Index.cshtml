@@ -32,11 +32,10 @@
 
                     </li>
 
-
                     <li class="sidebar-item has-sub">
                         <a class='sidebar-link'>
                             <i width="20"></i>
-                            <span>Sinhronizacija</span>
+                            <span>Uvoz / izvoz</span>
                         </a>
 
                         <ul class="submenu ">
@@ -53,6 +52,9 @@
                                 <a asp-action="Asset" asp-controller="BufferedFileUpload">Sredstvo</a>
                             </li>
 
+                            <li>
+                                <a asp-action="TotalImport" asp-controller="BufferedFileUpload">Skupni uvoz</a>
+                            </li>
                         </ul>
 
                     </li>
@@ -100,13 +102,13 @@
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <div class="avatar mr-1">
-                                <img src="~/content/dist/assets/images/more.png" alt="" srcset="">
+                                <img src="~/img/gear.png" alt="" srcset="">
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#"><i data-feather="settings"></i> Settings</a>
+                            <a class="dropdown-item" asp-action="Settings" asp-controller="Home"><i data-feather="settings"></i> Nastavitve</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i data-feather="log-out"></i> Logout</a>
+                            <a class="dropdown-item" asp-action="Logout" asp-controller="Auth"><i data-feather="log-out"></i> Odjava</a>
                         </div>
                     </li>
                 </ul>
@@ -251,11 +253,9 @@
                                             {
                                                 var elementinner = @ViewBag.Row.columns[j][max];
                                                 <td contenteditable="false">@ViewBag.Row.columns[j][max]</td>
-
                                             } catch
                                             {
                                                 <td contenteditable="false">NULL</td>
-
                                             }
 
                                         }
@@ -318,7 +318,7 @@
                         {
                             @for (int i = 1; i <= Model.Count; i++)
                             {
-                                <tr onclick="chooseFirst(@i)" id="row-first-@i">
+                                <tr onclick="chooseFirst(@i)" ondblclick="askForDeletion(@i)" id="row-first-@i">
                                     <td>@Model.ElementAt(i-1).Table</td>
                                     <td>@Model.ElementAt(i-1).Field</td>
                                     <td>@Model.ElementAt(i-1).Name</td>

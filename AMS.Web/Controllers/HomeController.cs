@@ -449,6 +449,31 @@ namespace AMS.Web.Controllers
             }
             return View();
         }
+
+        public IActionResult NotFinished()
+        {
+            if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
+
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            var checkOuts = db.GetAllCheckOutItemsNotFinished();
+            return View(checkOuts);
+        }
+
+
+        public IActionResult Discrepancies()
+        {
+            if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
+
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            var checkOuts = db.GetAllCheckOutItemsDiscrepancies();
+            return View(checkOuts);
+        }
         public IActionResult Edit()
         {
             if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)

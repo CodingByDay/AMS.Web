@@ -1279,6 +1279,24 @@ namespace AMS.Web.Database
             CheckOutAPI api = new CheckOutAPI();
             api.data = items;
             api.setCount();
+
+
+
+            using (SqlConnection conn = new SqlConnection(config.connectionString))
+            {
+                foreach (var i in items)
+                {
+                    conn.Open();
+                    SqlCommand getEmail = new SqlCommand($"SELECT [UserName] FROM Accounts WHERE ID = {i.anUserCheck};", conn);
+
+                    String email = (string) getEmail.ExecuteScalar();
+
+                    i.user = email;
+                    conn.Close();
+                }
+
+            }
+
             return items;
         }
 
@@ -1540,6 +1558,124 @@ namespace AMS.Web.Database
 
                 command.ExecuteNonQuery();
             }
+        }
+
+        internal object GetAllCheckOutItemsNotFinished()
+        {
+            List<CheckOut> items = new List<CheckOut>();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+
+                connection.Open();
+                SqlCommand getOpenInventory = new SqlCommand("SELECT anQId FROM tInventory WHERE adDateConfirm IS NULL;", connection);
+                int qid = (int)getOpenInventory.ExecuteScalar();
+
+
+
+                SqlCommand command = new SqlCommand($"SELECT * FROM tAsset WHERE anQId not in (SELECT distinct anAssetID FROM tCheckOut WHERE anInventory = {qid})", connection);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        CheckOut checkOut = new CheckOut();
+                        checkOut.anQId = ConvertFromDBVal<int>(reader["anQId"]);
+                        checkOut.anInventory = qid;
+                        checkOut.anAssetID = ConvertFromDBVal<int>(reader["anQId"]);
+                        checkOut.acItem = ConvertFromDBVal<string>(reader["acItem"]);
+                        checkOut.acLocation = ConvertFromDBVal<string>(reader["acLocation"]);
+                        checkOut.acCode = ConvertFromDBVal<string>(reader["acCode"]);
+                        checkOut.acECD = ConvertFromDBVal<string>(reader["acECD"]);
+                        checkOut.acName = ConvertFromDBVal<string>(reader["acName"]);
+                        checkOut.acName2 = ConvertFromDBVal<string>(reader["acName2"]);
+                       
+                        checkOut.adStringConfirm = "Test";
+                        checkOut.adTimeIns = ConvertFromDBVal<DateTime>(reader["adTimeIns"]).ToString();
+                        checkOut.anUserIns = ConvertFromDBVal<int>(reader["anUserIns"]);
+                        checkOut.adTimeChg = ConvertFromDBVal<DateTime>(reader["adTimeChg"]).ToString();
+                        checkOut.anUserChg = ConvertFromDBVal<int>(reader["anUserChg"]);
+                        checkOut.acNote = ConvertFromDBVal<string>(reader["acNote"]);
+                        items.Add(checkOut);
+                    }
+                }
+            }
+
+            CheckOutAPI api = new CheckOutAPI();
+            api.data = items;
+            api.setCount();
+
+
+
+
+            return items;
+        }
+
+        internal object GetAllCheckOutItemsDiscrepancies()
+        {
+            List<CheckOut> items = new List<CheckOut>();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+
+                connection.Open();
+                SqlCommand getOpenInventory = new SqlCommand("SELECT anQId FROM tInventory WHERE adDateConfirm IS NULL;", connection);
+                int qid = (int)getOpenInventory.ExecuteScalar();
+
+
+
+                SqlCommand command = new SqlCommand($"SELECT * FROM tCheckOut WHERE anInventory = {qid} AND anAssetID in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qid} GROUP BY anAssetID HAVING count(anAssetID) > 1)", connection);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        CheckOut checkOut = new CheckOut();
+                        checkOut.anQId = ConvertFromDBVal<int>(reader["anQId"]);
+                        checkOut.anInventory = ConvertFromDBVal<int>(reader["anInventory"]);
+                        checkOut.anAssetID = ConvertFromDBVal<int>(reader["anAssetID"]);
+                        checkOut.acItem = ConvertFromDBVal<string>(reader["acItem"]);
+                        checkOut.acLocation = ConvertFromDBVal<string>(reader["acLocation"]);
+                        checkOut.acCode = ConvertFromDBVal<string>(reader["acCode"]);
+                        checkOut.acECD = ConvertFromDBVal<string>(reader["acECD"]);
+                        checkOut.acName = ConvertFromDBVal<string>(reader["acName"]);
+                        checkOut.acName2 = ConvertFromDBVal<string>(reader["acName2"]);
+                        checkOut.adDateCheck = ConvertFromDBVal<DateTime>(reader["adDateCheck"]).ToString();
+                        checkOut.anUserCheck = ConvertFromDBVal<int>(reader["anUserCheck"]);
+                        checkOut.adStringConfirm = "Test";
+                        checkOut.anUserConfirm = ConvertFromDBVal<int>(reader["anUserConfirm"]);
+                        checkOut.adTimeIns = ConvertFromDBVal<DateTime>(reader["adTimeIns"]).ToString();
+                        checkOut.anUserIns = ConvertFromDBVal<int>(reader["anUserIns"]);
+                        checkOut.adTimeChg = ConvertFromDBVal<DateTime>(reader["adTimeChg"]).ToString();
+                        checkOut.anUserChg = ConvertFromDBVal<int>(reader["anUserChg"]);
+                        checkOut.acNote = ConvertFromDBVal<string>(reader["acNote"]);
+                        items.Add(checkOut);
+                    }
+                }
+            }
+
+            CheckOutAPI api = new CheckOutAPI();
+            api.data = items;
+            api.setCount();
+
+
+
+            using (SqlConnection conn = new SqlConnection(config.connectionString))
+            {
+                foreach (var i in items)
+                {
+                    conn.Open();
+                    SqlCommand getEmail = new SqlCommand($"SELECT [UserName] FROM Accounts WHERE ID = {i.anUserCheck};", conn);
+
+                    String email = (string)getEmail.ExecuteScalar();
+
+                    i.user = email;
+                    conn.Close();
+                }
+
+            }
+
+            return items;
         }
     }
 }

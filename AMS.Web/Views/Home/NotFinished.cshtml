@@ -88,7 +88,7 @@
 
 
 
-               
+
 
 
 
@@ -150,62 +150,61 @@
         <div class="main-content container-fluid">
 
 
-          
+
             <div class="card">
                 <h4 class="card-title-active">Aktivna inventura</h4>
                 <div class="card-header d-flex justify-content-between align-items-center">
-                   
+
 
 
 
                     @model List<CheckOut>
 
-            @(Html.DevExtreme().DataGrid()
-
-         
+                    @(Html.DevExtreme().DataGrid()
 
 
 
-            .ID("gridContainer")
-                    .ShowBorders(true)
-                    .DataSource(Model)
-                    .KeyExpr("anQId")
-                    .FilterRow(filterRow => filterRow
-                    .Visible(true)
-                    .ApplyFilter(GridApplyFilterMode.Auto)
-                )
-                    .SearchPanel(searchPanel => searchPanel
-                    .Visible(true)
-                    .Width(240)
-                    .Placeholder("Search...")
-                )
-                    .Columns(c =>
-                    {
-                        c.Add().DataField("acItem").Caption("Izdelek");
-                        c.Add().DataField("acLocation").Caption("Lokacija");
-                        c.Add().DataField("acCode").Caption("Šifra izdelka");
-                        c.Add().DataField("acName").Caption("Ime");
-                        c.Add().DataField("adDateCheck").Caption("Čas skeniranja");
-                        c.Add().DataField("user").Caption("Kontakt");
 
-                        c.Add()
-                        .Type(GridCommandColumnType.Buttons)
-                        .Width(110)           
-                        .Buttons(b =>
+
+                        .ID("gridContainer")
+                        .ShowBorders(true)
+                        .DataSource(Model)
+                        .KeyExpr("anQId")
+                        .FilterRow(filterRow => filterRow
+                        .Visible(true)
+                        .ApplyFilter(GridApplyFilterMode.Auto)
+                        )
+                        .SearchPanel(searchPanel => searchPanel
+                        .Visible(true)
+                        .Width(240)
+                        .Placeholder("Search...")
+                        )
+                        .Columns(c =>
                         {
-                            b.Add().Hint("Potrdi").Icon("check").OnClick("onConfirmIconClick"); ;
-                            b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClick"); 
-                        });
-                      
-                        
-                    })
-
-          
-            )
+                            c.Add().DataField("acItem").Caption("Izdelek");
+                            c.Add().DataField("acLocation").Caption("Lokacija");
+                            c.Add().DataField("acCode").Caption("Šifra izdelka");
+                            c.Add().DataField("acName").Caption("Ime");
 
 
-        </div>
-        </div>
+                            c.Add()
+                            .Type(GridCommandColumnType.Buttons)
+                            .Width(110)
+                            .Buttons(b =>
+                            {
+                                b.Add().Hint("Potrdi").Icon("check").OnClick("onConfirmIconClick"); ;
+                                b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClick");
+                            });
+
+
+                        })
+
+
+                        )
+
+
+                </div>
+            </div>
 
         </div>
 
