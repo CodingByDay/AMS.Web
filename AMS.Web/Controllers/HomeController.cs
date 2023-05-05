@@ -192,6 +192,22 @@ namespace AMS.Web.Controllers
 
 
         [HttpPost]
+        public JsonResult CheckDiscrepancies([FromQuery(Name = "id")] string id)
+        {
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            var inventories = db.getInventories();
+            int index = Int32.Parse(id);
+            var row = inventories.ElementAt(index);
+            if (db.CheckDiscrepancies(row.qId) != -1 && db.CheckDiscrepancies(row.qId) != 0)
+            {
+                return Json(true);
+            }
+            return Json(false);
+        }
+
+
+
+        [HttpPost]
         public JsonResult ConfirmInventoryWhole([FromQuery(Name = "id")] string id)
         {
             DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");

@@ -1677,5 +1677,19 @@ namespace AMS.Web.Database
 
             return items;
         }
+
+        internal int CheckDiscrepancies(int qId)
+        {
+            int result = -1;
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand($"SELECT count(*) FROM tCheckOut WHERE anInventory = {qId} AND anAssetID in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qId} GROUP BY anAssetID HAVING count(anAssetID) > 1)\n AND anAssetID not in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qId} AND adDateConfirm is not null)", connection);
+                result = (int) cmd.ExecuteScalar();
+            }
+
+
+            return result;
+        }
     }
 }
