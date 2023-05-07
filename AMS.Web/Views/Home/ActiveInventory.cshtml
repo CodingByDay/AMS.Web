@@ -15,13 +15,29 @@
                             <span>Inventure</span>
                         </a>
                     </li>
-                    <li class="sidebar-item active">
+                    <li class="sidebar-item active has-sub" >
                         <a asp-action="ActiveInventory" class='sidebar-link'>
                             <i width="20"></i>
 
-                            <span>Aktivna inventura</span>
+                            <span asp-action="ActiveInventory">Aktivna inventura</span>
                         </a>
+
+
+                        <ul class="submenu ">
+                            <li>
+                                <a asp-action="ActiveInventory" asp-controller="Home">Vsi zapisi</a>
+                            </li>
+                            <li>
+                                <a asp-action="Discrepancies" asp-controller="Home">Neskladja</a>
+                            </li>
+
+                            <li>
+                                <a asp-action="NotFinished" asp-controller="Home">Nepopisani</a>
+                            </li>
+
+                        </ul>
                     </li>
+                  
 
 
 
@@ -193,7 +209,6 @@
                         .Width(110)           
                         .Buttons(b =>
                         {
-                            b.Add().Hint("Potrdi").Icon("check").OnClick("onConfirmIconClick"); ;
                             b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClick"); 
                         });
                       

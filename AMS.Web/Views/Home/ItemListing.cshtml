@@ -16,12 +16,27 @@
                         </a>
                     </li>
 
-                    <li class="sidebar-item ">
+                    <li class="sidebar-item has-sub">
                         <a asp-action="ActiveInventory" class='sidebar-link'>
                             <i width="20"></i>
 
-                            <span>Aktivna inventura</span>
+                            <span asp-action="ActiveInventory">Aktivna inventura</span>
                         </a>
+
+
+                        <ul class="submenu ">
+                            <li>
+                                <a asp-action="ActiveInventory" asp-controller="Home">Vsi zapisi</a>
+                            </li>
+                            <li>
+                                <a asp-action="Discrepancies" asp-controller="Home">Neskladja</a>
+                            </li>
+
+                            <li>
+                                <a asp-action="NotFinished" asp-controller="Home">Nepopisani</a>
+                            </li>
+
+                        </ul>
                     </li>
 
 

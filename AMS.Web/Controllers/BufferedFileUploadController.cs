@@ -466,7 +466,9 @@ namespace AMS.Web.Controllers
                 if (headerResult)
                 {
                     List<String> headers = row.getColumnAtIndex(0);
-                    ViewBag.Headers = headers;                  
+                    ViewBag.Headers = headers;
+                    row.headers = true;
+                   
                 }
 
 

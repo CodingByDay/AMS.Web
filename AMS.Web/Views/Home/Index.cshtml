@@ -16,17 +16,19 @@
                             </a>
                         </li>
 
-                    <li class="sidebar-item has-sub">
+                    <li class="sidebar-item has-sub" asp-action="ActiveInventory">
                         <a asp-action="ActiveInventory" class='sidebar-link'>
                             <i width="20"></i>
-                                <span>Aktivna inventura</span>
-                            </a>
+                            <span asp-action="ActiveInventory">Aktivna inventura</span>
+                        </a>
 
 
 
 
                         <ul class="submenu ">
-
+                            <li>
+                                <a asp-action="ActiveInventory" asp-controller="Home">Vsi zapisi</a>
+                            </li>
                             <li>
                                 <a asp-action="Discrepancies" asp-controller="Home">Neskladja</a>
                             </li>

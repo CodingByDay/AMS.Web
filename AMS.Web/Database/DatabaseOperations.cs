@@ -1351,7 +1351,7 @@ namespace AMS.Web.Database
             {
                 conn.Open();
 
-                SqlCommand getCheckoutItems = new SqlCommand($"select * FROM tCheckOut WHERE anInventory = {row.qId} AND adDateConfirm IS NULL;", conn);
+                SqlCommand getCheckoutItems = new SqlCommand($"select * FROM tCheckOut WHERE anInventory = {row.qId};", conn);
                 
                 using(SqlDataReader reader = getCheckoutItems.ExecuteReader())
                 {

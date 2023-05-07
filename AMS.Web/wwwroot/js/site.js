@@ -156,7 +156,7 @@ function onConfirmIconClickInventory(e) {
                         title: 'Neskladje',
                         showDenyButton: false,
                         showCancelButton: false,
-                        confirmButtonText: 'Ok',
+                        confirmButtonText: 'Popravi',
                         customClass: {
                             actions: 'my-actions',
                             cancelButton: 'order-1 right-gap',
@@ -165,8 +165,7 @@ function onConfirmIconClickInventory(e) {
                         }
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            alert("Success")
-                       
+                            window.location.href = "/Home/Discrepancies"                    
                         } 
                     })   
                 } else {
