@@ -42,12 +42,33 @@
 
 
 
-
-                    <li class="sidebar-item">
-                        <a asp-action="Listing" asp-controller="Home" class='sidebar-link'>
+                    <li class="sidebar-item has-sub">
+                        <a class='sidebar-link'>
                             <i width="20"></i>
                             <span>Pregled</span>
                         </a>
+
+
+                        <ul class="submenu ">
+
+
+
+                            <li>
+                                <a asp-action="LocationListing" asp-controller="Home">Lokacije</a>
+                            </li>
+
+                            <li>
+                                <a asp-action="ItemListing" asp-controller="Home">Artikli</a>
+                            </li>
+
+                            <li>
+                                <a asp-action="AssetListing" asp-controller="Home">Sredstva</a>
+                            </li>
+
+
+
+
+                        </ul>
 
                     </li>
 

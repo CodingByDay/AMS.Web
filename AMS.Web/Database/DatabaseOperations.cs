@@ -1567,8 +1567,9 @@ namespace AMS.Web.Database
             }
         }
 
-        internal object GetAllCheckOutItemsNotFinished()
+        internal List<CheckOut> GetAllCheckOutItemsNotFinished()
         {
+            int qid;
             List<CheckOut> items = new List<CheckOut>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -1576,8 +1577,13 @@ namespace AMS.Web.Database
 
                 connection.Open();
                 SqlCommand getOpenInventory = new SqlCommand("SELECT anQId FROM tInventory WHERE adDateConfirm IS NULL;", connection);
-                int qid = (int)getOpenInventory.ExecuteScalar();
-
+                try
+                {
+                    qid = (int)getOpenInventory.ExecuteScalar();
+                } catch
+                {
+                    return new List<CheckOut>();
+                }
 
 
                 SqlCommand command = new SqlCommand($"SELECT * FROM tAsset WHERE anQId not in (SELECT distinct anAssetID FROM tCheckOut WHERE anInventory = {qid})", connection);
@@ -1618,8 +1624,9 @@ namespace AMS.Web.Database
             return items;
         }
 
-        internal object GetAllCheckOutItemsDiscrepancies()
+        internal List<CheckOut> GetAllCheckOutItemsDiscrepancies()
         {
+            int qid;
             List<CheckOut> items = new List<CheckOut>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -1627,8 +1634,13 @@ namespace AMS.Web.Database
 
                 connection.Open();
                 SqlCommand getOpenInventory = new SqlCommand("SELECT anQId FROM tInventory WHERE adDateConfirm IS NULL;", connection);
-                int qid = (int)getOpenInventory.ExecuteScalar();
-
+                try
+                {
+                    qid = (int)getOpenInventory.ExecuteScalar();
+                } catch
+                {
+                    return new List<CheckOut>();
+                }
 
 
                 SqlCommand command = new SqlCommand($"SELECT * FROM tCheckOut WHERE anInventory = {qid} AND anAssetID in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qid} GROUP BY anAssetID HAVING count(anAssetID) > 1)", connection);

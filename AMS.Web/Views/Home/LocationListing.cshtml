@@ -176,36 +176,37 @@
 
         @model List<LocationListing>;
 
-        @(
-            Html.DevExtreme().DataGrid()
+                    @(
+                        Html.DevExtreme().DataGrid()
 
-                            .ID("gridContainerLocation")
-                            .ShowBorders(true)
-                            .DataSource(Model)
-                            .KeyExpr("anQId")
-                            .FilterRow(filterRow => filterRow
-                            .Visible(true)
-                            .ApplyFilter(GridApplyFilterMode.Auto)
-                            )
-                            .SearchPanel(searchPanel => searchPanel
-                            .Visible(true)
-                            .Width(240)
-                            .Placeholder("Poiščite...")
-                            )
-                            .Editing(e =>
-                            {
+                                                .ID("gridContainerLocation")
+                                                .ShowBorders(true)
+                                                .DataSource(Model)
+                                                .KeyExpr("anQId")
+                                                .FilterRow(filterRow => filterRow
+                                                .Visible(true)
+                                                .ApplyFilter(GridApplyFilterMode.Auto)
+                                                )
+                                                .SearchPanel(searchPanel => searchPanel
+                                                .Visible(true)
+                                                .Width(240)
+                                                .Placeholder("Poiščite...")
+                                                )
+                                                .Editing(e =>
+                                                {
 
-                                e.Mode(GridEditMode.Cell)
-    
-                                    .AllowUpdating(true);
+                                                    e.Mode(GridEditMode.Cell)
 
-                            })
-                .Columns(c =>
-                {
+                                                        .AllowUpdating(true);
 
-                    c.Add().DataField("acLocation").Caption("Šifra").AllowEditing(true);
-                    c.Add().DataField("acName").Caption("Naslov").AllowEditing(true).SetCellValue("setCellValueLocationName");
-                c.Add()
+                                                })
+                                    .Columns(c =>
+                                    {
+
+                                        c.Add().DataField("acLocation").Caption("Šifra").AllowEditing(true);
+                                        c.Add().DataField("acName").Caption("Naslov").AllowEditing(true).SetCellValue("setCellValueLocationName");
+                                        c.Add().DataField("acDept").Caption("Oddelek").AllowEditing(false);
+                                        c.Add()
                 .Type(GridCommandColumnType.Buttons)
                 .Width(110)
                 .Buttons(b =>
