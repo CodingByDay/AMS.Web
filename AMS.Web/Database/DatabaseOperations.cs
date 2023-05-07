@@ -3,6 +3,7 @@ using AMS.Web.Models;
 using Org.BouncyCastle.Utilities;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 using System.Text.Json;
 
 namespace AMS.Web.Database
@@ -55,17 +56,17 @@ namespace AMS.Web.Database
                     objConn.Open();
                     if (disable)
                     {
-                        current = new SqlCommand("ALTER TABLE tAsset NOCHECK CONSTRAINT rtItem_tStatus", objConn);
+                        current = new SqlCommand("EXEC sp_msforeachtable \"ALTER TABLE tItem NOCHECK CONSTRAINT all\"", objConn);
                     }
                     else
                     {
-                        current = new SqlCommand("ALTER TABLE tAsset CHECK CONSTRAINT rtItem_tStatus", objConn);
+                        current = new SqlCommand("EXEC sp_msforeachtable \"ALTER TABLE tItem WITH CHECK CHECK CONSTRAINT all\"", objConn);
                     }
                     current.ExecuteNonQuery();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw new KeyNotFoundException("Database error");
+                    return;
                 }
                 finally
                 {
@@ -84,17 +85,17 @@ namespace AMS.Web.Database
                     objConn.Open();
                     if (disable)
                     {
-                        current = new SqlCommand("ALTER TABLE tAsset NOCHECK CONSTRAINT rtAsset_tItem, rtAsset_tLocation", objConn);
+                        current = new SqlCommand("EXEC sp_msforeachtable \"ALTER TABLE tAsset NOCHECK CONSTRAINT all\"", objConn);
                     }
                     else
                     {
-                        current = new SqlCommand("ALTER TABLE tAsset CHECK CONSTRAINT rtAsset_tItem, rtAsset_tLocation", objConn);
+                        current = new SqlCommand("EXEC sp_msforeachtable \"ALTER TABLE tAsset WITH CHECK CHECK CONSTRAINT all\"", objConn);
                     }
                     current.ExecuteNonQuery();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw new KeyNotFoundException("Database error");
+                    return;
                 }
                 finally { objConn.Close(); }
             }
@@ -115,9 +116,9 @@ namespace AMS.Web.Database
 
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw new KeyNotFoundException("Database error");
+                    return;
                 }
                 finally
                 {
@@ -1235,6 +1236,7 @@ namespace AMS.Web.Database
 
         public List<CheckOut> GetAllCheckOutItems()
         {
+            int qid;
             List<CheckOut> items = new List<CheckOut>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -1242,8 +1244,13 @@ namespace AMS.Web.Database
 
                 connection.Open();
                 SqlCommand getOpenInventory = new SqlCommand("SELECT anQId FROM tInventory WHERE adDateConfirm IS NULL;", connection);
-                int qid = (int) getOpenInventory.ExecuteScalar(); 
-
+                try
+                {
+                    qid = (int)getOpenInventory.ExecuteScalar();
+                } catch
+                {
+                    return new List<CheckOut>();
+                }
 
 
                 SqlCommand command = new SqlCommand($"SELECT * FROM tCheckOut WHERE anInventory = {qid} and adDateConfirm is null", connection);
@@ -1690,6 +1697,38 @@ namespace AMS.Web.Database
 
 
             return result;
+        }
+
+        internal bool findType(string sql)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand($"{sql}", connection);
+                string result = (string)cmd.ExecuteScalar();
+                switch (result)
+                {
+                    case "char":
+                        return false;
+                    case "datetime":
+                        return true;
+                    case "decimal":
+                        return false;
+                    case "int":
+                        return false;
+                    case "money":
+                        return false;
+                    case "smalldatetime":
+                        return true;
+                    case "varbinary":
+                        return true;
+                    case "varchar":
+                        return true;
+
+                }
+
+            }
+            return false;
         }
     }
 }

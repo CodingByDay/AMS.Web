@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 using Microsoft.VisualBasic.FileIO;
-
+using System.Data.SqlClient;
 using System.IO;
 using System.Reflection;
 
@@ -34,6 +34,7 @@ namespace AMS.Web.Controllers
         public JsonResult Connection([FromBody]ConnectionViewModel connection, [FromQuery(Name = "headers")] string headers, [FromQuery(Name = "complete")] string complete)
 
         {
+                List<bool> quotesNeeded = new List<bool>();
                 bool headersResult = false;
                 if(headers == "true")
                 {
@@ -87,6 +88,12 @@ namespace AMS.Web.Controllers
                 {
                     var el = connection.startObjects.Where(x => x.field == name).FirstOrDefault();
                     SecondTable connector = getKeyValuePairs(connection).Where(x => x.Key == el).FirstOrDefault().Value;
+                    var table = connection.startObjects.ElementAt(0).table;
+
+                    DatabaseOperations databaseFindtype = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+
+                    quotesNeeded.Add (databaseFindtype.findType($"SELECT TOP 1 DATA_TYPE FROM tSetTables WHERE Field = '{name}' and  [Table] = '{table}'"));
+
 
                     if (!headersResult)
                     {
@@ -112,13 +119,25 @@ namespace AMS.Web.Controllers
                         {
                             if (i != order.Count)
                             {
-                                insert += "'" + r[order[i-1]] + "'" + ",";
-                            } else
+                                if (quotesNeeded.ElementAt(i-1))
+                                {
+                                    insert += "'" + r[order[i - 1]] + "'" + ",";
+                                } else
+                                {
+                                    insert += r[order[i - 1]] + ",";
+
+                                }
+                    } else
                             {
+                                if (quotesNeeded.ElementAt(i - 1))
+                                {
+                                    insert += "'" + r[order[i - 1]] + "'";
+                                } else
+                                {
+                                    insert += r[order[i - 1]];
 
-                                insert += "'" + r[order[i-1]] + "'";
-
-                            }
+                                }
+                    }
                         }
                         insert += ")";
                         query += $"INSERT INTO {connection.startObjects.ElementAt(0).table} {fieldNames} VALUES {insert}";
@@ -129,15 +148,29 @@ namespace AMS.Web.Controllers
             
                 DatabaseOperations database = new DatabaseOperations(HttpContext.Session.GetString("connection"));
                 database.toggleFKConstraintsItems(true);
+                database.toggleFKConstraintsAssets(true);
                 database.insertBulk(queries);
                 database.toggleFKConstraintsItems(false);
+                database.toggleFKConstraintsAssets(false);
                 // database.setConfiguration(getKeyValuePairs(connection), "test");
+                try
+                {
 
-                return Json(new SyncResponse { message = "Success" });
+                    System.IO.File.SetAttributes(Path.Combine(path, filename), FileAttributes.Normal);
+                    System.IO.File.Delete(Path.Combine(path, filename));
+                }
+                catch (Exception)
+                {
+
+                }
+            return Json(new SyncResponse { message = "Success" });
         }
 
         private void ResolveImportAll(ConnectionViewModel connection, bool headersResult)
         {
+
+            List<bool> quotesNeeded = new List<bool>();
+
             List<string> queries = new List<string>();
             var path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "Temp"));
             string filename = HttpContext.Session.GetString("filename");
@@ -176,7 +209,10 @@ namespace AMS.Web.Controllers
                 {
                     var el = connection.startObjects.Where(x => x.field == name).FirstOrDefault();
                     SecondTable connector = getKeyValuePairs(connection).Where(x => x.Key == el).FirstOrDefault().Value;
+                    DatabaseOperations databaseFindtype = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+                    var table = connection.startObjects.ElementAt(0).table;
 
+                    quotesNeeded.Add(databaseFindtype.findType($"SELECT TOP 1 DATA_TYPE FROM tSetTables WHERE Field = '{name}' and  [Table] = '{table}'"));
                     if (!headersResult)
                     {
 
@@ -205,12 +241,25 @@ namespace AMS.Web.Controllers
                 {
                     if (i != order.Count)
                     {
-                        insert += "'" + r[order[i - 1]] + "'" + ",";
+                        if (quotesNeeded.ElementAt(i - 1))
+                        {
+                            insert += "'" + r[order[i - 1]] + "'" + ",";
+                        } else
+                        {
+                            insert +=  r[order[i - 1]] + ",";
+
+                        }
                     }
                     else
                     {
+                        if (quotesNeeded.ElementAt(i - 1))
+                        {
+                            insert += "'" + r[order[i - 1]] + "'";
+                        } else
+                        {
+                            insert += r[order[i - 1]];
 
-                        insert += "'" + r[order[i - 1]] + "'";
+                        }
 
                     }
                 }
@@ -225,8 +274,10 @@ namespace AMS.Web.Controllers
 
             DatabaseOperations database = new DatabaseOperations(HttpContext.Session.GetString("connection"));
             database.toggleFKConstraintsItems(true);
+            database.toggleFKConstraintsAssets(true);
             database.insertBulk(queries);
             database.toggleFKConstraintsItems(false);
+            database.toggleFKConstraintsAssets(false);
 
             // Working
 
@@ -486,16 +537,7 @@ namespace AMS.Web.Controllers
 
 
 
-                try
-                {
-                    var path = System.IO.Path.GetFullPath(System.IO.Path.Combine(Environment.CurrentDirectory, "Temp"));
-                    var pReal = System.IO.Path.Combine(path, file.FileName);
-                    System.IO.File.SetAttributes(pReal, FileAttributes.Normal);
-                    System.IO.File.Delete(pReal);
-                } catch (Exception)
-                {
-
-                }
+               
 
 
                 HttpContext.Session.SetString("filename", file.FileName);

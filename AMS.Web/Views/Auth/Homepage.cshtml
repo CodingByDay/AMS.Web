@@ -40,7 +40,7 @@
     <main class="main" id="top">
       <nav class="navbar navbar-expand-lg fixed-top navbar-dark" data-navbar-on-scroll="data-navbar-on-scroll">
             <div class="container">
-                <a class="navbar-brand" asp-action="Homepage"><img src="~/images/logo-inventory.png" style="width:150px;margin-top:2em;" alt="" /></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-solid fa-bars text-white fs-3"></i></button>
+                <a class="navbar-brand" asp-action="Homepage"><img src="~/images/logo-inventory.png" style="width:100px;margin-top:0em;" alt="" /></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-solid fa-bars text-white fs-3"></i></button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
               <li class="nav-item"><a class="nav-link active" aria-current="page" asp-action="Homepage">Home</a></li>
@@ -59,8 +59,8 @@
             <div class="row align-items-center py-lg-8 py-6">
               <div class="col-lg-6 text-center text-lg-start">
                 <h1 class="text-white fs-5 fs-xl-6">Revolutionary Inventory Software</h1>
-                <p class="text-white py-lg-3 py-2">Don't let inventory management be a headache for your business. Try our Inventory system and see the difference it can make!</p>
-                <div class="d-sm-flex align-items-center gap-3"><button class="btn btn-outline-light mb-3 w-75" asp-action="Login">Log in</button></div>
+                <p class="text-white py-lg-3 py-2" id="start">Don't let inventory management be a headache for your business. Try our Inventory system and see the difference it can make!</p>
+                            <div class="d-sm-flex align-items-center gap-3" asp-action="Login"><button class="btn btn-outline-light mb-3 w-75" asp-action="Login">Log in</button></div>
               </div>
               <div class="col-lg-6 text-center text-lg-end mt-3 mt-lg-0"><img class="img-fluid" src="~/assets-homepage/img/hero/hero-graphics.png" alt="" /></div>
             </div>
@@ -145,22 +145,6 @@
 
 
 
-    <!-- ============================================-->
-    <!-- <section> begin ============================-->
-    <section>
-      <div class="container bg-dark overflow-hidden rounded-1">
-        <div class="bg-holder" style="background-image:url(~/assets-homepage/img/promo/promo-bg.png);"></div>
-        <!--/.bg-holder-->
-        <div class="px-5 py-7 position-relative">
-          <h1 class="text-center w-lg-75 mx-auto fs-lg-6 fs-md-4 fs-3 text-white">Get in touch today!</h1>
-          <div class="row justify-content-center mt-5">
-            <div class="col-auto w-100 w-lg-50"><input class="form-control mb-2 border-light fs-1" type="email" placeholder="Your email address" /></div>
-            <div class="col-auto mt-2 mt-lg-0"><button class="btn btn-success text-dark fs-1" asp-action="Login">Start now</button></div>
-          </div>
-        </div>
-      </div><!-- end of .container-->
-    </section><!-- <section> close ============================-->
-    <!-- ============================================-->
 
 
 
@@ -170,30 +154,15 @@
       <div class="container">
         <div class="row justify-content-between">
           <div class="col-lg-6 col-sm-12"><a href="index.html"></a>
-            <p class="w-lg-75 text-gray">Social media validation business model canvas graphical user interface launch party creative facebook iPad twitter.</p>
+            <p class="w-lg-75 text-gray"></p>
           </div>
           <div class="col-lg-2 col-sm-4">
             <h3 class="fw-bold fs-1 mt-5 mb-4">Links</h3>
             <ul class="list-unstyled">
-              <li class="my-3 col-md-4"><a href="#">Home</a></li>
+              <li class="my-3 col-md-4"><a href="#start">Home</a></li>
 
             </ul>
-          </div>
-          <div class="col-lg-2 col-sm-4">
-            <h3 class="fw-bold fs-1 mt-5 mb-4">Company</h3>
-            <ul class="list-unstyled">
-              <li class="my-3"><a href="#">Home</a></li>
-
-            </ul>
-          </div>
-          <div class="col-lg-2 col-sm-4">
-            <h3 class="fw-bold fs-1 mt-5 mb-4">Resources</h3>
-            <ul class="list-unstyled">
-              <li class="mb-3"><a href="#">Home</a></li>
-              <li class="mb-3"><a href="#">Products</a></li>
-              <li class="mb-3"><a href="#">Services</a></li>
-            </ul>
-          </div>
+    
         </div>
         <p class="text-gray">All rights reserved.</p>
       </div><!-- end of .container-->
