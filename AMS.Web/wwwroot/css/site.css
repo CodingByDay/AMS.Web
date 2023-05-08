@@ -27,9 +27,16 @@ div#app {
     height: 0;
 }
 
+#main-heading {
+
+}
+
+#main-heading {
+    font-size: 2.3em !important;
+}
+
 
 .choose-file-outer label, input, button {
-
     /* width: 20%; */
 }
 
@@ -49,14 +56,9 @@ h3#logo-header {
     font-family: sans-serif;
 }
 
-
-
-
-
-
-
-
-
+h1#heading-text, h1#heading-text-second {
+    font-size: 2em !important;
+}
 
 button#btnExport {
     margin-top: 4em;
