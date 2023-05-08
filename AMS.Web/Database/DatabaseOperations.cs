@@ -1048,13 +1048,15 @@ namespace AMS.Web.Database
             return structure;
         }
 
-        internal List<string> GetRowsForConfiguration(CompleteConnectionConfiguration data)
+        internal List<string> GetRowsForConfiguration(string[] ids)
         {
             List<string> structure = new List<string>();
             List<string> rows = new List<string>();
-            foreach (var singular in data.baseData)
+            foreach (var singular in ids)
             {
-                rows.Add(singular.Key.field);
+                var names = getExportColumnNames();
+                int number = Int32.Parse(singular);
+                rows.Add(names.ElementAt(number).Text);
             }
             string select = "";
             foreach (var row in rows)
@@ -1072,7 +1074,8 @@ namespace AMS.Web.Database
                         String currentLine = "";
                         foreach (var singular in rows)
                         {
-                            string currentValue = (string)reader[$"{singular}"];
+
+                            string currentValue = Convert.ToString(reader[$"{singular}"]);
                             if (currentValue != null)
                             {
                                 if (currentValue != "")
@@ -1741,6 +1744,41 @@ namespace AMS.Web.Database
 
             }
             return false;
+        }
+
+
+
+       
+        internal List<Column> getExportColumnNames()
+        {
+           List<Column> data = new List<Column>();
+           int counter = 0;
+           using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'tAsset';", connection);
+                using(SqlDataReader reader = command.ExecuteReader())
+                {
+                    while(reader.Read()) {
+                        try
+                        {
+                            data.Add(new Column { ID = counter, Text = reader.GetString(0) });
+                        } catch
+                        {
+                            continue;
+                        } finally
+                        {
+                            counter += 1;
+                        }
+                    }
+                }
+            }
+            return data;
+        }
+
+        internal void GetAllColumnNameQuery(string[] arrayIDS)
+        {
+            throw new NotImplementedException();
         }
     }
 }

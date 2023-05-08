@@ -237,23 +237,38 @@
             <div class="choice-div-outer"><img src="~/img/excel.png" width="20" height="20" data-choice="excel" class="choice-div" /></div>
             <div class="choice-div-outer"><img src="~/img/notepad.png" width="20" height="20" data-choice="notepad" class="choice-div" /></div>
 
-            <!-- Place for the configuration dropdown -->
-            @if (ViewBag.Configuration != null)
+
+           
+            @if (ViewBag.Columns != null)
             {
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Predloge
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        @foreach (var config in ViewBag.Configuration)
-                        {
-                            <a class="dropdown-item" onclick="chooseConfigHome('@config', '@ViewBag.Company')">@config</a>
-                        }
+                 List<Column> ModelColumns = ViewBag.Columns; 
+            
+                <!-- This is the place for the column choice -->
+                <div id="list-demo">
+                    <div class="widget-container">
+                        @(Html.DevExtreme().List()
+                            .ID("simpleList")
+                            .Height(200)
+                            .ShowSelectionControls(true)
+                            .SelectionMode(ListSelectionMode.All)
+                            .DataSource(ModelColumns, "ID")
+                            .ItemTemplate(@<text><%- Text %></text>)
+                            .OnSelectionChanged(@<text>
+                                function(data) {
+                                   $("#selectedItemKeys").text(data.component.option("selectedItemKeys").join(", "));
+                                }
+                            </text>)
+                            )
+
+                        <div class="selected-data" style="display: none;">
+                            <span class="caption">Selected IDs: </span>
+                            <span id="selectedItemKeys" style="display: none;"></span>
+                        </div>
                     </div>
+
+              
                 </div>
             }
-            <!-- End of the configuration section -->
-
         </div>
         <button type="button" class="btn btn-primary download" id="btnExport" data-config="" onclick="processButtonClick()">Prenesi</button>
 

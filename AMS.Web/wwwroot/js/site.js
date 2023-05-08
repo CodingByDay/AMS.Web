@@ -447,7 +447,7 @@ activeChoice = "";
 
 $(document).ready(function () {
     // MAIN ON READY EVENT
-
+ 
     jQuery(".remove-icon").click(function () {
         id = jQuery(this).parent().parent().attr("data-unique");
         // Ask whether or not the user is sure about deleting the item
@@ -508,13 +508,15 @@ function processButtonClick() {
         type = "d"
     }
 
-    var configObject = jQuery("#btnExport").attr("data-config");
+    var configObject = jQuery("#selectedItemKeys").text();
+    
+
+
     jQuery.ajax({
         type: "POST",
-        url: `DownloadInventory?type=${activeChoice}`,
+        url: `DownloadInventory?type=${activeChoice}&ids=${configObject}`,
         dataType: "json",
         contentType: "application/json; charset=utf-8",
-        data: configObject,
         success: function (response) {
             // This is the 
             var a = document.createElement('a');
@@ -1111,8 +1113,15 @@ function sync(type) {
                                     dataType: "json",
                                     contentType: "application/json; charset=utf-8",
                                     success: function (test) {
+                                    
+
                                         Swal.fire({
-                                            title: `Predloga ${result.value} shranjena`,
+                                            title: `Predloga ${result.value} shranjena.`,
+
+                                            type: "success",
+                                            timer: 3000
+                                        }).then(() => {
+                                            window.location.href = "/home/index";
                                         })
                                     },
                                     error: function () {
@@ -1123,7 +1132,14 @@ function sync(type) {
                         } 
                     })
                 } else if (result.isDenied) {
-                    Swal.fire('Predloga ni shranjena', '', 'info')
+                    Swal.fire({
+                        title: `Predloga ni shranjena.`,
+
+                        type: "success",
+                        timer: 3000
+                    }).then(() => {
+                        window.location.href = "/home/index";
+                    })
                 }
             })
             jQuery(".loader").css("visibility", "hidden");

@@ -70,6 +70,9 @@ namespace AMS.Web.Controllers
                 return RedirectToAction("Login", "Auth");
             }
             DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+
+            var names = db.getExportColumnNames();
+            ViewBag.Columns = names;
             // Data for the configuration //
             var configuration = db.getConfigurationNamesOnly();
             var inventories = db.getInventories();
@@ -238,13 +241,25 @@ namespace AMS.Web.Controllers
 
 
         [HttpPost]
-        public JsonResult DownloadInventory([FromQuery(Name = "type")] string type, [FromBody] CompleteConnectionConfiguration data )
+        public JsonResult DownloadInventory([FromQuery(Name = "type")] string type, [FromQuery(Name="ids")] string ids)
         {
+            string[] arrayIDS = ids.Split(",");
+
+
+
+
+
+
             DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+
+
+
+
+
             string baseUrl = string.Empty;
             string uid = Guid.NewGuid().ToString();
             string name = string.Empty;
-            List<string> lines = db.GetRowsForConfiguration(data);
+            List<string> lines = db.GetRowsForConfiguration(arrayIDS);
             if (type == "notepad")
             {
                 var basePath = System.IO.Path.GetFullPath(System.IO.Path.Combine(Environment.CurrentDirectory, "wwwroot\\Export"));
@@ -292,7 +307,7 @@ namespace AMS.Web.Controllers
                 baseUrl = $"{this.Request.Scheme}://{this.Request.Host.Value}{this.Request.PathBase.Value}/Export/{uid}.xlsx";
                 name = uid + ".xlsx";
             }
-                return Json(new FileResponse { name = name, url = baseUrl });
+            return Json(new FileResponse { name = name, url = baseUrl });
         }
 
 
