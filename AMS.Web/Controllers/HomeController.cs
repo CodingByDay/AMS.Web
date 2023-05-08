@@ -64,7 +64,7 @@ namespace AMS.Web.Controllers
 
         public IActionResult Index()
         {
-            SentrySdk.CaptureMessage("Hello Sentry");
+     
             string username = HttpContext.Session.GetString("username") ?? "";
             if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
             {

@@ -1317,7 +1317,7 @@ namespace AMS.Web.Database
                 {
                     try
                     {
-                        SqlCommand command = new SqlCommand($"UPDATE tAsset SET acLocation = '{item.acLocation}', acECD = '{item.acECD}' WHERE anQId = {item.anAssetID};", conn);
+                        SqlCommand command = new SqlCommand($"UPDATE tAsset SET acLocation = '{item.acLocation}' WHERE acECD = '{item.acECD}';", conn);
                         command.ExecuteNonQuery();
                     } catch (Exception ex)
                     {
