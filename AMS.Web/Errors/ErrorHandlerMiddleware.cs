@@ -1,5 +1,6 @@
 ﻿namespace WebApi.Helpers;
 
+using Sentry;
 using System.Net;
 using System.Text.Json;
 
@@ -22,9 +23,8 @@ public class ErrorHandlerMiddleware
         {
             var response = context.Response;
             response.ContentType = "application/json";
-
-
             context.Response.Redirect($"/error/resolve?error={error?.Message}");
+            SentrySdk.CaptureMessage(error?.Message);
 
         }
     }

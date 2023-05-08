@@ -30,9 +30,7 @@ namespace AMS.Web.Services
             };
 
             return Task.CompletedTask;
-            // no need to await this call here because this task is scheduled to run much much later.
-            Task.Run(action);
-            return Task.CompletedTask;
+
         }
 
         private void CleanDirectory(object? state)

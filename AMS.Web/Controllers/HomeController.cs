@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using Microsoft.Office.Interop.Excel;
 using MimeKit;
-
+using Sentry;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Mail;
@@ -64,6 +64,7 @@ namespace AMS.Web.Controllers
 
         public IActionResult Index()
         {
+            SentrySdk.CaptureMessage("Hello Sentry");
             string username = HttpContext.Session.GetString("username") ?? "";
             if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
             {

@@ -2175,6 +2175,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.12" />
     <PackageReference Include="MimeKit" Version="3.6.1" />
     <PackageReference Include="RestSharp" Version="108.0.3" />
+    <PackageReference Include="Sentry.AspNetCore" Version="3.31.0" />
     <PackageReference Include="System.Data.OleDb" Version="7.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>

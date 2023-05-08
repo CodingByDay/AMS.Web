@@ -1,6 +1,7 @@
 using AMS.Web;
 using AMS.Web.Interfaces;
 using AMS.Web.Services;
+using System.Reflection.PortableExecutable;
 using WebApi.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,8 +23,7 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(30);
 });
 
-
-
+builder.WebHost.UseSentry();
 
 
 var app = builder.Build();
@@ -36,6 +36,10 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+
+
+app.UseSentryTracing();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseMiddleware<ErrorHandlerMiddleware>();
