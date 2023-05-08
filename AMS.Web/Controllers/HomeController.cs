@@ -347,9 +347,17 @@ namespace AMS.Web.Controllers
         {
             var config=ConfigurationHelper.GetConfigurationObject();
             DatabaseOperations db = new DatabaseOperations(config.connectionString);
-            var invite = db.CreateCompany(company);
-            SendEmailInvite(company, invite, email);
-            return Json(true);
+            bool exists = db.CheckIfCompanyExists(company);
+
+            if (!exists)
+            {
+                var invite = db.CreateCompany(company);
+                SendEmailInvite(company, invite, email);
+                return Json(true);
+            } else
+            {
+                return Json(false);
+            }
         }
 
 

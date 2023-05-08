@@ -814,17 +814,29 @@ function inviteAdmin() {
         url: "SendInvitationAdmin",
         data: { "email": email, "company": company },
         success: function (response) {
-            Swal.fire({
-                icon: 'success',
-                title: `Povabilo poslano na ${email}`,
-                showConfirmButton: false,
-                timer: 2500
-            });
 
-            setTimeout(function () {
-                location.href = "/auth/login"
-            }, 3500);
+            if (response) {
+                Swal.fire({
+                    icon: 'success',
+                    title: `Povabilo poslano na ${email}`,
+                    showConfirmButton: false,
+                    timer: 2500
+                });
+                setTimeout(function () {
+                    location.href = "/home/index"
+                }, 3500);
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: `Za obstoječa podjetja uporabljajte internega administratorja`,
+                    showConfirmButton: false,
+                    timer: 2500
+                });
 
+                setTimeout(function () {
+                    location.href = "/home/index"
+                }, 3500);
+            }
            
         },
         failure: function (response) {

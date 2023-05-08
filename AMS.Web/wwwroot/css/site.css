@@ -134,7 +134,13 @@ button.btn.btn-primary.download {
     margin: auto;
 }
 
-
+.close-create {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */

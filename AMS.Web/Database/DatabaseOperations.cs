@@ -462,7 +462,7 @@ namespace AMS.Web.Database
                 try
                 {
                     conn.Open();
-                    var sql = "  SELECT Password FROM Accounts WHERE UserName = @Username";
+                    var sql = "SELECT Password FROM Accounts WHERE UserName = @Username";
                     using (var cmd = new SqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@Username", user);
@@ -1703,6 +1703,21 @@ namespace AMS.Web.Database
         internal void GetAllColumnNameQuery(string[] arrayIDS)
         {
             throw new NotImplementedException();
+        }
+
+        internal bool CheckIfCompanyExists(string company)
+        {
+            using(SqlConnection connection = new SqlConnection(config.connectionString))
+            {
+                connection.Open();
+                SqlCommand sql = new SqlCommand($"select count(*) from Companies where Company = '{company}';", connection);
+                int count = (int) sql.ExecuteScalar();
+                if(count > 0)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
