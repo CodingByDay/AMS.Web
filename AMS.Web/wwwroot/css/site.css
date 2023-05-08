@@ -4,7 +4,7 @@ table.dx-datagrid-table.dx-datagrid-table-fixed td, tr {
     border: 0.1em solid #fff;
 }
 .dx-datagrid.dx-gridbase-container.dx-datagrid-borders {
-    padding: 7em;
+    padding: 4em;
 }
 table.dx-datagrid-table.dx-datagrid-table-fixed td, tr {
     background: white;
@@ -65,9 +65,9 @@ button#btnExport {
 }
 
 .choice-div {
-    width: 60px;
-    height: 60px;
-    border-radius: 2em;
+    width: 40px;
+    height: 40px;
+    border-radius: 0.5em;
 }
 
 td.inventories-options {

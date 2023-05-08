@@ -1354,7 +1354,7 @@ function resolveImportHome(obj, name) {
 
 function resolveImport(obj) {
 
-
+    var end = -1;
     if (obj.hasHeaders) {
         document.getElementById("cbCheckbox").checked = true;
     }
@@ -1364,13 +1364,33 @@ function resolveImport(obj) {
     for (var i = 0; i < obj.baseData.length; i++) {
         var current = obj.baseData[i];
         window.current = current;
-        var end = current.Value.name.replace("Stolpec", "").trim()
+
+        if (current.Value.name.includes("Stolpec")) {
+            end = current.Value.name.replace("Stolpec", "").trim()
+        } else {
+            end = findIndex(current.Value.name);
+        }
+
         var table = document.getElementById("names");
         var start = findElement(table, current.Key.field);
         connectElementsManualy(start, end);
     }
 }
 
+
+function findIndex(name) {
+    var table = document.getElementById("arrow");
+    for (var i = 0, row; row = table.rows[i]; i++) {
+        //rows would be accessed using the "row" variable assigned in the for loop
+        for (var j = 0, col; col = row.cells[j]; j++) {
+            //iterate through columns
+            //columns would be accessed using the "col" variable assigned in the for loop
+            if (col.innerHTML == name) {
+                return i - 1;
+            }
+        }
+    }
+}
 
 
 
