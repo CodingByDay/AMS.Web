@@ -35,10 +35,7 @@ namespace AMS.Web.Database
                     string? type = (string)command.ExecuteScalar();
                     return type ?? string.Empty;
                 }
-                catch (Exception err)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
                 finally
                 {
                     objConn.Close();
@@ -64,10 +61,7 @@ namespace AMS.Web.Database
                     }
                     current.ExecuteNonQuery();
                 }
-                catch (Exception ex)
-                {
-                    return;
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
                 finally
                 {
                     objConn.Close();
@@ -93,10 +87,7 @@ namespace AMS.Web.Database
                     }
                     current.ExecuteNonQuery();
                 }
-                catch (Exception ex)
-                {
-                    return;
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
                 finally { objConn.Close(); }
             }
         }
@@ -116,10 +107,7 @@ namespace AMS.Web.Database
 
                     }
                 }
-                catch (Exception ex)
-                {
-                    return;
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
                 finally
                 {
                     objConn.Close();
@@ -185,10 +173,7 @@ namespace AMS.Web.Database
                     }
                     return returnObject;
                 }
-                catch (Exception ex)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
                 finally
                 {
                     objConn.Close();
@@ -254,10 +239,7 @@ namespace AMS.Web.Database
                     }
                     return returnObject;
                 }
-                catch (Exception)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
                 finally
                 {
                     objConn.Close();
@@ -337,10 +319,7 @@ namespace AMS.Web.Database
                     sql.ExecuteNonQuery();
                     return true;
                 }
-                catch (Exception)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
         }
 
@@ -421,10 +400,7 @@ namespace AMS.Web.Database
                     }
                     return returnObject;
                 }
-                catch (Exception)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
                 finally
                 {
                     objConn.Close();
@@ -449,10 +425,7 @@ namespace AMS.Web.Database
                         cmd.ExecuteNonQuery();
                     }
                 }
-                catch (Exception)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
 
             string guid = Guid.NewGuid().ToString();
@@ -477,10 +450,7 @@ namespace AMS.Web.Database
                         cmd.ExecuteNonQuery();
                     }
                 }
-                catch (Exception)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
         }
 
@@ -535,10 +505,7 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
         }
 
@@ -560,10 +527,7 @@ namespace AMS.Web.Database
                         cmd.ExecuteNonQuery();
                     }
                 }
-                catch (Exception)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
         }
 
@@ -590,10 +554,7 @@ namespace AMS.Web.Database
 
                     return result;
                 }
-                catch (Exception)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
         }
 
@@ -616,10 +577,7 @@ namespace AMS.Web.Database
                         cmd.ExecuteNonQuery();
                     }
                 }
-                catch (Exception)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
         }
 
@@ -643,10 +601,7 @@ namespace AMS.Web.Database
                         cmd.ExecuteNonQuery();
                     }
                 }
-                catch (Exception)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
         }
 
@@ -669,10 +624,7 @@ namespace AMS.Web.Database
                         cmd.ExecuteNonQuery();
                     }
                 }
-                catch (Exception)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
         }
 
@@ -720,10 +672,7 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
 
             return users;
@@ -775,11 +724,7 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception)
-
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
 
             return users;
@@ -831,11 +776,7 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception)
-
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
 
             users.users.Remove(users.users.Where(x => x.email == self).FirstOrDefault());
@@ -856,10 +797,7 @@ namespace AMS.Web.Database
                         cmd.ExecuteNonQuery();
                     }
                 }
-                catch (Exception ex)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
         }
 
@@ -904,10 +842,7 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
 
             InsertRows(items);
@@ -943,10 +878,7 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
             }
             InsertRowsLocations(items);
         }
@@ -964,10 +896,7 @@ namespace AMS.Web.Database
                         current.ExecuteNonQuery();
                     }
                 }
-                catch (Exception ex)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
                 finally
                 {
                     objConn.Close();
@@ -988,10 +917,7 @@ namespace AMS.Web.Database
                         current.ExecuteNonQuery();
                     }
                 }
-                catch (Exception ex)
-                {
-                    throw new KeyNotFoundException("Database error");
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
                 finally
                 {
                     objConn.Close();
@@ -1037,9 +963,7 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                }
+                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
                 finally
                 {
                     objConn.Close();

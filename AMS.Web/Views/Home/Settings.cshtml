@@ -172,14 +172,14 @@
                 switch (ViewBag.Type)
                 {
                     case "SADM":
-                        
-                        <h1>Povabite novega admina podjetja</h1>
+
+                        <h4 class="card-title-active">Povabite admina podjetja</h4>
 
                         <div class="invitation-div">
 
-                        <input type="text" id="admin">
+                        <input type="text" id="admin" placeholder="    email naslov">
 
-                        <input type="text" id="company">
+                        <input type="text" id="company" placeholder="    podjetje">
 
                         <button type="button" onclick="inviteAdmin()" class="btn btn-primary">Povabilo</button>
 
@@ -232,13 +232,55 @@
                         break;
                     case "LADM":
 
-                        <h1>Povabite novega uporabnika</h1>
+                                <h4 class="card-title-active">Povabite admina podjetja</h4>
+
                         <div class="invitation-div">
 
-                            <input type="text" id="user">
+                            <input type="text" id="user" placeholder="    email naslov">
 
                             <button type="button" onclick="inviteUser()" class="btn btn-primary" >Povabilo</button>
+                                    <div class="user_table">
 
+
+                                        @{
+                                            UserList dataLocal = Model;
+                                        }
+
+                                        @(
+                                            Html.DevExtreme().DataGrid()
+
+                                            .ID("gridContainer")
+                                            .ShowBorders(true)
+                                            .DataSource(dataLocal.users)
+                                            .KeyExpr("anQId")
+                                            .FilterRow(filterRow => filterRow
+                                            .Visible(true)
+                                            .ApplyFilter(GridApplyFilterMode.Auto)
+                                            )
+                                            .SearchPanel(searchPanel => searchPanel
+                                            .Visible(true)
+                                            .Width(240)
+                                            .Placeholder("Search...")
+                                            )
+                                            .Columns(c =>
+                                            {
+                                                c.Add().DataField("email").Caption("Naslov");
+                                                c.Add().DataField("company").Caption("Podjetje");
+                                                c.Add().DataField("type").Caption("Tip");
+                                                c.Add()
+                                                .Type(GridCommandColumnType.Buttons)
+                                                .Width(110)
+                                                .Buttons(b =>
+                                                {
+                                                    b.Add().Hint("Pobriši uporabnika").Icon("trash").OnClick("deleteUser");
+                                                });
+
+
+                                            })
+
+
+                                            )
+                                    </div>
                         </div>
 
                         break;

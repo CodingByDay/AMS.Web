@@ -183,6 +183,7 @@ cursor: pointer;
 .invitation-div {
     display: flex;
     gap: 5vh;
+    margin-left: 4em;
 }
 
 
