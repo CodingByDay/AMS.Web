@@ -9,7 +9,7 @@
                 <div class="card pt-4">
                     <div class="card-body">
                         <div class="text-center mb-5">
-                            <img src="~/images/logo_riko.png" width="150" alt="" srcset="">
+                            <img src="~/images/logo_riko.png" class="login-logo" width="150" alt="" srcset="">
                             <h3>Prijava</h3>
                             <p>Prijavite se za nadaljevanje.</p>
                         </div>
@@ -24,7 +24,7 @@
                                 }
                                 <label for="username">Email naslov</label>
                                 <div class="position-relative">
-                                    <input type="text" name="username" class="form-control" id="username">
+                                    <input type="text" name="username" class="form-control" id="username" tabindex="1">
                                     <div class="form-control-icon">
                                         <i data-feather="user"></i>
                                     </div>
@@ -38,7 +38,7 @@
                                     </a>
                                 </div>
                                 <div class="position-relative">
-                                    <input type="password" class="form-control" name="password" id="password">
+                                    <input type="password" class="form-control" name="password" id="password" tabindex="2">
                                     <div class="form-control-icon">
                                         <i data-feather="lock"></i>
                                     </div>
@@ -46,7 +46,7 @@
                             </div>
 
                             <div class="clearfix">
-                                <button asp-controller="Auth" asp-action="Authenticate" class="btn btn-primary float-right">Prijava</button>
+                                <button asp-controller="Auth" asp-action="Authenticate" class="btn btn-primary float-right" tabindex="3">Prijava</button>
                             </div>
                         </form>
 

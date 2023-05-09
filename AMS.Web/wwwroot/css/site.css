@@ -22,6 +22,47 @@ td {
     cursor: text;
 }
 
+div#navbarSupportedContent {
+    height: 70px;
+}
+div#navbarSupportedContent {
+    background: #0a2640;
+    margin-left: -2em;
+    margin-right: -2em;
+    padding: 2em;
+}
+nav.navbar.navbar-expand-lg.fixed-top.navbar-dark {
+    background: #0a2640 !important;
+}
+
+
+/* Breakpoint for navigation */
+@media (max-width: 990px) {
+    nav.navbar.navbar-expand-lg.fixed-top.navbar-dark.bg-dark.shadow-transition.mobile {
+        min-height: max-content;
+    }
+    .ms-auto {
+        text-align: -moz-center;
+        text-align: -webkit-center;
+    }
+    .container {
+        top: -1.5em!important;
+    }
+
+    .main-logo {
+        width: 50px!important;
+    }
+    div#navbarSupportedContent {
+        height: max-content;
+    }
+}
+
+
+
+#top-link {
+    cursor: pointer;
+}
+
 
 div#app {
     height: 0;
@@ -46,8 +87,17 @@ div#app {
 
 .choose-file-outer {
 
-    zoom: 0.8;
+    zoom: 0.7;
 }
+
+
+
+img.login-logo {
+    margin-bottom: 2em;
+    padding: 2em;
+}
+
+
 
 h3#logo-header {
     color: white;
