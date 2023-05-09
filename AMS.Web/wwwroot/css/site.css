@@ -22,10 +22,10 @@ td {
     cursor: text;
 }
 
-div#navbarSupportedContent {
+div#navbarSupportedContentHome {
     height: 70px;
 }
-div#navbarSupportedContent {
+div#navbarSupportedContentHome {
     background: #0a2640;
     margin-left: -2em;
     margin-right: -2em;
@@ -38,6 +38,9 @@ nav.navbar.navbar-expand-lg.fixed-top.navbar-dark {
 
 /* Breakpoint for navigation */
 @media (max-width: 990px) {
+    .choose-file-inner {
+        width: min-content;
+    }
     nav.navbar.navbar-expand-lg.fixed-top.navbar-dark.bg-dark.shadow-transition.mobile {
         min-height: max-content;
     }
@@ -52,7 +55,7 @@ nav.navbar.navbar-expand-lg.fixed-top.navbar-dark {
     .main-logo {
         width: 50px!important;
     }
-    div#navbarSupportedContent {
+    div#navbarSupportedContentHome {
         height: max-content;
     }
 }
@@ -267,8 +270,7 @@ html {
 }
 
 .remove-buttons {
-    margin-left: 3em;
-    margin-right: 3em;
+
 }
 
 
