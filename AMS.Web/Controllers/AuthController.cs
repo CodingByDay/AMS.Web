@@ -55,7 +55,7 @@ namespace AMS.Web.Controllers
             var jsonString = System.Text.Json.JsonSerializer.Serialize(request);
             string response = HttpHelper.GetMethodCall(jsonString, "/login");
             LoginResponse? loginResponse = Newtonsoft.Json.JsonConvert.DeserializeObject<LoginResponse>(response);
-            if (loginResponse != null)
+            if (loginResponse != null && loginResponse.result!="empty")
             {
                 if (loginResponse.success)
                 {
