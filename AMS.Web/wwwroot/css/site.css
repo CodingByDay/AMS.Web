@@ -38,6 +38,9 @@ nav.navbar.navbar-expand-lg.fixed-top.navbar-dark {
 
 /* Breakpoint for navigation */
 @media (max-width: 990px) {
+    button.navbar-toggler {
+        display: none;
+    }
     .choose-file-inner {
         width: min-content;
     }

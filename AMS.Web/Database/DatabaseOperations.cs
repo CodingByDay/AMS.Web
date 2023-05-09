@@ -61,7 +61,7 @@ namespace AMS.Web.Database
                     }
                     current.ExecuteNonQuery();
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) { return; }
                 finally
                 {
                     objConn.Close();
@@ -87,7 +87,7 @@ namespace AMS.Web.Database
                     }
                     current.ExecuteNonQuery();
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) { return; }
                 finally { objConn.Close(); }
             }
         }
@@ -107,7 +107,7 @@ namespace AMS.Web.Database
 
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) { return; }
                 finally
                 {
                     objConn.Close();
@@ -425,7 +425,7 @@ namespace AMS.Web.Database
                         cmd.ExecuteNonQuery();
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {  }
             }
 
             string guid = Guid.NewGuid().ToString();
@@ -1106,7 +1106,7 @@ namespace AMS.Web.Database
                 {
                     return false;
                 }
-                SqlCommand command = new SqlCommand($"INSERT INTO tInventory VALUES ('{date}', '{id}', NULL, NULL, NULL, NULL, NULL, NULL, 'Nova inventura')", conn);
+                SqlCommand command = new SqlCommand($"INSERT INTO tInventory VALUES ('{date}', '{id}', NULL, NULL, NULL, NULL, NULL, NULL, '{name}')", conn);
                 command.ExecuteNonQuery();
                 // Testiranje inserta za inventure //
             }
@@ -1705,12 +1705,12 @@ namespace AMS.Web.Database
             throw new NotImplementedException();
         }
 
-        internal bool CheckIfCompanyExists(string company)
+        internal bool CheckIfCompanyExists(string company, string email)
         {
             using(SqlConnection connection = new SqlConnection(config.connectionString))
             {
                 connection.Open();
-                SqlCommand sql = new SqlCommand($"select count(*) from Companies where Company = '{company}';", connection);
+                SqlCommand sql = new SqlCommand($"select count(Company) from Accounts where Company = '{company}' and UserType != 'SADM';", connection);
                 int count = (int) sql.ExecuteScalar();
                 if(count > 0)
                 {
@@ -1718,6 +1718,16 @@ namespace AMS.Web.Database
                 }
             }
             return false;
+        }
+
+        internal void DeleteInventoryAsset(string id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand sql = new SqlCommand($"delete from tAsset where anQId = {id}", connection);
+                sql.ExecuteNonQuery();
+            }
         }
     }
 }

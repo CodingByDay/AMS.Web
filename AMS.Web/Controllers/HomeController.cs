@@ -102,7 +102,15 @@ namespace AMS.Web.Controllers
         }
 
 
+        [HttpPost]
+        public JsonResult DeleteInventoryAsset([FromQuery(Name = "id")] string id)
+        {
 
+            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            var assets = db.GetAssets();
+            db.DeleteInventoryAsset(assets.ElementAt(Int32.Parse(id)).anQId.ToString());
+            return Json(true);
+        }
 
 
 
@@ -348,7 +356,7 @@ namespace AMS.Web.Controllers
         {
             var config=ConfigurationHelper.GetConfigurationObject();
             DatabaseOperations db = new DatabaseOperations(config.connectionString);
-            bool exists = db.CheckIfCompanyExists(company);
+            bool exists = db.CheckIfCompanyExists(company, email);
 
             if (!exists)
             {
