@@ -666,6 +666,9 @@ function selectInventory(which) {
 
 var span = document.getElementsByClassName("close")[0];
 var modal = document.getElementById("myModal");
+
+
+
 $("#export-inventory").click(function () {
  
         modal.style.display = "block";

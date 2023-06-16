@@ -844,6 +844,35 @@ footer {
   align-items: center;
   transition: all 0.5s;
 }
+
+#main {
+    background-color: #f7f7f8;
+}
+
+
+h4.card-title {
+    font-weight: 600 !important;
+}
+
+
+
+.sidebar-link span {
+    color: #081A45!important;
+    font-weight: 600!important;
+}
+
+li.sidebar-item.active a {
+    background: #f7f7f8 !important;
+}
+
+
+
+
+
+.card {
+    box-shadow: none!important;
+}
+
 .sidebar-wrapper .menu .sidebar-link:hover span {
   opacity: 1;
 }
@@ -869,16 +898,16 @@ footer {
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link {
   background-color: #e8f3ff;
 }
-.sidebar-wrapper .menu .sidebar-item.active .sidebar-link:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  background-color: rgba(46, 170, 244, 0.5);
-  width: 5px;
-}
+    .sidebar-wrapper .menu .sidebar-item.active .sidebar-link:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        background-color: #081A45;
+        width: 5px;
+    }
 .sidebar-wrapper .menu .submenu {
   list-style: none;
   max-height: 0;
@@ -1294,28 +1323,64 @@ footer {
   padding: 0;
   margin: 0;
 }
+
 .widget-todo-list-wrapper .widget-todo-item {
   padding: 0.8rem 2rem 0.8rem 0.8rem;
   list-style: none;
 }
+
 .widget-todo-list-wrapper .widget-todo-item:hover {
   background-color: #f8f9fa;
 }
+
 .widget-todo-list-wrapper .widget-todo-item .checkbox {
   margin-left: 1rem;
 }
+
 .widget-todo-list-wrapper .widget-todo-item i, .widget-todo-list-wrapper .widget-todo-item svg {
   font-size: 12px;
   cursor: move;
   height: 1rem;
 }
 
+#auth {
+    margin-bottom: -20vh;
+}
+
+p.forget {
+    font-size: x-small;
+    margin: 0;
+}
+
+.header {
+    font-weight: 600;
+}
+
+.riko {
+    color: #081A45;
+}
+
+
+.gray {
+    color: #969595;
+}
+
+
+
+
+
+* {
+    font-family: Calibri;
+}
+
+
+
 /** 4.1 Auth Pages **/
 #auth {
-  background: #6c757d;
-  min-height: 100vh;
-  padding-top: 100px;
-  background-image: url(../images/background/auth.jpg);
+    background: #6c757d;
+    min-height: 100vh;
+    padding-top: 100px;
+    background-color: #081A45;
 }
 #auth .card {
   box-shadow: 0 5px 15px rgba(36, 104, 146, 0.6);

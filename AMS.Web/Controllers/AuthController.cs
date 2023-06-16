@@ -166,7 +166,7 @@ namespace AMS.Web.Controllers
             sbEmailBody.Append("Please click on the following link to reset your password");
             sbEmailBody.Append("<br/>"); sbEmailBody.Append("https://localhost:7123/auth/resetpasswordaction?uid=" + UniqueId);
             sbEmailBody.Append("<br/><br/>");
-            sbEmailBody.Append("<b>In.Sist d.o.o.</b>");
+            sbEmailBody.Append("<b>Riko d.o.o.</b>");
 
             mailMessage.IsBodyHtml = true;
 

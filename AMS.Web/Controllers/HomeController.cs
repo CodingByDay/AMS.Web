@@ -401,7 +401,7 @@ namespace AMS.Web.Controllers
             sbEmailBody.Append("Please click on the following link to activate your account");
             sbEmailBody.Append("<br/>"); sbEmailBody.Append("https://localhost:7123/auth/register?uid=" + guid + "&company=" + company + "&email=" + email);
             sbEmailBody.Append("<br/><br/>");
-            sbEmailBody.Append("<b>In.Sist d.o.o.</b>");
+            sbEmailBody.Append("<b>Riko d.o.o.</b>");
             mailMessage.IsBodyHtml = true;
             mailMessage.Body = sbEmailBody.ToString();
             mailMessage.Subject = "Start using Inventory Masters";
@@ -429,7 +429,7 @@ namespace AMS.Web.Controllers
             sbEmailBody.Append("Please click on the following link to activate your account");
             sbEmailBody.Append("<br/>"); sbEmailBody.Append("https://localhost:7123/auth/registeruser?uid=" + guid + "&user=" + email);
             sbEmailBody.Append("<br/><br/>");
-            sbEmailBody.Append("<b>In.Sist d.o.o.</b>");
+            sbEmailBody.Append("<b>Riko d.o.o.</b>");
             mailMessage.IsBodyHtml = true;
             mailMessage.Body = sbEmailBody.ToString();
             mailMessage.Subject = "Start using Inventory Masters";
