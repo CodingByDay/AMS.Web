@@ -556,10 +556,11 @@ footer {
 .form-group {
   margin-bottom: 0.7rem;
 }
+
 .form-group label {
-  font-size: 0.755rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  color: rgba(35, 28, 99, 0.7);
+  color: rgb(150 149 149);
   font-weight: 500;
 }
 .form-group small {
@@ -587,7 +588,7 @@ footer {
   border-right: 1px solid #5A8DEE;
 }
 .form-group[class*=has-icon-].has-icon-left .form-control {
-  padding-left: 2.5rem;
+  padding-left: none;
 }
 .form-group[class*=has-icon-].has-icon-left .form-control-icon {
   left: 0;
@@ -1411,7 +1412,7 @@ li.sidebar-item.active a {
 }
 
 p.forget {
-    font-size: x-small;
+    font-size: small;
     margin: 0;
 }
 
@@ -1421,11 +1422,13 @@ p.forget {
 
 .riko {
     color: #081A45;
+    font-size: 28px;
 }
 
 
 .gray {
     color: #969595;
+    font-size: 16px;
 }
 
 
