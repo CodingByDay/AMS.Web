@@ -170,6 +170,7 @@ button#btnExport {
 button.btn.btn-primary {
     background: #081A45;
     border-radius: 0;
+    font-size: 14px;
 }
 
 
