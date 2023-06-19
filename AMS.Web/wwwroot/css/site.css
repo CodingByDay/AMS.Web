@@ -100,10 +100,12 @@ div#app {
 
 img.login-logo {
     margin-bottom: 2em;
-    padding: 2em;
 }
 
-
+.login-button {
+    padding: 1em;
+    padding-top: 0px;
+}
 
 h3#logo-header {
     color: white;

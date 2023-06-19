@@ -2220,7 +2220,7 @@ progress {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  border-radius: 0.25rem;
+  border-radius: none;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -4267,7 +4267,7 @@ progress {
   background-color: #fff;
   background-clip: border-box;
   border: 0 solid #DFE3E7;
-  border-radius: 0.267rem;
+  border-radius: none;
 }
 .card > hr {
   margin-right: 0;
