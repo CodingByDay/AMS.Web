@@ -112,9 +112,66 @@
 #app {
     height: 0;
 }
+
+button.swal2-deny.order-3.swal2-styled {
+    border-radius: 0;
+}
+
 div#app {
     height: 80vh;
 }
+.choose-file-outer {
+    display: flex;
+    gap: 0.3em;
+}
+form#mainForm {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 0.155em;
+}
+
+button.swal2-confirm.order-2.swal2-styled {
+    background: #081A45;
+    border-radius: 0;
+}
+
+.choose-file-outer {
+    display: flex!important;
+    gap: 0.3em!important;
+}
+
+button#dropdownMenuButton {
+    background: #081A45;
+    border-radius: 0;
+}
+
+.choice-div {
+    width: 70px;
+    height: max-content;
+    border-radius: 0.5em;
+}
+
+.close {
+    color: #081A45!important;
+
+}
+button#btnExport {
+    border-radius: 0;
+    background: #081A45;
+}
+
+.btn.btn-info {
+    background: #081A45;
+    color: white;
+    border-radius: 0;
+}
+
+button.btn.btn-primary {
+    background: #081A45;
+    border-radius: 0;
+}
+
 
 #main {
   margin-left: 260px;
@@ -147,6 +204,12 @@ section .section-title:after {
   margin: 0.6rem 0 1rem;
   background-color: #5A8DEE;
   display: block;
+}
+
+
+
+thead th {
+    background: #081A45 !important;
 }
 
 a {

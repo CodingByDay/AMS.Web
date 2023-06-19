@@ -374,11 +374,6 @@ function onDeleteIconClickInventoryLocation(e) {
         }
     })
 
-
-
-
-
-
 }
 
 
@@ -562,8 +557,8 @@ $(document).ready(function () {
 
     jQuery(".choice-div").click(function () {
         activeChoice = jQuery(this).attr("data-choice");
-        jQuery(".choice-div").css('background-color', 'transparent');
-        jQuery(this).css('background-color', '#3DA5FF');
+        jQuery(".choice-div").css('border', 'none');
+        jQuery(this).css('border', '1px solid #081A45');
     });
 });
 
