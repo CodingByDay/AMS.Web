@@ -13,6 +13,7 @@ using System.Net.Mail;
 using System.Text;
 using AMS.Web.Database;
 using Microsoft.CodeAnalysis.VisualBasic.Syntax;
+using Microsoft.AspNetCore.Http;
 
 namespace AMS.Web.Controllers
 {
@@ -158,7 +159,7 @@ namespace AMS.Web.Controllers
             var config = ConfigurationHelper.GetConfigurationObject();
             // MailMessage class is present is System.Net.Mail namespace
             MailMessage mailMessage = new MailMessage(config.email, ToEmail);
-
+            var request = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
 
             // StringBuilder class is present in System.Text namespace
             StringBuilder sbEmailBody = new StringBuilder();
