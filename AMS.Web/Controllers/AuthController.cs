@@ -159,13 +159,13 @@ namespace AMS.Web.Controllers
             var config = ConfigurationHelper.GetConfigurationObject();
             // MailMessage class is present is System.Net.Mail namespace
             MailMessage mailMessage = new MailMessage(config.email, ToEmail);
-            var request = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
+            var requestString = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
 
             // StringBuilder class is present in System.Text namespace
             StringBuilder sbEmailBody = new StringBuilder();
             sbEmailBody.Append("Dear " + UserName + ",<br/><br/>");
             sbEmailBody.Append("Please click on the following link to reset your password");
-            sbEmailBody.Append("<br/>"); sbEmailBody.Append("https://localhost:7123/auth/resetpasswordaction?uid=" + UniqueId);
+            sbEmailBody.Append("<br/>"); sbEmailBody.Append($"{requestString}/auth/resetpasswordaction?uid=" + UniqueId);
             sbEmailBody.Append("<br/><br/>");
             sbEmailBody.Append("<b>Riko d.o.o.</b>");
 

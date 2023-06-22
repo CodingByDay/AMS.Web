@@ -393,13 +393,14 @@ namespace AMS.Web.Controllers
             // MailMessage class is present is System.Net.Mail namespace
             var config = ConfigurationHelper.GetConfigurationObject();
             MailMessage mailMessage = new MailMessage(config.email, email);
+            var requestString = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
 
 
             // StringBuilder class is present in System.Text namespace
             StringBuilder sbEmailBody = new StringBuilder();
             sbEmailBody.Append("Dear " + "user" + ",<br/><br/>");
             sbEmailBody.Append("Please click on the following link to activate your account");
-            sbEmailBody.Append("<br/>"); sbEmailBody.Append("https://localhost:7123/auth/register?uid=" + guid + "&company=" + company + "&email=" + email);
+            sbEmailBody.Append("<br/>"); sbEmailBody.Append($"{requestString}/auth/register?uid=" + guid + "&company=" + company + "&email=" + email);
             sbEmailBody.Append("<br/><br/>");
             sbEmailBody.Append("<b>Riko d.o.o.</b>");
             mailMessage.IsBodyHtml = true;
@@ -423,11 +424,13 @@ namespace AMS.Web.Controllers
             // MailMessage class is present is System.Net.Mail namespace
             var config = ConfigurationHelper.GetConfigurationObject();
             MailMessage mailMessage = new MailMessage(config.email, email);
+            var requestString = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
+
             // StringBuilder class is present in System.Text namespace
             StringBuilder sbEmailBody = new StringBuilder();
             sbEmailBody.Append("Dear " + "user" + ",<br/><br/>");
             sbEmailBody.Append("Please click on the following link to activate your account");
-            sbEmailBody.Append("<br/>"); sbEmailBody.Append("https://localhost:7123/auth/registeruser?uid=" + guid + "&user=" + email);
+            sbEmailBody.Append("<br/>"); sbEmailBody.Append($"{requestString}/auth/registeruser?uid=" + guid + "&user=" + email);
             sbEmailBody.Append("<br/><br/>");
             sbEmailBody.Append("<b>Riko d.o.o.</b>");
             mailMessage.IsBodyHtml = true;
