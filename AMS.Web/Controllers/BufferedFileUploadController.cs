@@ -3,6 +3,7 @@ using AMS.Web.Classes;
 using AMS.Web.Database;
 using AMS.Web.Interfaces;
 using AMS.Web.Models;
+using ExcelToCsv;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.CodeAnalysis;
@@ -17,6 +18,7 @@ namespace AMS.Web.Controllers
     public class BufferedFileUploadController : Controller
     {
         readonly IBufferedFileUploadService _bufferedFileUploadService;
+        Row dataMain;
 
         public BufferedFileUploadController(IBufferedFileUploadService bufferedFileUploadService)
         {
@@ -55,8 +57,19 @@ namespace AMS.Web.Controllers
                 
                 var path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "Temp"));
                 string filename = HttpContext.Session.GetString("filename");
-                Row row = ShowTextRows(Path.Combine(path, filename), headersResult);
-                int counter = 0;
+                Row row;
+
+
+                if (filename.Contains("xlsx"))
+                {
+                    row = ReturnRowsExcel(Path.Combine(path, filename), headersResult);
+                }
+                else
+                {
+                    row = ShowTextRows(Path.Combine(path, filename), headersResult);
+                }
+
+                   int counter = 0;
                 foreach(var r in row.columns)
                 {
 
@@ -174,7 +187,19 @@ namespace AMS.Web.Controllers
             List<string> queries = new List<string>();
             var path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "Temp"));
             string filename = HttpContext.Session.GetString("filename");
-            Row row = ShowTextRows(Path.Combine(path, filename), headersResult);
+            Row row;
+
+            if(filename.Contains("xlsx"))
+            {
+                row = ReturnRowsExcel(Path.Combine(path, filename), headersResult);
+            } else
+            {
+                row = ShowTextRows(Path.Combine(path, filename), headersResult);
+            }
+
+      
+
+            //  Row row = dataMain;
             int counter = 0;
             foreach (var r in row.columns)
             {
@@ -184,6 +209,9 @@ namespace AMS.Web.Controllers
                     continue;
                 }
 
+
+
+                // Dobi naslove 
                 string query = string.Empty;
                 List<string> columns = new List<string>();
                 string fieldNames = "(";
@@ -237,16 +265,27 @@ namespace AMS.Web.Controllers
                         count++;
                     }
                 }
+
+
+                if ( r.Count < order.Count )
+                {
+                    continue;
+                }
+
+
                 for (int i = 1; i <= order.Count; i++)
                 {
                     if (i != order.Count)
                     {
                         if (quotesNeeded.ElementAt(i - 1))
                         {
-                            insert += "'" + r[order[i - 1]] + "'" + ",";
+
+                                 insert += "'" + r[order[i - 1]] + "'" + ",";
+
                         } else
                         {
-                            insert +=  r[order[i - 1]] + ",";
+
+                                insert += r[order[i - 1]] + ",";
 
                         }
                     }
@@ -254,11 +293,15 @@ namespace AMS.Web.Controllers
                     {
                         if (quotesNeeded.ElementAt(i - 1))
                         {
-                            insert += "'" + r[order[i - 1]] + "'";
+
+                               insert += "'" + r[order[i - 1]] + "'";
+
                         } else
                         {
-                            insert += r[order[i - 1]];
 
+                                insert += r[order[i - 1]];
+
+                            
                         }
 
                     }
@@ -514,6 +557,9 @@ namespace AMS.Web.Controllers
 
 
                 Row? row = await _bufferedFileUploadService.UploadFile(file, headerResult);
+
+                dataMain = row;
+
                 if (headerResult)
                 {
                     List<String> headers = row.getColumnAtIndex(0);
@@ -568,6 +614,20 @@ namespace AMS.Web.Controllers
                 ViewBag.Message = "File Upload Failed";
             }
             return View(Model);
+        }
+        public Row ReadExcel(string fileName, string fileExt, bool header)
+        {
+            // Excel.Cursor.Current = Cursors.WaitCursor;
+            Row row = ExcelFileHelper.ReadAsRowObject(fileName, header);
+            return row;
+        }
+
+        private Row ReturnRowsExcel(string path, bool headers)
+        {
+            Row row = new Row();
+            // Read xlsx file and return items
+            var data = ReadExcel(path, "xlsx", headers);
+            return data;
         }
     }
 }

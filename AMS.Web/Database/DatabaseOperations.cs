@@ -98,20 +98,22 @@ namespace AMS.Web.Database
             {
                 objConn.Open();
 
-                try
+                foreach (string statement in statements)
                 {
-                    foreach (string statement in statements)
+                    try
                     {
                         SqlCommand current = new SqlCommand(statement, objConn);
                         current.ExecuteNonQuery();
-
+                    } catch
+                    {
+                        continue;
                     }
-                }
-                catch (Exception ex) { return; }
-                finally
-                {
+
+                 }
+                
+
                     objConn.Close();
-                }
+                
             }
         }
 
@@ -888,19 +890,26 @@ namespace AMS.Web.Database
             using (SqlConnection objConn = new SqlConnection(connectionString))
             {
                 objConn.Open();
-                try
+
+
+
+                foreach (string item in items)
                 {
-                    foreach (string item in items)
+
+                    try
                     {
                         SqlCommand current = new SqlCommand($"INSERT INTO tLocation (acLocation, acName) VALUES ('{item}', '{item}'); ", objConn);
                         current.ExecuteNonQuery();
+                    } catch
+                    {
+                        continue;
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
-                finally
-                {
+                
+               
+          
                     objConn.Close();
-                }
+                
             }
         }
 
@@ -909,20 +918,27 @@ namespace AMS.Web.Database
             using (SqlConnection objConn = new SqlConnection(connectionString))
             {
                 objConn.Open();
-                try
+             
+                
+
+                foreach (Item item in items)
                 {
-                    foreach (Item item in items)
+                    try
                     {
                         SqlCommand current = new SqlCommand($"INSERT INTO tItem (acItem, acName, anQty) VALUES ('{item.item}', '{item.name}', {item.qty})", objConn);
                         current.ExecuteNonQuery();
+                    } catch (Exception)
+                    {
+                        continue;
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
-                finally
-                {
+
                     objConn.Close();
-                }
+                
+
             }
+
+
         }
 
         internal ExportStructure GetStructure(int count)
@@ -1317,7 +1333,7 @@ namespace AMS.Web.Database
                 {
                     try
                     {
-                        SqlCommand command = new SqlCommand($"UPDATE tAsset SET acLocation = '{item.acLocation}' WHERE acECD = '{item.acECD}';", conn);
+                        SqlCommand command = new SqlCommand($"UPDATE tAsset SET acLocation = '{item.acLocation}', acECD = '{item.acECD}' WHERE anQId = '{item.anAssetID}';", conn);
                         command.ExecuteNonQuery();
                     } catch (Exception ex)
                     {
