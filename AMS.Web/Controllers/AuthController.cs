@@ -176,6 +176,9 @@ namespace AMS.Web.Controllers
             SmtpClient smtpClient = new SmtpClient("smtp.office365.com", 587);
 
             smtpClient.Credentials = new System.Net.NetworkCredential()
+
+
+                    
             {
                 UserName = config.email,
                 Password = config.password

@@ -309,7 +309,7 @@ namespace AMS.Web.Controllers
                     for (j = 0; j < cells.Length; j++)
                         xlWorkSheet.Cells[i + 1, j + 1] = cells[j];
                 }
-                xlWorkBook.SaveAs(Path.Combine(basePath, $"{uid}.xlsx"), Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookDefault, misValue, misValue, misValue, misValue, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+                xlWorkBook.SaveAs(Path.Combine(basePath, $"{uid}.xlsx"), Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookDefault, misValue, misValue, misValue, misValue, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlShared, misValue, misValue, misValue, misValue, misValue);
                 xlWorkBook.Close(true, misValue, misValue);
                 xlApp.Quit();
                 System.IO.File.Delete(Path.Combine(basePath, $"{uid}.txt"));
