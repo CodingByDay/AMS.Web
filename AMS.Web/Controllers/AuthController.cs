@@ -180,11 +180,11 @@ namespace AMS.Web.Controllers
 
                     
             {
-                UserName = config.email,
-                Password = config.password
+                UserName = config.email
+
             };
 
-            smtpClient.EnableSsl = true;
+            smtpClient.EnableSsl = false;
             smtpClient.Send(mailMessage);
         }
 

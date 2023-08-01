@@ -1,6 +1,9 @@
 ﻿using AMS.Web.Classes;
 using AMS.Web.Database;
 using AMS.Web.Models;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
+using DocumentFormat.OpenXml;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
@@ -15,6 +18,8 @@ using System.Text;
 using System.Text.Json;
 using System.Xml;
 using System.Xml.Linq;
+using System.IO.Packaging;
+using System.Data;
 
 namespace AMS.Web.Controllers
 {
@@ -293,33 +298,138 @@ namespace AMS.Web.Controllers
                     }
                 }
                 int i, j;
-                Microsoft.Office.Interop.Excel.Application xlApp;
-                Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
-                Microsoft.Office.Interop.Excel._Worksheet xlWorkSheet;
-                object misValue = System.Reflection.Missing.Value;
-                string[] linesI, cells;
-                linesI = System.IO.File.ReadAllLines(Path.Combine(basePath, $"{uid}.txt"));
-                xlApp = new Microsoft.Office.Interop.Excel.Application();
-                xlApp.DisplayAlerts = false;
-                xlWorkBook = xlApp.Workbooks.Add();
-                xlWorkSheet = (Microsoft.Office.Interop.Excel._Worksheet)xlWorkBook.ActiveSheet;
-                for (i = 0; i < linesI.Length; i++)
+                System.IO.MemoryStream stream = new System.IO.MemoryStream();
+
+                using (SpreadsheetDocument package = SpreadsheetDocument.Create($"{basePath}\\{uid}.xlsx", SpreadsheetDocumentType.Workbook))
                 {
-                    cells = lines[i].Split(new Char[] { '\t', ';' });
-                    for (j = 0; j < cells.Length; j++)
-                        xlWorkSheet.Cells[i + 1, j + 1] = cells[j];
+                    package.AddWorkbookPart();
+                    package.WorkbookPart.Workbook = new DocumentFormat.OpenXml.Spreadsheet.Workbook();
+                    package.WorkbookPart.AddNewPart<WorksheetPart>();
+                    string[] linesI, cells;
+
+                    //sheetData.Append(row);
+                    linesI = System.IO.File.ReadAllLines(Path.Combine(basePath, $"{uid}.txt"));
+
+                    SheetData xlSheetData = new SheetData();
+
+
+
+                    for (i = 0; i < linesI.Length; i++)
+                    {
+                        DocumentFormat.OpenXml.Spreadsheet.Row xlRow = new DocumentFormat.OpenXml.Spreadsheet.Row();
+                        cells = lines[i].Split(new Char[] { '\t', ';' });
+                        for (j = 0; j < cells.Length; j++)
+                        {
+
+                            var xlCell = new Cell(new InlineString(new DocumentFormat.OpenXml.Spreadsheet.Text(cells[j]))) { DataType = CellValues.InlineString };
+
+                            xlRow.Append(xlCell);
+                        }
+
+                        xlSheetData.Append(xlRow);
+                    }
+
+                    package.WorkbookPart.WorksheetParts.First().Worksheet = new DocumentFormat.OpenXml.Spreadsheet.Worksheet(xlSheetData);
+                    package.WorkbookPart.WorksheetParts.First().Worksheet.Save();
+
+                    // create the worksheet to workbook relation
+                    package.WorkbookPart.Workbook.AppendChild(new DocumentFormat.OpenXml.Spreadsheet.Sheets());
+                    package.WorkbookPart.Workbook.GetFirstChild<DocumentFormat.OpenXml.Spreadsheet.Sheets>().AppendChild(new Sheet()
+                    {
+                        Id = package.WorkbookPart.GetIdOfPart(package.WorkbookPart.WorksheetParts.First()),
+
+                        SheetId = 1,
+
+                        Name = "Sheet1"
+
+                    });
+
+                     System.IO.File.Delete(Path.Combine(basePath, $"{uid}.txt"));
+                     baseUrl = $"{this.Request.Scheme}://{this.Request.Host.Value}{this.Request.PathBase.Value}/Export/{uid}.xlsx";
+                     name = uid + ".xlsx";
+
+                    package.WorkbookPart.Workbook.Save();
+
                 }
-                xlWorkBook.SaveAs(Path.Combine(basePath, $"{uid}.xlsx"), Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookDefault, misValue, misValue, misValue, misValue, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlShared, misValue, misValue, misValue, misValue, misValue);
-                xlWorkBook.Close(true, misValue, misValue);
-                xlApp.Quit();
-                System.IO.File.Delete(Path.Combine(basePath, $"{uid}.txt"));
-                baseUrl = $"{this.Request.Scheme}://{this.Request.Host.Value}{this.Request.PathBase.Value}/Export/{uid}.xlsx";
-                name = uid + ".xlsx";
             }
             return Json(new FileResponse { name = name, url = baseUrl });
         }
 
+        private void testWrite(string basePath, string uid, string ids)
+        {
+            System.IO.MemoryStream stream = new System.IO.MemoryStream();
 
+            using (SpreadsheetDocument package = SpreadsheetDocument.Create($"{basePath}\\mytest.xlsx", SpreadsheetDocumentType.Workbook))
+            {
+                package.AddWorkbookPart();
+                package.WorkbookPart.Workbook = new DocumentFormat.OpenXml.Spreadsheet.Workbook();
+                package.WorkbookPart.AddNewPart<WorksheetPart>();
+
+                string[] arrayIDS = ids.Split(",");
+
+
+
+
+
+
+                DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+
+
+                List<string> lines = db.GetRowsForConfiguration(arrayIDS);
+
+
+
+
+                int i, j;
+
+
+
+
+                string[] linesI, cells;
+
+                //sheetData.Append(row);
+                linesI = System.IO.File.ReadAllLines(Path.Combine(basePath, $"{uid}.txt"));
+
+                SheetData xlSheetData = new SheetData();
+
+
+
+                for (i = 0; i < linesI.Length; i++)
+                {
+                    DocumentFormat.OpenXml.Spreadsheet.Row xlRow = new DocumentFormat.OpenXml.Spreadsheet.Row();
+                    cells = lines[i].Split(new Char[] { '\t', ';' });
+                    for (j = 0; j < cells.Length; j++)
+                    {
+
+                        var xlCell = new Cell(new InlineString(new DocumentFormat.OpenXml.Spreadsheet.Text(cells[j]))) { DataType = CellValues.InlineString };
+
+                        xlRow.Append(xlCell);
+                    }
+
+                    xlSheetData.Append(xlRow);
+                }
+
+                     package.WorkbookPart.WorksheetParts.First().Worksheet = new DocumentFormat.OpenXml.Spreadsheet.Worksheet(xlSheetData);
+                    package.WorkbookPart.WorksheetParts.First().Worksheet.Save();
+
+                    // create the worksheet to workbook relation
+                    package.WorkbookPart.Workbook.AppendChild(new DocumentFormat.OpenXml.Spreadsheet.Sheets());
+                    package.WorkbookPart.Workbook.GetFirstChild<DocumentFormat.OpenXml.Spreadsheet.Sheets>().AppendChild(new Sheet()
+                    {
+                        Id = package.WorkbookPart.GetIdOfPart(package.WorkbookPart.WorksheetParts.First()),
+
+                        SheetId = 1,
+
+                        Name = "Sheet1"
+
+                    });
+
+                    package.WorkbookPart.Workbook.Save();
+
+                }
+            
+        
+        }
 
         public class FileResponse {
             public string url { get; set; }
@@ -394,8 +504,6 @@ namespace AMS.Web.Controllers
             var config = ConfigurationHelper.GetConfigurationObject();
             MailMessage mailMessage = new MailMessage(config.email, email);
             var requestString = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
-
-
             // StringBuilder class is present in System.Text namespace
             StringBuilder sbEmailBody = new StringBuilder();
             sbEmailBody.Append("Dear " + "user" + ",<br/><br/>");
@@ -411,10 +519,9 @@ namespace AMS.Web.Controllers
             smtpClient.Credentials = new System.Net.NetworkCredential()
             {
                 UserName = config.email,
-                Password = config.password
             };
 
-            smtpClient.EnableSsl = true;
+            smtpClient.EnableSsl = false;
             smtpClient.Send(mailMessage);
         }
 
@@ -425,7 +532,6 @@ namespace AMS.Web.Controllers
             var config = ConfigurationHelper.GetConfigurationObject();
             MailMessage mailMessage = new MailMessage(config.email, email);
             var requestString = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
-
             // StringBuilder class is present in System.Text namespace
             StringBuilder sbEmailBody = new StringBuilder();
             sbEmailBody.Append("Dear " + "user" + ",<br/><br/>");
@@ -440,9 +546,9 @@ namespace AMS.Web.Controllers
             smtpClient.Credentials = new System.Net.NetworkCredential()
             {
                 UserName = config.email,
-                Password = config.password
             };
-            smtpClient.EnableSsl = true;
+         
+            smtpClient.EnableSsl = false;
             smtpClient.Send(mailMessage);
         }
        
