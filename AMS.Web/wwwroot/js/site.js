@@ -1031,6 +1031,7 @@ function requestReset() {
         url: "RequestReset",
         data: { "username": email },
         success: function (response) {
+
             var guid = response.guid;
             var email = response.email;
             var error = response.error;

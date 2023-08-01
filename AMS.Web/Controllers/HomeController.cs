@@ -400,13 +400,13 @@ namespace AMS.Web.Controllers
             StringBuilder sbEmailBody = new StringBuilder();
             sbEmailBody.Append("Dear " + "user" + ",<br/><br/>");
             sbEmailBody.Append("Please click on the following link to activate your account");
-            sbEmailBody.Append("<br/>"); sbEmailBody.Append($"{requestString}/auth/register?uid=" + guid + "&company=" + company + "&email=" + email);
+            sbEmailBody.Append("<br/>"); sbEmailBody.Append($"http://inventura.riko.si/auth/register?uid=" + guid + "&company=" + company + "&email=" + email);
             sbEmailBody.Append("<br/><br/>");
             sbEmailBody.Append("<b>Riko d.o.o.</b>");
             mailMessage.IsBodyHtml = true;
             mailMessage.Body = sbEmailBody.ToString();
             mailMessage.Subject = "Start using Inventory Masters";
-            SmtpClient smtpClient = new SmtpClient("smtp.office365.com", 587);
+            SmtpClient smtpClient = new SmtpClient("192.168.112.19", 25);
 
             smtpClient.Credentials = new System.Net.NetworkCredential()
             {
@@ -430,13 +430,13 @@ namespace AMS.Web.Controllers
             StringBuilder sbEmailBody = new StringBuilder();
             sbEmailBody.Append("Dear " + "user" + ",<br/><br/>");
             sbEmailBody.Append("Please click on the following link to activate your account");
-            sbEmailBody.Append("<br/>"); sbEmailBody.Append($"{requestString}/auth/registeruser?uid=" + guid + "&user=" + email);
+            sbEmailBody.Append("<br/>"); sbEmailBody.Append($"http://inventura.riko.si/auth/registeruser?uid=" + guid + "&user=" + email);
             sbEmailBody.Append("<br/><br/>");
             sbEmailBody.Append("<b>Riko d.o.o.</b>");
             mailMessage.IsBodyHtml = true;
             mailMessage.Body = sbEmailBody.ToString();
             mailMessage.Subject = "Start using Inventory Masters";
-            SmtpClient smtpClient = new SmtpClient("smtp.office365.com", 587);
+            SmtpClient smtpClient = new SmtpClient("192.168.112.19", 25);
             smtpClient.Credentials = new System.Net.NetworkCredential()
             {
                 UserName = config.email,

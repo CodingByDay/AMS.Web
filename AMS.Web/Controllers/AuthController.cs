@@ -165,7 +165,7 @@ namespace AMS.Web.Controllers
             StringBuilder sbEmailBody = new StringBuilder();
             sbEmailBody.Append("Dear " + UserName + ",<br/><br/>");
             sbEmailBody.Append("Please click on the following link to reset your password");
-            sbEmailBody.Append("<br/>"); sbEmailBody.Append($"{requestString}/auth/resetpasswordaction?uid=" + UniqueId);
+            sbEmailBody.Append("<br/>"); sbEmailBody.Append($"http://inventura.riko.si/auth/resetpasswordaction?uid=" + UniqueId);
             sbEmailBody.Append("<br/><br/>");
             sbEmailBody.Append("<b>Riko d.o.o.</b>");
 
@@ -173,7 +173,7 @@ namespace AMS.Web.Controllers
 
             mailMessage.Body = sbEmailBody.ToString();
             mailMessage.Subject = "Reset Your Password";
-            SmtpClient smtpClient = new SmtpClient("smtp.office365.com", 587);
+            SmtpClient smtpClient = new SmtpClient("192.168.112.19", 25);
 
             smtpClient.Credentials = new System.Net.NetworkCredential()
 
