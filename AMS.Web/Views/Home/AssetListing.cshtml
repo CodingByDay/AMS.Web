@@ -196,18 +196,18 @@
             })
             .Columns(c =>
             {
-                c.Add().DataField("acItem").Caption("Šifra").AllowEditing(true);
-                c.Add().DataField("acCode").Caption("2D koda").AllowEditing(true);
                 c.Add().DataField("acLocation").Caption("Lokacija").AllowEditing(true);
                 c.Add().DataField("acName").Caption("Naziv").AllowEditing(true);
-                c.Add().DataField("acECD").Caption("EPC code");
-
+                c.Add().DataField("acCareTaker").Caption("Zadolženi").AllowEditing(true);
+                c.Add().DataField("acItem").Caption("Šifra").AllowEditing(true);
+                c.Add().DataField("acNote").Caption("Zgodovina").AllowEditing(true);
+                c.Add().DataField("acECD").Caption("EPC koda");
                 c.Add()
                 .Type(GridCommandColumnType.Buttons)
                 .Width(110)
                 .Buttons(b =>
                 {
-                                b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClickInventoryAsset");
+                 b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClickInventoryAsset");
                 });
             })
             )

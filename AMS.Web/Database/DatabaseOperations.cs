@@ -1189,14 +1189,14 @@ namespace AMS.Web.Database
                 SqlCommand getOpenInventory = new SqlCommand("SELECT anQId FROM tInventory WHERE adDateConfirm IS NULL;", connection);
                 try
                 {
-                    qid = (int)getOpenInventory.ExecuteScalar();
+                    qid = (int) getOpenInventory.ExecuteScalar();
                 } catch
                 {
                     return new List<CheckOut>();
                 }
 
 
-                SqlCommand command = new SqlCommand($"SELECT * FROM tCheckOut WHERE anInventory = {qid} and adDateConfirm is null", connection);
+                SqlCommand command = new SqlCommand($"SELECT a.*, b.* FROM tCheckout AS a INNER JOIN tAsset AS b ON a.anAssetID = b.anQId WHERE a.anInventory = {qid} AND a.adDateConfirm IS NULL;", connection);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -1212,6 +1212,7 @@ namespace AMS.Web.Database
                         checkOut.acECD = ConvertFromDBVal<string>(reader["acECD"]);
                         checkOut.acName = ConvertFromDBVal<string>(reader["acName"]);
                         checkOut.acName2 = ConvertFromDBVal<string>(reader["acName2"]);
+                        checkOut.acCareTaker = ConvertFromDBVal<string>(reader["acCareTaker"]);
                         checkOut.adDateCheck = ConvertFromDBVal<DateTime>(reader["adDateCheck"]).ToString();
                         checkOut.anUserCheck = ConvertFromDBVal<int>(reader["anUserCheck"]);
                         checkOut.adStringConfirm = "Test";
@@ -1545,7 +1546,7 @@ namespace AMS.Web.Database
                         checkOut.acECD = ConvertFromDBVal<string>(reader["acECD"]);
                         checkOut.acName = ConvertFromDBVal<string>(reader["acName"]);
                         checkOut.acName2 = ConvertFromDBVal<string>(reader["acName2"]);
-                       
+                        checkOut.acCareTaker = ConvertFromDBVal<string>(reader["acCareTaker"]);
                         checkOut.adStringConfirm = "Test";
                         checkOut.adTimeIns = ConvertFromDBVal<DateTime>(reader["adTimeIns"]).ToString();
                         checkOut.anUserIns = ConvertFromDBVal<int>(reader["anUserIns"]);
@@ -1586,7 +1587,7 @@ namespace AMS.Web.Database
                 }
 
 
-                SqlCommand command = new SqlCommand($"SELECT * FROM tCheckOut WHERE anInventory = {qid} AND anAssetID in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qid} GROUP BY anAssetID HAVING count(anAssetID) > 1)", connection);
+                SqlCommand command = new SqlCommand($"SELECT a.*, b.* FROM tCheckOut AS a INNER JOIN tAsset AS b ON a.anAssetID = b.anQId WHERE anInventory = {qid} AND anAssetID in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qid} GROUP BY anAssetID HAVING count(anAssetID) > 1);", connection);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -1602,6 +1603,7 @@ namespace AMS.Web.Database
                         checkOut.acECD = ConvertFromDBVal<string>(reader["acECD"]);
                         checkOut.acName = ConvertFromDBVal<string>(reader["acName"]);
                         checkOut.acName2 = ConvertFromDBVal<string>(reader["acName2"]);
+                        checkOut.acCareTaker = ConvertFromDBVal<string>(reader["acCareTaker"]);
                         checkOut.adDateCheck = ConvertFromDBVal<DateTime>(reader["adDateCheck"]).ToString();
                         checkOut.anUserCheck = ConvertFromDBVal<int>(reader["anUserCheck"]);
                         checkOut.adStringConfirm = "Test";

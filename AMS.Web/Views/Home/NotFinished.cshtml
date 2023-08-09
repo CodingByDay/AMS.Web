@@ -199,11 +199,11 @@
                         )
                         .Columns(c =>
                         {
-                            c.Add().DataField("acItem").Caption("Izdelek");
-                            c.Add().DataField("acLocation").Caption("Lokacija");
-                            c.Add().DataField("acCode").Caption("Šifra izdelka");
-                            c.Add().DataField("acName").Caption("Ime");
 
+                            c.Add().DataField("acLocation").Caption("Lokacija");
+                            c.Add().DataField("acName").Caption("Naziv");
+                            c.Add().DataField("acCareTaker").Caption("Zadolženi");
+                            c.Add().DataField("acItem").Caption("Šifra izdelka");
 
                             c.Add()
                             .Type(GridCommandColumnType.Buttons)

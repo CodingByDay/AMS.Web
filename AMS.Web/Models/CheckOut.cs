@@ -41,5 +41,7 @@
 
         public String user { get; set; }
 
+        public string acCareTaker { get; set; }
+
     }
 }

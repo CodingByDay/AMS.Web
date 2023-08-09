@@ -277,3 +277,5 @@ C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\obj\Release\net6.0\refint\AMS.We
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\obj\Release\net6.0\AMS.Web.pdb
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\obj\Release\net6.0\AMS.Web.genruntimeconfig.cache
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\obj\Release\net6.0\ref\AMS.Web.dll
+C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\bin\Release\net6.0\DocumentFormat.OpenXml.dll
+C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\bin\Release\net6.0\System.IO.Packaging.dll

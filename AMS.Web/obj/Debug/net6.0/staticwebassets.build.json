@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "td4GQC5fDXojmOBDdwrSZyOp5WPT6TrmXT8SZxP2r5Q=",
+  "Hash": "GMdt5I6kVg6cAqA3X6KpvmNcFnoraK1bQpstnP33aOA=",
   "Source": "AMS.Web",
   "BasePath": "_content/AMS.Web",
   "Mode": "Default",
@@ -21454,23 +21454,6 @@
       "OriginalItemSpec": "wwwroot\\docs\\ui-todolist.html"
     },
     {
-      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\export\\~$mytest.xlsx",
-      "SourceId": "AMS.Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
-      "BasePath": "_content/AMS.Web",
-      "RelativePath": "export/~$mytest.xlsx",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\export\\~$mytest.xlsx"
-    },
-    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\export\\a385adf0-e4a8-4754-baac-a279f2e86d4d.txt",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -21486,6 +21469,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\export\\a385adf0-e4a8-4754-baac-a279f2e86d4d.txt"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\export\\d524e46d-0925-4299-b9a2-61f796b21c42.xlsx",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "export/d524e46d-0925-4299-b9a2-61f796b21c42.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\export\\d524e46d-0925-4299-b9a2-61f796b21c42.xlsx"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\export\\fb448d28-488c-4ea6-b241-0ec99bf89334.xlsx",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "export/fb448d28-488c-4ea6-b241-0ec99bf89334.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\export\\fb448d28-488c-4ea6-b241-0ec99bf89334.xlsx"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\export\\mytest.xlsx",
