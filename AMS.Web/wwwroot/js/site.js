@@ -46,6 +46,71 @@ function setCellValueItemName(newData, value, currentRowData) {
     });
 }
 
+function setCellValueAssetLocation(newData, value, currentRowData) {
+    jQuery.ajax({
+        type: "POST",
+        url: `UpdateRow?table=tAsset&&field=acLocation&&type=string&&data=${value}&&anQId=${currentRowData.anQId}`,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            window.location.reload();
+        },
+        failure: function (response) {
+
+        },
+        error: function (response) {
+        }
+    });
+}
+function setCellValueAssetName(newData, value, currentRowData) {
+    jQuery.ajax({
+        type: "POST",
+        url: `UpdateRow?table=tAsset&&field=acName&&type=string&&data=${value}&&anQId=${currentRowData.anQId}`,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            window.location.reload();
+        },
+        failure: function (response) {
+
+        },
+        error: function (response) {
+        }
+    });
+}
+function setCellValueAssetCareTaker(newData, value, currentRowData) {
+    jQuery.ajax({
+        type: "POST",
+        url: `UpdateRow?table=tAsset&&field=acCareTaker&&type=string&&data=${value}&&anQId=${currentRowData.anQId}`,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            window.location.reload();
+        },
+        failure: function (response) {
+
+        },
+        error: function (response) {
+        }
+    });
+}
+function setCellValueAssetNote(newData, value, currentRowData) {
+    jQuery.ajax({
+        type: "POST",
+        url: `UpdateRow?table=tAsset&&field=acNote&&type=string&&data=${value}&&anQId=${currentRowData.anQId}`,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            window.location.reload();
+        },
+        failure: function (response) {
+
+        },
+        error: function (response) {
+        }
+    });
+}
+
 
 
 function setCellValueItemQty(newData, value, currentRowData) {

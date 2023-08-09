@@ -173,35 +173,37 @@
 
 
         @model List<AssetListing>;
-        @(
-            Html.DevExtreme().DataGrid()
-            .ID("gridContainerAsset")
-            .ShowBorders(true)
-            .DataSource(Model)
-            .KeyExpr("anQId")
-            .FilterRow(filterRow => filterRow
-            .Visible(true)
-            .ApplyFilter(GridApplyFilterMode.Auto)
-            )
-            .SearchPanel(searchPanel => searchPanel
-            .Visible(true)
-            .Width(240)
-            .Placeholder("Poiščite...")
-            )
-            .Editing(e =>
-            {
-                e.Mode(GridEditMode.Cell)
+                    @(
+                        Html.DevExtreme().DataGrid()
+                                .ID("gridContainerAsset")
+                                .ShowBorders(true)
+                                .DataSource(Model)
+                                .KeyExpr("anQId")
+                                .FilterRow(filterRow => filterRow
+                                .Visible(true)
+                                .ApplyFilter(GridApplyFilterMode.Auto)
+                                )
+                                .SearchPanel(searchPanel => searchPanel
+                                .Visible(true)
+                                .Width(240)
+                                .Placeholder("Poiščite...")
+                                )
+                                .Editing(e =>
+                                {
+                                    e.Mode(GridEditMode.Cell)
 
-                .AllowUpdating(true);
-            })
-            .Columns(c =>
-            {
-                c.Add().DataField("acLocation").Caption("Lokacija").AllowEditing(true);
-                c.Add().DataField("acName").Caption("Naziv").AllowEditing(true);
-                c.Add().DataField("acCareTaker").Caption("Zadolženi").AllowEditing(true);
-                c.Add().DataField("acItem").Caption("Šifra").AllowEditing(true);
-                c.Add().DataField("acNote").Caption("Zgodovina").AllowEditing(true);
-                c.Add().DataField("acECD").Caption("EPC koda");
+                                    .AllowUpdating(true);
+                                })
+                                .Columns(c =>
+                                {
+
+                                    c.Add().DataField("acLocation").Caption("Lokacija").AllowEditing(true).SetCellValue("setCellValueAssetLocation"); 
+                                    c.Add().DataField("acName").Caption("Naziv").AllowEditing(true).SetCellValue("setCellValueAssetName"); 
+                                    c.Add().DataField("acCareTaker").Caption("Zadolženi").AllowEditing(true).SetCellValue("setCellValueAssetCareTaker");
+                                    c.Add().DataField("acItem").Caption("Šifra");
+                                    c.Add().DataField("acNote").Caption("Zgodovina").AllowEditing(true).SetCellValue("setCellValueAssetNote");
+                                    c.Add().DataField("acECD").Caption("EPC koda");
+
                 c.Add()
                 .Type(GridCommandColumnType.Buttons)
                 .Width(110)
