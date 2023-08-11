@@ -1,5 +1,6 @@
 ﻿using AMS.Web.Classes;
 using AMS.Web.Models;
+using DocumentFormat.OpenXml.Office2010.Excel;
 using Org.BouncyCastle.Utilities;
 using System.Data;
 using System.Data.SqlClient;
@@ -104,16 +105,48 @@ namespace AMS.Web.Database
                     {
                         SqlCommand current = new SqlCommand(statement, objConn);
                         current.ExecuteNonQuery();
-                    } catch
+                    } catch (Exception err)
                     {
-                        continue;
+                        try
+                        {
+                            if (err.Message.Contains("Violation of PRIMARY KEY constraint 'PK_Asset'."))
+                            {
+                                var valueSplit = statement.Split("VALUES");
+
+                                var commaSplit = valueSplit[1].Split(",");
+                                var name = commaSplit[1].Replace("'", string.Empty).Replace("'", string.Empty);
+
+                                if (commaSplit[0] == "(''" || commaSplit[0] == " (''")
+                                {
+                                    string leftName = string.Empty;
+                                    if (name.Length < 32)
+                                    {
+                                        leftName = name.Substring(0, name.Length);
+                                    }
+                                    else
+                                    {
+                                        leftName = name.Substring(0, 32);
+                                    }
+                                    commaSplit[0] = $"('{leftName}'";
+                                    valueSplit[1] = string.Join(",", commaSplit);
+                                    var commandString = string.Join("VALUES", valueSplit);
+                                    try
+                                    {
+                                        SqlCommand current = new SqlCommand(commandString, objConn);
+                                        current.ExecuteNonQuery();
+                                    } catch
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                        } catch (Exception)
+                        {
+                            continue;
+                        }                 
                     }
-
-                 }
-                
-
-                    objConn.Close();
-                
+                 }           
+                    objConn.Close();                
             }
         }
 
@@ -1196,7 +1229,7 @@ namespace AMS.Web.Database
                 }
 
 
-                SqlCommand command = new SqlCommand($"SELECT a.*, b.* FROM tCheckout AS a INNER JOIN tAsset AS b ON a.anAssetID = b.anQId WHERE a.anInventory = {qid} AND a.adDateConfirm IS NULL;", connection);
+                SqlCommand command = new SqlCommand($"SELECT a.*, b.* FROM tCheckout AS a LEFT JOIN tAsset AS b ON a.anAssetID = b.anQId WHERE a.anInventory = {qid} AND a.adDateConfirm IS NULL;", connection);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -1587,7 +1620,7 @@ namespace AMS.Web.Database
                 }
 
 
-                SqlCommand command = new SqlCommand($"SELECT a.*, b.* FROM tCheckOut AS a INNER JOIN tAsset AS b ON a.anAssetID = b.anQId WHERE anInventory = {qid} AND anAssetID in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qid} GROUP BY anAssetID HAVING count(anAssetID) > 1);", connection);
+                SqlCommand command = new SqlCommand($"SELECT a.*, b.* FROM tCheckOut AS a LEFT JOIN tAsset AS b ON a.anAssetID = b.anQId WHERE anInventory = {qid} AND anAssetID in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qid} GROUP BY anAssetID HAVING count(anAssetID) > 1) AND anAssetID not in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qid} AND adDateConfirm is not null);", connection);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {

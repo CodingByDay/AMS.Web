@@ -105,7 +105,7 @@ namespace AMS.Web.Controllers
 
                     DatabaseOperations databaseFindtype = new DatabaseOperations(HttpContext.Session.GetString("connection"));
 
-                    quotesNeeded.Add (databaseFindtype.findType($"SELECT TOP 1 DATA_TYPE FROM tSetTables WHERE Field = '{name}' and  [Table] = '{table}'"));
+                    quotesNeeded.Add(databaseFindtype.findType($"SELECT TOP 1 DATA_TYPE FROM tSetTables WHERE Field = '{name}' and  [Table] = '{table}'"));
 
 
                     if (!headersResult)
@@ -122,37 +122,56 @@ namespace AMS.Web.Controllers
                             throw new KeyNotFoundException("Error");
 
                         }
-                    } else
+                    }
+                    else
                     {
                         order.Add(count);
                         count++;
                     }
-                      }
-                        for (int i = 1; i <= order.Count;i++)
-                        {
-                            if (i != order.Count)
-                            {
-                                if (quotesNeeded.ElementAt(i-1))
-                                {
-                                    insert += "'" + r[order[i - 1]] + "'" + ",";
-                                } else
-                                {
-                                    insert += r[order[i - 1]] + ",";
+                }
 
-                                }
-                    } else
-                            {
-                                if (quotesNeeded.ElementAt(i - 1))
-                                {
-                                    insert += "'" + r[order[i - 1]] + "'";
-                                } else
-                                {
-                                    insert += r[order[i - 1]];
-
-                                }
+                    if (r.Count < order.Count)
+                    {
+                        continue;
                     }
+
+
+                    for (int i = 1; i <= order.Count; i++)
+                    {
+                        if (i != order.Count)
+                        {
+                            if (quotesNeeded.ElementAt(i - 1))
+                            {
+
+                                insert += "'" + r[order[i - 1]] + "'" + ",";
+
+                            }
+                            else
+                            {
+
+                                insert += r[order[i - 1]] + ",";
+
+                            }
                         }
-                        insert += ")";
+                        else
+                        {
+                            if (quotesNeeded.ElementAt(i - 1))
+                            {
+
+                                insert += "'" + r[order[i - 1]] + "'";
+
+                            }
+                            else
+                            {
+
+                                insert += r[order[i - 1]];
+
+
+                            }
+
+                        }
+                    }
+                    insert += ")";
                         query += $"INSERT INTO {connection.startObjects.ElementAt(0).table} {fieldNames} VALUES {insert}";
                         queries.Add(query);             
                 }

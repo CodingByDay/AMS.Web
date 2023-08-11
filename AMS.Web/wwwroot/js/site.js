@@ -62,6 +62,11 @@ function setCellValueAssetLocation(newData, value, currentRowData) {
         }
     });
 }
+
+
+
+
+
 function setCellValueAssetName(newData, value, currentRowData) {
     jQuery.ajax({
         type: "POST",
@@ -98,6 +103,42 @@ function setCellValueAssetNote(newData, value, currentRowData) {
     jQuery.ajax({
         type: "POST",
         url: `UpdateRow?table=tAsset&&field=acNote&&type=string&&data=${value}&&anQId=${currentRowData.anQId}`,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            window.location.reload();
+        },
+        failure: function (response) {
+
+        },
+        error: function (response) {
+        }
+    });
+}
+
+
+function setCellValueSignature(newData, value, currentRowData) {
+    jQuery.ajax({
+        type: "POST",
+        url: `UpdateRow?table=tAsset&&field=acFieldSC&&type=string&&data=${value}&&anQId=${currentRowData.anQId}`,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            window.location.reload();
+        },
+        failure: function (response) {
+
+        },
+        error: function (response) {
+        }
+    });
+}
+
+
+function setCellValueEPC(newData, value, currentRowData) {
+    jQuery.ajax({
+        type: "POST",
+        url: `UpdateRow?table=tAsset&&field=acECD&&type=string&&data=${value}&&anQId=${currentRowData.anQId}`,
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function (response) {
@@ -267,6 +308,7 @@ function onConfirmIconClickInventory(e) {
             success: function (response) {
 
                 if (response) {
+                    alert(response)
                     Swal.fire({
                         title: 'Neskladje',
                         showDenyButton: false,
