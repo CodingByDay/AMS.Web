@@ -112,7 +112,6 @@ namespace AMS.Web.Database
                             if (err.Message.Contains("Violation of PRIMARY KEY constraint 'PK_Asset'."))
                             {
                                 var valueSplit = statement.Split("VALUES");
-
                                 var commaSplit = valueSplit[1].Split(",");
                                 var name = commaSplit[1].Replace("'", string.Empty).Replace("'", string.Empty);
 
