@@ -1,0 +1,27 @@
+/**
+ * DevExtreme (esm/__internal/grids/grid_core/row_dragging/dom.js)
+ * Version: 23.1.4
+ * Build date: Fri Jul 14 2023
+ *
+ * Copyright (c) 2012 - 2023 Developer Express Inc. ALL RIGHTS RESERVED
+ * Read about DevExtreme licensing here: https://js.devexpress.com/Licensing/
+ */
+import $ from "../../../../core/renderer";
+import gridCoreUtils from "../m_utils";
+import {
+    ATTRIBUTES,
+    CLASSES
+} from "./const";
+var createHandleTemplateFunc = addWidgetPrefix => (container, options) => {
+    var $container = $(container);
+    $container.attr(ATTRIBUTES.dragCell, "");
+    if ("data" === options.rowType) {
+        $container.addClass(CLASSES.cellFocusDisabled);
+        return $("<span>").addClass(addWidgetPrefix(CLASSES.handleIcon))
+    }
+    gridCoreUtils.setEmptyText($container);
+    return
+};
+export var GridCoreRowDraggingDom = {
+    createHandleTemplateFunc: createHandleTemplateFunc
+};

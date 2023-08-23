@@ -58,6 +58,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "DevExpress.AspNetCore.Common": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "DevExpress.AspNetCore.Dashboard": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
+            "DevExpress.AspNetCore.Dashboard.de": {
+              "target": "Package",
+              "version": "[22.2.5, )"
+            },
             "DevExtreme.AspNet.Core": {
               "target": "Package",
               "version": "[22.2.5, )"

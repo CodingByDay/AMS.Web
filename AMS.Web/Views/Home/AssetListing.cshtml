@@ -189,17 +189,19 @@
                                 .Width(240)
                                 .Placeholder("Poiščite...")
                                 )
+
                                 .Editing(e =>
                                 {
                                     e.Mode(GridEditMode.Cell)
                                     .AllowUpdating(true);
                                 })
+
                                 .Columns(c =>
                                 {
                                     c.Add().DataField("acLocation").Caption("Lokacija").AllowEditing(true).SetCellValue("setCellValueAssetLocation"); 
                                     c.Add().DataField("acName").Caption("Naziv").AllowEditing(true).SetCellValue("setCellValueAssetName"); 
                                     c.Add().DataField("acCareTaker").Caption("Zadolženi").AllowEditing(true).SetCellValue("setCellValueAssetCareTaker");
-                                    c.Add().DataField("acItem").Caption("Šifra");
+                                    c.Add().DataField("acItem").Caption("Šifra").AllowEditing(true).SetCellValue("setCellValueAssetItem"); 
                                     c.Add().DataField("acNote").Caption("Zgodovina").AllowEditing(true).SetCellValue("setCellValueAssetNote");
                                     c.Add().DataField("acFieldSC").Caption("Podpis").AllowEditing(true).SetCellValue("setCellValueSignature");
                                     c.Add().DataField("acECD").Caption("EPC koda").AllowEditing(true).SetCellValue("setCellValueEPC"); 

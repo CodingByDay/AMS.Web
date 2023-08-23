@@ -116,6 +116,22 @@ function setCellValueAssetNote(newData, value, currentRowData) {
     });
 }
 
+function setCellValueAssetItem(newData, value, currentRowData) {
+    jQuery.ajax({
+        type: "POST",
+        url: `UpdateRow?table=tAsset&&field=acItem&&type=string&&data=${value}&&anQId=${currentRowData.anQId}`,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            window.location.reload();
+        },
+        failure: function (response) {
+
+        },
+        error: function (response) {
+        }
+    });
+}
 
 function setCellValueSignature(newData, value, currentRowData) {
     jQuery.ajax({

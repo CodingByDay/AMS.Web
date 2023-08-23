@@ -63,8 +63,10 @@ namespace AMS.Web.Controllers
 
 
 
-
-
+        public IActionResult Dashboard()
+        {
+            return View();
+        }
 
 
         public IActionResult Index()

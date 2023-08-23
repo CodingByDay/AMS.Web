@@ -2168,6 +2168,9 @@
     </Content>
 </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="DevExpress.AspNetCore.Common" Version="22.2.5" />
+    <PackageReference Include="DevExpress.AspNetCore.Dashboard" Version="22.2.5" />
+    <PackageReference Include="DevExpress.AspNetCore.Dashboard.de" Version="22.2.5" />
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.20.0" />
     <PackageReference Include="ExcelDataReader" Version="3.6.0" />
     <PackageReference Include="ExcelDataReader.DataSet" Version="3.6.0" />
@@ -2182,6 +2185,9 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
   <ItemGroup>
+    <Content Update="Views\Home\Dashboard.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\Content\dist\assets\js\feather-icons\icons.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

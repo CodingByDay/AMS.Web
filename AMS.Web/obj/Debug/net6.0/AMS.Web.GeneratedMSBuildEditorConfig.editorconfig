@@ -56,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBc3NldExpc3RpbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/jankoj/Desktop/AMS Web/AMS.Web/AMS.Web/Views/Home/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/jankoj/Desktop/AMS Web/AMS.Web/AMS.Web/Views/Home/DeviceSync.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXZpY2VTeW5jLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
