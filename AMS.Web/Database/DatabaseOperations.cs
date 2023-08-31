@@ -1038,7 +1038,7 @@ namespace AMS.Web.Database
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                SqlCommand current = new SqlCommand($"SELECT {select.Remove(select.Length - 1)} FROM tAsset;", conn);
+                SqlCommand current = new SqlCommand($"SELECT {select.Remove(select.Length - 1)} FROM vAssetCheck;", conn);
                 using (SqlDataReader reader = current.ExecuteReader())
                 {
                     while (reader.Read())
@@ -1457,13 +1457,13 @@ namespace AMS.Web.Database
             return data;
         }
 
-        public List<AssetListing> GetAssets()
+        public List<AssetListing> GetAssets(int current)
         {
             List<AssetListing> data = new List<AssetListing>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand sql = new SqlCommand("SELECT * FROM tAsset", connection);
+                SqlCommand sql = new SqlCommand($"select * from vAssetCheck where anInventory = {current}", connection);
                 using (SqlDataReader reader = sql.ExecuteReader())
                 {
                     while (reader.Read())
@@ -1511,13 +1511,16 @@ namespace AMS.Web.Database
                         string adFieldDC = ConvertFromDBVal<string>(reader["adFieldDC"]);
                         string adFieldDD = ConvertFromDBVal<string>(reader["adFieldDD"]);
                         string acActive = ConvertFromDBVal<string>(reader["acActive"]);
+                        bool abWriteOff = ConvertFromDBVal<bool>(reader["abWriteOff"]);
+                        string abWriteOffReason = ConvertFromDBVal<string>(reader["abWriteOffReason"]);
                         int anSeqNo = ConvertFromDBVal<int>(reader["anSeqNo"]);
                         string acInsertedFrom = ConvertFromDBVal<string>(reader["acInsertedFrom"]);
+                        bool checkedOut = ConvertFromDBVal<bool>(reader["checkedOut"]);
                         data.Add(new AssetListing(anQId, acType, acItem, acLocation, acCode, acECD, acName, acName2, adDateOfACQ, adDateOfACT, adDateOfLIQ, adDateOfELI, acCareTaker, adTimeIns, anUserIns, adTimeChg, anUserChg, acNote,
 
                             acFieldSA, acFieldSB, acFieldSC, acFieldSD, acFieldSE, acFieldSF, acFieldSG, acFieldSH, acFieldSI, acFieldSJ, anFieldNA, anFieldNB, anFieldNC, anFieldND, anFieldNE, anFieldNF, anFieldNG, anFieldNH,
 
-                            anFieldNI, anFieldNJ, adFieldDA, adFieldDB, adFieldDC, adFieldDD, acActive, anSeqNo, acInsertedFrom));
+                            anFieldNI, anFieldNJ, adFieldDA, adFieldDB, adFieldDC, adFieldDD, acActive, anSeqNo, acInsertedFrom, abWriteOff, abWriteOffReason, checkedOut));
                     }
                 }
             }
@@ -1530,16 +1533,37 @@ namespace AMS.Web.Database
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
+                if (type == "bool")
+                {
+                    if(data == "true")
+                    {
+                        command = new SqlCommand($"UPDATE {table} SET {field}=1 WHERE anQId = {id}", connection);
+
+                    }
+                    else
+                    {
+                        command = new SqlCommand($"UPDATE {table} SET {field}=0 WHERE anQId = {id}", connection);
+
+                    }
+                    command.ExecuteNonQuery();
+                    return;
+                }
                 if (type == "string")
                 {
+
                     command = new SqlCommand($"UPDATE {table} SET {field}='{data}' WHERE anQId = {id}", connection);
+                    command.ExecuteNonQuery();
+                    return;
                 }
                 else
                 {
+
                     command = new SqlCommand($"UPDATE {table} SET {field}={data} WHERE anQId = {id}", connection);
+                    command.ExecuteNonQuery();
+                    return;
                 }
 
-                command.ExecuteNonQuery();
+               
             }
         }
 
@@ -1747,6 +1771,7 @@ namespace AMS.Web.Database
                     }
                 }
             }
+            data.Add(new Column { ID = counter, Text = "CheckedOut" });
             return data;
         }
 
@@ -1778,6 +1803,20 @@ namespace AMS.Web.Database
                 SqlCommand sql = new SqlCommand($"delete from tAsset where anQId = {id}", connection);
                 sql.ExecuteNonQuery();
             }
+        }
+
+        internal int GetCurrentActiveInventory()
+        {
+            int result = -1;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand sql = new SqlCommand($"EXEC GetCurrentInventory", connection);
+                result = (int) sql.ExecuteScalar();
+            }
+
+            return result;
         }
     }
 }

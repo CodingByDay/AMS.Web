@@ -48,7 +48,13 @@
         public int anSeqNo { get; set; }
         public string acInsertedFrom { get; set; }
 
-        public AssetListing(int anQId_, string acType_, string acItem_, string acLocation_, string acCode_, string acECD_, string acName_, string acName2_, string adDateOfACQ_, string adDateOfACT_, string adDateOfLIQ_, string adDateOfELI_, string acCareTaker_, string adTimeIns_, int anUserIns_, string adTimeChg_, int anUserChg_, string acNote_, string acFieldSA_, string acFieldSB_, string acFieldSC_, string acFieldSD_, string acFieldSE_, string acFieldSF_, string acFieldSG_, string acFieldSH_, string acFieldSI_, string acFieldSJ_, decimal anFieldNA_, decimal anFieldNB_, decimal anFieldNC_, decimal anFieldND_, decimal anFieldNE_, decimal anFieldNF_, decimal anFieldNG_, decimal anFieldNH_, decimal anFieldNI_, decimal anFieldNJ_, string adFieldDA_, string adFieldDB_, string adFieldDC_, string adFieldDD_, string acActive_, int anSeqNo_, string acInsertedFrom_)
+        public bool abWriteOff { get; set; }
+
+        public string abWriteOffReason { get; set; }
+
+        public bool checkedOut { get; set; }
+
+        public AssetListing(int anQId_, string acType_, string acItem_, string acLocation_, string acCode_, string acECD_, string acName_, string acName2_, string adDateOfACQ_, string adDateOfACT_, string adDateOfLIQ_, string adDateOfELI_, string acCareTaker_, string adTimeIns_, int anUserIns_, string adTimeChg_, int anUserChg_, string acNote_, string acFieldSA_, string acFieldSB_, string acFieldSC_, string acFieldSD_, string acFieldSE_, string acFieldSF_, string acFieldSG_, string acFieldSH_, string acFieldSI_, string acFieldSJ_, decimal anFieldNA_, decimal anFieldNB_, decimal anFieldNC_, decimal anFieldND_, decimal anFieldNE_, decimal anFieldNF_, decimal anFieldNG_, decimal anFieldNH_, decimal anFieldNI_, decimal anFieldNJ_, string adFieldDA_, string adFieldDB_, string adFieldDC_, string adFieldDD_, string acActive_, int anSeqNo_, string acInsertedFrom_, bool abWriteOff_, string abWriteOffReason_, bool checketOut_)
         {
             this.anQId = anQId_;
             this.acType = acType_;
@@ -95,6 +101,13 @@
             this.acActive = acActive_;
             this.anSeqNo = anSeqNo_;
             this.acInsertedFrom = acInsertedFrom_;
+            this.abWriteOff = abWriteOff_;
+            this.abWriteOffReason = abWriteOffReason_;
+            this.checkedOut = checketOut_;
         }
+
+     
+
+
     }
 }

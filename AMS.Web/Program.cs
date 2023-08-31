@@ -14,14 +14,7 @@ builder.Services.AddOptions();
 
 IFileProvider? fileProvider = builder.Environment.ContentRootFileProvider;
 IConfiguration? configuration = builder.Configuration;
-// ...
-builder.Services.AddScoped<DashboardConfigurator>((IServiceProvider serviceProvider) => {
-    DashboardConfigurator configurator = new DashboardConfigurator();
-    configurator.SetDashboardStorage(new DashboardFileStorage(fileProvider.GetFileInfo("").PhysicalPath));
-    configurator.SetConnectionStringsProvider(new DashboardConnectionStringsProvider(configuration));
-    return configurator;
-});
-builder.Services.AddDevExpressControls();
+
 
 
 
@@ -43,17 +36,10 @@ builder.WebHost.UseSentry();
 
 var app = builder.Build();
 
-//// Configure the HTTP request pipeline.
-//if (!app.Environment.IsDevelopment())
-//{
-//    app.UseExceptionHandler("/Home/Error");
-//    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-//    app.UseHsts();
-//}
 
 
-app.UseDevExpressControls();
-app.MapDashboardRoute("home/dashboard", "DefaultDashboard");
+
+
 app.UseSentryTracing();
 app.UseHttpsRedirection();
 app.UseStaticFiles();

@@ -57,7 +57,12 @@ namespace AMS.Web.Controllers
         {
             DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
             ViewBag.Title = "Sredstva";
-            var assets = db.GetAssets();
+
+
+
+            var currentInventory = db.GetCurrentActiveInventory();
+
+            var assets = db.GetAssets(currentInventory);
             return View(assets);
         }
 
@@ -114,7 +119,8 @@ namespace AMS.Web.Controllers
         {
 
             DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
-            var assets = db.GetAssets();
+            var currentInventory = db.GetCurrentActiveInventory();
+            var assets = db.GetAssets(currentInventory);
             db.DeleteInventoryAsset(assets.ElementAt(Int32.Parse(id)).anQId.ToString());
             return Json(true);
         }

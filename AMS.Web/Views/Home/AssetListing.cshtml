@@ -111,6 +111,10 @@
 
 
 
+                    <a class='sidebar-link' asp-controller="home" asp-action="dashboard">
+                        <i width="20"></i>
+                        <span>Analitika</span>
+                    </a>
 
 
 
@@ -170,49 +174,70 @@
                 <h4 class="card-title-active">Pregled sredstev</h4>
                 <div class="card-header d-flex justify-content-between align-items-center">
 
-
+                    @using (Html.DevExtreme().NamedTemplate("checkBox"))
+                    {
+                        @(Html.DevExtreme().CheckBox()
+                            .Width(80)
+                            )
+                    }
 
         @model List<AssetListing>;
                     @(
                         Html.DevExtreme().DataGrid()
 
-                                .ID("gridContainerAsset")
-                                .ShowBorders(true)
-                                .DataSource(Model)
-                                .KeyExpr("anQId")
-                                .FilterRow(filterRow => filterRow
-                                .Visible(true)
-                                .ApplyFilter(GridApplyFilterMode.Auto)
-                                )
-                                .SearchPanel(searchPanel => searchPanel
-                                .Visible(true)
-                                .Width(240)
-                                .Placeholder("Poiščite...")
-                                )
+                                        .ID("gridContainerAsset")
+                                        .ShowBorders(true)
+                                        .DataSource(Model)
+                                        .KeyExpr("anQId")
+                                        .FilterRow(filterRow => filterRow
+                                        .Visible(true)
+                                        .ApplyFilter(GridApplyFilterMode.Auto)
+                                        )
+                                        .SearchPanel(searchPanel => searchPanel
+                                        .Visible(true)
+                                        .Width(240)
+                                        .Placeholder("Poiščite...")
+                                        )
 
-                                .Editing(e =>
-                                {
-                                    e.Mode(GridEditMode.Cell)
-                                    .AllowUpdating(true);
-                                })
+                                        .Editing(e =>
+                                        {
+                                            e.Mode(GridEditMode.Cell)
+                                            .AllowUpdating(true);
+                                        })
 
-                                .Columns(c =>
-                                {
-                                    c.Add().DataField("acLocation").Caption("Lokacija").AllowEditing(true).SetCellValue("setCellValueAssetLocation"); 
-                                    c.Add().DataField("acName").Caption("Naziv").AllowEditing(true).SetCellValue("setCellValueAssetName"); 
-                                    c.Add().DataField("acCareTaker").Caption("Zadolženi").AllowEditing(true).SetCellValue("setCellValueAssetCareTaker");
-                                    c.Add().DataField("acItem").Caption("Šifra").AllowEditing(true).SetCellValue("setCellValueAssetItem"); 
-                                    c.Add().DataField("acNote").Caption("Zgodovina").AllowEditing(true).SetCellValue("setCellValueAssetNote");
-                                    c.Add().DataField("acFieldSC").Caption("Podpis").AllowEditing(true).SetCellValue("setCellValueSignature");
-                                    c.Add().DataField("acECD").Caption("EPC koda").AllowEditing(true).SetCellValue("setCellValueEPC"); 
 
-                 c.Add()
+
+
+
+                                    .Columns(c =>
+                                    {
+                                        c.Add().DataField("acLocation").Caption("Lokacija").AllowEditing(true).SetCellValue("setCellValueAssetLocation"); 
+                                        c.Add().DataField("acName").Caption("Naziv").AllowEditing(true).SetCellValue("setCellValueAssetName"); 
+                                        c.Add().DataField("acCareTaker").Caption("Zadolženi").AllowEditing(true).SetCellValue("setCellValueAssetCareTaker");
+                                        c.Add().DataField("acItem").Caption("Šifra").AllowEditing(true).SetCellValue("setCellValueAssetItem"); 
+                                        c.Add().DataField("acNote").Caption("Zgodovina").AllowEditing(true).SetCellValue("setCellValueAssetNote");
+                                        c.Add().DataField("acFieldSC").Caption("Podpis").AllowEditing(true).SetCellValue("setCellValueSignature");
+                                        c.Add().DataField("acECD").Caption("EPC koda").AllowEditing(true).SetCellValue("setCellValueEPC");
+                                        c.Add().DataField("abWriteOff").Caption("Odpisano").AllowEditing(true).SetCellValue("setWriteOff");
+                                        c.Add().DataField("abWriteOffReason").Caption("Razlog").AllowEditing(true).SetCellValue("setWriteOffReason");
+                                        c.Add().DataField("checkedOut").Caption("Zabeleženo").AllowEditing(false);
+
+
+
+                            c.Add()
                 .Type(GridCommandColumnType.Buttons)
                 .Width(110)
                 .Buttons(b =>
                 {
                 // b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClickInventoryAsset");
+                        
+
+
                 });
+                      
+
+
+
             })
             )
 
