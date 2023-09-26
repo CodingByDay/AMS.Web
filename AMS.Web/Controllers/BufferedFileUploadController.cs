@@ -103,7 +103,7 @@ namespace AMS.Web.Controllers
                     SecondTable connector = getKeyValuePairs(connection).Where(x => x.Key == el).FirstOrDefault().Value;
                     var table = connection.startObjects.ElementAt(0).table;
 
-                    DatabaseOperations databaseFindtype = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+                    DatabaseOperations databaseFindtype = new DatabaseOperations(Request.Cookies["connection"]);
 
                     quotesNeeded.Add(databaseFindtype.findType($"SELECT TOP 1 DATA_TYPE FROM tSetTables WHERE Field = '{name}' and  [Table] = '{table}'"));
 
@@ -178,7 +178,7 @@ namespace AMS.Web.Controllers
 
                 // Database call
             
-                DatabaseOperations database = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+                DatabaseOperations database = new DatabaseOperations(Request.Cookies["connection"]);
                 database.toggleFKConstraintsItems(true);
                 database.toggleFKConstraintsAssets(true);
                 database.insertBulk(queries);
@@ -216,21 +216,31 @@ namespace AMS.Web.Controllers
                 row = ShowTextRows(Path.Combine(path, filename), headersResult);
             }
 
-      
 
+            List<string> fileNames = new List<string>();
             //  Row row = dataMain;
             int counter = 0;
             foreach (var r in row.columns)
             {
+                List<int> finalOrder = new List<int>();
                 counter += 1;
                 if (counter == 1 && headersResult)
                 {
+                    for (int i = 0; i < r.Count; i++)
+                    {
+                        fileNames.Add($"{r[i]}");
+                    }
                     continue;
+                } else if (counter == 1 && !headersResult)
+                {
+                    for (int i = 0; i < r.Count; i++)
+                    {
+                        fileNames.Add($"Stolpec {i}");
+                    }
                 }
 
 
 
-                // Dobi naslove 
                 string query = string.Empty;
                 List<string> columns = new List<string>();
                 string fieldNames = "(";
@@ -244,7 +254,6 @@ namespace AMS.Web.Controllers
                     else
                     {
                         fieldNames += connection.startObjects.ElementAt(i - 1).field;
-
                     }
                 }
                 string insert = string.Empty;
@@ -252,11 +261,28 @@ namespace AMS.Web.Controllers
                 insert += "(";
                 List<int> order = new List<int>();
                 int count = 0;
+                string correctedFieldNames = "(";
+                int helpCount = 0;
+
                 foreach (string name in columns)
                 {
+                    
                     var el = connection.startObjects.Where(x => x.field == name).FirstOrDefault();
                     SecondTable connector = getKeyValuePairs(connection).Where(x => x.Key == el).FirstOrDefault().Value;
-                    DatabaseOperations databaseFindtype = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+
+                    if(connector.name == fileNames.ElementAt(helpCount))
+                    {
+                        finalOrder.Add(helpCount);
+                    } else
+                    {
+                        finalOrder.Add(fileNames.IndexOf(connector.name));
+                    }
+
+
+
+                    helpCount += 1;
+
+                    DatabaseOperations databaseFindtype = new DatabaseOperations(Request.Cookies["connection"]);
                     var table = connection.startObjects.ElementAt(0).table;
 
                     quotesNeeded.Add(databaseFindtype.findType($"SELECT TOP 1 DATA_TYPE FROM tSetTables WHERE Field = '{name}' and  [Table] = '{table}'"));
@@ -283,8 +309,33 @@ namespace AMS.Web.Controllers
                         order.Add(count);
                         count++;
                     }
+
+
+
+                }
+                int cCounter = 0;
+                List<string> columnsModified = new List<string>();
+
+                foreach (int final in finalOrder)
+                {
+                    columnsModified.Add(columns[final]);
+                    cCounter += 1;
                 }
 
+                fieldNames = "(";
+                for (int i = 1; i <= columnsModified.Count; i++)
+                {
+                    if (i != columnsModified.Count)
+                    {
+                        fieldNames += columnsModified.ElementAt(i - 1) + ",";
+                    }
+                    else
+                    {
+                        fieldNames += columnsModified.ElementAt(i - 1);
+                    }
+                }
+
+                fieldNames += ")";
 
                 if ( r.Count < order.Count )
                 {
@@ -331,10 +382,9 @@ namespace AMS.Web.Controllers
 
             }
 
-
             // Database call
 
-            DatabaseOperations database = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations database = new DatabaseOperations(Request.Cookies["connection"]);
             database.toggleFKConstraintsItems(true);
             database.toggleFKConstraintsAssets(true);
             database.insertBulk(queries);
@@ -345,18 +395,16 @@ namespace AMS.Web.Controllers
 
             ResolveItems();
             ResolveLocations();
-
-
         }
         private void ResolveLocations()
         {
-            DatabaseOperations database = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations database = new DatabaseOperations(Request.Cookies["connection"]);
             database.CommitLocationsFromAssets();
 
         }
         private void ResolveItems()
         {
-            DatabaseOperations database = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations database = new DatabaseOperations(Request.Cookies["connection"]);
             database.CommitItemsFromAssets();
 
         }
@@ -380,7 +428,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult getConfig([FromQuery(Name = "name")] string name)
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"]);
             var res = db.getSpecificConfiguration(name);        
             return Json(res);
         }
@@ -396,7 +444,7 @@ namespace AMS.Web.Controllers
             if(header == "true") { headerResult = true; }
             var toSave = getKeyValuePairs(connection);
             var configName = name;
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"]);
             if(db.setConfiguration(toSave, headerResult, configName, HttpContext.Session.GetString("company")))
             {
                 return Json(new ConfigResponse { message = "Success" });
@@ -492,22 +540,22 @@ namespace AMS.Web.Controllers
                 switch (type)
                 {
                     case "lokacij":
-                        DatabaseOperations dbLocation = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+                        DatabaseOperations dbLocation = new DatabaseOperations(Request.Cookies["connection"]);
                         var resultLocation = dbLocation.getTableDataLocation();
                         Model = resultLocation;
                         break;
                     case "artiklov":
-                        DatabaseOperations dbITem = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+                        DatabaseOperations dbITem = new DatabaseOperations(Request.Cookies["connection"]);
                         var resultITem = dbITem.getTableDataItem();
                         Model = resultITem;
                         break;
                     case "sredstev":
-                        DatabaseOperations dbAsset = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+                        DatabaseOperations dbAsset = new DatabaseOperations(Request.Cookies["connection"]);
                         var result = dbAsset.getTableDataAsset();
                         Model = result;
                         break;
                     case "vse":
-                        DatabaseOperations dbAssetAll = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+                        DatabaseOperations dbAssetAll = new DatabaseOperations(Request.Cookies["connection"]);
                         var resultAll = dbAssetAll.getTableDataAsset();
                         Model = resultAll;
                         break;
@@ -515,7 +563,7 @@ namespace AMS.Web.Controllers
             }
 
 
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"]);
             // List<string> returnObjects = db.getConfiguration();
             var configuration = db.getConfigurationNamesOnly();
             ViewBag.Configuration = configuration;
@@ -542,21 +590,21 @@ namespace AMS.Web.Controllers
                     switch (HttpContext.Session.GetString("type"))
                     {
                         case "lokacij":
-                            DatabaseOperations dbLocation = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+                            DatabaseOperations dbLocation = new DatabaseOperations(Request.Cookies["connection"]);
                             var resultLocation = dbLocation.getTableDataLocation();
                             Model = resultLocation;
                             var namesLocations = dbLocation.getConfigurationNamesOnly();
                             ViewBag.Configuration = namesLocations;
                             break;
                         case "artiklov":
-                            DatabaseOperations dbItem = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+                            DatabaseOperations dbItem = new DatabaseOperations(Request.Cookies["connection"]);
                             var resultItem = dbItem.getTableDataItem();
                             Model = resultItem;
                             var namesItems = dbItem.getConfigurationNamesOnly();
                             ViewBag.Configuration = namesItems;
                             break;
                         case "sredstev":
-                            DatabaseOperations dbAsset = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+                            DatabaseOperations dbAsset = new DatabaseOperations(Request.Cookies["connection"]);
                             var result = dbAsset.getTableDataAsset();
                             Model = result;
                             var names = dbAsset.getConfigurationNamesOnly();
@@ -564,7 +612,7 @@ namespace AMS.Web.Controllers
                             ViewBag.Configuration = namesAssets;
                             break;
                         case "vse":
-                            DatabaseOperations dbAssetAll = new DatabaseOperations(HttpContext.Session.GetString("connection"));
+                            DatabaseOperations dbAssetAll = new DatabaseOperations(Request.Cookies["connection"]);
                             var resultAll = dbAssetAll.getTableDataAsset();
                             Model = resultAll;
                             var namesAll = dbAssetAll.getConfigurationNamesOnly();

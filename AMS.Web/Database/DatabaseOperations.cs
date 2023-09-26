@@ -876,7 +876,9 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+                    throw new KeyNotFoundException(ex.Message);
+                }
             }
 
             InsertRows(items);

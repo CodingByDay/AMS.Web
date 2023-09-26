@@ -60,6 +60,17 @@ namespace AMS.Web.Controllers
             {
                 if (loginResponse.success)
                 {
+                    // Create a cookie for the "connection" property
+                    var connectionCookie = new CookieOptions
+                    {
+                        Expires = DateTime.Now.AddDays(1), // Set an appropriate expiration date
+                        HttpOnly = true,
+                        // You can set other options like Secure, SameSite, etc., as needed
+                    };
+
+                    // Set the "connection" property value in the cookie
+                    Response.Cookies.Append("connection", loginResponse.result, connectionCookie);
+
                     HttpContext.Session.SetString("connection", loginResponse.result);
                     HttpContext.Session.SetString("username", username);
                     HttpContext.Session.SetString("company", request.company);

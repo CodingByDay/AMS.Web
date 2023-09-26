@@ -36,7 +36,7 @@ namespace AMS.Web.Controllers
         public IActionResult LocationListing()
         {
             ViewBag.Title = "Lokacije";
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection")??"");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"]??"");
             var locations = db.GetAllLocations();
             return View(locations);
         }
@@ -46,7 +46,7 @@ namespace AMS.Web.Controllers
         public IActionResult ItemListing()
         {
             ViewBag.Title = "Artikli";
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection")??"");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"]??"");
             var items = db.GetAllItems();
             // db.GetUserNames(items)       
             return View(items);
@@ -55,7 +55,7 @@ namespace AMS.Web.Controllers
 
         public IActionResult AssetListing()
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             ViewBag.Title = "Sredstva";
 
 
@@ -82,7 +82,7 @@ namespace AMS.Web.Controllers
             {
                 return RedirectToAction("Login", "Auth");
             }
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
 
             var names = db.getExportColumnNames();
             ViewBag.Columns = names;
@@ -108,7 +108,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult UpdateRow([FromQuery(Name = "table")] string table, [FromQuery(Name = "field")] string field, [FromQuery( Name = "type")] string type, [FromQuery(Name = "data")] string data, [FromQuery(Name = "anQId")] string anQId)
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             db.UpdateRow(table,field, type, data, anQId);
             return Json(true);
         }
@@ -118,7 +118,7 @@ namespace AMS.Web.Controllers
         public JsonResult DeleteInventoryAsset([FromQuery(Name = "id")] string id)
         {
 
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             var currentInventory = db.GetCurrentActiveInventory();
             var assets = db.GetAssets(currentInventory);
             db.DeleteInventoryAsset(assets.ElementAt(Int32.Parse(id)).anQId.ToString());
@@ -131,7 +131,7 @@ namespace AMS.Web.Controllers
         public JsonResult DeleteInventoryLocation([FromQuery(Name = "id")] string id)
         {
 
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection")?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"]?? "");
             var locations = db.GetAllLocations();
             db.DeleteInventoryLocation(locations.ElementAt(Int32.Parse(id)).anQId.ToString());
             return Json(true);
@@ -142,7 +142,7 @@ namespace AMS.Web.Controllers
         public JsonResult DeleteInventoryItem([FromQuery(Name = "id")] string id)
         {
 
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             var items = db.GetAllItems();
             db.DeleteInventoryItem(items.ElementAt(Int32.Parse(id)).anQId.ToString());
             return Json(true);
@@ -153,7 +153,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult DeleteInventory([FromQuery(Name = "id")] string id) {
 
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             var invs = db.getInventories();
             db.DeleteInventory(invs.ElementAt(Int32.Parse(id)).qId.ToString());
             return Json(true);
@@ -164,7 +164,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult CreateInventory([FromQuery(Name = "name")] string name, [FromQuery(Name = "date")] string date, [FromQuery(Name = "leader")] string leader)
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
 
   
             DateTime.TryParse(date, out DateTime converted);
@@ -177,7 +177,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult getConfig([FromQuery(Name = "name")] string name)
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             var res = db.getSpecificConfiguration(name);
             return Json(res);
         }
@@ -209,7 +209,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult ConfirmInventory([FromQuery(Name="id")] string id)
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             var checkOuts = db.GetAllCheckOutItems();
             int index = Int32.Parse(id);
             var row = checkOuts.ElementAt(index);
@@ -223,7 +223,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult CheckDiscrepancies([FromQuery(Name = "id")] string id)
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             var inventories = db.getInventories();
             int index = Int32.Parse(id);
             var row = inventories.ElementAt(index);
@@ -239,7 +239,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult ConfirmInventoryWhole([FromQuery(Name = "id")] string id)
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             var inventories = db.getInventories();
             int index = Int32.Parse(id);
             var row = inventories.ElementAt(index);
@@ -250,7 +250,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult DeleteInventoryPosition([FromQuery(Name = "id")] string id)
         {
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             var checkOuts = db.GetAllCheckOutItems();
             int index = Int32.Parse(id);
             var row = checkOuts.ElementAt(index);
@@ -272,7 +272,7 @@ namespace AMS.Web.Controllers
 
 
 
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
 
 
 
@@ -380,7 +380,7 @@ namespace AMS.Web.Controllers
 
 
 
-                DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+                DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
 
 
                 List<string> lines = db.GetRowsForConfiguration(arrayIDS);
@@ -452,7 +452,7 @@ namespace AMS.Web.Controllers
         private ExportStructure GetStructureFromDatabase(int count)
         {
             var config = ConfigurationHelper.GetConfigurationObject();
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             return db.GetStructure(count);
         }
 
@@ -568,7 +568,7 @@ namespace AMS.Web.Controllers
                 return RedirectToAction("Login", "Auth");
             }
 
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             string username = HttpContext.Session.GetString("username") ?? "";
             string type = db.getUserTypeFromString(username) ?? "";
             UserList users = new UserList();
@@ -605,7 +605,7 @@ namespace AMS.Web.Controllers
             {
                 return RedirectToAction("Login", "Auth");
             }
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             var checkOuts = db.GetAllCheckOutItems();
             return View(checkOuts);
 
@@ -626,7 +626,7 @@ namespace AMS.Web.Controllers
                 return RedirectToAction("Login", "Auth");
             }
 
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             var checkOuts = db.GetAllCheckOutItemsNotFinished();
             return View(checkOuts);
         }
@@ -639,7 +639,7 @@ namespace AMS.Web.Controllers
                 return RedirectToAction("Login", "Auth");
             }
 
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             var checkOuts = db.GetAllCheckOutItemsDiscrepancies();
             return View(checkOuts);
         }
@@ -657,7 +657,7 @@ namespace AMS.Web.Controllers
             {
                 return RedirectToAction("Login", "Auth");
             }
-            DatabaseOperations db = new DatabaseOperations(HttpContext.Session.GetString("connection") ?? "");
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"] ?? "");
             var data = db.GetAllThreeTablesCurrentState();
             return View(data);
         }
