@@ -17,12 +17,14 @@ namespace AMS.Web.Controllers
 {
     public class BufferedFileUploadController : Controller
     {
+        private readonly ILogger<HomeController> _logger;
         readonly IBufferedFileUploadService _bufferedFileUploadService;
         Row dataMain;
 
-        public BufferedFileUploadController(IBufferedFileUploadService bufferedFileUploadService)
+        public BufferedFileUploadController(IBufferedFileUploadService bufferedFileUploadService, ILogger<HomeController> logger)
         {
             _bufferedFileUploadService = bufferedFileUploadService;
+            _logger = logger;
         }
 
 
@@ -165,7 +167,7 @@ namespace AMS.Web.Controllers
                     //helpCount += 1;
                     var table = connection.startObjects.ElementAt(0).table;
 
-                    DatabaseOperations databaseFindtype = new DatabaseOperations(Request.Cookies["connection"]);
+                    DatabaseOperations databaseFindtype = new DatabaseOperations(Request.Cookies["connection"], _logger);
 
                     quotesNeeded.Add(databaseFindtype.findType($"SELECT TOP 1 DATA_TYPE FROM tSetTables WHERE Field = '{name}' and  [Table] = '{table}'"));
 
@@ -235,12 +237,13 @@ namespace AMS.Web.Controllers
                     }
                     insert += ")";
                         query += $"INSERT INTO {connection.startObjects.ElementAt(0).table} {fieldNames} VALUES {insert}";
+                        _logger.LogInformation("Insert query: " + query + DateTime.Now);
                         queries.Add(query);             
                 }
 
                 // Database call
             
-                DatabaseOperations database = new DatabaseOperations(Request.Cookies["connection"]);
+                DatabaseOperations database = new DatabaseOperations(Request.Cookies["connection"], _logger);
                 database.toggleFKConstraintsItems(true);
                 database.toggleFKConstraintsAssets(true);
                 database.insertBulk(queries);
@@ -376,7 +379,7 @@ namespace AMS.Web.Controllers
 
                     helpCount += 1;
 
-                    DatabaseOperations databaseFindtype = new DatabaseOperations(Request.Cookies["connection"]);
+                    DatabaseOperations databaseFindtype = new DatabaseOperations(Request.Cookies["connection"], _logger);
                     var table = connection.startObjects.ElementAt(0).table;
 
                     quotesNeeded.Add(databaseFindtype.findType($"SELECT TOP 1 DATA_TYPE FROM tSetTables WHERE Field = '{name}' and  [Table] = '{table}'"));
@@ -472,13 +475,14 @@ namespace AMS.Web.Controllers
                 }
                 insert += ")";
                 query += $"INSERT INTO {connection.startObjects.ElementAt(0).table} {fieldNames} VALUES {insert}";
+                _logger.LogInformation("Insert query: " + query + DateTime.Now);
                 queries.Add(query);
 
             }
 
             // Database call
 
-            DatabaseOperations database = new DatabaseOperations(Request.Cookies["connection"]);
+            DatabaseOperations database = new DatabaseOperations(Request.Cookies["connection"], _logger);
             database.toggleFKConstraintsItems(true);
             database.toggleFKConstraintsAssets(true);
             database.insertBulk(queries);
@@ -492,13 +496,13 @@ namespace AMS.Web.Controllers
         }
         private void ResolveLocations()
         {
-            DatabaseOperations database = new DatabaseOperations(Request.Cookies["connection"]);
+            DatabaseOperations database = new DatabaseOperations(Request.Cookies["connection"], _logger);
             database.CommitLocationsFromAssets();
         }
 
         private void ResolveItems()
         {
-            DatabaseOperations database = new DatabaseOperations(Request.Cookies["connection"]);
+            DatabaseOperations database = new DatabaseOperations(Request.Cookies["connection"], _logger);
             database.CommitItemsFromAssets();
 
         }
@@ -522,7 +526,7 @@ namespace AMS.Web.Controllers
         [HttpPost]
         public JsonResult getConfig([FromQuery(Name = "name")] string name)
         {
-            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"]);
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             var res = db.getSpecificConfiguration(name);        
             return Json(res);
         }
@@ -538,7 +542,7 @@ namespace AMS.Web.Controllers
             if(header == "true") { headerResult = true; }
             var toSave = getKeyValuePairs(connection);
             var configName = name;
-            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"]);
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             if(db.setConfiguration(toSave, headerResult, configName, HttpContext.Session.GetString("company")))
             {
                 return Json(new ConfigResponse { message = "Success" });
@@ -634,22 +638,22 @@ namespace AMS.Web.Controllers
                 switch (type)
                 {
                     case "lokacij":
-                        DatabaseOperations dbLocation = new DatabaseOperations(Request.Cookies["connection"]);
+                        DatabaseOperations dbLocation = new DatabaseOperations(Request.Cookies["connection"], _logger);
                         var resultLocation = dbLocation.getTableDataLocation();
                         Model = resultLocation;
                         break;
                     case "artiklov":
-                        DatabaseOperations dbITem = new DatabaseOperations(Request.Cookies["connection"]);
+                        DatabaseOperations dbITem = new DatabaseOperations(Request.Cookies["connection"], _logger);
                         var resultITem = dbITem.getTableDataItem();
                         Model = resultITem;
                         break;
                     case "sredstev":
-                        DatabaseOperations dbAsset = new DatabaseOperations(Request.Cookies["connection"]);
+                        DatabaseOperations dbAsset = new DatabaseOperations(Request.Cookies["connection"], _logger);
                         var result = dbAsset.getTableDataAsset();
                         Model = result;
                         break;
                     case "vse":
-                        DatabaseOperations dbAssetAll = new DatabaseOperations(Request.Cookies["connection"]);
+                        DatabaseOperations dbAssetAll = new DatabaseOperations(Request.Cookies["connection"], _logger);
                         var resultAll = dbAssetAll.getTableDataAsset();
                         Model = resultAll;
                         break;
@@ -657,7 +661,7 @@ namespace AMS.Web.Controllers
             }
 
 
-            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"]);
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             // List<string> returnObjects = db.getConfiguration();
             var configuration = db.getConfigurationNamesOnly();
             ViewBag.Configuration = configuration;
@@ -684,21 +688,21 @@ namespace AMS.Web.Controllers
                     switch (HttpContext.Session.GetString("type"))
                     {
                         case "lokacij":
-                            DatabaseOperations dbLocation = new DatabaseOperations(Request.Cookies["connection"]);
+                            DatabaseOperations dbLocation = new DatabaseOperations(Request.Cookies["connection"], _logger);
                             var resultLocation = dbLocation.getTableDataLocation();
                             Model = resultLocation;
                             var namesLocations = dbLocation.getConfigurationNamesOnly();
                             ViewBag.Configuration = namesLocations;
                             break;
                         case "artiklov":
-                            DatabaseOperations dbItem = new DatabaseOperations(Request.Cookies["connection"]);
+                            DatabaseOperations dbItem = new DatabaseOperations(Request.Cookies["connection"], _logger);
                             var resultItem = dbItem.getTableDataItem();
                             Model = resultItem;
                             var namesItems = dbItem.getConfigurationNamesOnly();
                             ViewBag.Configuration = namesItems;
                             break;
                         case "sredstev":
-                            DatabaseOperations dbAsset = new DatabaseOperations(Request.Cookies["connection"]);
+                            DatabaseOperations dbAsset = new DatabaseOperations(Request.Cookies["connection"], _logger);
                             var result = dbAsset.getTableDataAsset();
                             Model = result;
                             var names = dbAsset.getConfigurationNamesOnly();
@@ -706,7 +710,7 @@ namespace AMS.Web.Controllers
                             ViewBag.Configuration = namesAssets;
                             break;
                         case "vse":
-                            DatabaseOperations dbAssetAll = new DatabaseOperations(Request.Cookies["connection"]);
+                            DatabaseOperations dbAssetAll = new DatabaseOperations(Request.Cookies["connection"], _logger);
                             var resultAll = dbAssetAll.getTableDataAsset();
                             Model = resultAll;
                             var namesAll = dbAssetAll.getConfigurationNamesOnly();
@@ -770,7 +774,7 @@ namespace AMS.Web.Controllers
             catch (Exception exception)
             {
 
-
+                _logger.LogError("Error: " + exception.Message + DateTime.Now);
                 // Log ex
                 ViewBag.Message = "File Upload Failed";
             }

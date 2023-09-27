@@ -32,10 +32,10 @@ builder.Services.AddSession(options =>
 });
 
 builder.WebHost.UseSentry();
-
-
 var app = builder.Build();
 
+var loggerFactory = app.Services.GetService<ILoggerFactory>();
+loggerFactory.AddFile(builder.Configuration["Logging:LogFilePath"] );
 
 
 

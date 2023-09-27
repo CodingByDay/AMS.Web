@@ -1,4 +1,5 @@
 ﻿using AMS.Web.Classes;
+using AMS.Web.Controllers;
 using AMS.Web.Models;
 using DocumentFormat.OpenXml.Office2010.Excel;
 using Org.BouncyCastle.Utilities;
@@ -15,10 +16,13 @@ namespace AMS.Web.Database
         private SqlTransaction objTrans;
         private Root config;
 
-        public DatabaseOperations(string connection)
+        private readonly ILogger<HomeController> _logger;
+        public DatabaseOperations(string connection, ILogger<HomeController> logger)
         {
             connectionString = connection;
             config = ConfigurationHelper.GetConfigurationObject();
+            _logger = logger;
+
             // call the api to ask
         }
 
@@ -36,7 +40,10 @@ namespace AMS.Web.Database
                     string? type = (string)command.ExecuteScalar();
                     return type ?? string.Empty;
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message); 
+                }
                 finally
                 {
                     objConn.Close();
@@ -62,7 +69,10 @@ namespace AMS.Web.Database
                     }
                     current.ExecuteNonQuery();
                 }
-                catch (Exception ex) { return; }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    return;
+                }
                 finally
                 {
                     objConn.Close();
@@ -88,7 +98,14 @@ namespace AMS.Web.Database
                     }
                     current.ExecuteNonQuery();
                 }
-                catch (Exception ex) { return; }
+                catch (Exception ex) {
+
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    
+                    return;
+                
+                
+                }
                 finally { objConn.Close(); }
             }
         }
@@ -107,6 +124,7 @@ namespace AMS.Web.Database
                         current.ExecuteNonQuery();
                     } catch (Exception err)
                     {
+                        _logger.LogError("Error: " + err.Message + DateTime.Now);
                         try
                         {
                             if (err.Message.Contains("Violation of PRIMARY KEY constraint 'PK_Asset'."))
@@ -139,8 +157,9 @@ namespace AMS.Web.Database
                                     }
                                 }
                             }
-                        } catch (Exception)
+                        } catch (Exception ex)
                         {
+                            _logger.LogError("Error: " + ex.Message + DateTime.Now);
                             continue;
                         }                 
                     }
@@ -207,7 +226,11 @@ namespace AMS.Web.Database
                     }
                     return returnObject;
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) { 
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message); 
+                
+                }
                 finally
                 {
                     objConn.Close();
@@ -273,7 +296,13 @@ namespace AMS.Web.Database
                     }
                     return returnObject;
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message);
+                
+                
+                }
                 finally
                 {
                     objConn.Close();
@@ -353,7 +382,11 @@ namespace AMS.Web.Database
                     sql.ExecuteNonQuery();
                     return true;
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message);
+                }
             }
         }
 
@@ -371,6 +404,7 @@ namespace AMS.Web.Database
                 }
                 catch (Exception err)
                 {
+                    _logger.LogError("Error: " + err.Message + DateTime.Now);
                     throw new KeyNotFoundException("Database error");
                 }
             }
@@ -434,7 +468,10 @@ namespace AMS.Web.Database
                     }
                     return returnObject;
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message); 
+                }
                 finally
                 {
                     objConn.Close();
@@ -459,7 +496,9 @@ namespace AMS.Web.Database
                         cmd.ExecuteNonQuery();
                     }
                 }
-                catch (Exception ex) {  }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                }
             }
 
             string guid = Guid.NewGuid().ToString();
@@ -484,7 +523,10 @@ namespace AMS.Web.Database
                         cmd.ExecuteNonQuery();
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message);
+                }
             }
         }
 
@@ -508,8 +550,9 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
                     throw new KeyNotFoundException("Database error");
                 }
             }
@@ -539,7 +582,10 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message);
+                }
             }
         }
 
@@ -561,7 +607,10 @@ namespace AMS.Web.Database
                         cmd.ExecuteNonQuery();
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message);
+                }
             }
         }
 
@@ -611,7 +660,10 @@ namespace AMS.Web.Database
                         cmd.ExecuteNonQuery();
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message);
+                }
             }
         }
 
@@ -658,7 +710,10 @@ namespace AMS.Web.Database
                         cmd.ExecuteNonQuery();
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message);
+                }
             }
         }
 
@@ -706,7 +761,10 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message);
+                }
             }
 
             return users;
@@ -758,7 +816,10 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message);
+                }
             }
 
             return users;
@@ -810,7 +871,10 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message);
+                }
             }
 
             users.users.Remove(users.users.Where(x => x.email == self).FirstOrDefault());
@@ -831,7 +895,10 @@ namespace AMS.Web.Database
                         cmd.ExecuteNonQuery();
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message);
+                }
             }
         }
 
@@ -877,6 +944,7 @@ namespace AMS.Web.Database
                     }
                 }
                 catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
                     throw new KeyNotFoundException(ex.Message);
                 }
             }
@@ -914,7 +982,10 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message); 
+                }
             }
             InsertRowsLocations(items);
         }
@@ -961,8 +1032,9 @@ namespace AMS.Web.Database
                     {
                         SqlCommand current = new SqlCommand($"INSERT INTO tItem (acItem, acName, anQty) VALUES ('{item.item}', '{item.name}', {item.qty})", objConn);
                         current.ExecuteNonQuery();
-                    } catch (Exception)
+                    } catch (Exception ex)
                     {
+                        _logger.LogError("Error: " + ex.Message + DateTime.Now);
                         continue;
                     }
                 }
@@ -1013,7 +1085,10 @@ namespace AMS.Web.Database
                         }
                     }
                 }
-                catch (Exception ex) { throw new KeyNotFoundException(ex.Message); }
+                catch (Exception ex) {
+                    _logger.LogError("Error: " + ex.Message + DateTime.Now);
+                    throw new KeyNotFoundException(ex.Message);
+                }
                 finally
                 {
                     objConn.Close();
@@ -1372,6 +1447,7 @@ namespace AMS.Web.Database
                         command.ExecuteNonQuery();
                     } catch (Exception ex)
                     {
+                        _logger.LogError("Error: " + ex.Message + DateTime.Now);
                         var err = ex;
                     }
                     // Update the state and then confirm the original row.
@@ -1777,10 +1853,7 @@ namespace AMS.Web.Database
             return data;
         }
 
-        internal void GetAllColumnNameQuery(string[] arrayIDS)
-        {
-            throw new NotImplementedException();
-        }
+
 
         internal bool CheckIfCompanyExists(string company, string email)
         {

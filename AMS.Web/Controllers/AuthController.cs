@@ -25,9 +25,10 @@ namespace AMS.Web.Controllers
         {
             return View();
         }
-
-        public AuthController(IOptions<Root> options)
+        private readonly ILogger<HomeController> _logger;
+        public AuthController(IOptions<Root> options, ILogger<HomeController> logger)
         {
+            _logger = logger;
             _configuration = options.Value;
         }
 
@@ -52,7 +53,7 @@ namespace AMS.Web.Controllers
                 return RedirectToAction("Login", "Auth");
             }
             var config = ConfigurationHelper.GetConfigurationObject();
-            DatabaseOperations db = new DatabaseOperations(config.connectionString);
+            DatabaseOperations db = new DatabaseOperations(config.connectionString, _logger);
             LoginRequest request = new LoginRequest();
             request.company = db.getCompanyForUserName(username);
             request.username = username;
@@ -300,7 +301,7 @@ namespace AMS.Web.Controllers
         public JsonResult RegisterUserWithData(string email, string password, string company)
         {
             var config = ConfigurationHelper.GetConfigurationObject();
-            DatabaseOperations db = new DatabaseOperations(config.connectionString);
+            DatabaseOperations db = new DatabaseOperations(config.connectionString, _logger);
 
 
             db.RegisterUserWithData(email, password, company);
@@ -314,7 +315,7 @@ namespace AMS.Web.Controllers
         public IActionResult RegisterUser([FromQuery(Name = "uid")] string uid, [FromQuery(Name = "company")] string company, [FromQuery(Name = "user")] string user)
         {
             var config = ConfigurationHelper.GetConfigurationObject();
-            DatabaseOperations db = new DatabaseOperations(config.connectionString);
+            DatabaseOperations db = new DatabaseOperations(config.connectionString, _logger);
 
             if (String.IsNullOrEmpty(uid) || !db.checkGuidInviteUser(uid, user))
             {
@@ -341,7 +342,7 @@ namespace AMS.Web.Controllers
         public JsonResult UpdatePassword(string email, string password)
         {
             var config = ConfigurationHelper.GetConfigurationObject();
-            DatabaseOperations db = new DatabaseOperations(config.connectionString);
+            DatabaseOperations db = new DatabaseOperations(config.connectionString, _logger);
 
 
 
@@ -354,7 +355,7 @@ namespace AMS.Web.Controllers
         public IActionResult Register([FromQuery(Name = "uid")] string uid, [FromQuery(Name = "company")] string company, [FromQuery(Name = "email")] string email)
         {
             var config = ConfigurationHelper.GetConfigurationObject();
-            DatabaseOperations db = new DatabaseOperations(config.connectionString);
+            DatabaseOperations db = new DatabaseOperations(config.connectionString, _logger);
 
             if (String.IsNullOrEmpty(uid) || !db.checkGuidInvite(uid, company))
             {
