@@ -69,15 +69,66 @@ namespace AMS.Web.Controllers
                     row = ShowTextRows(Path.Combine(path, filename), headersResult);
                 }
 
-                   int counter = 0;
+                List<string> fileNames = new List<string>();
+
+
+                if (headersResult)
+                {
+                    fileNames = row.columns[0];
+                    // Step 1: Filter out empty elements from fileNames
+                    fileNames = fileNames.Where(name => !string.IsNullOrEmpty(name)).ToList();
+                }
+                else
+                {
+                    for (int i = 0; i < connection.startObjects.Length; i++)
+                    {
+                        fileNames.Add($"Stolpec {i}");
+                    }
+                }
+                // Step 2: Create a dictionary to map file names to their indices
+                // Step 2: Create a dictionary to map file names to their indices
+                Dictionary<string, int> fileNameToIndexMapping = fileNames
+                    .Select((name, index) => new { Name = name, Index = index })
+                    .ToDictionary(item => item.Name, item => item.Index);
+
+
+
+                List<SecondTable> reorderedEndObjects = connection.endObjects
+                    .OrderBy(obj => fileNameToIndexMapping.TryGetValue(obj.name, out var index) ? index : int.MaxValue)
+                    .ToList();
+                // Step 4: Create a list to store the indices used during sorting
+                List<int> sortedIndices = connection.endObjects
+                    .Select(obj => fileNameToIndexMapping.TryGetValue(obj.name, out var index) ? index : -1)
+                    .ToList();
+                // Step 4: Update the original objects with the reordered lists
+                // Step 5: Use the sortedIndices to reorder startObjects
+                connection.startObjects = sortedIndices
+                    .Select(index => connection.startObjects[index])
+                    .ToArray();
+                connection.endObjects = reorderedEndObjects.ToArray();
+            int counter = 0;
                 foreach(var r in row.columns)
                 {
-
-                    counter += 1;
-                    if(counter == 1 && headersResult) {
-                    continue;
+                    List<int> finalOrder = new List<int>();
+            
+                    if (counter == 1 && headersResult) {
+                        //for (int i = 0; i < r.Count; i++)
+                        //{
+                        //    fileNames.Add($"{r[i]}");
+                        //}
+                        continue;
                     }
-                    string query = string.Empty;
+                    else if (counter == 1 && !headersResult)
+                    {
+                        //for (int i = 0; i < r.Count; i++)
+                        //{
+                        //    fileNames.Add($"Stolpec {i}");
+                        //}
+                    }
+
+
+
+                string query = string.Empty;
                     List<string> columns = new List<string>();
                     string fieldNames = "("; 
                     for(int i = 1; i <= connection.startObjects.Length;i++)
@@ -97,10 +148,21 @@ namespace AMS.Web.Controllers
                         insert += "(";
                         List<int> order = new List<int>();
                 int count = 0;
+                int helpCount = 0;
                 foreach (string name in columns)
                 {
                     var el = connection.startObjects.Where(x => x.field == name).FirstOrDefault();
                     SecondTable connector = getKeyValuePairs(connection).Where(x => x.Key == el).FirstOrDefault().Value;
+                    //if (connector.name == fileNames.ElementAt(helpCount))
+                    //{
+                    //    finalOrder.Add(helpCount);
+                    //}
+                    //else
+                    //{
+                    //    finalOrder.Add(fileNames.IndexOf(connector.name));
+                    //}
+
+                    //helpCount += 1;
                     var table = connection.startObjects.ElementAt(0).table;
 
                     DatabaseOperations databaseFindtype = new DatabaseOperations(Request.Cookies["connection"]);
@@ -216,8 +278,51 @@ namespace AMS.Web.Controllers
                 row = ShowTextRows(Path.Combine(path, filename), headersResult);
             }
 
-
             List<string> fileNames = new List<string>();
+
+
+
+            if (headersResult)
+            {
+                fileNames = row.columns[0];
+                // Step 1: Filter out empty elements from fileNames
+                fileNames = fileNames.Where(name => !string.IsNullOrEmpty(name)).ToList();
+            } else
+            {
+                for(int i = 0; i < connection.startObjects.Length;i++)
+                {
+                    fileNames.Add($"Stolpec {i}"); 
+                }
+            }
+            // Step 2: Create a dictionary to map file names to their indices
+            // Step 2: Create a dictionary to map file names to their indices
+            Dictionary<string, int> fileNameToIndexMapping = fileNames
+                .Select((name, index) => new { Name = name, Index = index })
+                .ToDictionary(item => item.Name, item => item.Index);
+
+  
+
+            List<SecondTable> reorderedEndObjects = connection.endObjects
+                .OrderBy(obj => fileNameToIndexMapping.TryGetValue(obj.name, out var index) ? index : int.MaxValue)
+                .ToList();
+            // Step 4: Create a list to store the indices used during sorting
+            List<int> sortedIndices = connection.endObjects
+                .Select(obj => fileNameToIndexMapping.TryGetValue(obj.name, out var index) ? index : -1)
+                .ToList();
+            // Step 4: Update the original objects with the reordered lists
+            // Step 5: Use the sortedIndices to reorder startObjects
+            connection.startObjects = sortedIndices
+                .Select(index => connection.startObjects[index])
+                .ToArray();
+            connection.endObjects = reorderedEndObjects.ToArray();
+
+  
+
+
+
+            // Step 4: Update the original startObjects with the reordered list
+
+
             //  Row row = dataMain;
             int counter = 0;
             foreach (var r in row.columns)
@@ -226,18 +331,9 @@ namespace AMS.Web.Controllers
                 counter += 1;
                 if (counter == 1 && headersResult)
                 {
-                    for (int i = 0; i < r.Count; i++)
-                    {
-                        fileNames.Add($"{r[i]}");
-                    }
+
                     continue;
-                } else if (counter == 1 && !headersResult)
-                {
-                    for (int i = 0; i < r.Count; i++)
-                    {
-                        fileNames.Add($"Stolpec {i}");
-                    }
-                }
+                } 
 
 
 
@@ -270,15 +366,13 @@ namespace AMS.Web.Controllers
                     var el = connection.startObjects.Where(x => x.field == name).FirstOrDefault();
                     SecondTable connector = getKeyValuePairs(connection).Where(x => x.Key == el).FirstOrDefault().Value;
 
-                    if(connector.name == fileNames.ElementAt(helpCount))
-                    {
-                        finalOrder.Add(helpCount);
-                    } else
-                    {
-                        finalOrder.Add(fileNames.IndexOf(connector.name));
-                    }
-
-
+                    //if(connector.name == fileNames.ElementAt(helpCount))
+                    //{
+                    //    finalOrder.Add(helpCount);
+                    //} else
+                    //{
+                    //    finalOrder.Add(fileNames.IndexOf(connector.name));
+                    //}
 
                     helpCount += 1;
 
@@ -314,28 +408,28 @@ namespace AMS.Web.Controllers
 
                 }
                 int cCounter = 0;
-                List<string> columnsModified = new List<string>();
+                //List<string> columnsModified = new List<string>();
 
-                foreach (int final in finalOrder)
-                {
-                    columnsModified.Add(columns[final]);
-                    cCounter += 1;
-                }
+                //foreach (int final in finalOrder)
+                //{
+                //    columnsModified.Add(columns[final]);
+                //    cCounter += 1;
+                //}
 
-                fieldNames = "(";
-                for (int i = 1; i <= columnsModified.Count; i++)
-                {
-                    if (i != columnsModified.Count)
-                    {
-                        fieldNames += columnsModified.ElementAt(i - 1) + ",";
-                    }
-                    else
-                    {
-                        fieldNames += columnsModified.ElementAt(i - 1);
-                    }
-                }
+                //fieldNames = "(";
+                //for (int i = 1; i <= columnsModified.Count; i++)
+                //{
+                //    if (i != columnsModified.Count)
+                //    {
+                //        fieldNames += columnsModified.ElementAt(i - 1) + ",";
+                //    }
+                //    else
+                //    {
+                //        fieldNames += columnsModified.ElementAt(i - 1);
+                //    }
+                //}
 
-                fieldNames += ")";
+                //fieldNames += ")";
 
                 if ( r.Count < order.Count )
                 {
@@ -400,8 +494,8 @@ namespace AMS.Web.Controllers
         {
             DatabaseOperations database = new DatabaseOperations(Request.Cookies["connection"]);
             database.CommitLocationsFromAssets();
-
         }
+
         private void ResolveItems()
         {
             DatabaseOperations database = new DatabaseOperations(Request.Cookies["connection"]);

@@ -46,6 +46,11 @@ namespace AMS.Web.Controllers
         [HttpGet]
         public IActionResult Authenticate([FromQuery(Name = "username")] string username, [FromQuery(Name = "password")] string password)
         {
+            if(string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                TempData["Login"] = false;
+                return RedirectToAction("Login", "Auth");
+            }
             var config = ConfigurationHelper.GetConfigurationObject();
             DatabaseOperations db = new DatabaseOperations(config.connectionString);
             LoginRequest request = new LoginRequest();
