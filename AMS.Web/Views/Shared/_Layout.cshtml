@@ -1,4 +1,8 @@
 ﻿﻿
+@{
+    // Retrieve the URL passed from the controller using ViewBag
+    string currentUrl = ViewBag.CurrentUrl;
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,16 +27,18 @@
     <script src="~/js/sortable.min.js"></script>
     <link href="~/css/site.css" rel="stylesheet" />
     <head>
-
-        <link href="~/css/devextreme/dx.light.css" rel="stylesheet" />
-
-        <script src="~/js/devextreme/jquery.js"></script>
-
-        <script src="~/js/devextreme/dx.all.js"></script>
-        @* Uncomment to provide geo-data for the VectorMap control *@
-        @*<script src="~/js/devextreme/vectormap-data/world.js"></script>*@
-        <script src="~/js/devextreme/aspnet/dx.aspnet.mvc.js"></script>
-        <script src="~/js/devextreme/aspnet/dx.aspnet.data.js"></script>
+        @if (!currentUrl.Contains("/dashboard"))
+        {
+            <link href="~/css/devextreme/dx.light.css" rel="stylesheet" />
+            <script src="~/js/devextreme/jquery.js"></script>
+            <script src="~/js/devextreme/dx.all.js"></script>
+            <script src="~/js/devextreme/aspnet/dx.aspnet.mvc.js"></script>
+            <script src="~/js/devextreme/aspnet/dx.aspnet.data.js"></script>
+        } else
+        {
+            <link href="~/css/site.min.css" rel="stylesheet" />
+            <script src="~/js/site.min.js"></script>
+        }
     </head>
 </head>
 <body>
@@ -41,15 +47,12 @@
 
     <footer>
     </footer>
-
     <script src="~/content/dist/assets/js/feather-icons/feather.min.js"></script>
     <script src="~/content/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="~/content/dist/assets/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
-
     <script src="~/content/dist/assets/vendors/chartjs/Chart.min.js"></script>
     <script src="~/content/dist/assets/vendors/apexcharts/apexcharts.min.js"></script>
-
     <script>
         jQuery(document).ready(function () {
             window.lines = []

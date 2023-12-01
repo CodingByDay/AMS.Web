@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Časovni pregled" />
+  <DataSources>
+    <SqlDataSource Name="vAssetCheck 2" ComponentName="sqlDataSource1" DataProcessingMode="Client">
+      <Connection Name="Riko Inventura" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="vAssetCheck">
+        <Tables>
+          <Table Name="vAssetCheck" />
+        </Tables>
+        <Columns>
+          <Column Table="vAssetCheck" Name="acItem" />
+          <Column Table="vAssetCheck" Name="acLocation" />
+          <Column Table="vAssetCheck" Name="anInventory" />
+          <Column Table="vAssetCheck" Name="adDateCheckI" />
+          <Column Table="vAssetCheck" Name="anUserCheckI" />
+          <Column Table="vAssetCheck" Name="adTimeInsI" />
+          <Column Table="vAssetCheck" Name="acECD" />
+          <Column Table="vAssetCheck" Name="acName" />
+          <Column Table="vAssetCheck" Name="adDateOfACQ" />
+          <Column Table="vAssetCheck" Name="adDateOfACT" />
+          <Column Table="vAssetCheck" Name="adDateOfLIQ" />
+          <Column Table="vAssetCheck" Name="adDateOfELI" />
+          <Column Table="vAssetCheck" Name="acCareTaker" />
+          <Column Table="vAssetCheck" Name="adTimeIns" />
+          <Column Table="vAssetCheck" Name="adTimeChg" />
+          <Column Table="vAssetCheck" Name="abWriteOff" />
+          <Column Table="vAssetCheck" Name="abWriteOffReason" />
+          <Column Table="vAssetCheck" Name="acActive" />
+          <Column Table="vAssetCheck" Name="CheckedOut" />
+          <Column Table="vAssetCheck" Name="acECDC" />
+          <Column Table="vAssetCheck" Name="acNameC" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Pregled" DataSource="sqlDataSource1" DataMember="vAssetCheck">
+      <DataItems>
+        <Dimension DataMember="acItem" DefaultId="DataItem0" />
+        <Dimension DataMember="acLocation" DefaultId="DataItem1" />
+        <Dimension DataMember="acName" DefaultId="DataItem2" />
+        <Dimension DataMember="adDateCheckI" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem3" />
+        <Dimension DataMember="adDateOfACT" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem4" />
+        <Dimension DataMember="adDateOfELI" DefaultId="DataItem5" />
+        <Dimension DataMember="adDateOfLIQ" DefaultId="DataItem6" />
+        <Dimension DataMember="acCareTaker" DefaultId="DataItem7" />
+        <Dimension DataMember="acECD" DefaultId="DataItem8" />
+        <Dimension DataMember="CheckedOut" DefaultId="DataItem9" />
+        <Dimension DataMember="acECDC" DefaultId="DataItem10" />
+      </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="Format Rule 1" DataItem="DataItem9" DataItemApplyTo="DataItem9">
+          <FormatConditionValue>
+            <AppearanceSettings AppearanceType="PaleGreen" />
+            <Value1 Type="System.Boolean" Value="True" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 2" DataItem="DataItem9" DataItemApplyTo="DataItem9">
+          <FormatConditionValue>
+            <IconSettings IconType="IndicatorCircledGreenCheck" />
+            <Value1 Type="System.Boolean" Value="True" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Name="Ident">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Lokacija">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Naziv">
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Datum popisa">
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Datum aktualizacije">
+          <Dimension DefaultId="DataItem4" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Datum eliminacije">
+          <Dimension DefaultId="DataItem5" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Datum likvidacije">
+          <Dimension DefaultId="DataItem6" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Zadolženi">
+          <Dimension DefaultId="DataItem7" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="RFID koda">
+          <Dimension DefaultId="DataItem8" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="RFID  nova">
+          <Dimension DefaultId="DataItem10" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Prešteto">
+          <Dimension DefaultId="DataItem9" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+    <ComboBox ComponentName="comboBoxDashboardItem1" Name="Inventura" DataSource="sqlDataSource1" DataMember="vAssetCheck">
+      <DataItems>
+        <Dimension DataMember="anInventory" Name="Inventura" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ComboBox>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutGroup Orientation="Vertical">
+        <LayoutItem DashboardItem="comboBoxDashboardItem1" />
+        <LayoutItem DashboardItem="gridDashboardItem1" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

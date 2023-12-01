@@ -157,11 +157,15 @@
             </div>
         </nav>
 
- 
-        <div class="iframe-container">
-            <div class="loader"></div>
-            <iframe src="http://analitika-inventura-test.riko.si" scrolling="no" style="width:100%; height:90%;" id='analytics-frame'>Your browser doesn't support iFrames.</iframe>
 
+        <div class="analytics-control-view">
+   
+            @(Html.DevExpress().Dashboard("clientDashboardControl1")
+                .ControllerName("DefaultDashboard")
+                .Width("100%")
+             
+                .Height("100%")
+                )
         </div>
         <div class="main-content container-fluid">
             <div class="page-title">

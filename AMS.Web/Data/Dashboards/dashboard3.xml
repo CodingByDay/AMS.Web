@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Odpisi" />
+  <DataSources>
+    <SqlDataSource Name="vAssetCheck 1" ComponentName="sqlDataSource1" DataProcessingMode="Client">
+      <Connection Name="Riko Inventura" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="vAssetCheck">
+        <Tables>
+          <Table Name="vAssetCheck" />
+        </Tables>
+        <Columns>
+          <Column Table="vAssetCheck" Name="acItem" />
+          <Column Table="vAssetCheck" Name="acType" />
+          <Column Table="vAssetCheck" Name="acLocation" />
+          <Column Table="vAssetCheck" Name="acCode" />
+          <Column Table="vAssetCheck" Name="acECD" />
+          <Column Table="vAssetCheck" Name="acName" />
+          <Column Table="vAssetCheck" Name="adDateOfLIQ" />
+          <Column Table="vAssetCheck" Name="acCareTaker" />
+          <Column Table="vAssetCheck" Name="adTimeChg" />
+          <Column Table="vAssetCheck" Name="abWriteOff" />
+          <Column Table="vAssetCheck" Name="abWriteOffReason" />
+          <Column Table="vAssetCheck" Name="anInventory" />
+          <Column Table="vAssetCheck" Name="acNoteI" />
+          <Column Table="vAssetCheck" Name="anCheckOut" />
+          <Column Table="vAssetCheck" Name="CheckedOut" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Pregled za odpis" DataSource="sqlDataSource1" DataMember="vAssetCheck">
+      <DataItems>
+        <Dimension DataMember="acItem" DefaultId="DataItem0" />
+        <Dimension DataMember="acLocation" DefaultId="DataItem1" />
+        <Dimension DataMember="acName" DefaultId="DataItem2" />
+        <Dimension DataMember="abWriteOff" DefaultId="DataItem3" />
+        <Dimension DataMember="abWriteOffReason" DefaultId="DataItem4" />
+        <Dimension DataMember="CheckedOut" DefaultId="DataItem5" />
+        <Dimension DataMember="acCareTaker" DefaultId="DataItem6" />
+      </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="Format Rule 1" DataItem="DataItem3" DataItemApplyTo="DataItem3">
+          <FormatConditionValue>
+            <AppearanceSettings AppearanceType="Cyan" />
+            <Value1 Type="System.Boolean" Value="True" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 2" DataItem="DataItem5" DataItemApplyTo="DataItem5">
+          <FormatConditionValue>
+            <IconSettings IconType="IndicatorGreenCheck" />
+            <Value1 Type="System.Boolean" Value="True" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 3" DataItem="DataItem5" DataItemApplyTo="DataItem5">
+          <FormatConditionValue>
+            <IconSettings IconType="IndicatorRedCross" />
+            <Value1 Type="System.Boolean" Value="False" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 4" DataItem="DataItem3" DataItemApplyTo="DataItem3">
+          <FormatConditionValue>
+            <IconSettings IconType="IndicatorGreenCheck" />
+            <Value1 Type="System.Boolean" Value="True" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 5" DataItem="DataItem3" DataItemApplyTo="DataItem3">
+          <FormatConditionValue>
+            <AppearanceSettings AppearanceType="FontGrayed" />
+            <Value1 Type="System.Boolean" Value="False" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Name="Ident" Weight="38.157040882543804">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Lokacija" Weight="96.755353666450361">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Naziv sredstva" Weight="177.49837767683323">
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Zadolženi" Weight="89.260220635950688">
+          <Dimension DefaultId="DataItem6" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Odpis" Weight="24.529526281635302">
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Razlog odpisa" Weight="72.225827384815062">
+          <Dimension DefaultId="DataItem4" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Popisano" Weight="26.573653471771578">
+          <Dimension DefaultId="DataItem5" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions ColumnWidthMode="Manual" />
+    </Grid>
+    <ComboBox ComponentName="comboBoxDashboardItem1" Name="Izberi inventuro" DataSource="sqlDataSource1" DataMember="vAssetCheck" ComboBoxType="Checked">
+      <DataItems>
+        <Dimension DataMember="acNoteI" DefaultId="DataItem1" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem1" />
+      </FilterDimensions>
+    </ComboBox>
+    <ListBox ComponentName="listBoxDashboardItem1" Name="Odpisano" DataSource="sqlDataSource1" DataMember="vAssetCheck" ListBoxType="Radio">
+      <DataItems>
+        <Dimension DataMember="CheckedOut" Name="Za odpis" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <ListBox ComponentName="listBoxDashboardItem4" Name="Popisano" DataSource="sqlDataSource1" DataMember="vAssetCheck" ListBoxType="Radio">
+      <DataItems>
+        <Dimension DataMember="abWriteOff" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutGroup Weight="0.39975093399750933">
+        <LayoutItem DashboardItem="comboBoxDashboardItem1" />
+        <LayoutItem DashboardItem="listBoxDashboardItem4" />
+        <LayoutItem DashboardItem="listBoxDashboardItem1" />
+      </LayoutGroup>
+      <LayoutItem DashboardItem="gridDashboardItem1" Weight="1.6002490660024906" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="Inventura" />
+  <DataSources>
+    <SqlDataSource Name="vAssetCheck" ComponentName="sqlDataSource1" DataProcessingMode="Client">
+      <Connection Name="Riko Inventura" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="vAssetCheck">
+        <Tables>
+          <Table Name="vAssetCheck" />
+        </Tables>
+        <Columns>
+          <AllColumns Table="vAssetCheck" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Pregled inventure" ShowCaption="false" DataSource="sqlDataSource1" DataMember="vAssetCheck" IsMasterFilterCrossDataSource="true">
+      <InteractivityOptions MasterFilterMode="Multiple" />
+      <DataItems>
+        <Dimension DataMember="acLocation" DefaultId="DataItem0" />
+        <Dimension DataMember="acCareTaker" DefaultId="DataItem1" />
+        <Dimension DataMember="acECD" DefaultId="DataItem2" />
+        <Dimension DataMember="acName" DefaultId="DataItem3" />
+        <Dimension DataMember="CheckedOut" DefaultId="DataItem4" />
+        <Dimension DataMember="acECDC" DefaultId="DataItem5" />
+      </DataItems>
+      <FormatRules>
+        <GridItemFormatRule Name="Format Rule 1" DataItem="DataItem4" DataItemApplyTo="DataItem4">
+          <FormatConditionValue>
+            <AppearanceSettings AppearanceType="PaleGray" />
+            <Value1 Type="System.Boolean" Value="False" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 2" DataItem="DataItem4" DataItemApplyTo="DataItem4">
+          <FormatConditionValue>
+            <IconSettings IconType="IndicatorCircledGreenCheck" />
+            <Value1 Type="System.Boolean" Value="True" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+      </FormatRules>
+      <GridColumns>
+        <GridDimensionColumn Name="Lokacija">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Zadolženi">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="ECD koda">
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="nov ECD v tekočem popisu">
+          <Dimension DefaultId="DataItem5" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Naziv sredstva">
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Name="Popisano">
+          <Dimension DefaultId="DataItem4" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+    <ListBox ComponentName="listBoxDashboardItem1" Name="Izbrana inventura" DataSource="sqlDataSource1" DataMember="vAssetCheck" EnableSearch="true" ListBoxType="Radio">
+      <DataItems>
+        <Dimension DataMember="anInventory" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <ListBox ComponentName="listBoxDashboardItem3" Name="Zadolženi" DataSource="sqlDataSource1" DataMember="vAssetCheck" EnableSearch="true">
+      <DataItems>
+        <Dimension DataMember="acCareTaker" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <ListBox ComponentName="listBoxDashboardItem2" Name="Lokacija" DataSource="sqlDataSource1" DataMember="vAssetCheck" EnableSearch="true">
+      <DataItems>
+        <Dimension DataMember="acLocation" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </ListBox>
+    <Pie ComponentName="pieDashboardItem1" Name="Pregled stanja inventure" DataSource="sqlDataSource1" DataMember="vAssetCheck" PieType="Donut" LabelContentType="ArgumentValueAndPercent">
+      <ColoringOptions MeasuresColoringMode="Hue" />
+      <DataItems>
+        <Measure DataMember="CheckedOut" SummaryType="Count" DefaultId="DataItem2" />
+        <Dimension DataMember="CheckedOut" ColoringMode="Hue" DefaultId="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem1" />
+      </Arguments>
+      <Values>
+        <Value DefaultId="DataItem2" />
+      </Values>
+    </Pie>
+  </Items>
+  <ColorScheme>
+    <Entry DataSource="sqlDataSource1" DataMember="vAssetCheck" Color="-1208282">
+      <MeasureKey>
+        <Definition DataMember="CheckedOut" SummaryType="Count" />
+      </MeasureKey>
+      <DimensionKeys>
+        <DimensionKey>
+          <Definition DataMember="CheckedOut" />
+          <Value Type="System.Boolean" Value="False" />
+        </DimensionKey>
+      </DimensionKeys>
+    </Entry>
+  </ColorScheme>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutGroup>
+        <LayoutGroup Orientation="Vertical" Weight="0.29342851912868373">
+          <LayoutItem DashboardItem="listBoxDashboardItem1" Weight="0.80574758710395888" />
+          <LayoutItem DashboardItem="listBoxDashboardItem2" Weight="1.194252412896041" />
+          <LayoutItem DashboardItem="listBoxDashboardItem3" />
+        </LayoutGroup>
+        <LayoutGroup Orientation="Vertical" Weight="1.7065714808713162">
+          <LayoutItem DashboardItem="gridDashboardItem1" Weight="1.3537764014796672" />
+          <LayoutItem DashboardItem="pieDashboardItem1" Weight="1.352795079391649" />
+        </LayoutGroup>
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

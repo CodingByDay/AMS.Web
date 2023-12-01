@@ -928,17 +928,6 @@
     <Content Remove="wwwroot\Content\src\ui-todolist.html" />
     <Content Remove="wwwroot\Content\webpack.mix.js" />
   </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="Microsoft.Office.Interop.Excel">
-      <WrapperTool>tlbimp</WrapperTool>
-      <VersionMinor>9</VersionMinor>
-      <VersionMajor>1</VersionMajor>
-      <Guid>00020813-0000-0000-c000-000000000046</Guid>
-      <Lcid>0</Lcid>
-      <Isolated>false</Isolated>
-      <EmbedInteropTypes>true</EmbedInteropTypes>
-    </COMReference>
-  </ItemGroup>
 <ItemGroup>
     <Content Include="content\**">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -2168,9 +2157,9 @@
     </Content>
 </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
     <PackageReference Include="DevExpress.AspNetCore.Common" Version="22.2.5" />
     <PackageReference Include="DevExpress.AspNetCore.Dashboard" Version="22.2.5" />
-    <PackageReference Include="DevExpress.AspNetCore.Dashboard.de" Version="22.2.5" />
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.20.0" />
     <PackageReference Include="ExcelDataReader" Version="3.6.0" />
     <PackageReference Include="ExcelDataReader.DataSet" Version="3.6.0" />
@@ -2178,6 +2167,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.12" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
     <PackageReference Include="MimeKit" Version="3.6.1" />
     <PackageReference Include="RestSharp" Version="108.0.3" />
     <PackageReference Include="Sentry.AspNetCore" Version="3.31.0" />

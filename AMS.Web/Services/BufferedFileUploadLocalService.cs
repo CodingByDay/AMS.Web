@@ -3,7 +3,7 @@ using AMS.Web.Models;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.AspNetCore.Http;
 using Microsoft.CodeAnalysis;
-using Microsoft.Office.Interop.Excel;
+
 using System.Data.OleDb;
 using NuGet.Protocol;
 using System.Runtime.InteropServices;
@@ -11,7 +11,7 @@ using System.Threading;
 
 
 //Microsoft Excel 16 object in references-> COM tab
-using Excel = Microsoft.Office.Interop.Excel;
+
 using ExcelToCsv;
 
 namespace AMS.Web.Services

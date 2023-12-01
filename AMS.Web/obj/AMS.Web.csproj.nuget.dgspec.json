@@ -56,15 +56,15 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "BuildBundlerMinifier": {
+              "target": "Package",
+              "version": "[3.2.449, )"
+            },
             "DevExpress.AspNetCore.Common": {
               "target": "Package",
               "version": "[22.2.5, )"
             },
             "DevExpress.AspNetCore.Dashboard": {
-              "target": "Package",
-              "version": "[22.2.5, )"
-            },
-            "DevExpress.AspNetCore.Dashboard.de": {
               "target": "Package",
               "version": "[22.2.5, )"
             },
@@ -103,6 +103,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.12, )"
+            },
+            "Microsoft.Web.LibraryManager.Build": {
+              "target": "Package",
+              "version": "[2.1.175, )"
             },
             "MimeKit": {
               "target": "Package",

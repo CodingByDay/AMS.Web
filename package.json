@@ -1,7 +1,22 @@
 {
   "dependencies": {
-    "@devexpress/analytics-core": "^23.1.4",
-    "devexpress-dashboard": "^23.1.4",
-    "devextreme": "^23.1.4"
-  }
+    "@devexpress/analytics-core": "^23.1.6",
+    "devexpress-dashboard": "^23.1.6",
+    "devextreme": "^23.1.6"
+  },
+  "name": "ams.web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://tnet-git.trendnet.local:8080/git/root/AMS.Web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "description": ""
 }

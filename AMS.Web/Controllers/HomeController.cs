@@ -6,8 +6,7 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using DocumentFormat.OpenXml;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis;
-using Microsoft.Office.Interop.Excel;
+
 using MimeKit;
 using Sentry;
 using System.Diagnostics;
@@ -36,6 +35,10 @@ namespace AMS.Web.Controllers
         public IActionResult LocationListing()
         {
             ViewBag.Title = "Lokacije";
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             var locations = db.GetAllLocations();
             return View(locations);
@@ -46,6 +49,10 @@ namespace AMS.Web.Controllers
         public IActionResult ItemListing()
         {
             ViewBag.Title = "Artikli";
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             var items = db.GetAllItems();
             // db.GetUserNames(items)       
@@ -57,7 +64,10 @@ namespace AMS.Web.Controllers
         {
             DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             ViewBag.Title = "Sredstva";
+            string currentUrl = HttpContext.Request.Path;
 
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
 
 
             var currentInventory = db.GetCurrentActiveInventory();
@@ -70,6 +80,10 @@ namespace AMS.Web.Controllers
 
         public IActionResult Dashboard()
         {
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             return View();
         }
 
@@ -86,6 +100,10 @@ namespace AMS.Web.Controllers
 
             var names = db.getExportColumnNames();
             ViewBag.Columns = names;
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             // Data for the configuration //
             var configuration = db.getConfigurationNamesOnly();
             var inventories = db.getInventories();
@@ -110,6 +128,7 @@ namespace AMS.Web.Controllers
         {
             DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             db.UpdateRow(table,field, type, data, anQId);
+
             return Json(true);
         }
 
@@ -563,6 +582,10 @@ namespace AMS.Web.Controllers
 
         public IActionResult Settings()
         {
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
             {
                 return RedirectToAction("Login", "Auth");
@@ -592,6 +615,10 @@ namespace AMS.Web.Controllers
 
         public IActionResult Privacy()
         {
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
             {
                 return RedirectToAction("Login", "Auth");
@@ -601,6 +628,10 @@ namespace AMS.Web.Controllers
 
         public IActionResult ActiveInventory()
         {
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
             {
                 return RedirectToAction("Login", "Auth");
@@ -612,6 +643,10 @@ namespace AMS.Web.Controllers
         }
         public IActionResult DeviceSync()
         {
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
             {
                 return RedirectToAction("Login", "Auth");
@@ -621,6 +656,10 @@ namespace AMS.Web.Controllers
 
         public IActionResult NotFinished()
         {
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
             {
                 return RedirectToAction("Login", "Auth");
@@ -634,6 +673,10 @@ namespace AMS.Web.Controllers
 
         public IActionResult Discrepancies()
         {
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
             {
                 return RedirectToAction("Login", "Auth");
@@ -645,6 +688,10 @@ namespace AMS.Web.Controllers
         }
         public IActionResult Edit()
         {
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
             {
                 return RedirectToAction("Login", "Auth");
@@ -653,6 +700,10 @@ namespace AMS.Web.Controllers
         }
         public IActionResult Listing()
         {
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
             {
                 return RedirectToAction("Login", "Auth");
@@ -663,6 +714,10 @@ namespace AMS.Web.Controllers
         }
         public IActionResult Synchronization()
         {
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
             {
                 return RedirectToAction("Login", "Auth");
@@ -681,6 +736,10 @@ namespace AMS.Web.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             if (HttpContext.Session.GetString("username") == string.Empty || HttpContext.Session.GetString("username") == null)
             {
                 return RedirectToAction("Login", "Auth");

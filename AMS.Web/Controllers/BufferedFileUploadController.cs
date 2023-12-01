@@ -114,21 +114,9 @@ namespace AMS.Web.Controllers
                     List<int> finalOrder = new List<int>();
             
                     if (counter == 1 && headersResult) {
-                        //for (int i = 0; i < r.Count; i++)
-                        //{
-                        //    fileNames.Add($"{r[i]}");
-                        //}
                         continue;
                     }
-                    else if (counter == 1 && !headersResult)
-                    {
-                        //for (int i = 0; i < r.Count; i++)
-                        //{
-                        //    fileNames.Add($"Stolpec {i}");
-                        //}
-                    }
-
-
+            
 
                 string query = string.Empty;
                     List<string> columns = new List<string>();
@@ -155,14 +143,6 @@ namespace AMS.Web.Controllers
                 {
                     var el = connection.startObjects.Where(x => x.field == name).FirstOrDefault();
                     SecondTable connector = getKeyValuePairs(connection).Where(x => x.Key == el).FirstOrDefault().Value;
-                    //if (connector.name == fileNames.ElementAt(helpCount))
-                    //{
-                    //    finalOrder.Add(helpCount);
-                    //}
-                    //else
-                    //{
-                    //    finalOrder.Add(fileNames.IndexOf(connector.name));
-                    //}
 
                     //helpCount += 1;
                     var table = connection.startObjects.ElementAt(0).table;
@@ -369,14 +349,6 @@ namespace AMS.Web.Controllers
                     var el = connection.startObjects.Where(x => x.field == name).FirstOrDefault();
                     SecondTable connector = getKeyValuePairs(connection).Where(x => x.Key == el).FirstOrDefault().Value;
 
-                    //if(connector.name == fileNames.ElementAt(helpCount))
-                    //{
-                    //    finalOrder.Add(helpCount);
-                    //} else
-                    //{
-                    //    finalOrder.Add(fileNames.IndexOf(connector.name));
-                    //}
-
                     helpCount += 1;
 
                     DatabaseOperations databaseFindtype = new DatabaseOperations(Request.Cookies["connection"], _logger);
@@ -411,28 +383,7 @@ namespace AMS.Web.Controllers
 
                 }
                 int cCounter = 0;
-                //List<string> columnsModified = new List<string>();
 
-                //foreach (int final in finalOrder)
-                //{
-                //    columnsModified.Add(columns[final]);
-                //    cCounter += 1;
-                //}
-
-                //fieldNames = "(";
-                //for (int i = 1; i <= columnsModified.Count; i++)
-                //{
-                //    if (i != columnsModified.Count)
-                //    {
-                //        fieldNames += columnsModified.ElementAt(i - 1) + ",";
-                //    }
-                //    else
-                //    {
-                //        fieldNames += columnsModified.ElementAt(i - 1);
-                //    }
-                //}
-
-                //fieldNames += ")";
 
                 if ( r.Count < order.Count )
                 {
@@ -666,6 +617,10 @@ namespace AMS.Web.Controllers
             var configuration = db.getConfigurationNamesOnly();
             ViewBag.Configuration = configuration;
             ViewBag.Company = HttpContext.Session.GetString("company");
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             return View(Model);
         }
 
@@ -778,6 +733,11 @@ namespace AMS.Web.Controllers
                 // Log ex
                 ViewBag.Message = "File Upload Failed";
             }
+
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             return View(Model);
         }
         public Row ReadExcel(string fileName, string fileExt, bool header)

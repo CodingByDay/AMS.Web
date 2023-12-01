@@ -40,6 +40,10 @@ namespace AMS.Web.Controllers
 
                 ViewBag.Login = login;
             }
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             return View();
         }
 
@@ -52,6 +56,7 @@ namespace AMS.Web.Controllers
                 TempData["Login"] = false;
                 return RedirectToAction("Login", "Auth");
             }
+
             var config = ConfigurationHelper.GetConfigurationObject();
             DatabaseOperations db = new DatabaseOperations(config.connectionString, _logger);
             LoginRequest request = new LoginRequest();
@@ -73,10 +78,8 @@ namespace AMS.Web.Controllers
                         HttpOnly = true,
                         // You can set other options like Secure, SameSite, etc., as needed
                     };
-
                     // Set the "connection" property value in the cookie
                     Response.Cookies.Append("connection", loginResponse.result, connectionCookie);
-
                     HttpContext.Session.SetString("connection", loginResponse.result);
                     HttpContext.Session.SetString("username", username);
                     HttpContext.Session.SetString("company", request.company);
@@ -89,10 +92,12 @@ namespace AMS.Web.Controllers
 
 
 
-
-
         public IActionResult Homepage()
         {
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             return View();
         }
         private void StoreTokenForUserName(string username)
@@ -107,6 +112,10 @@ namespace AMS.Web.Controllers
 
         public IActionResult ResetPassword()
         {
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             return View();
         }
 
@@ -239,6 +248,10 @@ namespace AMS.Web.Controllers
 
         public IActionResult ForgotPasswordChange(string email, string code)
         {
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             return View();
         }
 
@@ -252,7 +265,10 @@ namespace AMS.Web.Controllers
                 return RedirectToAction("Login");
             }
 
+            string currentUrl = HttpContext.Request.Path;
 
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             return View();
         }
 
@@ -325,6 +341,10 @@ namespace AMS.Web.Controllers
             viewModel.guid = uid;
             viewModel.company = company;
             viewModel.email = user;
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             return View(viewModel);
         }
 
@@ -366,6 +386,10 @@ namespace AMS.Web.Controllers
             viewModel.guid = uid;
             viewModel.company = company;
             viewModel.email = email;
+            string currentUrl = HttpContext.Request.Path;
+
+            // Pass the current URL to the view
+            ViewBag.CurrentUrl = currentUrl;
             return View(viewModel);
         }
     }
