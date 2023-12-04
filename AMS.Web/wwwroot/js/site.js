@@ -1,13 +1,23 @@
-﻿
+﻿function onBeforeRender(sender) {
+    var dashboardControl = sender;
+
+    dashboardControl.registerExtension(new DevExpress.Dashboard.DashboardPanelExtension(dashboardControl));
+    dashboardControl.unregisterExtension("designerToolbar");
+
+
+}
+
+
+
 const iframe = document.getElementById('myIframe');
 const loader = document.querySelector('.loader');
-
+/*
 if (window.location.href.includes("dashboard")) {
     jQuery("#main").css("overflow", "hidden");
     const loader = document.querySelector('.loader');
     loader.style.display = 'block';
 }
-
+*/
 jQuery('#analytics-frame').on('load', function () {
     const iframe = document.getElementById('myIframe');
     const loader = document.querySelector('.loader');
