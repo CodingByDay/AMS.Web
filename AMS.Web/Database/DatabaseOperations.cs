@@ -1615,8 +1615,16 @@ namespace AMS.Web.Database
                 {
                     if(data == "true")
                     {
-                        command = new SqlCommand($"UPDATE {table} SET {field}=1 WHERE anQId = {id}", connection);
+                        if (field == "abWriteOff")
+                        {
 
+
+                            command = new SqlCommand($"UPDATE {table} SET {field}=1 WHERE anQId = {id}", connection);
+                        } else
+                        {
+                            command = new SqlCommand($"UPDATE {table} SET {field}=1 WHERE anQId = {id}", connection);
+                        }
+                        
                     }
                     else
                     {
@@ -1664,7 +1672,7 @@ namespace AMS.Web.Database
                 }
 
 
-                SqlCommand command = new SqlCommand($"SELECT * FROM tAsset WHERE anQId not in (SELECT distinct anAssetID FROM tCheckOut WHERE anInventory = {qid})", connection);
+                SqlCommand command = new SqlCommand($"SELECT * FROM tAsset WHERE anQId not in (SELECT distinct anAssetID FROM tCheckOut WHERE anInventory = {qid}) AND abWriteOff != 1", connection);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
