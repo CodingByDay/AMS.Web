@@ -1305,7 +1305,7 @@ namespace AMS.Web.Database
                 }
 
 
-                SqlCommand command = new SqlCommand($"SELECT a.*, b.* FROM tCheckout AS a LEFT JOIN tAsset AS b ON a.anAssetID = b.anQId WHERE a.anInventory = {qid} AND a.adDateConfirm IS NULL;", connection);
+                SqlCommand command = new SqlCommand($"SELECT a.*, b.* FROM tCheckout AS a LEFT JOIN tAsset AS b ON a.anAssetID = b.anQId WHERE a.anInventory = {qid} AND a.adDateConfirm IS NULL AND abWriteOff != 1;", connection);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -1617,9 +1617,7 @@ namespace AMS.Web.Database
                     {
                         if (field == "abWriteOff")
                         {
-
-
-                            command = new SqlCommand($"UPDATE {table} SET {field}=1 WHERE anQId = {id}", connection);
+                            command = new SqlCommand($"UPDATE {table} SET {field}=1, adWriteOffDate = GETDATE() WHERE anQId = {id}", connection);
                         } else
                         {
                             command = new SqlCommand($"UPDATE {table} SET {field}=1 WHERE anQId = {id}", connection);
@@ -1628,7 +1626,18 @@ namespace AMS.Web.Database
                     }
                     else
                     {
-                        command = new SqlCommand($"UPDATE {table} SET {field}=0 WHERE anQId = {id}", connection);
+
+
+                        if (field == "abWriteOff")
+                        {
+
+                            command = new SqlCommand($"UPDATE {table} SET {field}=1, adWriteOffDate = NULL WHERE anQId = {id}", connection);
+                        }
+                        else
+                        {
+                            command = new SqlCommand($"UPDATE {table} SET {field}=0 WHERE anQId = {id}", connection);
+                        }
+                        
 
                     }
                     command.ExecuteNonQuery();
@@ -1729,7 +1738,7 @@ namespace AMS.Web.Database
                 }
 
 
-                SqlCommand command = new SqlCommand($"SELECT a.*, b.* FROM tCheckOut AS a LEFT JOIN tAsset AS b ON a.anAssetID = b.anQId WHERE anInventory = {qid} AND anAssetID in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qid} GROUP BY anAssetID HAVING count(anAssetID) > 1) AND anAssetID not in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qid} AND adDateConfirm is not null);", connection);
+                SqlCommand command = new SqlCommand($"SELECT a.*, b.* FROM tCheckOut AS a LEFT JOIN tAsset AS b ON a.anAssetID = b.anQId WHERE anInventory = {qid} AND anAssetID in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qid} GROUP BY anAssetID HAVING count(anAssetID) > 1) AND anAssetID not in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qid} AND adDateConfirm is not null) AND abWriteOff != 1;", connection);
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DX5UCIeeYgU8I0D2yw2GxYwcae6q/KqWBV6HXAMgjWg=",
+  "Hash": "Oy2x1SJSCSjyXNcdUYrxBa0O5z1QUOgsQGH6WWwkZuI=",
   "Source": "AMS.Web",
   "BasePath": "_content/AMS.Web",
   "Mode": "Default",
@@ -10591,6 +10591,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.carmine.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.carmine.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.carmine.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.carmine.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.carmine.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -10606,6 +10623,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.carmine.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.carmine.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.carmine.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.carmine.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.contrast.compact.css",
@@ -10625,6 +10659,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.contrast.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.contrast.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.contrast.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.contrast.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.contrast.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -10640,6 +10691,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.contrast.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.contrast.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.contrast.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.contrast.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.dark.compact.css",
@@ -10659,6 +10727,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.dark.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.dark.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.dark.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.dark.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.dark.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -10674,6 +10759,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.dark.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.dark.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.dark.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.dark.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.darkmoon.compact.css",
@@ -10693,6 +10795,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.darkmoon.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.darkmoon.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.darkmoon.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.darkmoon.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.darkmoon.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -10708,6 +10827,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.darkmoon.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.darkmoon.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.darkmoon.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.darkmoon.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.darkviolet.compact.css",
@@ -10727,6 +10863,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.darkviolet.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.darkviolet.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.darkviolet.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.darkviolet.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.darkviolet.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -10742,6 +10895,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.darkviolet.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.darkviolet.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.darkviolet.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.darkviolet.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.greenmist.compact.css",
@@ -10761,6 +10931,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.greenmist.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.greenmist.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.greenmist.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.greenmist.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.greenmist.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -10776,6 +10963,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.greenmist.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.greenmist.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.greenmist.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.greenmist.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.light.compact.css",
@@ -10795,6 +10999,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.light.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.light.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.light.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.light.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.light.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -10810,6 +11031,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.light.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.light.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.light.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.light.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.blue.dark.compact.css",
@@ -10829,6 +11067,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.blue.dark.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.blue.dark.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.blue.dark.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.blue.dark.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.blue.dark.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -10844,6 +11099,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.blue.dark.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.blue.dark.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.blue.dark.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.blue.dark.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.blue.light.compact.css",
@@ -10863,6 +11135,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.blue.light.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.blue.light.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.blue.light.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.blue.light.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.blue.light.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -10878,6 +11167,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.blue.light.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.blue.light.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.blue.light.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.blue.light.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.lime.dark.compact.css",
@@ -10897,6 +11203,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.lime.dark.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.lime.dark.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.lime.dark.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.lime.dark.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.lime.dark.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -10912,6 +11235,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.lime.dark.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.lime.dark.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.lime.dark.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.lime.dark.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.lime.light.compact.css",
@@ -10931,6 +11271,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.lime.light.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.lime.light.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.lime.light.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.lime.light.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.lime.light.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -10946,6 +11303,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.lime.light.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.lime.light.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.lime.light.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.lime.light.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.orange.dark.compact.css",
@@ -10965,6 +11339,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.orange.dark.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.orange.dark.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.orange.dark.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.orange.dark.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.orange.dark.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -10980,6 +11371,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.orange.dark.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.orange.dark.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.orange.dark.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.orange.dark.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.orange.light.compact.css",
@@ -10999,6 +11407,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.orange.light.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.orange.light.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.orange.light.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.orange.light.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.orange.light.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11014,6 +11439,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.orange.light.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.orange.light.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.orange.light.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.orange.light.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.purple.dark.compact.css",
@@ -11033,6 +11475,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.purple.dark.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.purple.dark.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.purple.dark.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.purple.dark.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.purple.dark.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11048,6 +11507,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.purple.dark.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.purple.dark.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.purple.dark.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.purple.dark.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.purple.light.compact.css",
@@ -11067,6 +11543,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.purple.light.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.purple.light.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.purple.light.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.purple.light.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.purple.light.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11082,6 +11575,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.purple.light.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.purple.light.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.purple.light.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.purple.light.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.teal.dark.compact.css",
@@ -11101,6 +11611,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.teal.dark.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.teal.dark.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.teal.dark.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.teal.dark.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.teal.dark.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11116,6 +11643,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.teal.dark.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.teal.dark.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.teal.dark.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.teal.dark.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.teal.light.compact.css",
@@ -11135,6 +11679,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.teal.light.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.teal.light.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.teal.light.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.teal.light.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.teal.light.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11150,6 +11711,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.teal.light.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.material.teal.light.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.material.teal.light.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.material.teal.light.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.softblue.compact.css",
@@ -11169,6 +11747,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.softblue.compact.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.softblue.compact.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.softblue.compact.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.softblue.compact.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.softblue.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11184,6 +11779,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.softblue.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx.softblue.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx.softblue.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx.softblue.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx-diagram.css",
@@ -11203,6 +11815,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx-diagram.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx-diagram.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx-diagram.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx-diagram.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx-diagram.min.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11218,6 +11847,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx-diagram.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx-diagram.min.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx-diagram.min.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx-diagram.min.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx-gantt.css",
@@ -11237,6 +11883,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx-gantt.css"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx-gantt.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx-gantt.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx-gantt.css.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx-gantt.min.css",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11252,6 +11915,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx-gantt.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\dx-gantt.min.css.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/dx-gantt.min.css.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\dx-gantt.min.css.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-300.ttf",
@@ -11271,6 +11951,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-300.ttf"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-300.ttf.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/fonts/Roboto-300.ttf.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-300.ttf.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-300.woff",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11286,6 +11983,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-300.woff"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-300.woff.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/fonts/Roboto-300.woff.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-300.woff.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-300.woff2",
@@ -11305,6 +12019,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-300.woff2"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-300.woff2.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/fonts/Roboto-300.woff2.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-300.woff2.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-400.ttf",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11320,6 +12051,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-400.ttf"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-400.ttf.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/fonts/Roboto-400.ttf.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-400.ttf.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-400.woff",
@@ -11339,6 +12087,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-400.woff"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-400.woff.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/fonts/Roboto-400.woff.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-400.woff.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-400.woff2",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11354,6 +12119,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-400.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-400.woff2.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/fonts/Roboto-400.woff2.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-400.woff2.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-500.ttf",
@@ -11373,6 +12155,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-500.ttf"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-500.ttf.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/fonts/Roboto-500.ttf.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-500.ttf.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-500.woff",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11388,6 +12187,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-500.woff"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-500.woff.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/fonts/Roboto-500.woff.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-500.woff.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-500.woff2",
@@ -11407,6 +12223,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-500.woff2"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-500.woff2.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/fonts/Roboto-500.woff2.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-500.woff2.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-700.ttf",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11422,6 +12255,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-700.ttf"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-700.ttf.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/fonts/Roboto-700.ttf.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-700.ttf.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-700.woff",
@@ -11441,6 +12291,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-700.woff"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-700.woff.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/fonts/Roboto-700.woff.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-700.woff.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-700.woff2",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11456,6 +12323,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-700.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\fonts\\Roboto-700.woff2.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/fonts/Roboto-700.woff2.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\fonts\\Roboto-700.woff2.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\icons\\dxicons.ttf",
@@ -11475,6 +12359,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\icons\\dxicons.ttf"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\icons\\dxicons.ttf.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/icons/dxicons.ttf.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\icons\\dxicons.ttf.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\icons\\dxicons.woff",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11490,6 +12391,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\icons\\dxicons.woff"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\icons\\dxicons.woff.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/icons/dxicons.woff.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\icons\\dxicons.woff.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\icons\\dxicons.woff2",
@@ -11509,6 +12427,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\icons\\dxicons.woff2"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\icons\\dxicons.woff2.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/icons/dxicons.woff2.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\icons\\dxicons.woff2.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\icons\\dxiconsmaterial.ttf",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11524,6 +12459,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\icons\\dxiconsmaterial.ttf"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\icons\\dxiconsmaterial.ttf.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/icons/dxiconsmaterial.ttf.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\icons\\dxiconsmaterial.ttf.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\icons\\dxiconsmaterial.woff",
@@ -11543,6 +12495,23 @@
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\icons\\dxiconsmaterial.woff"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\icons\\dxiconsmaterial.woff.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/icons/dxiconsmaterial.woff.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\icons\\dxiconsmaterial.woff.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\icons\\dxiconsmaterial.woff2",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -11558,6 +12527,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\devextreme\\icons\\dxiconsmaterial.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\devextreme\\icons\\dxiconsmaterial.woff2.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "css/devextreme/icons/dxiconsmaterial.woff2.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\devextreme\\icons\\dxiconsmaterial.woff2.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\css\\error.css",
@@ -27013,6 +27999,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\aspnet\\dx.aspnet.data.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\aspnet\\dx.aspnet.data.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/aspnet/dx.aspnet.data.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\aspnet\\dx.aspnet.data.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\aspnet\\dx.aspnet.mvc.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27028,6 +28031,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\aspnet\\dx.aspnet.mvc.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\aspnet\\dx.aspnet.mvc.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/aspnet/dx.aspnet.mvc.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\aspnet\\dx.aspnet.mvc.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\bootstrap.js",
@@ -27081,6 +28101,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/cldr.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27096,6 +28133,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/cldr.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr\\event.js",
@@ -27115,6 +28169,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr\\event.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr\\event.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/cldr/event.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr\\event.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr\\event.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27130,6 +28201,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr\\event.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr\\event.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/cldr/event.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr\\event.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr\\supplemental.js",
@@ -27149,6 +28237,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr\\supplemental.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr\\supplemental.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/cldr/supplemental.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr\\supplemental.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr\\supplemental.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27164,6 +28269,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr\\supplemental.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr\\supplemental.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/cldr/supplemental.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr\\supplemental.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr\\unresolved.js",
@@ -27183,6 +28305,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr\\unresolved.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr\\unresolved.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/cldr/unresolved.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr\\unresolved.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr\\unresolved.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27198,6 +28337,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr\\unresolved.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\cldr\\unresolved.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/cldr/unresolved.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\cldr\\unresolved.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx.all.debug.js",
@@ -27217,6 +28373,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx.all.debug.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx.all.debug.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/dx.all.debug.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx.all.debug.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx.all.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27232,6 +28405,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx.all.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx.all.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/dx.all.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx.all.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx.viz.debug.js",
@@ -27251,6 +28441,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx.viz.debug.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx.viz.debug.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/dx.viz.debug.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx.viz.debug.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx.viz.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27266,6 +28473,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx.viz.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx.viz.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/dx.viz.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx.viz.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx.web.debug.js",
@@ -27285,6 +28509,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx.web.debug.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx.web.debug.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/dx.web.debug.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx.web.debug.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx.web.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27300,6 +28541,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx.web.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx.web.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/dx.web.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx.web.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx-diagram.js",
@@ -27319,6 +28577,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx-diagram.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx-diagram.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/dx-diagram.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx-diagram.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx-diagram.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27334,6 +28609,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx-diagram.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx-diagram.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/dx-diagram.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx-diagram.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx-gantt.js",
@@ -27353,6 +28645,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx-gantt.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx-gantt.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/dx-gantt.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx-gantt.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx-gantt.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27368,6 +28677,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx-gantt.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx-gantt.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/dx-gantt.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx-gantt.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx-quill.js",
@@ -27387,6 +28713,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx-quill.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx-quill.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/dx-quill.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx-quill.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx-quill.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27402,6 +28745,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx-quill.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\dx-quill.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/dx-quill.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\dx-quill.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\exceljs.js",
@@ -27421,6 +28781,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\exceljs.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\exceljs.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/exceljs.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\exceljs.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\exceljs.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27436,6 +28813,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\exceljs.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\exceljs.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/exceljs.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\exceljs.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\FileSaver.js",
@@ -27455,6 +28849,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\FileSaver.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\FileSaver.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/FileSaver.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\FileSaver.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\FileSaver.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27470,6 +28881,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\FileSaver.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\FileSaver.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/FileSaver.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\FileSaver.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize.js",
@@ -27489,6 +28917,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/globalize.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27504,6 +28949,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/globalize.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\currency.js",
@@ -27523,6 +28985,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\currency.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\currency.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/globalize/currency.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\currency.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\currency.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27538,6 +29017,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\currency.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\currency.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/globalize/currency.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\currency.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\date.js",
@@ -27557,6 +29053,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\date.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\date.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/globalize/date.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\date.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\date.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27572,6 +29085,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\date.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\date.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/globalize/date.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\date.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\message.js",
@@ -27591,6 +29121,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\message.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\message.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/globalize/message.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\message.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\message.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27606,6 +29153,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\message.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\message.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/globalize/message.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\message.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\number.js",
@@ -27625,6 +29189,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\number.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\number.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/globalize/number.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\number.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\number.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27640,6 +29221,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\number.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\globalize\\number.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/globalize/number.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\globalize\\number.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\jquery.js",
@@ -27693,6 +29291,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\jspdf.plugin.autotable.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\jspdf.plugin.autotable.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/jspdf.plugin.autotable.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\jspdf.plugin.autotable.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\jspdf.plugin.autotable.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27708,6 +29323,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\jspdf.plugin.autotable.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\jspdf.plugin.autotable.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/jspdf.plugin.autotable.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\jspdf.plugin.autotable.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\jspdf.umd.js",
@@ -27727,6 +29359,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\jspdf.umd.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\jspdf.umd.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/jspdf.umd.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\jspdf.umd.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\jspdf.umd.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27742,6 +29391,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\jspdf.umd.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\jspdf.umd.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/jspdf.umd.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\jspdf.umd.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\jszip.js",
@@ -27761,6 +29427,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\jszip.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\jszip.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/jszip.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\jszip.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\jszip.min.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27776,6 +29459,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\jszip.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\jszip.min.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/jszip.min.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\jszip.min.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.ar.js",
@@ -27795,6 +29495,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.ar.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.ar.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.ar.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.ar.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.ca.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27810,6 +29527,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.ca.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.ca.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.ca.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.ca.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.cs.js",
@@ -27829,6 +29563,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.cs.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.cs.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.cs.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.cs.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.de.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27844,6 +29595,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.de.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.de.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.de.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.de.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.el.js",
@@ -27863,6 +29631,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.el.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.el.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.el.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.el.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.en.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27878,6 +29663,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.en.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.en.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.en.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.en.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.es.js",
@@ -27897,6 +29699,40 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.es.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.es.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.es.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.es.js.bak"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.fa.js",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.fa.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.fa.js"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.fi.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27912,6 +29748,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.fi.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.fi.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.fi.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.fi.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.fr.js",
@@ -27931,6 +29784,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.fr.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.fr.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.fr.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.fr.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.hu.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27946,6 +29816,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.hu.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.hu.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.hu.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.hu.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.it.js",
@@ -27965,6 +29852,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.it.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.it.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.it.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.it.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.ja.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -27980,6 +29884,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.ja.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.ja.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.ja.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.ja.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.lt.js",
@@ -27999,6 +29920,40 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.lt.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.lt.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.lt.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.lt.js.bak"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.lv.js",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.lv.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.lv.js"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.nb.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -28014,6 +29969,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.nb.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.nb.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.nb.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.nb.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.nl.js",
@@ -28033,6 +30005,40 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.nl.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.nl.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.nl.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.nl.js.bak"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.pl.js",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.pl.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.pl.js"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.pt.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -28048,6 +30054,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.pt.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.pt.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.pt.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.pt.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.ro.js",
@@ -28067,6 +30090,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.ro.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.ro.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.ro.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.ro.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.ru.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -28082,6 +30122,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.ru.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.ru.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.ru.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.ru.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.sl.js",
@@ -28101,6 +30158,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.sl.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.sl.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.sl.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.sl.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.sv.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -28116,6 +30190,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.sv.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.sv.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.sv.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.sv.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.tr.js",
@@ -28135,6 +30226,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.tr.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.tr.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.tr.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.tr.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.vi.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -28150,6 +30258,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.vi.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.vi.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.vi.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.vi.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.zh.js",
@@ -28169,6 +30294,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.zh.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.zh.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.zh.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.zh.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.zh-tw.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -28184,6 +30326,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.zh-tw.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\localization\\dx.messages.zh-tw.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/localization/dx.messages.zh-tw.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\localization\\dx.messages.zh-tw.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-data\\africa.js",
@@ -28203,6 +30362,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-data\\africa.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-data\\africa.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/vectormap-data/africa.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-data\\africa.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-data\\canada.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -28218,6 +30394,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-data\\canada.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-data\\canada.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/vectormap-data/canada.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-data\\canada.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-data\\eurasia.js",
@@ -28237,6 +30430,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-data\\eurasia.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-data\\eurasia.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/vectormap-data/eurasia.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-data\\eurasia.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-data\\europe.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -28252,6 +30462,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-data\\europe.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-data\\europe.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/vectormap-data/europe.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-data\\europe.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-data\\usa.js",
@@ -28271,6 +30498,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-data\\usa.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-data\\usa.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/vectormap-data/usa.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-data\\usa.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-data\\world.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -28286,6 +30530,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-data\\world.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-data\\world.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/vectormap-data/world.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-data\\world.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-utils\\dx.vectormaputils.debug.js",
@@ -28305,6 +30566,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-utils\\dx.vectormaputils.debug.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-utils\\dx.vectormaputils.debug.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/vectormap-utils/dx.vectormaputils.debug.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-utils\\dx.vectormaputils.debug.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-utils\\dx.vectormaputils.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -28322,6 +30600,23 @@
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-utils\\dx.vectormaputils.js"
     },
     {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-utils\\dx.vectormaputils.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/vectormap-utils/dx.vectormaputils.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-utils\\dx.vectormaputils.js.bak"
+    },
+    {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-utils\\dx.vectormaputils.node.js",
       "SourceId": "AMS.Web",
       "SourceType": "Discovered",
@@ -28337,6 +30632,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-utils\\dx.vectormaputils.node.js"
+    },
+    {
+      "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\devextreme\\vectormap-utils\\dx.vectormaputils.node.js.bak",
+      "SourceId": "AMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\",
+      "BasePath": "_content/AMS.Web",
+      "RelativePath": "js/devextreme/vectormap-utils/dx.vectormaputils.node.js.bak",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\devextreme\\vectormap-utils\\dx.vectormaputils.node.js.bak"
     },
     {
       "Identity": "C:\\Users\\jankoj\\Desktop\\AMS Web\\AMS.Web\\AMS.Web\\wwwroot\\js\\exportify.js",

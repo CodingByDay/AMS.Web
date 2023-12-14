@@ -30,9 +30,13 @@
           <Column Table="vAssetCheck" Name="CheckedOut" />
           <Column Table="vAssetCheck" Name="acECDC" />
           <Column Table="vAssetCheck" Name="acNameC" />
+          <Column Table="vAssetCheck" Name="acNoteI" />
         </Columns>
       </Query>
       <ConnectionOptions CloseConnection="true" />
+      <CalculatedFields>
+        <CalculatedField Name="Popisano calculated" Expression="Iif([CheckedOut], 'Že popisano', 'Ni popisano')" DataType="Auto" DataMember="vAssetCheck" />
+      </CalculatedFields>
     </SqlDataSource>
   </DataSources>
   <Items>
@@ -47,7 +51,7 @@
         <Dimension DataMember="adDateOfLIQ" DefaultId="DataItem6" />
         <Dimension DataMember="acCareTaker" DefaultId="DataItem7" />
         <Dimension DataMember="acECD" DefaultId="DataItem8" />
-        <Dimension DataMember="CheckedOut" DefaultId="DataItem9" />
+        <Dimension DataMember="Popisano calculated" DefaultId="DataItem9" />
         <Dimension DataMember="acECDC" DefaultId="DataItem10" />
       </DataItems>
       <FormatRules>
@@ -61,6 +65,18 @@
           <FormatConditionValue>
             <IconSettings IconType="IndicatorCircledGreenCheck" />
             <Value1 Type="System.Boolean" Value="True" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 3" DataItem="DataItem9" DataItemApplyTo="DataItem9">
+          <FormatConditionValue>
+            <IconSettings IconType="IndicatorGreenCheck" />
+            <Value1 Type="System.String" Value="Že popisano" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 4" DataItem="DataItem9" DataItemApplyTo="DataItem9">
+          <FormatConditionValue>
+            <IconSettings IconType="IndicatorRedCross" />
+            <Value1 Type="System.String" Value="Ni popisano" />
           </FormatConditionValue>
         </GridItemFormatRule>
       </FormatRules>
@@ -103,7 +119,7 @@
     </Grid>
     <ComboBox ComponentName="comboBoxDashboardItem1" Name="Inventura" DataSource="sqlDataSource1" DataMember="vAssetCheck">
       <DataItems>
-        <Dimension DataMember="anInventory" Name="Inventura" DefaultId="DataItem0" />
+        <Dimension DataMember="acNoteI" Name="Inventura" DefaultId="DataItem0" />
       </DataItems>
       <FilterDimensions>
         <Dimension DefaultId="DataItem0" />

@@ -21,7 +21,9 @@ h4.card-title-active {
 td {
     cursor: text;
 }
-
+p#version {
+    text-align: center;
+}
 div#navbarSupportedContentHome {
     height: 70px;
 }
@@ -36,8 +38,11 @@ nav.navbar.navbar-expand-lg.fixed-top.navbar-dark {
 }
 
 #main {
-    height: 100%;
+    height: 100em;
 }
+
+
+
 
 /* Breakpoint for navigation */
 @media (max-width: 990px) {
@@ -345,7 +350,7 @@ input:checked + .slider {
     background-color: #2196F3;
 }
 .analytics-control-view {
-    height: 85%;
+    height: 85vh;
 
 
 }

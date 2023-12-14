@@ -11,8 +11,8 @@
           "BuildBundlerMinifier": "3.2.449",
           "DevExpress.AspNetCore.Common": "22.2.5",
           "DevExpress.AspNetCore.Dashboard": "22.2.5",
-          "DevExtreme.AspNet.Core": "22.2.5",
-          "DevExtreme.AspNet.Data": "2.9.0",
+          "DevExtreme.AspNet.Core": "23.2.3",
+          "DevExtreme.AspNet.Data": "3.0.0",
           "DocumentFormat.OpenXml": "2.20.0",
           "ExcelDataReader": "3.6.0",
           "ExcelDataReader.DataSet": "3.6.0",
@@ -490,27 +490,27 @@
           }
         }
       },
-      "DevExtreme.AspNet.Core/22.2.5": {
+      "DevExtreme.AspNet.Core/23.2.3": {
         "dependencies": {
-          "DevExtreme.AspNet.Data": "2.9.0",
+          "DevExtreme.AspNet.Data": "3.0.0",
           "Newtonsoft.Json": "13.0.2"
         },
         "runtime": {
           "lib/net6.0/DevExtreme.AspNet.Core.dll": {
-            "assemblyVersion": "22.2.5.0",
-            "fileVersion": "22.2.5.0"
+            "assemblyVersion": "23.2.3.0",
+            "fileVersion": "23.2.3.0"
           }
         }
       },
-      "DevExtreme.AspNet.Data/2.9.0": {
+      "DevExtreme.AspNet.Data/3.0.0": {
         "dependencies": {
           "Microsoft.CSharp": "4.4.0",
           "Newtonsoft.Json": "13.0.2"
         },
         "runtime": {
-          "lib/netstandard2.0/DevExtreme.AspNet.Data.dll": {
-            "assemblyVersion": "2.9.0.0",
-            "fileVersion": "2.9.0.0"
+          "lib/net6.0/DevExtreme.AspNet.Data.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
           }
         }
       },
@@ -3053,19 +3053,19 @@
       "path": "devexpress.xpo/22.2.5",
       "hashPath": "devexpress.xpo.22.2.5.nupkg.sha512"
     },
-    "DevExtreme.AspNet.Core/22.2.5": {
+    "DevExtreme.AspNet.Core/23.2.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dGZOnVyhVbl1e7xyeS/dlROG+moF299N/BBFaTZPyXtcldBYQn62v0LnXjCttN8PEvxkVFd5hMlf0cBJKa7p+Q==",
-      "path": "devextreme.aspnet.core/22.2.5",
-      "hashPath": "devextreme.aspnet.core.22.2.5.nupkg.sha512"
+      "sha512": "sha512-M9q8roNxqS8ux8NpPgqtbWXv7zBlpd+XLHU3H6aTDe2z55HAmCJDv7pmJwccCrbS1kzuBouZriMbugVVJiiawA==",
+      "path": "devextreme.aspnet.core/23.2.3",
+      "hashPath": "devextreme.aspnet.core.23.2.3.nupkg.sha512"
     },
-    "DevExtreme.AspNet.Data/2.9.0": {
+    "DevExtreme.AspNet.Data/3.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-C3cdpuuCUTsR6r27xb097xco8+Unw0NEKKfPTSUsM0TcQ6CZqURurGKVVj5jVcKrFbzoJQZCZnpvzF7vCVqqbw==",
-      "path": "devextreme.aspnet.data/2.9.0",
-      "hashPath": "devextreme.aspnet.data.2.9.0.nupkg.sha512"
+      "sha512": "sha512-65Tdo835fKRLi8T4h9VlpohSeLsg/33ebPVE7b7hOCzxHlGFl1KsEnqbeL+/4f8HkA6MAK1/rL5n+Y0GitBBcA==",
+      "path": "devextreme.aspnet.data/3.0.0",
+      "hashPath": "devextreme.aspnet.data.3.0.0.nupkg.sha512"
     },
     "DocumentFormat.OpenXml/2.20.0": {
       "type": "package",

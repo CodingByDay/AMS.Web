@@ -27,6 +27,10 @@
         </Columns>
       </Query>
       <ConnectionOptions CloseConnection="true" />
+      <CalculatedFields>
+        <CalculatedField Name="Popisano calculated" Expression="Iif([CheckedOut], 'Že popisano', 'Ni popisano')" DataType="Auto" DataMember="vAssetCheck" />
+        <CalculatedField Name="Odpis calculated" Expression="Iif([abWriteOff] , 'Za odpis', 'Ni za odpis')&#xD;&#xA;" DataType="Auto" DataMember="vAssetCheck" />
+      </CalculatedFields>
     </SqlDataSource>
   </DataSources>
   <Items>
@@ -35,9 +39,9 @@
         <Dimension DataMember="acItem" DefaultId="DataItem0" />
         <Dimension DataMember="acLocation" DefaultId="DataItem1" />
         <Dimension DataMember="acName" DefaultId="DataItem2" />
-        <Dimension DataMember="abWriteOff" DefaultId="DataItem3" />
+        <Dimension DataMember="Odpis calculated" DefaultId="DataItem3" />
         <Dimension DataMember="abWriteOffReason" DefaultId="DataItem4" />
-        <Dimension DataMember="CheckedOut" DefaultId="DataItem5" />
+        <Dimension DataMember="Popisano calculated" DefaultId="DataItem5" />
         <Dimension DataMember="acCareTaker" DefaultId="DataItem6" />
       </DataItems>
       <FormatRules>
@@ -71,27 +75,51 @@
             <Value1 Type="System.Boolean" Value="False" />
           </FormatConditionValue>
         </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 6" DataItem="DataItem3" DataItemApplyTo="DataItem3">
+          <FormatConditionValue>
+            <AppearanceSettings AppearanceType="Orange" />
+            <Value1 Type="System.String" Value="Za odpis" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 7" DataItem="DataItem3" DataItemApplyTo="DataItem3">
+          <FormatConditionValue>
+            <AppearanceSettings AppearanceType="PaleGreen" />
+            <Value1 Type="System.String" Value="Ni za odpis" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 8" DataItem="DataItem5" DataItemApplyTo="DataItem5">
+          <FormatConditionValue>
+            <IconSettings IconType="IndicatorGreenCheck" />
+            <Value1 Type="System.String" Value="Že popisano" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 9" DataItem="DataItem5" DataItemApplyTo="DataItem5">
+          <FormatConditionValue>
+            <IconSettings IconType="IndicatorRedCross" />
+            <Value1 Type="System.String" Value="Ni popisano" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
       </FormatRules>
       <GridColumns>
-        <GridDimensionColumn Name="Ident" Weight="38.157040882543804">
+        <GridDimensionColumn Name="Ident" Weight="38.013698630136979">
           <Dimension DefaultId="DataItem0" />
         </GridDimensionColumn>
-        <GridDimensionColumn Name="Lokacija" Weight="96.755353666450361">
+        <GridDimensionColumn Name="Lokacija" Weight="96.917808219178056">
           <Dimension DefaultId="DataItem1" />
         </GridDimensionColumn>
-        <GridDimensionColumn Name="Naziv sredstva" Weight="177.49837767683323">
+        <GridDimensionColumn Name="Naziv sredstva" Weight="177.39726027397256">
           <Dimension DefaultId="DataItem2" />
         </GridDimensionColumn>
-        <GridDimensionColumn Name="Zadolženi" Weight="89.260220635950688">
+        <GridDimensionColumn Name="Zadolženi" Weight="89.383561643835591">
           <Dimension DefaultId="DataItem6" />
         </GridDimensionColumn>
-        <GridDimensionColumn Name="Odpis" Weight="24.529526281635302">
+        <GridDimensionColumn Name="Odpis" Weight="65.068493150684915">
           <Dimension DefaultId="DataItem3" />
         </GridDimensionColumn>
-        <GridDimensionColumn Name="Razlog odpisa" Weight="72.225827384815062">
+        <GridDimensionColumn Name="Razlog odpisa" Weight="31.849315068493144">
           <Dimension DefaultId="DataItem4" />
         </GridDimensionColumn>
-        <GridDimensionColumn Name="Popisano" Weight="26.573653471771578">
+        <GridDimensionColumn Name="Popisano" Weight="26.369863013698627">
           <Dimension DefaultId="DataItem5" />
         </GridDimensionColumn>
       </GridColumns>
@@ -105,17 +133,17 @@
         <Dimension DefaultId="DataItem1" />
       </FilterDimensions>
     </ComboBox>
-    <ListBox ComponentName="listBoxDashboardItem1" Name="Odpisano" DataSource="sqlDataSource1" DataMember="vAssetCheck" ListBoxType="Radio">
+    <ListBox ComponentName="listBoxDashboardItem1" Name="ODPISANO" DataSource="sqlDataSource1" DataMember="vAssetCheck" ListBoxType="Radio">
       <DataItems>
-        <Dimension DataMember="CheckedOut" Name="Za odpis" DefaultId="DataItem0" />
+        <Dimension DataMember="Odpis calculated" Name="Za odpis" DefaultId="DataItem0" />
       </DataItems>
       <FilterDimensions>
         <Dimension DefaultId="DataItem0" />
       </FilterDimensions>
     </ListBox>
-    <ListBox ComponentName="listBoxDashboardItem4" Name="Popisano" DataSource="sqlDataSource1" DataMember="vAssetCheck" ListBoxType="Radio">
+    <ListBox ComponentName="listBoxDashboardItem4" Name="POPISANO" DataSource="sqlDataSource1" DataMember="vAssetCheck" ListBoxType="Radio">
       <DataItems>
-        <Dimension DataMember="abWriteOff" DefaultId="DataItem0" />
+        <Dimension DataMember="Popisano calculated" DefaultId="DataItem0" />
       </DataItems>
       <FilterDimensions>
         <Dimension DefaultId="DataItem0" />

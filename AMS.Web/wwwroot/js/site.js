@@ -1,4 +1,18 @@
-﻿function onBeforeRender(sender) {
+﻿jQuery(function () {
+    var versionCookie = document.cookie.split(';')
+        .map(cookie => cookie.split('='))
+        .find(cookie => cookie[0].trim() === 'version');
+
+    if (versionCookie) {
+        var versionValue = versionCookie[1];
+        jQuery('#version').text("v." + versionValue);
+    } else {
+        jQuery('#version').text('Version not found'); 
+    }
+});
+
+
+function onBeforeRender(sender) {
     var dashboardControl = sender;
     dashboardControl.registerExtension(new DevExpress.Dashboard.DashboardPanelExtension(dashboardControl));
     dashboardControl.unregisterExtension("designerToolbar");

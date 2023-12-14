@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
@@ -928,11 +928,11 @@
     <Content Remove="wwwroot\Content\src\ui-todolist.html" />
     <Content Remove="wwwroot\Content\webpack.mix.js" />
   </ItemGroup>
-<ItemGroup>
+  <ItemGroup>
     <Content Include="content\**">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-</ItemGroup>
+  </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
     <None Include="wwwroot\Content\.gitignore" />
@@ -2148,14 +2148,12 @@
     <None Include="wwwroot\js\feather-icons\icons\zap.svg" />
     <None Include="wwwroot\js\feather-icons\icons\zoom-in.svg" />
     <None Include="wwwroot\js\feather-icons\icons\zoom-out.svg" />
-
-
   </ItemGroup>
-	<ItemGroup>
+  <ItemGroup>
     <Content Include="content\**">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-</ItemGroup>
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
     <PackageReference Include="DevExpress.AspNetCore.Common" Version="22.2.5" />
@@ -2204,8 +2202,7 @@
   <ItemGroup>
     <Folder Include="Temp\" />
     <Folder Include="wwwroot\Export\" />
-    <PackageReference Include="DevExtreme.AspNet.Core" Version="22.2.5" />
-    <PackageReference Include="DevExtreme.AspNet.Data" Version="2.9.0" />
+    <PackageReference Include="DevExtreme.AspNet.Core" Version="23.2.3" />
+    <PackageReference Include="DevExtreme.AspNet.Data" Version="3.0.0" />
   </ItemGroup>
-
 </Project>

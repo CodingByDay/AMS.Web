@@ -27,9 +27,16 @@
           <Column Table="vAssetCheck" Name="adDateCheckC" />
           <Column Table="vAssetCheck" Name="acNameC" />
           <Column Table="vAssetCheck" Name="acLocationC" />
+          <Column Table="vAssetCheck" Name="acNoteI" />
+          <Column Table="vAssetCheck" Name="adDateOfLIQ" />
+          <Column Table="vAssetCheck" Name="adDateOfELI" />
         </Columns>
       </Query>
       <ConnectionOptions CloseConnection="true" />
+      <CalculatedFields>
+        <CalculatedField Name="Popisano calculated" Expression="Iif([CheckedOut], 'Že popisano', 'Ni popisano')" DataType="Auto" DataMember="vAssetCheck" />
+        <CalculatedField Name="Odpisano calculated" Expression="Iif([abWriteOff], 'Za odpis', 'Ni za odpis')" DataType="Auto" DataMember="vAssetCheck" />
+      </CalculatedFields>
     </SqlDataSource>
   </DataSources>
   <Items>
@@ -39,8 +46,8 @@
         <Dimension DataMember="acLocation" DefaultId="DataItem1" />
         <Dimension DataMember="acCareTaker" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem2" />
         <Dimension DataMember="adDateCheckC" DateTimeGroupInterval="DayMonthYear" DefaultId="DataItem3" />
-        <Dimension DataMember="CheckedOut" DefaultId="DataItem4" />
-        <Dimension DataMember="abWriteOff" DefaultId="DataItem5" />
+        <Dimension DataMember="Popisano calculated" DefaultId="DataItem4" />
+        <Dimension DataMember="Odpisano calculated" DefaultId="DataItem5" />
         <Dimension DataMember="acName" DefaultId="DataItem6" />
       </DataItems>
       <FormatRules>
@@ -54,6 +61,30 @@
           <FormatConditionValue>
             <IconSettings IconType="IndicatorCircledGreenCheck" />
             <Value1 Type="System.Boolean" Value="True" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 3" DataItem="DataItem4" DataItemApplyTo="DataItem4">
+          <FormatConditionValue>
+            <IconSettings IconType="IndicatorGreenCheck" />
+            <Value1 Type="System.String" Value="Že popisano" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 4" DataItem="DataItem4" DataItemApplyTo="DataItem4">
+          <FormatConditionValue>
+            <IconSettings IconType="IndicatorRedCross" />
+            <Value1 Type="System.String" Value="Ni popisano" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 5" DataItem="DataItem5" DataItemApplyTo="DataItem5">
+          <FormatConditionValue>
+            <AppearanceSettings AppearanceType="Orange" />
+            <Value1 Type="System.String" Value="Za odpis" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 6" DataItem="DataItem5" DataItemApplyTo="DataItem5">
+          <FormatConditionValue>
+            <AppearanceSettings AppearanceType="PaleGreen" />
+            <Value1 Type="System.String" Value="Ni za odpis" />
           </FormatConditionValue>
         </GridItemFormatRule>
       </FormatRules>
@@ -84,7 +115,7 @@
     </Grid>
     <ComboBox ComponentName="comboBoxDashboardItem1" Name="Izberi inventuro" DataSource="sqlDataSource1" DataMember="vAssetCheck">
       <DataItems>
-        <Dimension DataMember="anInventory" Name="Izbor inventure" DefaultId="DataItem0" />
+        <Dimension DataMember="acNoteI" Name="Izbor inventure" DefaultId="DataItem0" />
       </DataItems>
       <FilterDimensions>
         <Dimension DefaultId="DataItem0" />

@@ -13,6 +13,9 @@
         </Columns>
       </Query>
       <ConnectionOptions CloseConnection="true" />
+      <CalculatedFields>
+        <CalculatedField Name="Popisano calculated" Expression="Iif([CheckedOut], 'Že popisano', 'Ni popisano')" DataType="Auto" DataMember="vAssetCheck" />
+      </CalculatedFields>
     </SqlDataSource>
   </DataSources>
   <Items>
@@ -23,7 +26,7 @@
         <Dimension DataMember="acCareTaker" DefaultId="DataItem1" />
         <Dimension DataMember="acECD" DefaultId="DataItem2" />
         <Dimension DataMember="acName" DefaultId="DataItem3" />
-        <Dimension DataMember="CheckedOut" DefaultId="DataItem4" />
+        <Dimension DataMember="Popisano calculated" DefaultId="DataItem4" />
         <Dimension DataMember="acECDC" DefaultId="DataItem5" />
       </DataItems>
       <FormatRules>
@@ -37,6 +40,18 @@
           <FormatConditionValue>
             <IconSettings IconType="IndicatorCircledGreenCheck" />
             <Value1 Type="System.Boolean" Value="True" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 3" DataItem="DataItem4" DataItemApplyTo="DataItem4">
+          <FormatConditionValue>
+            <IconSettings IconType="IndicatorGreenCheck" />
+            <Value1 Type="System.String" Value="Že popisano" />
+          </FormatConditionValue>
+        </GridItemFormatRule>
+        <GridItemFormatRule Name="Format Rule 4" DataItem="DataItem4" DataItemApplyTo="DataItem4">
+          <FormatConditionValue>
+            <IconSettings IconType="IndicatorRedCross" />
+            <Value1 Type="System.String" Value="Ni popisano" />
           </FormatConditionValue>
         </GridItemFormatRule>
       </FormatRules>
@@ -64,7 +79,7 @@
     </Grid>
     <ListBox ComponentName="listBoxDashboardItem1" Name="Izbrana inventura" DataSource="sqlDataSource1" DataMember="vAssetCheck" EnableSearch="true" ListBoxType="Radio">
       <DataItems>
-        <Dimension DataMember="anInventory" DefaultId="DataItem0" />
+        <Dimension DataMember="acNoteI" DefaultId="DataItem0" />
       </DataItems>
       <FilterDimensions>
         <Dimension DefaultId="DataItem0" />
