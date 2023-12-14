@@ -65,11 +65,11 @@
             },
             "DevExpress.AspNetCore.Common": {
               "target": "Package",
-              "version": "[22.2.5, )"
+              "version": "[23.2.3, )"
             },
             "DevExpress.AspNetCore.Dashboard": {
               "target": "Package",
-              "version": "[22.2.5, )"
+              "version": "[23.2.3, )"
             },
             "DevExtreme.AspNet.Core": {
               "target": "Package",
