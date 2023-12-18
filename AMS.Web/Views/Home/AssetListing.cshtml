@@ -183,7 +183,7 @@
                             )
                     }
 
-        @model List<AssetListing>;
+                        @model List<AssetListing>;
                     @(
                         Html.DevExtreme().DataGrid()
 
@@ -220,7 +220,7 @@
                                         c.Add().DataField("abWriteOff").Caption("Odpisano").AllowEditing(true).SetCellValue("setWriteOff");
                                         c.Add().DataField("abWriteOffReason").Caption("Razlog").AllowEditing(true).SetCellValue("setWriteOffReason");
                                         c.Add().DataField("checkedOut").Caption("Zabeleženo").AllowEditing(false);
-                            c.Add()
+                 c.Add()
                 .Type(GridCommandColumnType.Buttons)
                 .Width(110)
 

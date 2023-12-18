@@ -66,9 +66,6 @@ C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\bin\Debug\net6.0\NuGet.Protocol.
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\bin\Debug\net6.0\NuGet.Versioning.dll
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\bin\Debug\net6.0\BouncyCastle.Crypto.dll
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\bin\Debug\net6.0\RestSharp.dll
-C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\bin\Debug\net6.0\Sentry.dll
-C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\bin\Debug\net6.0\Sentry.AspNetCore.dll
-C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\bin\Debug\net6.0\Sentry.Extensions.Logging.dll
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\bin\Debug\net6.0\Serilog.dll
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\bin\Debug\net6.0\Serilog.Extensions.Logging.File.dll
@@ -268,7 +265,6 @@ C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\bin\Debug\net6.0\runtimes\win\li
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\obj\Debug\net6.0\AMS.Web.csproj.AssemblyReference.cache
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\obj\Debug\net6.0\AMS.Web.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\obj\Debug\net6.0\Sentry.Attributes.cs
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\obj\Debug\net6.0\AMS.Web.AssemblyInfoInputs.cache
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\obj\Debug\net6.0\AMS.Web.AssemblyInfo.cs
 C:\Users\jankoj\Desktop\AMS Web\AMS.Web\AMS.Web\obj\Debug\net6.0\AMS.Web.csproj.CoreCompileInputs.cache

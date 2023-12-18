@@ -9,6 +9,7 @@
     <Content Remove="wwwroot\Content\dist\assets\fonts\Raleway-Regular.ttf" />
     <Content Remove="wwwroot\Content\dist\assets\images\avatar\avatar-1.png" />
     <Content Remove="wwwroot\Content\dist\assets\images\avatar\avatar-s-1.png" />
+	  
     <Content Remove="wwwroot\Content\dist\assets\images\avatar\avatar-s-10.png" />
     <Content Remove="wwwroot\Content\dist\assets\images\avatar\avatar-s-11.png" />
     <Content Remove="wwwroot\Content\dist\assets\images\avatar\avatar-s-12.png" />
@@ -2168,7 +2169,6 @@
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
     <PackageReference Include="MimeKit" Version="3.6.1" />
     <PackageReference Include="RestSharp" Version="108.0.3" />
-    <PackageReference Include="Sentry.AspNetCore" Version="3.31.0" />
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="3.0.0" />
     <PackageReference Include="System.Data.OleDb" Version="7.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />

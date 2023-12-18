@@ -40,7 +40,7 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(30);
 });
 
-builder.WebHost.UseSentry();
+
 var app = builder.Build();
 
 var loggerFactory = app.Services.GetService<ILoggerFactory>();
@@ -49,7 +49,7 @@ loggerFactory.AddFile(builder.Configuration["Logging:LogFilePath"] );
 
 
 
-app.UseSentryTracing();
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseMiddleware<ErrorHandlerMiddleware>();

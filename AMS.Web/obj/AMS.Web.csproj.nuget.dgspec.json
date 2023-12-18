@@ -119,10 +119,6 @@
               "target": "Package",
               "version": "[108.0.3, )"
             },
-            "Sentry.AspNetCore": {
-              "target": "Package",
-              "version": "[3.31.0, )"
-            },
             "Serilog.Extensions.Logging.File": {
               "target": "Package",
               "version": "[3.0.0, )"

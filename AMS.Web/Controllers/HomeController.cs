@@ -6,9 +6,7 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using DocumentFormat.OpenXml;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-
 using MimeKit;
-using Sentry;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Mail;
