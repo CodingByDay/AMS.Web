@@ -322,8 +322,7 @@ function setCellValueLocationName(newData, value, currentRowData) {
 
 function onDeleteIconClickInventoryAsset(e) {
 
-    console.log(e);
-    alert("Test")
+
     Swal.fire({
         title: 'Ali ste sigurni da želite pobrisati sredstvo?',
         showDenyButton: true,
@@ -340,7 +339,7 @@ function onDeleteIconClickInventoryAsset(e) {
         if (result.isConfirmed) {
             jQuery.ajax({
                 type: "POST",
-                url: `DeleteInventoryAsset?id=${e.row.rowIndex}`,
+                url: `DeleteInventoryAsset?id=${e.row.data.anQId}`,
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {
@@ -362,7 +361,7 @@ function onDeleteIconClickInventoryAsset(e) {
 function onDeleteIconClickInventory(newData, value, currentRowData) {
     jQuery.ajax({
         type: "POST",
-        url: `ConfirmInventory?id=${e.row.rowIndex}`,
+        url: `ConfirmInventory?id=${e.row.data.anQId}`,
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function (response) {
@@ -394,7 +393,7 @@ function onConfirmIconClick(e) {
         if (result.isConfirmed) {
             jQuery.ajax({
                 type: "POST",
-                url: `ConfirmInventory?id=${e.row.rowIndex}`,
+                url: `ConfirmInventory?id=${e.row.data.anQId}`,
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {
@@ -431,7 +430,7 @@ function onConfirmIconClickInventory(e) {
 
         jQuery.ajax({
             type: "POST",
-            url: `CheckDiscrepancies?id=${e.row.rowIndex}`,
+            url: `CheckDiscrepancies?id=${e.row.data.qId}`,
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             success: function (response) {
@@ -471,7 +470,7 @@ function onConfirmIconClickInventory(e) {
                         if (result.isConfirmed) {
                             jQuery.ajax({
                                 type: "POST",
-                                url: `ConfirmInventoryWhole?id=${e.row.rowIndex}`,
+                                url: `ConfirmInventoryWhole?id=${e.row.data.qId}`,
                                 dataType: "json",
                                 contentType: "application/json; charset=utf-8",
                                 success: function (response) {
@@ -514,7 +513,7 @@ function onDeleteIconClickInventoryItem(e) {
         if (result.isConfirmed) {
             jQuery.ajax({
                 type: "POST",
-                url: `DeleteInventoryItem?id=${e.row.rowIndex}`,
+                url: `DeleteInventoryItem?id=${e.row.data.anQId}`,
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {
@@ -539,6 +538,7 @@ function onDeleteIconClickInventoryItem(e) {
 
 
 function onDeleteIconClickInventory(e) {
+    console.log(e);
     Swal.fire({
         title: 'Ali ste sigurni da želite pobrisati inventuro?',
         showDenyButton: true,
@@ -555,7 +555,7 @@ function onDeleteIconClickInventory(e) {
         if (result.isConfirmed) {
             jQuery.ajax({
                 type: "POST",
-                url: `DeleteInventory?id=${e.row.rowIndex}`,
+                url: `DeleteInventory?id=${e.row.data.qId}`,
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {
@@ -593,7 +593,7 @@ function onDeleteIconClickInventoryLocation(e) {
         if (result.isConfirmed) {
             jQuery.ajax({
                 type: "POST",
-                url: `DeleteInventoryLocation?id=${e.row.rowIndex}`,
+                url: `DeleteInventoryLocation?id=${e.row.data.anQId}`,
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {
@@ -631,7 +631,7 @@ function onDeleteIconClick(e) {
         if (result.isConfirmed) {
             jQuery.ajax({
                 type: "POST",
-                url: `DeleteInventoryPosition?id=${e.row.rowIndex}`,
+                url: `DeleteInventoryPosition?id=${e.row.data.anQId}`,
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (response) {

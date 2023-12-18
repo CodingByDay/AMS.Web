@@ -139,8 +139,8 @@ namespace AMS.Web.Controllers
 
             DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"],_logger);
             var currentInventory = db.GetCurrentActiveInventory();
-            var assets = db.GetAssets(currentInventory);
-            db.DeleteInventoryAsset(assets.ElementAt(Int32.Parse(id)).anQId.ToString());
+            var assets = db.GetAssets(currentInventory);        
+            db.DeleteInventoryAsset(id);
             return Json(true);
         }
 
@@ -152,7 +152,7 @@ namespace AMS.Web.Controllers
 
             DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             var locations = db.GetAllLocations();
-            db.DeleteInventoryLocation(locations.ElementAt(Int32.Parse(id)).anQId.ToString());
+            db.DeleteInventoryLocation(id);
             return Json(true);
         }
 
@@ -163,7 +163,7 @@ namespace AMS.Web.Controllers
 
             DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             var items = db.GetAllItems();
-            db.DeleteInventoryItem(items.ElementAt(Int32.Parse(id)).anQId.ToString());
+            db.DeleteInventoryItem(id);
             return Json(true);
         }
 
@@ -174,7 +174,7 @@ namespace AMS.Web.Controllers
 
             DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             var invs = db.getInventories();
-            db.DeleteInventory(invs.ElementAt(Int32.Parse(id)).qId.ToString());
+            db.DeleteInventory(id);
             return Json(true);
         }
 
@@ -231,7 +231,7 @@ namespace AMS.Web.Controllers
             DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             var checkOuts = db.GetAllCheckOutItems();
             int index = Int32.Parse(id);
-            var row = checkOuts.ElementAt(index);
+            var row = checkOuts.Where(x=>x.anQId == index).FirstOrDefault();
             db.CommitRow(row, HttpContext.Session.GetString("username") ?? "");
             return Json(true);
         }
@@ -245,7 +245,7 @@ namespace AMS.Web.Controllers
             DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             var inventories = db.getInventories();
             int index = Int32.Parse(id);
-            var row = inventories.ElementAt(index);
+            var row = inventories.Where(x => x.qId == index).FirstOrDefault();
             if (db.CheckDiscrepancies(row.qId) != -1 && db.CheckDiscrepancies(row.qId) != 0)
             {
                 return Json(true);
@@ -261,7 +261,7 @@ namespace AMS.Web.Controllers
             DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             var inventories = db.getInventories();
             int index = Int32.Parse(id);
-            var row = inventories.ElementAt(index);
+            var row = inventories.Where(x => x.qId == index).FirstOrDefault();
             db.CommitInventory(row, HttpContext.Session.GetString("username"));
             return Json(true);
         }
@@ -272,7 +272,7 @@ namespace AMS.Web.Controllers
             DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             var checkOuts = db.GetAllCheckOutItems();
             int index = Int32.Parse(id);
-            var row = checkOuts.ElementAt(index);
+            var row = checkOuts.Where(x => x.anQId == index).FirstOrDefault();
             db.DeleteRow(row);
             return Json(true);
         }
