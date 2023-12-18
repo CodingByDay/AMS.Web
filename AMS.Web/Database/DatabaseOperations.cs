@@ -1248,7 +1248,7 @@ namespace AMS.Web.Database
                 connection.Open();
                 SqlCommand command = new SqlCommand($"DELETE FROM tInventory WHERE anQId = {qid}", connection);
                 command.ExecuteNonQuery();
-                // Testiranje inserta za inventure //
+
             }
         }
 
@@ -1259,8 +1259,6 @@ namespace AMS.Web.Database
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand($"DELETE FROM tItem WHERE anQId = {qid}", connection);
-                command.ExecuteNonQuery();
-                // Testiranje inserta za inventure //
             }
         }
 

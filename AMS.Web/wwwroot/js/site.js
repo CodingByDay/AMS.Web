@@ -321,6 +321,9 @@ function setCellValueLocationName(newData, value, currentRowData) {
 
 
 function onDeleteIconClickInventoryAsset(e) {
+
+    console.log(e);
+    alert("Test")
     Swal.fire({
         title: 'Ali ste sigurni da želite pobrisati sredstvo?',
         showDenyButton: true,

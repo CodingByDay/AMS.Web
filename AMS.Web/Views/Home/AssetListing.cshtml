@@ -208,9 +208,6 @@
                                         })
 
 
-
-
-
                                     .Columns(c =>
                                     {
                                         c.Add().DataField("acLocation").Caption("Lokacija").AllowEditing(true).SetCellValue("setCellValueAssetLocation"); 
@@ -223,23 +220,16 @@
                                         c.Add().DataField("abWriteOff").Caption("Odpisano").AllowEditing(true).SetCellValue("setWriteOff");
                                         c.Add().DataField("abWriteOffReason").Caption("Razlog").AllowEditing(true).SetCellValue("setWriteOffReason");
                                         c.Add().DataField("checkedOut").Caption("Zabeleženo").AllowEditing(false);
-
-
-
                             c.Add()
                 .Type(GridCommandColumnType.Buttons)
                 .Width(110)
+
+
                 .Buttons(b =>
                 {
-                // b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClickInventoryAsset");
-                        
-
-
+                   b.Add().Hint("Pobriši").Icon("trash").OnClick("onDeleteIconClickInventoryAsset");
                 });
-                      
-
-
-
+                    
             })
             )
 

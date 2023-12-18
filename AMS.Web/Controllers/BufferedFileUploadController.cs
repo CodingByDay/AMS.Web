@@ -144,7 +144,7 @@ namespace AMS.Web.Controllers
                     var el = connection.startObjects.Where(x => x.field == name).FirstOrDefault();
                     SecondTable connector = getKeyValuePairs(connection).Where(x => x.Key == el).FirstOrDefault().Value;
 
-                    //helpCount += 1;
+                    // helpCount += 1;
                     var table = connection.startObjects.ElementAt(0).table;
 
                     DatabaseOperations databaseFindtype = new DatabaseOperations(Request.Cookies["connection"], _logger);
