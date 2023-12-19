@@ -52,7 +52,7 @@ function onCellPrepared(e) {
     }
 }
 function setCellValueWriteOff(rowData, value) { 
-    alert("s")
+
     rowData.abWriteOff = 1; // Convert bit value to boolean
 }
 
@@ -408,14 +408,8 @@ function onConfirmIconClick(e) {
         } else if (result.isDenied) {
 
         }
-    })
-
-    
+    })  
 }
-
-
-
-
 
 
 function onConfirmIconClickInventory(e) {
@@ -436,7 +430,7 @@ function onConfirmIconClickInventory(e) {
             success: function (response) {
 
                 if (response) {
-                    alert(response)
+
                     Swal.fire({
                         title: 'Neskladje',
                         showDenyButton: false,

@@ -27,7 +27,7 @@
     <script src="~/js/sortable.min.js"></script>
     <link href="~/css/site.css" rel="stylesheet" />
     <head>
-        @if (!currentUrl.Contains("/dashboard"))
+        @if (currentUrl!=null&&!currentUrl.Contains("/dashboard"))
         {
             <link href="~/css/devextreme/dx.light.css" rel="stylesheet" />
             <script src="~/js/devextreme/jquery.js"></script>

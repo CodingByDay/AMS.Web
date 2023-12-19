@@ -1449,7 +1449,6 @@ namespace AMS.Web.Database
                         _logger.LogError("Error: " + ex.Message + DateTime.Now);
                         var err = ex;
                     }
-                    // Update the state and then confirm the original row.
                     try
                     {
                         SqlCommand confirm = new SqlCommand($"UPDATE tCheckOut SET adDateConfirm = '{DateTime.Now}', anUserConfirm = {userID} WHERE anQId = {item.anQId}", conn);
@@ -1460,8 +1459,9 @@ namespace AMS.Web.Database
                         var err = ex;
                     }
                 }
-                        SqlCommand sql = new SqlCommand($"UPDATE tInventory SET adDateConfirm = '{currentStamp}', anUserConfirm = {userID} WHERE anQId = {row.qId}", conn);
-                        sql.ExecuteNonQuery();
+                // Closing the inventory
+                SqlCommand sql = new SqlCommand($"UPDATE tInventory SET adDateConfirm = '{currentStamp}', anUserConfirm = {userID} WHERE anQId = {row.qId}", conn);
+                sql.ExecuteNonQuery();
             }
         }
 
@@ -1724,8 +1724,6 @@ namespace AMS.Web.Database
             List<CheckOut> items = new List<CheckOut>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-
-
                 connection.Open();
                 SqlCommand getOpenInventory = new SqlCommand("SELECT anQId FROM tInventory WHERE adDateConfirm IS NULL;", connection);
                 try
@@ -1735,8 +1733,6 @@ namespace AMS.Web.Database
                 {
                     return new List<CheckOut>();
                 }
-
-
                 SqlCommand command = new SqlCommand($"SELECT a.*, b.* FROM tCheckOut AS a LEFT JOIN tAsset AS b ON a.anAssetID = b.anQId WHERE anInventory = {qid} AND anAssetID in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qid} GROUP BY anAssetID HAVING count(anAssetID) > 1) AND anAssetID not in (SELECT anAssetID FROM tCheckOut WHERE anInventory = {qid} AND adDateConfirm is not null) AND abWriteOff != 1;", connection);
 
                 using (SqlDataReader reader = command.ExecuteReader())
@@ -1899,12 +1895,16 @@ namespace AMS.Web.Database
         internal int GetCurrentActiveInventory()
         {
             int result = -1;
-
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 SqlCommand sql = new SqlCommand($"EXEC GetCurrentInventory", connection);
-                result = (int) sql.ExecuteScalar();
+                var scalarResult = sql.ExecuteScalar();
+
+                if (scalarResult != DBNull.Value && scalarResult != null)
+                {
+                    result = Convert.ToInt32(scalarResult);
+                }
             }
 
             return result;

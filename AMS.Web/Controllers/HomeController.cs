@@ -60,18 +60,21 @@ namespace AMS.Web.Controllers
 
         public IActionResult AssetListing()
         {
+    
             DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"], _logger);
             ViewBag.Title = "Sredstva";
             string currentUrl = HttpContext.Request.Path;
-
             // Pass the current URL to the view
             ViewBag.CurrentUrl = currentUrl;
-
-
             var currentInventory = db.GetCurrentActiveInventory();
-
-            var assets = db.GetAssets(currentInventory);
-            return View(assets);
+            if (currentInventory != -1)
+            {
+                var assets = db.GetAssets(currentInventory);
+                return View(assets);
+            } else
+            {
+                return View(new List<AssetListing>());
+            }
         }
 
 
@@ -135,9 +138,7 @@ namespace AMS.Web.Controllers
         public JsonResult DeleteInventoryAsset([FromQuery(Name = "id")] string id)
         {
 
-            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"],_logger);
-            var currentInventory = db.GetCurrentActiveInventory();
-            var assets = db.GetAssets(currentInventory);        
+            DatabaseOperations db = new DatabaseOperations(Request.Cookies["connection"],_logger);    
             db.DeleteInventoryAsset(id);
             return Json(true);
         }
