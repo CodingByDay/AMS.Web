@@ -1606,60 +1606,46 @@ namespace AMS.Web.Database
 
         public void UpdateRow(string table, string field, string type, string data, string id)
         {
-            SqlCommand command = new SqlCommand();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
+                string updateQuery = "";
+
                 if (type == "bool")
                 {
-                    if(data == "true")
+                    updateQuery = "UPDATE " + table + " SET " + field + " = @data";
+
+                    if (data == "true")
                     {
-                        if (field == "abWriteOff")
-                        {
-                            command = new SqlCommand($"UPDATE {table} SET {field}=1, adWriteOffDate = GETDATE() WHERE anQId = {id}", connection);
-                        } else
-                        {
-                            command = new SqlCommand($"UPDATE {table} SET {field}=1 WHERE anQId = {id}", connection);
-                        }
-                        
+                        updateQuery += ", adWriteOffDate = GETDATE()";
                     }
                     else
                     {
-
-
-                        if (field == "abWriteOff")
-                        {
-
-                            command = new SqlCommand($"UPDATE {table} SET {field}=1, adWriteOffDate = NULL WHERE anQId = {id}", connection);
-                        }
-                        else
-                        {
-                            command = new SqlCommand($"UPDATE {table} SET {field}=0 WHERE anQId = {id}", connection);
-                        }
-                        
-
+                        updateQuery += ", adWriteOffDate = NULL";
                     }
-                    command.ExecuteNonQuery();
-                    return;
-                }
-                if (type == "string")
-                {
 
-                    command = new SqlCommand($"UPDATE {table} SET {field}='{data}' WHERE anQId = {id}", connection);
-                    command.ExecuteNonQuery();
-                    return;
+                    updateQuery += " WHERE anQId = @id";
+                }
+                else if (type == "string")
+                {
+                    updateQuery = $"UPDATE {table} SET {field} = @data WHERE anQId = @id";
                 }
                 else
                 {
-
-                    command = new SqlCommand($"UPDATE {table} SET {field}={data} WHERE anQId = {id}", connection);
-                    command.ExecuteNonQuery();
-                    return;
+                    updateQuery = $"UPDATE {table} SET {field} = CAST(@data AS {type}) WHERE anQId = @id";
                 }
 
-               
+                using (SqlCommand command = new SqlCommand(updateQuery, connection))
+                {
+                    // Add parameters
+                    command.Parameters.AddWithValue("@data", data);
+                    command.Parameters.AddWithValue("@id", id);
+
+                    command.ExecuteNonQuery();
+                }
             }
         }
+
 
         internal List<CheckOut> GetAllCheckOutItemsNotFinished()
         {
