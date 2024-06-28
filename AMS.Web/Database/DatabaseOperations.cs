@@ -1204,41 +1204,41 @@ namespace AMS.Web.Database
 
         public bool CreateInventory(string name, string date, string leader)
         {
-            int id;
-            // var config = ConfigurationHelper.GetConfigurationObject();
+            string id;
+
             using (SqlConnection conn = new SqlConnection(config.connectionString))
             {
                 conn.Open();
-                SqlCommand command = new SqlCommand($"SELECT ID FROM Accounts WHERE UserName = '{leader}'", conn);
-                id = (int)command.ExecuteScalar();
-                // Testiranje inserta za inventure //
+                SqlCommand command = new SqlCommand("SELECT ID FROM Accounts WHERE UserName = @Leader", conn);
+                command.Parameters.AddWithValue("@Leader", leader);
+
+                id = command.ExecuteScalar()?.ToString();
             }
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
-
-                SqlCommand checkOpen = new SqlCommand("SELECT count(*) as openInventory FROM tInventory WHERE adDateConfirm is NULL;", conn);
-
-                int countOpen = (int) checkOpen.ExecuteScalar();
-
-
-
-
-
+                SqlCommand checkOpen = new SqlCommand("SELECT COUNT(*) as openInventory FROM tInventory WHERE adDateConfirm IS NULL;", conn);
+                int countOpen = (int)checkOpen.ExecuteScalar();
 
                 if (countOpen > 0)
                 {
                     return false;
                 }
-                SqlCommand command = new SqlCommand($"INSERT INTO tInventory VALUES ('{date}', '{id}', NULL, NULL, NULL, NULL, NULL, NULL, '{name}')", conn);
-                command.ExecuteNonQuery();
-                // Testiranje inserta za inventure //
-            }
 
+                SqlCommand command = new SqlCommand("INSERT INTO tInventory VALUES (@Date, @ID, NULL, NULL, NULL, NULL, NULL, NULL, @Name)", conn);
+
+                command.Parameters.AddWithValue("@Date", date);
+                command.Parameters.AddWithValue("@ID", id);
+                command.Parameters.AddWithValue("@Name", name);
+
+                command.ExecuteNonQuery();
+            }
 
             return true;
         }
+
 
         public void DeleteInventory(string qid)
         {
@@ -1604,6 +1604,9 @@ namespace AMS.Web.Database
             return data;
         }
 
+
+
+
         public void UpdateRow(string table, string field, string type, string data, string id)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -1613,7 +1616,7 @@ namespace AMS.Web.Database
 
                 if (type == "bool")
                 {
-                    updateQuery = "UPDATE " + table + " SET " + field + " = @data";
+                    updateQuery = $"UPDATE {table} SET {field} = @data";
 
                     if (data == "true")
                     {
@@ -1632,19 +1635,37 @@ namespace AMS.Web.Database
                 }
                 else
                 {
-                    updateQuery = $"UPDATE {table} SET {field} = CAST(@data AS {type}) WHERE anQId = @id";
+                    updateQuery = $"UPDATE {table} SET {field} = @data WHERE anQId = @id";
                 }
 
                 using (SqlCommand command = new SqlCommand(updateQuery, connection))
                 {
-                    // Add parameters
-                    command.Parameters.AddWithValue("@data", data);
+                    // Add parameters with explicit data types
+                    command.Parameters.Add("@data", GetSqlDbType(type)).Value = data ?? string.Empty;
                     command.Parameters.AddWithValue("@id", id);
 
                     command.ExecuteNonQuery();
                 }
             }
         }
+
+        private SqlDbType GetSqlDbType(string type)
+        {
+            // Map your type strings to SqlDbType
+            switch (type.ToLower())
+            {
+                case "int":
+                    return SqlDbType.Int;
+                case "bool":
+                    return SqlDbType.Bit;
+                case "string":
+                    return SqlDbType.NVarChar;
+                default:
+                    return SqlDbType.NVarChar;
+            }
+        }
+
+
 
 
         internal List<CheckOut> GetAllCheckOutItemsNotFinished()
